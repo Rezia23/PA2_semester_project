@@ -36,7 +36,7 @@ public:
 
     virtual CMatrixStandard * Add (const unique_ptr<CMatrix> & other) const override;
     virtual CMatrixStandard * NegateAllNums() const override;
-    virtual CMatrixStandard * Substract (const unique_ptr<CMatrix> & other) const override;
+    virtual CMatrixStandard * Subtract (const unique_ptr<CMatrix> & other) const override;
     virtual CMatrixStandard * Multiply (const unique_ptr<CMatrix> & other) const override;
     virtual void Transpose() override;
     virtual void ChangeToIdentity(int size) override;

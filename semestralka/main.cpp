@@ -10,8 +10,10 @@
 using namespace std;
 int main() {
 
-    CApplicationConsole a;
-    a.Run();
+    CApplicationConsole app;
+    app.PrintInstructions();
+    app.Run();
+    app.ShowVariables();
 
     //lets do some tests
 //    vector<vector<double>> a = {{1,2,3},

@@ -30,7 +30,7 @@ public:
 
     virtual CMatrix *NegateAllNums() const = 0;
 
-    virtual CMatrix *Substract(const unique_ptr<CMatrix> & other) const = 0;
+    virtual CMatrix *Subtract(const unique_ptr<CMatrix> & other) const = 0;
 
     virtual CMatrix *Multiply(const unique_ptr<CMatrix> & other) const = 0;
 
@@ -63,6 +63,20 @@ public:
             }
         }
         return true;
+    }
+
+    string ToString(){
+        string result;
+        for(size_t i = 0; i<m_NumRows;i++){
+            for(size_t j = 0;j<m_NumCols;j++){
+                if(j!=0){
+                    result+=" ";
+                }
+                result+=to_string(GetNumAtCoords(i,j));
+            }
+            result+="\n";
+        }
+        return result;
     }
 
 protected:

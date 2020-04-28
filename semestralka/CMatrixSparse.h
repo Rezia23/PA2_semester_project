@@ -25,7 +25,7 @@ public:
     virtual void Print() const override;
     virtual CMatrixSparse * Add(const unique_ptr<CMatrix> & other) const override;
     virtual CMatrixSparse * NegateAllNums() const override;
-    virtual CMatrixSparse * Substract (const unique_ptr<CMatrix> & other) const override;
+    virtual CMatrixSparse * Subtract (const unique_ptr<CMatrix> & other) const override;
     virtual CMatrixSparse * Multiply (const unique_ptr<CMatrix> & other) const override;
     virtual void Transpose() override;
     virtual void ChangeToIdentity(int size) override;

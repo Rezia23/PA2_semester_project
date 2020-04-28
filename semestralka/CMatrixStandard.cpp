@@ -35,7 +35,7 @@ CMatrixStandard * CMatrixStandard::Add(const unique_ptr<CMatrix> & other) const 
     //TODO: possibly convert to sparse matrix afterwards
     return new CMatrixStandard(sum);
 }
-CMatrixStandard * CMatrixStandard::Substract(const unique_ptr<CMatrix> & other) const {
+CMatrixStandard * CMatrixStandard::Subtract(const unique_ptr<CMatrix> & other) const {
     return new CMatrixStandard(*this->Add(unique_ptr<CMatrix>(other->NegateAllNums())));
 }
 

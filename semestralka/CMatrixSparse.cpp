@@ -63,7 +63,7 @@ CMatrixSparse *CMatrixSparse::NegateAllNums() const {
     return new CMatrixSparse(negatedNum, m_NumRows, m_NumCols);
 }
 
-CMatrixSparse *CMatrixSparse::Substract(const unique_ptr<CMatrix> & other) const {
+CMatrixSparse *CMatrixSparse::Subtract(const unique_ptr<CMatrix> & other) const {
     return new CMatrixSparse(*this->Add(unique_ptr<CMatrix>(other->NegateAllNums())));
 }
 

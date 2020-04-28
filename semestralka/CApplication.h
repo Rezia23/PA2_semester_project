@@ -13,66 +13,155 @@
 #include "CMatrix.h"
 #include "CMatrixStandard.h"
 class CApplication {
+
+public:
+    enum e_Command {LOAD, ADD, SUBTRACT, TRANSPOSE, MULTIPLY, PUT}; //tbd others
+    struct s_Command{
+        e_Command m_Command;
+        vector<string> m_Operands;
+        string m_Result;
+        unique_ptr<CMatrix> m_Matrix;
+    };
 protected:
     map<string,unique_ptr<CMatrix>> m_Variables;
-    enum e_Command {LOAD, ADD}; //tbd others
-public:
-    CApplication() = default;
-    virtual ~CApplication() = default;
     virtual void PrintInstructions()const = 0;
     virtual string GetInput()const = 0;
-    bool LoadMatrices(string input, string result){
-        //tbd read name of variable
-        //to be read size
-        size_t numRows;
-        size_t  numCols;
-        stringstream inStream(input);
-        //readSize()
-        //readName()
-        //readMatrix()
-        char c;
-        if(!(inStream >> c) || c!='s'){
-            return false;
-        }
-        inStream>>numRows;
-        inStream>>numCols;
-        vector<vector<double>> matrix(numRows);
-        for(size_t i = 0;i<numRows;i++){
-            for(size_t j = 0; j<numCols;j++){
-                double nextNum;
-                //if se nenacte atd.
-                inStream>>nextNum;
-                matrix[i].push_back(nextNum);
-            }
-        }
-        m_Variables[string("asd")] = (make_unique<CMatrixStandard>(CMatrixStandard(matrix)));
-        result = "succesfully loaded\n";
+//    virtual bool getVariableName(string & input, string & varName) const = 0;
+//    virtual bool ReadSize(std::size_t & numRows, std::size_t & numCols,istream & inStream) const = 0;
+//    virtual bool ReadMatrix(istream & inStream,vector<vector<double>> & matrix, size_t numRows, size_t numCols) const = 0;
+//    virtual bool IsSyntaxCorrect(istream & inStream) const = 0;
+
+
+    virtual bool ParseCommand(string & input, s_Command &command) = 0;
+
+    bool AddMatrices(string input, string & result){
+
+        //check addition conditions
+
         return true;
-        //TODO parse mtf input!!!!!!!!
-
-        //to be metoda ParseMatrix
-
     }
+//    bool SubtractMatrices(string input, string & result){
+//        string name1, name2;
+//        if(!LoadOperandName(input, name1)){
+//            result = "Could not load first variable.";
+//            return false;
+//        }
+//        if(!LoadOperandName(input, name2)){
+//            result = "Could not load first variable.";
+//            return false;
+//        }
+//        stringstream inStream(input);
+//        if(!(IsSyntaxCorrect(inStream))) {
+//            result = "Command not properly ended.";
+//            return false;
+//        }
+//        //check sub conditions
+//        result = "Result of subtraction is:\n";
+//        unique_ptr<CMatrix> res = unique_ptr<CMatrix> (m_Variables.find(name1)->second->Subtract(m_Variables.find(name2)->second));
+//        result += res->ToString();
+//        return true;
+//    }
+//    bool MultiplyMatrices(string input, string & result){
+//        string name1, name2;
+//        if(!LoadOperandName(input, name1)){
+//            result = "Could not load first variable.";
+//            return false;
+//        }
+//        if(!LoadOperandName(input, name2)){
+//            result = "Could not load first variable.";
+//            return false;
+//        }
+//        stringstream inStream(input);
+//        if(!(IsSyntaxCorrect(inStream))) {
+//            result = "Command not properly ended.";
+//            return false;
+//        }
+//        //check mult conditions
+//        result = "Result of multiplication is:\n";
+//        unique_ptr<CMatrix> res = unique_ptr<CMatrix> (m_Variables.find(name1)->second->Multiply(m_Variables.find(name2)->second));
+//        result += res->ToString();
+//        return true;
+//    }
+//    bool TransposeMatrix(string input, string & result){
+//
+//        m_Variables.find(name)->second->Transpose();
+//        result = name + " has been transposed:\n";
+//        result+=m_Variables.find(name)->second->ToString();
+//        return true;
+//    }
+    virtual void ShowResult(string result) = 0;
+    bool existsVariable(string name) const{
+        return m_Variables.find(name)!=m_Variables.end();
+    }
+public:
+
+
+    CApplication() = default;
+    virtual ~CApplication() = default;
+
+
     bool Evaluate(string input, string & result){
-        e_Command command;
+        s_Command command;
         if(!ParseCommand(input, command)){
             return false;
         }
-        if(command == LOAD){
-            if(!LoadMatrices(input, result)){
-                return false;
-            }
-            return true;
-        }
+
+       if(command.m_Command == LOAD){
+           if(m_Variables.find(command.m_Operands[0])!=m_Variables.end()){
+               result = "Cannot create variable with same name as existing.";
+               return false;
+           }
+           m_Variables.insert(make_pair(command.m_Operands[0], move(command.m_Matrix)));
+           result = command.m_Result;
+           return true;
+        } else if(command.m_Command== ADD){
+           if(!existsVariable(command.m_Operands[0]) || !existsVariable(command.m_Operands[1])){
+               result = "Variables do not exist.";
+               return false;
+           }
+           result = "Result of addition is:\n";
+           unique_ptr<CMatrix> res = unique_ptr<CMatrix> (m_Variables.find(command.m_Operands[0])->second->Add(m_Variables.find(command.m_Operands[1])->second));
+           result += res->ToString();
+           return true;
+        }else if(command.m_Command== SUBTRACT){
+           if(!existsVariable(command.m_Operands[0]) || !existsVariable(command.m_Operands[1])){
+               result = "Variables do not exist.";
+               return false;
+           }
+           result = "Result of subtraction is:\n";
+           unique_ptr<CMatrix> res = unique_ptr<CMatrix> (m_Variables.find(command.m_Operands[0])->second->Subtract(m_Variables.find(command.m_Operands[1])->second));
+           result += res->ToString();
+           return true;
+       }else if(command.m_Command== MULTIPLY){
+           if(!existsVariable(command.m_Operands[0]) || !existsVariable(command.m_Operands[1])){
+               result = "Variables do not exist.";
+               return false;
+           }
+           result = "Result of multiplication is:\n";
+           unique_ptr<CMatrix> res = unique_ptr<CMatrix> (m_Variables.find(command.m_Operands[0])->second->Multiply(m_Variables.find(command.m_Operands[1])->second));
+           result += res->ToString();
+       }else if(command.m_Command== TRANSPOSE){
+           if(!existsVariable(command.m_Operands[0])){
+               result = "Variable does not exist.";
+               return false;
+           }
+           m_Variables.find(command.m_Operands[0])->second->Transpose();
+           result = command.m_Operands[0] + " has been transposed:\n";
+           result+=m_Variables.find(command.m_Operands[0])->second->ToString();
+       }
         //if addition... AddMatrices(mat1, mat2)
         //.........
         //
         return true;
     }
-    virtual bool ParseCommand(string & input, e_Command &command) = 0;
+
     void Run(){
         while(true){
             string input = GetInput();
+            if(input == "exit ;"){
+                ShowMsg("Closing the app.");
+                break;
+            }
             string result;
             if(!Evaluate(input, result)){
 //            //  ShowWrongInputMessage();
@@ -80,8 +169,24 @@ public:
                 cout<<"wrong wrong";
               }
 //            if(m_Variables.at("asd"))
-            m_Variables["asd"]->Print();
-            //ShowResult(result);
+            //ShowVariables();
+            ShowResult(result);
+
+        }
+    }
+
+    virtual void ShowVarName(string name) const= 0;
+    virtual void ShowMatrix(unique_ptr<CMatrix> & matrix) const= 0;
+    virtual void ShowMsg(string msg) const= 0;
+    void ShowVariables() const{
+        if(m_Variables.size()==0){
+            ShowMsg("No variables to be shown.");
+        }
+        for(auto a = m_Variables.begin(); a!=m_Variables.end();a++){
+            ShowVarName(a->first);
+            //getstring representation
+            //show
+            a->second->Print();
         }
     }
 };
