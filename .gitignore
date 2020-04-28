@@ -1,0 +1,4 @@
+*.txt
+*.xml
+*.out
+*/cmake-build-debug
