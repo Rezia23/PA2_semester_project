@@ -42,6 +42,8 @@ public:
     virtual void ChangeToIdentity(int size) = 0;
 
     virtual void Cut(size_t numRows, size_t numCols, pair<size_t, size_t> startPoint) = 0;
+    virtual bool ShouldBeSparse() const = 0;
+    virtual CMatrix * Convert()const = 0;
 
     //must copy matrix and call on the copy!
 //    double CalculateDeterminant(const unique_ptr<CMatrix> other){

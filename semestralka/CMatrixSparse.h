@@ -10,6 +10,7 @@
 #include "CMatrix.h"
 #include "CMatrixStandard.h"
 
+
 using namespace std;
 class CMatrixSparse: public CMatrix {
 private:
@@ -19,6 +20,15 @@ public:
     CMatrixSparse(map<pair<size_t, size_t>, double> matrix, size_t numRows, size_t numCols) : m_Matrix(matrix) {
         m_NumRows = numRows;
         m_NumCols = numCols;
+    }
+    virtual CMatrixStandard* Convert() const override {
+        vector<vector <double>> matrix(m_NumRows);
+        for(size_t i = 0; i<m_NumRows;i++){
+            for(size_t j = 0; j<m_NumCols;j++){
+                matrix[i].push_back(GetNumAtCoords(i,j));
+            }
+        }
+        return new CMatrixStandard(matrix);
     }
     virtual ~CMatrixSparse() override = default;
     virtual double GetNumAtCoords(size_t row, size_t col) const override;
@@ -32,6 +42,9 @@ public:
     virtual CMatrixSparse * MergeNextTo(const unique_ptr<CMatrix> & other) const override;
     virtual CMatrixSparse * MergeUnder(const unique_ptr<CMatrix> & other) const override;
     virtual void Cut(size_t numRows, size_t numCols, pair<size_t, size_t> startPoint) override;
+    virtual bool ShouldBeSparse()const{
+        return (m_NumRows * m_NumCols) - m_Matrix.size() > m_Matrix.size();
+    }
 
 };
 

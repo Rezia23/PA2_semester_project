@@ -8,6 +8,7 @@
 #include "CMatrix.h"
 #include <utility>
 #include <vector>
+#include "CMatrixSparse.h"
 using namespace std;
 
 class CMatrixStandard: public CMatrix {
@@ -30,11 +31,24 @@ public:
         m_NumRows = m_Matrix.size();
         m_NumCols = m_Matrix[0].size();
     }
+    virtual CMatrixSparse * Convert() const override {
+       size_t  numRows = m_NumRows;
+       size_t  numCols = m_NumCols;
+       map<pair<size_t , size_t >, double> matrix;
+        for(size_t i = 0; i<m_NumRows;i++){
+            for(size_t j = 0; j<m_NumCols;j++){
+                if(GetNumAtCoords(i,j)!=0){
+                    matrix[{i,j}] = GetNumAtCoords(i,j);
+                }
+            }
+        }
+        return new CMatrixSparse(matrix, numRows, numCols);
+    }
     virtual ~CMatrixStandard() override = default;
     virtual void Print() const override;
     virtual double GetNumAtCoords(size_t row, size_t col) const override { return m_Matrix[row][col];}
 
-    virtual CMatrixStandard * Add (const unique_ptr<CMatrix> & other) const override;
+    virtual CMatrixStandard* Add (const unique_ptr<CMatrix> & other) const override;
     virtual CMatrixStandard * NegateAllNums() const override;
     virtual CMatrixStandard * Subtract (const unique_ptr<CMatrix> & other) const override;
     virtual CMatrixStandard * Multiply (const unique_ptr<CMatrix> & other) const override;
@@ -46,6 +60,17 @@ public:
     CMatrixStandard* FindInverse()const;
     double CalculateDeterminant() const;
     int CalculateRank() const;
+    virtual bool ShouldBeSparse() const override{
+        size_t zeroCount = 0;
+        for(size_t i = 0; i<m_NumRows;i++){
+            for(size_t j = 0; j<m_NumCols;j++){
+                if(GetNumAtCoords(i,j)==0){
+                    zeroCount++;
+                }
+            }
+        }
+        return zeroCount>(m_NumRows*m_NumCols)-zeroCount;
+    }
 
 
 

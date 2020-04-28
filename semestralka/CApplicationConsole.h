@@ -8,6 +8,7 @@
 #include <cstdio>
 #include <sstream>
 #include "CApplication.h"
+#include "CMatrixSparse.h"
 using namespace std;
 
 class CApplicationConsole : public CApplication{
@@ -144,8 +145,11 @@ private:
             command.m_Result = "Command not properly ended.";
             return false;
         }
-        //TODO check, ktera to ma byti
+
         command.m_Matrix = (make_unique<CMatrixStandard>(CMatrixStandard(matrix)));
+//        if(command.m_Matrix->ShouldBeSparse()){
+//            command.m_Matrix = unique_ptr<CMatrix>(command.m_Matrix->Convert());
+//        }
         command.m_Operands.push_back(varName);
         command.m_Result = "Matrix " + varName + " was loaded.";
         return true;
