@@ -3,6 +3,10 @@
 //
 
 #include "CApplicationConsole.h"
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
 bool CApplicationConsole::getVariableName(string &input, string &varName) const {
     std::string::size_type spacePosition;
     spacePosition = input.find(" ");

@@ -27,31 +27,35 @@ public:
     CMatrixStandard():CMatrix(){
         m_Matrix.resize(0);
     }
+
     CMatrixStandard (vector<vector<double>>  matrix): CMatrix(), m_Matrix(std::move(matrix)){
         m_NumRows = m_Matrix.size();
         m_NumCols = m_Matrix[0].size();
     }
-    virtual CMatrixSparse * Convert() const override {
-       size_t  numRows = m_NumRows;
-       size_t  numCols = m_NumCols;
-       map<pair<size_t , size_t >, double> matrix;
+
+    CMatrixStandard (map<pair<size_t, size_t>, double> matrix, size_t numRows, size_t numCols):CMatrix(){
+        m_NumRows = numRows;
+        m_NumCols = numCols;
+        m_Matrix.resize(m_NumRows);
         for(size_t i = 0; i<m_NumRows;i++){
             for(size_t j = 0; j<m_NumCols;j++){
-                if(GetNumAtCoords(i,j)!=0){
-                    matrix[{i,j}] = GetNumAtCoords(i,j);
+                if(matrix.find({i,j})!=matrix.end()){
+                    m_Matrix[i].push_back(matrix[{i,j}]);
+                }else{
+                    m_Matrix[i].push_back(0);
                 }
             }
         }
-        return new CMatrixSparse(matrix, numRows, numCols);
     }
+    virtual CMatrix * Convert() const override;
     virtual ~CMatrixStandard() override = default;
     virtual void Print() const override;
     virtual double GetNumAtCoords(size_t row, size_t col) const override { return m_Matrix[row][col];}
 
-    virtual CMatrixStandard* Add (const unique_ptr<CMatrix> & other) const override;
-    virtual CMatrixStandard * NegateAllNums() const override;
-    virtual CMatrixStandard * Subtract (const unique_ptr<CMatrix> & other) const override;
-    virtual CMatrixStandard * Multiply (const unique_ptr<CMatrix> & other) const override;
+    virtual CMatrix* Add (const unique_ptr<CMatrix> & other) const override;
+    virtual CMatrix * NegateAllNums() const override;
+    virtual CMatrix * Subtract (const unique_ptr<CMatrix> & other) const override;
+    virtual CMatrix * Multiply (const unique_ptr<CMatrix> & other) const override;
     virtual void Transpose() override;
     virtual void ChangeToIdentity(int size) override;
     virtual CMatrixStandard * MergeNextTo(const unique_ptr<CMatrix> & other) const override;

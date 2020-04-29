@@ -21,22 +21,25 @@ public:
         m_NumRows = numRows;
         m_NumCols = numCols;
     }
-    virtual CMatrixStandard* Convert() const override {
-        vector<vector <double>> matrix(m_NumRows);
+    CMatrixSparse(vector<vector<double>> matrix):CMatrix(){
+        m_NumRows = matrix.size();
+        m_NumCols = matrix[0].size();
         for(size_t i = 0; i<m_NumRows;i++){
             for(size_t j = 0; j<m_NumCols;j++){
-                matrix[i].push_back(GetNumAtCoords(i,j));
+                if(matrix[i][j]!=0){
+                    m_Matrix[{i,j}] = matrix[i][j];
+                }
             }
         }
-        return new CMatrixStandard(matrix);
     }
+    virtual CMatrix* Convert() const override;
     virtual ~CMatrixSparse() override = default;
     virtual double GetNumAtCoords(size_t row, size_t col) const override;
     virtual void Print() const override;
-    virtual CMatrixSparse * Add(const unique_ptr<CMatrix> & other) const override;
-    virtual CMatrixSparse * NegateAllNums() const override;
-    virtual CMatrixSparse * Subtract (const unique_ptr<CMatrix> & other) const override;
-    virtual CMatrixSparse * Multiply (const unique_ptr<CMatrix> & other) const override;
+    virtual CMatrix * Add(const unique_ptr<CMatrix> & other) const override;
+    virtual CMatrix * NegateAllNums() const override;
+    virtual CMatrix * Subtract (const unique_ptr<CMatrix> & other) const override;
+    virtual CMatrix * Multiply (const unique_ptr<CMatrix> & other) const override;
     virtual void Transpose() override;
     virtual void ChangeToIdentity(int size) override;
     virtual CMatrixSparse * MergeNextTo(const unique_ptr<CMatrix> & other) const override;
