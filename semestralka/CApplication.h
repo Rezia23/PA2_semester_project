@@ -12,10 +12,12 @@
 #include <sstream>
 #include "CMatrix.h"
 #include "CMatrixStandard.h"
+#include "CCommand.h"
+
 class CApplication {
 
 public:
-    enum e_Command {LOAD, ADD, SUBTRACT, TRANSPOSE, MULTIPLY, PUT, PRINT, MERGE_UNDER, MERGE_NEXT_TO, CUT}; //tbd others
+    enum e_Command {LOAD1, ADD, SUBTRACT, TRANSPOSE, MULTIPLY, PUT, PRINT, MERGE_UNDER, MERGE_NEXT_TO, CUT}; //tbd others
     struct s_Command{
         e_Command m_Command;
         vector<string> m_Operands;
@@ -34,7 +36,7 @@ protected:
 //    virtual bool IsSyntaxCorrect(istream & inStream) const = 0;
 
 
-    virtual bool ParseCommand(string & input, s_Command &command) = 0;
+    virtual bool ParseCommand(string & input, unique_ptr<CCommand> & nextCommand) = 0;
 
     bool AddMatrices(string input, string & result){
 
@@ -42,55 +44,7 @@ protected:
 
         return true;
     }
-//    bool SubtractMatrices(string input, string & result){
-//        string name1, name2;
-//        if(!LoadOperandName(input, name1)){
-//            result = "Could not load first variable.";
-//            return false;
-//        }
-//        if(!LoadOperandName(input, name2)){
-//            result = "Could not load first variable.";
-//            return false;
-//        }
-//        stringstream inStream(input);
-//        if(!(IsSyntaxCorrect(inStream))) {
-//            result = "Command not properly ended.";
-//            return false;
-//        }
-//        //check sub conditions
-//        result = "Result of subtraction is:\n";
-//        unique_ptr<CMatrix> res = unique_ptr<CMatrix> (m_Variables.find(name1)->second->Subtract(m_Variables.find(name2)->second));
-//        result += res->ToString();
-//        return true;
-//    }
-//    bool MultiplyMatrices(string input, string & result){
-//        string name1, name2;
-//        if(!LoadOperandName(input, name1)){
-//            result = "Could not load first variable.";
-//            return false;
-//        }
-//        if(!LoadOperandName(input, name2)){
-//            result = "Could not load first variable.";
-//            return false;
-//        }
-//        stringstream inStream(input);
-//        if(!(IsSyntaxCorrect(inStream))) {
-//            result = "Command not properly ended.";
-//            return false;
-//        }
-//        //check mult conditions
-//        result = "Result of multiplication is:\n";
-//        unique_ptr<CMatrix> res = unique_ptr<CMatrix> (m_Variables.find(name1)->second->Multiply(m_Variables.find(name2)->second));
-//        result += res->ToString();
-//        return true;
-//    }
-//    bool TransposeMatrix(string input, string & result){
-//
-//        m_Variables.find(name)->second->Transpose();
-//        result = name + " has been transposed:\n";
-//        result+=m_Variables.find(name)->second->ToString();
-//        return true;
-//    }
+
     virtual void ShowResult(string result) = 0;
     bool existsVariable(string name) const{
         return m_Variables.find(name)!=m_Variables.end();
@@ -102,96 +56,101 @@ public:
     virtual ~CApplication() = default;
 
 
-    bool Evaluate(string input, string & result, s_Command &command){
+    bool Evaluate(string input, string & result, s_Command &command, unique_ptr<CCommand> & nextCommand){
 
-        if(!ParseCommand(input, command)){
+        if(!ParseCommand(input, nextCommand)){
+            result = "Command could not be parsed.";
             return false;
         }
-
-        if(command.m_Command == PRINT){
-            if(m_Variables.find(command.m_Operands[0])==m_Variables.end()){
-                result = "Cannot print non existent variable.";
-                return false;
-            }
-            result = m_Variables.at(command.m_Operands[0])->ToString();
-            return true;
-        }else if(command.m_Command == LOAD){
-           if(m_Variables.find(command.m_Operands[0])!=m_Variables.end()){
-               result = "Cannot create variable with same name as existing.";
-               return false;
-           }
-           m_Variables.insert(make_pair(command.m_Operands[0], move(command.m_ResultMatrix)));
-           result = command.m_Result;
-           return true;
-        } else if(command.m_Command== ADD){
-           if(!existsVariable(command.m_Operands[0]) || !existsVariable(command.m_Operands[1])){
-               result = "Variables do not exist.";
-               return false;
-           }
-           result = "Result of addition is:\n";
-           command.m_ResultMatrix = unique_ptr<CMatrix> (m_Variables.find(command.m_Operands[0])->second->Add(m_Variables.find(command.m_Operands[1])->second));
-           result += command.m_ResultMatrix->ToString();
-           return true;
-        }else if(command.m_Command== SUBTRACT){
-           if(!existsVariable(command.m_Operands[0]) || !existsVariable(command.m_Operands[1])){
-               result = "Variables do not exist.";
-               return false;
-           }
-           result = "Result of subtraction is:\n";
-           command.m_ResultMatrix = unique_ptr<CMatrix> (m_Variables.find(command.m_Operands[0])->second->Subtract(m_Variables.find(command.m_Operands[1])->second));
-           result += command.m_ResultMatrix->ToString();
-           return true;
-       }else if(command.m_Command== MULTIPLY){
-           if(!existsVariable(command.m_Operands[0]) || !existsVariable(command.m_Operands[1])){
-               result = "Variables do not exist.";
-               return false;
-           }
-           result = "Result of multiplication is:\n";
-           command.m_ResultMatrix = unique_ptr<CMatrix> (m_Variables.find(command.m_Operands[0])->second->Multiply(m_Variables.find(command.m_Operands[1])->second));
-           result += command.m_ResultMatrix->ToString();
-       }else if(command.m_Command== TRANSPOSE){
-           if(!existsVariable(command.m_Operands[0])){
-               result = "Variable does not exist.";
-               return false;
-           }
-           m_Variables.find(command.m_Operands[0])->second->Transpose();
-           result = command.m_Operands[0] + " has been transposed:\n";
-           result+=m_Variables.find(command.m_Operands[0])->second->ToString();
-       }else if(command.m_Command== CUT){
-            if(!existsVariable(command.m_Operands[0])){
-                result = "Variable does not exist.";
-                return false;
-            }
-            m_Variables.find(command.m_Operands[0])->second->Cut(command.m_Size.first, command.m_Size.second, command.m_StartPoint);
-            result = command.m_Operands[0] + " has been cut:\n";
-            result+=m_Variables.find(command.m_Operands[0])->second->ToString();
-        }else if(command.m_Command== PUT){
-           if(m_Variables.find(command.m_Operands[0])==m_Variables.end()){
-               result = "Variable does not exist.";
-               return false;
-           }
-           s_Command subCommand;
-           if(!Evaluate(input, result, subCommand)){
-               return false;
-           }
-           m_Variables.at(command.m_Operands[0]) = (move(subCommand.m_ResultMatrix));
-       }else if(command.m_Command== MERGE_UNDER){
-            if(!existsVariable(command.m_Operands[0]) || !existsVariable(command.m_Operands[1])){
-                result = "Variables do not exist.";
-                return false;
-            }
-            result = "Result is:\n";
-            command.m_ResultMatrix = unique_ptr<CMatrix> (m_Variables.find(command.m_Operands[0])->second->MergeUnder(m_Variables.find(command.m_Operands[1])->second));
-            result += command.m_ResultMatrix->ToString();
-        }else if(command.m_Command== MERGE_NEXT_TO){
-            if(!existsVariable(command.m_Operands[0]) || !existsVariable(command.m_Operands[1])){
-                result = "Variables do not exist.";
-                return false;
-            }
-            result = "Result is:\n";
-            command.m_ResultMatrix = unique_ptr<CMatrix> (m_Variables.find(command.m_Operands[0])->second->MergeNextTo(m_Variables.find(command.m_Operands[1])->second));
-            result += command.m_ResultMatrix->ToString();
+        if(!nextCommand->Execute(m_Variables)){
+            result = nextCommand->m_Result;
+            return false;
         }
+        result = nextCommand->m_Result;
+//        if(command.m_Command == PRINT){
+//            if(m_Variables.find(command.m_Operands[0])==m_Variables.end()){
+//                result = "Cannot print non existent variable.";
+//                return false;
+//            }
+//            result = m_Variables.at(command.m_Operands[0])->ToString();
+//            return true;
+//        }else if(nextCommand->m_CommandName == CCommand::LOAD){
+//           if(m_Variables.find(nextCommand->m_VariableName)!=m_Variables.end()){
+//               result = "Cannot create variable with same name as existing.";
+//               return false;
+//           }
+//           m_Variables.insert(make_pair(command.m_Operands[0], move(command.m_ResultMatrix)));
+//           result = command.m_Result;
+//           return true;
+//        } else if(command.m_Command== ADD){
+//           if(!existsVariable(command.m_Operands[0]) || !existsVariable(command.m_Operands[1])){
+//               result = "Variables do not exist.";
+//               return false;
+//           }
+//           result = "Result of addition is:\n";
+//           command.m_ResultMatrix = unique_ptr<CMatrix> (m_Variables.find(command.m_Operands[0])->second->Add(m_Variables.find(command.m_Operands[1])->second));
+//           result += command.m_ResultMatrix->ToString();
+//           return true;
+//        }else if(command.m_Command== SUBTRACT){
+//           if(!existsVariable(command.m_Operands[0]) || !existsVariable(command.m_Operands[1])){
+//               result = "Variables do not exist.";
+//               return false;
+//           }
+//           result = "Result of subtraction is:\n";
+//           command.m_ResultMatrix = unique_ptr<CMatrix> (m_Variables.find(command.m_Operands[0])->second->Subtract(m_Variables.find(command.m_Operands[1])->second));
+//           result += command.m_ResultMatrix->ToString();
+//           return true;
+//       }else if(command.m_Command== MULTIPLY){
+//           if(!existsVariable(command.m_Operands[0]) || !existsVariable(command.m_Operands[1])){
+//               result = "Variables do not exist.";
+//               return false;
+//           }
+//           result = "Result of multiplication is:\n";
+//           command.m_ResultMatrix = unique_ptr<CMatrix> (m_Variables.find(command.m_Operands[0])->second->Multiply(m_Variables.find(command.m_Operands[1])->second));
+//           result += command.m_ResultMatrix->ToString();
+//       }else if(command.m_Command== TRANSPOSE){
+//           if(!existsVariable(command.m_Operands[0])){
+//               result = "Variable does not exist.";
+//               return false;
+//           }
+//           m_Variables.find(command.m_Operands[0])->second->Transpose();
+//           result = command.m_Operands[0] + " has been transposed:\n";
+//           result+=m_Variables.find(command.m_Operands[0])->second->ToString();
+//       }else if(command.m_Command== CUT){
+//            if(!existsVariable(command.m_Operands[0])){
+//                result = "Variable does not exist.";
+//                return false;
+//            }
+//            m_Variables.find(command.m_Operands[0])->second->Cut(command.m_Size.first, command.m_Size.second, command.m_StartPoint);
+//            result = command.m_Operands[0] + " has been cut:\n";
+//            result+=m_Variables.find(command.m_Operands[0])->second->ToString();
+//        }else if(command.m_Command== PUT){
+//           if(m_Variables.find(command.m_Operands[0])==m_Variables.end()){
+//               result = "Variable does not exist.";
+//               return false;
+//           }
+//           s_Command subCommand;
+//           if(!Evaluate(input, result, subCommand)){
+//               return false;
+//           }
+//           m_Variables.at(command.m_Operands[0]) = (move(subCommand.m_ResultMatrix));
+//       }else if(command.m_Command== MERGE_UNDER){
+//            if(!existsVariable(command.m_Operands[0]) || !existsVariable(command.m_Operands[1])){
+//                result = "Variables do not exist.";
+//                return false;
+//            }
+//            result = "Result is:\n";
+//            command.m_ResultMatrix = unique_ptr<CMatrix> (m_Variables.find(command.m_Operands[0])->second->MergeUnder(m_Variables.find(command.m_Operands[1])->second));
+//            result += command.m_ResultMatrix->ToString();
+//        }else if(command.m_Command== MERGE_NEXT_TO){
+//            if(!existsVariable(command.m_Operands[0]) || !existsVariable(command.m_Operands[1])){
+//                result = "Variables do not exist.";
+//                return false;
+//            }
+//            result = "Result is:\n";
+//            command.m_ResultMatrix = unique_ptr<CMatrix> (m_Variables.find(command.m_Operands[0])->second->MergeNextTo(m_Variables.find(command.m_Operands[1])->second));
+//            result += command.m_ResultMatrix->ToString();
+//        }
         //if addition... AddMatrices(mat1, mat2)
         //.........
         //
@@ -207,11 +166,13 @@ public:
             }
             string result;
             s_Command command;
-            if(!Evaluate(input, result, command)){
+            unique_ptr<CCommand> nextCommand;
+            if(!Evaluate(input, result, command, nextCommand)){
 //            //  ShowWrongInputMessage();
 //            //  continue;
                 cout<<"wrong wrong";
               }
+
 //            if(m_Variables.at("asd"))
             //ShowVariables();
             ShowResult(result);
