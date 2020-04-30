@@ -20,10 +20,9 @@ public:
         if(!m_Subcommand->Execute(variables)){
             return false;
         }
-        variables[m_VariableName] = m_Subcommand->
         m_Result = "To matrix " + m_VariableName + " has been put:\n";
-
-        m_Result += m_ResultMatrix->ToString();
+        m_Result += m_Subcommand->m_ResultMatrix->ToString();
+        variables[m_VariableName] = move(m_Subcommand->m_ResultMatrix);
         return true;
     }
 private:

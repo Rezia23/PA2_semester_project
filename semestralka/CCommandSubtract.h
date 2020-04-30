@@ -27,7 +27,6 @@ public:
 private:
     string m_Operand1;
     string m_Operand2;
-    unique_ptr<CMatrix> m_ResultMatrix;
 };
 
 

@@ -47,6 +47,9 @@ public:
             }
         }
     }
+    CMatrix * Clone()const override {
+        return new CMatrixStandard(m_Matrix);
+    }
     virtual CMatrix * Convert() const override;
     virtual ~CMatrixStandard() override = default;
     virtual void Print() const override;

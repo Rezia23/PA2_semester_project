@@ -14,9 +14,10 @@ class CCommandLoad: public CCommand {
 public:
     CCommandLoad():CCommand(){}
     ~CCommandLoad() override = default;
-    CCommandLoad(string varName, vector<vector<double>> matrixNums):CCommand(), m_VariableName(varName), m_MatrixToLoad(make_unique<CMatrixStandard>(CMatrixStandard(matrixNums))){
-        if(m_MatrixToLoad->ShouldBeSparse()){
-            m_MatrixToLoad = unique_ptr<CMatrix>(m_MatrixToLoad->Convert());
+    CCommandLoad(string varName, vector<vector<double>> matrixNums):CCommand(), m_VariableName(varName){
+        m_ResultMatrix = (make_unique<CMatrixStandard>(CMatrixStandard(matrixNums)));
+        if(m_ResultMatrix->ShouldBeSparse()){
+            m_ResultMatrix = unique_ptr<CMatrix>(m_ResultMatrix->Convert());
         }
     }
 
@@ -26,13 +27,13 @@ public:
             return false;
         }
         m_Result = "Matrix " + m_VariableName + " successfully loaded.\n";
-        m_Result+=m_MatrixToLoad->ToString();
-        variables.insert(make_pair(m_VariableName, move(m_MatrixToLoad)));
+        m_Result+=m_ResultMatrix->ToString();
+        variables.insert(make_pair(m_VariableName, move(m_ResultMatrix)));
         return true;
     }
 private:
     string m_VariableName;
-    unique_ptr<CMatrix> m_MatrixToLoad;
+
 };
 
 

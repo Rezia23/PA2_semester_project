@@ -13,6 +13,7 @@ class CCommand {
 
 public:
     string m_Result;
+    unique_ptr<CMatrix> m_ResultMatrix;
     CCommand() = default;
     virtual bool Execute(map<string, unique_ptr<CMatrix>> &variables) = 0;
     virtual ~CCommand() = default;

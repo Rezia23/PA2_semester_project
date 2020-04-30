@@ -32,6 +32,9 @@ public:
             }
         }
     }
+    CMatrix * Clone()const override {
+        return new CMatrixSparse(m_Matrix, m_NumRows, m_NumCols);
+    }
     virtual CMatrix* Convert() const override;
     virtual ~CMatrixSparse() override = default;
     virtual double GetNumAtCoords(size_t row, size_t col) const override;
