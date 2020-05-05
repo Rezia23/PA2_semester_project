@@ -6,6 +6,7 @@
 #define SEMESTRALKA_CCOMMANDADD_H
 
 #include "CCommand.h"
+#include "CAddOperator.h"
 
 class CCommandAdd : public CCommand {
 public:
@@ -21,6 +22,7 @@ public:
             return false;
         }
         m_Result = "Result of addition is:\n";
+        CAddOperator op(memory.m_Variables.at(m_Operand1),memory.m_Variables.at(m_Operand2));
         m_ResultMatrix = unique_ptr<CMatrix>(memory.m_Variables.at(m_Operand1)->Add(memory.m_Variables.at(m_Operand2)));
         m_Result += m_ResultMatrix->ToString();
         return true;

@@ -37,7 +37,7 @@ public:
     CMatrixStandard() : CMatrix() {
         m_Matrix.resize(0);
     }
-    CMatrix * Evaluate(CMemory & memory)override{
+    CExpression * Evaluate(CMemory & memory)override{
         return this->Clone();
     }
     CMatrixStandard(vector<vector<double>> matrix) : CMatrix(), m_Matrix(std::move(matrix)) {

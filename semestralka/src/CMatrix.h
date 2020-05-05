@@ -12,7 +12,6 @@
 #include "CExpression.h"
 
 
-
 using namespace std;
 
 class CMatrix:public CExpression {
@@ -20,7 +19,7 @@ class CMatrix:public CExpression {
 public:
     size_t m_NumRows = 0;
     size_t m_NumCols = 0;
-    /irtual CMatrix * Evaluate(CMemory & memory) override = 0;
+    virtual CExpression * Evaluate(CMemory & memory) override = 0;
 
 
     CMatrix() = default;

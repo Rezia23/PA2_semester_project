@@ -18,7 +18,7 @@ private:
     map<pair<size_t, size_t>, double> m_Matrix;
 public:
     CMatrixSparse() : CMatrix() {}
-    CMatrix * Evaluate(CMemory & memory)override{
+    CExpression * Evaluate(CMemory & memory)override{
         return this->Clone();
     }
     CMatrixSparse(map<pair<size_t, size_t>, double> matrix, size_t numRows, size_t numCols) : m_Matrix(matrix) {

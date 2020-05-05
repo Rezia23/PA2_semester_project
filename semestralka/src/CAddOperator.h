@@ -16,9 +16,10 @@ public:
     CAddOperator(unique_ptr<CExpression> & left, unique_ptr<CExpression> & right)
     :CBinaryOperator(left, right){}
 
-    CMatrix * Evaluate(CMemory & memory) override{
-        unique_ptr<CMatrix> left = unique_ptr<CMatrix>(m_Left->Evaluate(memory));
-        unique_ptr<CMatrix> right = unique_ptr<CMatrix>(m_Left->Evaluate(memory));
+    //todo: fix - cannot
+    CExpression * Evaluate(CMemory & memory) override{
+        unique_ptr<CExpression> left = unique_ptr<CExpression>(m_Left->Evaluate(memory));
+        unique_ptr<CExpression> right = unique_ptr<CExpression>(m_Left->Evaluate(memory));
         if (left->m_NumRows != right->m_NumRows || left->m_NumCols != right->m_NumCols) {
             throw "Adding incompatible matrices.";
         }

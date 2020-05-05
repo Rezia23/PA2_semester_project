@@ -6,12 +6,12 @@
 #define SEMESTRALKA_CEXPRESSION_H
 
 #include "CMemory.h"
-#include "CMatrix.h"
+
 class CExpression {
 public:
     CExpression() = default;
     virtual ~CExpression() = default;
-    virtual CMatrix * Evaluate(CMemory & memory) = 0;
+    virtual class CExpression * Evaluate(CMemory & memory) = 0;
 };
 
 
