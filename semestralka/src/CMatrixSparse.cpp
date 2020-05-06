@@ -103,16 +103,16 @@ double CMatrixSparse::GetNumAtCoords(size_t row, size_t col) const {
 //    return new CMatrixSparse(product, m_NumRows, other->m_NumCols);
 //}
 
-void CMatrixSparse::Transpose() {
-    map<pair<size_t, size_t>, double> transposition;
-    for (auto num : m_Matrix) {
-        size_t rowIndex = num.first.first;
-        size_t colIndex = num.first.second;
-        transposition[{colIndex, rowIndex}] = num.second;
-    }
-    switchNumRowsCols();
-    m_Matrix = transposition;
-}
+//void CMatrixSparse::Transpose() {
+//    map<pair<size_t, size_t>, double> transposition;
+//    for (auto num : m_Matrix) {
+//        size_t rowIndex = num.first.first;
+//        size_t colIndex = num.first.second;
+//        transposition[{colIndex, rowIndex}] = num.second;
+//    }
+//    switchNumRowsCols();
+//    m_Matrix = transposition;
+//}
 
 CMatrixSparse *CMatrixSparse::MergeNextTo(const unique_ptr<CMatrix> &other) const {
     if (m_NumRows != other->m_NumRows) {
@@ -130,22 +130,22 @@ CMatrixSparse *CMatrixSparse::MergeNextTo(const unique_ptr<CMatrix> &other) cons
     return new CMatrixSparse(merged, m_NumRows, m_NumCols + other->m_NumCols);
 }
 
-CMatrixSparse *CMatrixSparse::MergeUnder(const unique_ptr<CMatrix> &other) const {
-    if (m_NumCols != other->m_NumCols) {
-        throw "Merging incompatible matrices.";
-    }
-    map<pair<size_t, size_t>, double> merged = m_Matrix;
-    for (size_t i = 0; i < other->m_NumRows; i++) {
-        for (size_t j = 0; j < other->m_NumCols; j++) {
-            double nextNum = other->GetNumAtCoords(i, j);
-            if (nextNum != 0) {
-                merged[{i + m_NumRows, j}] = nextNum;
-            }
-        }
-    }
-    return new CMatrixSparse(merged, m_NumRows + other->m_NumRows, m_NumCols);
-}
-
+//CMatrixSparse *CMatrixSparse::MergeUnder(const unique_ptr<CMatrix> &other) const {
+//    if (m_NumCols != other->m_NumCols) {
+//        throw "Merging incompatible matrices.";
+//    }
+//    map<pair<size_t, size_t>, double> merged = m_Matrix;
+//    for (size_t i = 0; i < other->m_NumRows; i++) {
+//        for (size_t j = 0; j < other->m_NumCols; j++) {
+//            double nextNum = other->GetNumAtCoords(i, j);
+//            if (nextNum != 0) {
+//                merged[{i + m_NumRows, j}] = nextNum;
+//            }
+//        }
+//    }
+//    return new CMatrixSparse(merged, m_NumRows + other->m_NumRows, m_NumCols);
+//}
+//
 void CMatrixSparse::Cut(size_t numRows, size_t numCols, pair<size_t, size_t> startPoint) {
     if (numRows > m_NumRows || numCols > m_NumCols) {
         throw "Wrong dimensions, cannot cut.";

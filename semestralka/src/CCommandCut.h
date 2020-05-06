@@ -8,6 +8,7 @@
 #include <utility>
 
 #include "CCommand.h"
+#include "CCutOperator.h"
 
 class CCommandCut : public CCommand {
 public:
@@ -23,11 +24,16 @@ public:
             m_Result = "Variable does not exist.";
             return false;
         }
-        m_Result = "Matrix" + m_VarName + " has been cut to:\n";
-        (memory.m_Variables.at(m_VarName)->Cut(m_NumRows, m_NumCols, m_StartPoint));
-        m_ResultMatrix = unique_ptr<CMatrix>(memory.m_Variables.at(m_VarName)->Clone());
-        m_Result += m_ResultMatrix->ToString();
-        return true;
+        m_Result = "Matrix " + m_VarName + " has been cut to:\n";
+        CCutOperator op (memory.m_Variables.at(m_VarName), m_NumRows, m_NumCols, m_StartPoint);
+        try{
+            m_ResultMatrix = unique_ptr<CMatrix>(op.Evaluate(memory));
+            m_Result += m_ResultMatrix->ToString();
+            return true;
+        }catch(const std::runtime_error& e){
+            m_Result = "Matrix " + m_VarName + " cannot be cut.";
+            return false;
+        }
     }
 
 private:

@@ -68,18 +68,38 @@ public:
 //    virtual CMatrix *Subtract(const unique_ptr<CMatrix> &other) const override;
 //    virtual CMatrix *Multiply(const unique_ptr<CMatrix> &other) const override;
 
-    virtual void Transpose() override;
+//    virtual void Transpose() override;
 
     virtual void ChangeToIdentity(int size) override;
 
     virtual CMatrixSparse *MergeNextTo(const unique_ptr<CMatrix> &other) const override;
-
-    virtual CMatrixSparse *MergeUnder(const unique_ptr<CMatrix> &other) const override;
-
+//
+//    virtual CMatrixSparse *MergeUnder(const unique_ptr<CMatrix> &other) const override;
+//
     virtual void Cut(size_t numRows, size_t numCols, pair<size_t, size_t> startPoint) override;
 
     virtual bool ShouldBeSparse() const {
         return (m_NumRows * m_NumCols) - m_Matrix.size() > m_Matrix.size();
+    }
+    virtual void SwapRows(std::size_t a, std::size_t b)override{
+        map<pair<std::size_t, size_t>, double> nums;
+        for(size_t i = 0; i<m_NumCols;i++){
+            double nextNum = GetNumAtCoords(a,i);
+            if(nextNum!=0){
+                nums[{a,i}] = nextNum;
+                m_Matrix.erase({a,i});
+            }
+        }
+        for(std::size_t i = 0; i<m_NumCols;i++){
+            double nextNum = GetNumAtCoords(b,i);
+            if(nextNum!=0){
+                m_Matrix.erase({b,i});
+                m_Matrix[{a,i}] = nextNum;
+            }
+        }
+        for(auto a : nums){
+            m_Matrix[{b, a.first.second}] = a.second;
+        }
     }
 
     /*tbd

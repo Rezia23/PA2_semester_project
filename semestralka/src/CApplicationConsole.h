@@ -19,6 +19,9 @@
 #include "CCommandPut.h"
 #include "CCommandMergeUnder.h"
 #include "CCommandMergeNextTo.h"
+#include "CCommandCut.h"
+#include "CCommandInverse.h"
+#include "CCommandDeterminant.h"
 //#include "CCommandPut.h"
 //#include "CCommandTranspose.h"
 //#include "CCommandCut.h"
@@ -160,18 +163,17 @@ private:
             }
             nextCommand = (std::make_unique<CCommandTranspose>(operands[0]));
             return true;
-        }
-//        else if (in_command == "cut") {
-//            string varName;
-//            size_t numRows;
-//            size_t numCols;
-//            pair<size_t, size_t> startPoint;
-//            if (!ParseCutting(input, varName, numRows, numCols, startPoint)) {
-//                return false;
-//            }
-//            nextCommand = (std::make_unique<CCommandCut>(varName, numRows, numCols, startPoint));
-//        }
-        else if (in_command == "merge_under") {
+        } else if (in_command == "cut") {
+            string varName;
+            size_t numRows;
+            size_t numCols;
+            pair<size_t, size_t> startPoint;
+            if (!ParseCutting(input, varName, numRows, numCols, startPoint)) {
+                return false;
+            }
+            nextCommand = (std::make_unique<CCommandCut>(varName, numRows, numCols, startPoint));
+            return true;
+        } else if (in_command == "merge_under") {
             vector<string> operands;
             if (!ParseOperands(input, operands, 2)) {
                 return false;
@@ -192,6 +194,28 @@ private:
                 return false;
             }
             nextCommand = (std::make_unique<CCommandMergeNextTo>(operands[0], operands[1]));
+            return true;
+        }else if (in_command == "inverse") {
+            vector<string> operands;
+            if (!ParseOperands(input, operands, 1)) {
+                return false;
+            }
+            stringstream inStream(input);
+            if (!(IsSyntaxCorrect(inStream))) {
+                return false;
+            }
+            nextCommand = (std::make_unique<CCommandInverse>(operands[0]));
+            return true;
+        }else if (in_command == "determinant") {
+            vector<string> operands;
+            if (!ParseOperands(input, operands, 1)) {
+                return false;
+            }
+            stringstream inStream(input);
+            if (!(IsSyntaxCorrect(inStream))) {
+                return false;
+            }
+            nextCommand = (std::make_unique<CCommandDeterminant>(operands[0]));
             return true;
         }
 

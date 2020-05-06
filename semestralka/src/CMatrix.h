@@ -37,11 +37,11 @@ public:
 //    virtual CMatrix *Subtract(const unique_ptr<CMatrix> &other) const = 0;
 //    virtual CMatrix *Multiply(const unique_ptr<CMatrix> &other) const = 0;
 
-    virtual void Transpose() = 0;
+//    virtual void Transpose() = 0;
 
     virtual CMatrix *MergeNextTo(const unique_ptr<CMatrix> &other) const = 0;
-
-    virtual CMatrix *MergeUnder(const unique_ptr<CMatrix> &other) const = 0;
+//
+//    virtual CMatrix *MergeUnder(const unique_ptr<CMatrix> &other) const = 0;
 
     virtual void ChangeToIdentity(int size) = 0;
 
@@ -58,6 +58,7 @@ public:
     std::size_t GetNumCols() const {
         return m_NumCols;
     }
+    virtual void SwapRows(std::size_t a, std::size_t b) = 0;
 
     bool operator==(const CMatrix &other) {
         if (m_NumRows != other.m_NumRows || m_NumCols != other.m_NumCols) {

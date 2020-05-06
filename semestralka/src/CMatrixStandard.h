@@ -56,6 +56,9 @@ public:
             }
         }
     }
+    virtual void SwapRows(std::size_t a, std::size_t b)override{
+        swap(m_Matrix[a], m_Matrix[b]);
+    }
 
     CMatrix *Clone() const override {
         return new CMatrixStandard(m_Matrix);
@@ -88,14 +91,14 @@ public:
 //    virtual CMatrix *Subtract(const unique_ptr<CMatrix> &other) const override;
 //    virtual CMatrix *Multiply(const unique_ptr<CMatrix> &other) const override;
 
-    virtual void Transpose() override;
+//    virtual void Transpose() override;
 
     virtual void ChangeToIdentity(int size) override;
-
+//
     virtual CMatrixStandard *MergeNextTo(const unique_ptr<CMatrix> &other) const override;
-
-    virtual CMatrixStandard *MergeUnder(const unique_ptr<CMatrix> &other) const override;
-
+//
+//    virtual CMatrixStandard *MergeUnder(const unique_ptr<CMatrix> &other) const override;
+//
     virtual void Cut(size_t numRows, size_t numCols, pair<size_t, size_t> startPoint) override;
 
     CMatrixStandard *FindInverse() const;

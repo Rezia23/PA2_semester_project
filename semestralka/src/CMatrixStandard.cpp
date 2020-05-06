@@ -88,17 +88,17 @@ void CMatrixStandard::Print() const {
 //    return new CMatrixStandard(product);
 //}
 
-void CMatrixStandard::Transpose() {
-    vector<vector<double>> transposition(m_NumCols, vector<double>(m_NumRows, 0));
-    for (size_t i = 0; i < m_NumRows; i++) {
-        for (size_t j = 0; j < m_NumCols; j++) {
-            transposition[j][i] = m_Matrix[i][j];
-        }
-    }
-    switchNumRowsCols();
-    m_Matrix = transposition;
-}
-
+//void CMatrixStandard::Transpose() {
+//    vector<vector<double>> transposition(m_NumCols, vector<double>(m_NumRows, 0));
+//    for (size_t i = 0; i < m_NumRows; i++) {
+//        for (size_t j = 0; j < m_NumCols; j++) {
+//            transposition[j][i] = m_Matrix[i][j];
+//        }
+//    }
+//    switchNumRowsCols();
+//    m_Matrix = transposition;
+//}
+//
 CMatrixStandard *CMatrixStandard::MergeNextTo(const unique_ptr<CMatrix> &other) const {
     if (m_NumRows != other->m_NumRows) {
         throw "Merging incompatible matrices.";
@@ -111,21 +111,21 @@ CMatrixStandard *CMatrixStandard::MergeNextTo(const unique_ptr<CMatrix> &other) 
     }
     return new CMatrixStandard(merged);
 }
-
-CMatrixStandard *CMatrixStandard::MergeUnder(const unique_ptr<CMatrix> &other) const {
-    if (m_NumCols != other->m_NumCols) {
-        throw "Merging incompatible matrices.";
-    }
-    vector<vector<double>> merged = m_Matrix;
-    for (size_t i = 0; i < other->m_NumRows; i++) {
-        merged.push_back(vector<double>());
-        for (size_t j = 0; j < other->m_NumCols; j++) {
-            merged[m_NumRows + i].push_back(other->GetNumAtCoords(i, j));
-        }
-    }
-    return new CMatrixStandard(merged);
-}
-
+//
+//CMatrixStandard *CMatrixStandard::MergeUnder(const unique_ptr<CMatrix> &other) const {
+//    if (m_NumCols != other->m_NumCols) {
+//        throw "Merging incompatible matrices.";
+//    }
+//    vector<vector<double>> merged = m_Matrix;
+//    for (size_t i = 0; i < other->m_NumRows; i++) {
+//        merged.push_back(vector<double>());
+//        for (size_t j = 0; j < other->m_NumCols; j++) {
+//            merged[m_NumRows + i].push_back(other->GetNumAtCoords(i, j));
+//        }
+//    }
+//    return new CMatrixStandard(merged);
+//}
+//
 void CMatrixStandard::Cut(size_t numRows, size_t numCols, pair<size_t, size_t> startPoint) {
     if (numRows > m_NumRows || numCols > m_NumCols) {
         throw "Wrong dimensions, cannot cut.";
