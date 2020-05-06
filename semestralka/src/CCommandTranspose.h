@@ -6,6 +6,7 @@
 #define SEMESTRALKA_CCOMMANDTRANSPOSE_H
 
 #include "CCommand.h"
+#include "CTransposeOperator.h"
 
 class CCommandTranspose : public CCommand {
 public:
@@ -21,7 +22,12 @@ public:
             return false;
         }
         m_Result = "Matrix" + m_VarName + " has been transposed to:\n";
-        (memory.m_Variables.at(m_VarName)->Transpose());
+//        (memory.m_Variables.at(m_VarName)->Transpose());
+//        m_ResultMatrix = unique_ptr<CMatrix>(memory.m_Variables.at(m_VarName)->Clone());
+//        m_Result += m_ResultMatrix->ToString();
+        CTransposeOperator op (memory.m_Variables.at(m_VarName));
+
+        memory.m_Variables.at(m_VarName) =shared_ptr<CMatrix>(op.Evaluate(memory));
         m_ResultMatrix = unique_ptr<CMatrix>(memory.m_Variables.at(m_VarName)->Clone());
         m_Result += m_ResultMatrix->ToString();
         return true;

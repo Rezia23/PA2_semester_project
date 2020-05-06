@@ -36,57 +36,57 @@ void CMatrixStandard::Print() const {
     }
 }
 
-CMatrix *CMatrixStandard::Add(const unique_ptr<CMatrix> &other) const {
-    if (m_NumRows != other->m_NumRows || m_NumCols != other->m_NumCols) {
-        throw "Adding incompatible matrices.";
-    }
-    vector<vector<double>> sum(m_NumRows);
-    for (size_t i = 0; i < m_NumRows; i++) {
-        for (size_t j = 0; j < m_NumCols; j++) {
-            sum[i].push_back(GetNumAtCoords(i, j) + other->GetNumAtCoords(i, j));
-        }
-    }
-    if (CMatrixStandard(sum).ShouldBeSparse()) {
-        return new CMatrixSparse(sum);
-    }
-    return new CMatrixStandard(sum);
-}
-
-CMatrix *CMatrixStandard::Subtract(const unique_ptr<CMatrix> &other) const {
-    return (this->Add(unique_ptr<CMatrix>(other->NegateAllNums())));
-}
-
-CMatrix *CMatrixStandard::NegateAllNums() const {
-    vector<vector<double>> negatedMat(m_NumRows);
-    for (size_t i = 0; i < m_NumRows; i++) {
-        for (size_t j = 0; j < m_NumCols; j++) {
-            negatedMat[i].push_back(-GetNumAtCoords(i, j));
-        }
-    }
-    if (CMatrixStandard(negatedMat).ShouldBeSparse()) {
-        return new CMatrixSparse(negatedMat);
-    }
-    return new CMatrixStandard(negatedMat);
-}
-
-CMatrix *CMatrixStandard::Multiply(const unique_ptr<CMatrix> &other) const {
-    if (m_NumCols != other->m_NumRows) {
-        throw "Multiplying incompatible matrices.";
-    }
-    vector<vector<double>> product(m_NumRows, vector<double>(other->m_NumCols, 0));
-
-    for (size_t i = 0; i < m_NumRows; i++) {
-        for (size_t j = 0; j < other->m_NumCols; j++) {
-            for (size_t k = 0; k < other->m_NumRows; k++) {
-                product[i][j] += GetNumAtCoords(i, k) * other->GetNumAtCoords(k, j);
-            }
-        }
-    }
-    if (CMatrixStandard(product).ShouldBeSparse()) {
-        return new CMatrixSparse(product);
-    }
-    return new CMatrixStandard(product);
-}
+//CMatrix *CMatrixStandard::Add(const unique_ptr<CMatrix> &other) const {
+//    if (m_NumRows != other->m_NumRows || m_NumCols != other->m_NumCols) {
+//        throw "Adding incompatible matrices.";
+//    }
+//    vector<vector<double>> sum(m_NumRows);
+//    for (size_t i = 0; i < m_NumRows; i++) {
+//        for (size_t j = 0; j < m_NumCols; j++) {
+//            sum[i].push_back(GetNumAtCoords(i, j) + other->GetNumAtCoords(i, j));
+//        }
+//    }
+//    if (CMatrixStandard(sum).ShouldBeSparse()) {
+//        return new CMatrixSparse(sum);
+//    }
+//    return new CMatrixStandard(sum);
+//}
+//
+//CMatrix *CMatrixStandard::Subtract(const unique_ptr<CMatrix> &other) const {
+//    return (this->Add(unique_ptr<CMatrix>(other->NegateAllNums())));
+//}
+//
+//CMatrix *CMatrixStandard::NegateAllNums() const {
+//    vector<vector<double>> negatedMat(m_NumRows);
+//    for (size_t i = 0; i < m_NumRows; i++) {
+//        for (size_t j = 0; j < m_NumCols; j++) {
+//            negatedMat[i].push_back(-GetNumAtCoords(i, j));
+//        }
+//    }
+//    if (CMatrixStandard(negatedMat).ShouldBeSparse()) {
+//        return new CMatrixSparse(negatedMat);
+//    }
+//    return new CMatrixStandard(negatedMat);
+//}
+//
+//CMatrix *CMatrixStandard::Multiply(const unique_ptr<CMatrix> &other) const {
+//    if (m_NumCols != other->m_NumRows) {
+//        throw "Multiplying incompatible matrices.";
+//    }
+//    vector<vector<double>> product(m_NumRows, vector<double>(other->m_NumCols, 0));
+//
+//    for (size_t i = 0; i < m_NumRows; i++) {
+//        for (size_t j = 0; j < other->m_NumCols; j++) {
+//            for (size_t k = 0; k < other->m_NumRows; k++) {
+//                product[i][j] += GetNumAtCoords(i, k) * other->GetNumAtCoords(k, j);
+//            }
+//        }
+//    }
+//    if (CMatrixStandard(product).ShouldBeSparse()) {
+//        return new CMatrixSparse(product);
+//    }
+//    return new CMatrixStandard(product);
+//}
 
 void CMatrixStandard::Transpose() {
     vector<vector<double>> transposition(m_NumCols, vector<double>(m_NumRows, 0));

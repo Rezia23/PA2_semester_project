@@ -12,12 +12,12 @@
 using namespace std;
 class CMemory {
 public:
-    map<string, unique_ptr<class CMatrix>> m_Variables;
+    map<string, shared_ptr<class CMatrix>> m_Variables;
     CMemory() = default;
     ~CMemory() = default;
 
     bool ExistsVariable(string name) const {
-        return m_Variables.find(name) != m_Variables.end();
+        return m_Variables.find(name)!= m_Variables.end();
     }
 };
 

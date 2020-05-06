@@ -9,17 +9,16 @@
 #include <glob.h>
 #include <memory>
 #include <vector>
-#include "CExpression.h"
+#include "COperator.h"
 
 
 using namespace std;
 
-class CMatrix:public CExpression {
+class CMatrix{
 
 public:
     size_t m_NumRows = 0;
     size_t m_NumCols = 0;
-    virtual CExpression * Evaluate(CMemory & memory) override = 0;
 
 
     CMatrix() = default;
@@ -29,14 +28,14 @@ public:
     virtual void Print() const = 0;
 
     virtual double GetNumAtCoords(size_t row, size_t col) const = 0;
+    virtual void SetNumAtCoords(size_t row, size_t col, double value) = 0;
+    virtual CMatrix * GetEmptyInstance() const = 0;
+    virtual void Resize(std::size_t numRows, std::size_t numCols) = 0;
 
-    virtual CMatrix *Add(const unique_ptr<CMatrix> &other) const = 0;
-
-    virtual CMatrix *NegateAllNums() const = 0;
-
-    virtual CMatrix *Subtract(const unique_ptr<CMatrix> &other) const = 0;
-
-    virtual CMatrix *Multiply(const unique_ptr<CMatrix> &other) const = 0;
+//    virtual CMatrix *Add(const unique_ptr<CMatrix> &other) const = 0;
+//    virtual CMatrix *NegateAllNums() const = 0;
+//    virtual CMatrix *Subtract(const unique_ptr<CMatrix> &other) const = 0;
+//    virtual CMatrix *Multiply(const unique_ptr<CMatrix> &other) const = 0;
 
     virtual void Transpose() = 0;
 

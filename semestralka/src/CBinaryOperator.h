@@ -6,20 +6,20 @@
 #define SEMESTRALKA_CBINARYOPERATOR_H
 
 
-#include "CExpression.h"
+#include "COperator.h"
 #include "CMatrix.h"
 #include <memory>
 using namespace std;
 
-class CBinaryOperator: public CExpression {
+class CBinaryOperator: public COperator {
 protected:
-    unique_ptr<CExpression> m_Left;
-    unique_ptr<CExpression> m_Right;
+    shared_ptr<CMatrix> m_Left;
+    shared_ptr<CMatrix> m_Right;
 public:
     CBinaryOperator() = default;
-    CBinaryOperator(unique_ptr<CExpression> & left, unique_ptr<CExpression> & right){
-        m_Left = move(left);
-        m_Right = move(right);
+    CBinaryOperator(shared_ptr<CMatrix> & left, shared_ptr<CMatrix> & right){
+        m_Left = (left);
+        m_Right = (right);
     }
     virtual ~CBinaryOperator() = default;
     virtual CMatrix * Evaluate(CMemory & memory)= 0;

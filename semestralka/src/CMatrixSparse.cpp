@@ -43,65 +43,65 @@ double CMatrixSparse::GetNumAtCoords(size_t row, size_t col) const {
     }
 }
 
-CMatrix *CMatrixSparse::Add(const unique_ptr<CMatrix> &other) const {
-    if (m_NumRows != other->m_NumRows || m_NumCols != other->m_NumCols) {
-        throw "Adding incompatible matrices.";
-    }
-    map<pair<size_t, size_t>, double> sum = m_Matrix;
-    for (size_t i = 0; i < m_NumRows; i++) {
-        for (size_t j = 0; j < m_NumCols; j++) {
-            double numToAdd = other->GetNumAtCoords(i, j);
-            if (numToAdd != 0) {
-                if (m_Matrix.find({i, j}) == m_Matrix.end()) {
-                    sum[{i, j}] = 0;
-                }
-                sum[{i, j}] += numToAdd;
-            }
-        }
-    }
-    if (!CMatrixSparse(sum, m_NumRows, m_NumCols).ShouldBeSparse()) {
-        return new CMatrixStandard(sum, m_NumRows, m_NumCols);
-    }
-    return new CMatrixSparse(sum, m_NumRows, m_NumCols);
-}
-
-CMatrix *CMatrixSparse::NegateAllNums() const {
-    map<pair<size_t, size_t>, double> negatedNum = m_Matrix;
-    for (size_t i = 0; i < m_NumRows; i++) {
-        for (size_t j = 0; j < m_NumCols; j++) {
-            if (GetNumAtCoords(i, j) != 0)
-                negatedNum[{i, j}] = -GetNumAtCoords(i, j);
-        }
-    }
-    if (!CMatrixSparse(negatedNum, m_NumRows, m_NumCols).ShouldBeSparse()) {
-        return new CMatrixStandard(negatedNum, m_NumRows, m_NumCols);
-    }
-    return new CMatrixSparse(negatedNum, m_NumRows, m_NumCols);
-}
-
-CMatrix *CMatrixSparse::Subtract(const unique_ptr<CMatrix> &other) const {
-    return this->Add(unique_ptr<CMatrix>(other->NegateAllNums()));
-}
-
-CMatrix *CMatrixSparse::Multiply(const unique_ptr<CMatrix> &other) const {
-    map<pair<size_t, size_t>, double> product;
-    for (auto numA : m_Matrix) {
-        size_t rowIndexA = numA.first.first;
-        size_t colIndexA = numA.first.second;
-        for (size_t colIndexB = 0; colIndexB < other->m_NumCols; colIndexB++) {
-            if (other->GetNumAtCoords(colIndexA, colIndexB) != 0) {
-                if (product.find({rowIndexA, colIndexB}) == product.end()) {
-                    product[{rowIndexA, colIndexB}] = 0;
-                }
-                product[{rowIndexA, colIndexB}] += (numA.second * other->GetNumAtCoords(colIndexA, colIndexB));
-            }
-        }
-    }
-    if (!CMatrixSparse(product, m_NumRows, other->m_NumCols).ShouldBeSparse()) {
-        return new CMatrixStandard(product, m_NumRows, other->m_NumCols);
-    }
-    return new CMatrixSparse(product, m_NumRows, other->m_NumCols);
-}
+//CMatrix *CMatrixSparse::Add(const unique_ptr<CMatrix> &other) const {
+//    if (m_NumRows != other->m_NumRows || m_NumCols != other->m_NumCols) {
+//        throw "Adding incompatible matrices.";
+//    }
+//    map<pair<size_t, size_t>, double> sum = m_Matrix;
+//    for (size_t i = 0; i < m_NumRows; i++) {
+//        for (size_t j = 0; j < m_NumCols; j++) {
+//            double numToAdd = other->GetNumAtCoords(i, j);
+//            if (numToAdd != 0) {
+//                if (m_Matrix.find({i, j}) == m_Matrix.end()) {
+//                    sum[{i, j}] = 0;
+//                }
+//                sum[{i, j}] += numToAdd;
+//            }
+//        }
+//    }
+//    if (!CMatrixSparse(sum, m_NumRows, m_NumCols).ShouldBeSparse()) {
+//        return new CMatrixStandard(sum, m_NumRows, m_NumCols);
+//    }
+//    return new CMatrixSparse(sum, m_NumRows, m_NumCols);
+//}
+//
+//CMatrix *CMatrixSparse::NegateAllNums() const {
+//    map<pair<size_t, size_t>, double> negatedNum = m_Matrix;
+//    for (size_t i = 0; i < m_NumRows; i++) {
+//        for (size_t j = 0; j < m_NumCols; j++) {
+//            if (GetNumAtCoords(i, j) != 0)
+//                negatedNum[{i, j}] = -GetNumAtCoords(i, j);
+//        }
+//    }
+//    if (!CMatrixSparse(negatedNum, m_NumRows, m_NumCols).ShouldBeSparse()) {
+//        return new CMatrixStandard(negatedNum, m_NumRows, m_NumCols);
+//    }
+//    return new CMatrixSparse(negatedNum, m_NumRows, m_NumCols);
+//}
+//
+//CMatrix *CMatrixSparse::Subtract(const unique_ptr<CMatrix> &other) const {
+//    return this->Add(unique_ptr<CMatrix>(other->NegateAllNums()));
+//}
+//
+//CMatrix *CMatrixSparse::Multiply(const unique_ptr<CMatrix> &other) const {
+//    map<pair<size_t, size_t>, double> product;
+//    for (auto numA : m_Matrix) {
+//        size_t rowIndexA = numA.first.first;
+//        size_t colIndexA = numA.first.second;
+//        for (size_t colIndexB = 0; colIndexB < other->m_NumCols; colIndexB++) {
+//            if (other->GetNumAtCoords(colIndexA, colIndexB) != 0) {
+//                if (product.find({rowIndexA, colIndexB}) == product.end()) {
+//                    product[{rowIndexA, colIndexB}] = 0;
+//                }
+//                product[{rowIndexA, colIndexB}] += (numA.second * other->GetNumAtCoords(colIndexA, colIndexB));
+//            }
+//        }
+//    }
+//    if (!CMatrixSparse(product, m_NumRows, other->m_NumCols).ShouldBeSparse()) {
+//        return new CMatrixStandard(product, m_NumRows, other->m_NumCols);
+//    }
+//    return new CMatrixSparse(product, m_NumRows, other->m_NumCols);
+//}
 
 void CMatrixSparse::Transpose() {
     map<pair<size_t, size_t>, double> transposition;

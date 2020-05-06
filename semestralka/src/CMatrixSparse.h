@@ -18,9 +18,7 @@ private:
     map<pair<size_t, size_t>, double> m_Matrix;
 public:
     CMatrixSparse() : CMatrix() {}
-    CExpression * Evaluate(CMemory & memory)override{
-        return this->Clone();
-    }
+
     CMatrixSparse(map<pair<size_t, size_t>, double> matrix, size_t numRows, size_t numCols) : m_Matrix(matrix) {
         m_NumRows = numRows;
         m_NumCols = numCols;
@@ -47,16 +45,28 @@ public:
     virtual ~CMatrixSparse() override = default;
 
     virtual double GetNumAtCoords(size_t row, size_t col) const override;
+    virtual void SetNumAtCoords(size_t row, size_t col, double value) override{
+        if(GetNumAtCoords(row, col)!=0){
+            m_Matrix.erase({row, col});
+        }
+        if(value!=0){
+            m_Matrix[{row, col}] = value;
+        }
+    }
+    CMatrix * GetEmptyInstance() const override{
+        return new CMatrixSparse();
+    }
+    void Resize(std::size_t numRows, std::size_t numCols) override{
+        m_NumRows = numRows;
+        m_NumCols = numCols;
+    }
 
     virtual void Print() const override;
 
-    virtual CMatrix *Add(const unique_ptr<CMatrix> &other) const override;
-
-    virtual CMatrix *NegateAllNums() const override;
-
-    virtual CMatrix *Subtract(const unique_ptr<CMatrix> &other) const override;
-
-    virtual CMatrix *Multiply(const unique_ptr<CMatrix> &other) const override;
+//    virtual CMatrix *Add(const unique_ptr<CMatrix> &other) const override;
+//    virtual CMatrix *NegateAllNums() const override;
+//    virtual CMatrix *Subtract(const unique_ptr<CMatrix> &other) const override;
+//    virtual CMatrix *Multiply(const unique_ptr<CMatrix> &other) const override;
 
     virtual void Transpose() override;
 

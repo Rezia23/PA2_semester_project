@@ -15,11 +15,12 @@
 #include "CCommandAdd.h"
 #include "CCommandSubtract.h"
 #include "CCommandMultiply.h"
-#include "CCommandPut.h"
 #include "CCommandTranspose.h"
-#include "CCommandCut.h"
-#include "CCommandMergeUnder.h"
-#include "CCommandMergeNextTo.h"
+//#include "CCommandPut.h"
+//#include "CCommandTranspose.h"
+//#include "CCommandCut.h"
+//#include "CCommandMergeUnder.h"
+//#include "CCommandMergeNextTo.h"
 
 using namespace std;
 
@@ -129,18 +130,20 @@ private:
                 return false;
             }
             nextCommand = (std::make_unique<CCommandMultiply>(operands[0], operands[1]));
-        } else if (in_command == "put") {
-            string name;
-            if (!LoadOperandName(input, name)) {
-                return false;
-            }
-            unique_ptr<CCommand> subCommand;
-            if (!ParseCommand(input, subCommand)) {
-                return false;
-            }
-            nextCommand = (std::make_unique<CCommandPut>(name, subCommand));
-
-        } else if (in_command == "transpose") {
+        }
+//        else if (in_command == "put") {
+//            string name;
+//            if (!LoadOperandName(input, name)) {
+//                return false;
+//            }
+//            unique_ptr<CCommand> subCommand;
+//            if (!ParseCommand(input, subCommand)) {
+//                return false;
+//            }
+//            nextCommand = (std::make_unique<CCommandPut>(name, subCommand));
+//
+//        }
+        else if (in_command == "transpose") {
             vector<string> operands;
             if (!ParseOperands(input, operands, 1)) {
                 return false;
@@ -150,36 +153,37 @@ private:
                 return false;
             }
             nextCommand = (std::make_unique<CCommandTranspose>(operands[0]));
-        } else if (in_command == "cut") {
-            string varName;
-            size_t numRows;
-            size_t numCols;
-            pair<size_t, size_t> startPoint;
-            if (!ParseCutting(input, varName, numRows, numCols, startPoint)) {
-                return false;
-            }
-            nextCommand = (std::make_unique<CCommandCut>(varName, numRows, numCols, startPoint));
-        } else if (in_command == "merge_under") {
-            vector<string> operands;
-            if (!ParseOperands(input, operands, 2)) {
-                return false;
-            }
-            stringstream inStream(input);
-            if (!(IsSyntaxCorrect(inStream))) {
-                return false;
-            }
-            nextCommand = (std::make_unique<CCommandMergeUnder>(operands[0], operands[1]));
-        } else if (in_command == "merge_next_to") {
-            vector<string> operands;
-            if (!ParseOperands(input, operands, 2)) {
-                return false;
-            }
-            stringstream inStream(input);
-            if (!(IsSyntaxCorrect(inStream))) {
-                return false;
-            }
-            nextCommand = (std::make_unique<CCommandMergeNextTo>(operands[0], operands[1]));
         }
+//        else if (in_command == "cut") {
+//            string varName;
+//            size_t numRows;
+//            size_t numCols;
+//            pair<size_t, size_t> startPoint;
+//            if (!ParseCutting(input, varName, numRows, numCols, startPoint)) {
+//                return false;
+//            }
+//            nextCommand = (std::make_unique<CCommandCut>(varName, numRows, numCols, startPoint));
+//        } else if (in_command == "merge_under") {
+//            vector<string> operands;
+//            if (!ParseOperands(input, operands, 2)) {
+//                return false;
+//            }
+//            stringstream inStream(input);
+//            if (!(IsSyntaxCorrect(inStream))) {
+//                return false;
+//            }
+//            nextCommand = (std::make_unique<CCommandMergeUnder>(operands[0], operands[1]));
+//        } else if (in_command == "merge_next_to") {
+//            vector<string> operands;
+//            if (!ParseOperands(input, operands, 2)) {
+//                return false;
+//            }
+//            stringstream inStream(input);
+//            if (!(IsSyntaxCorrect(inStream))) {
+//                return false;
+//            }
+//            nextCommand = (std::make_unique<CCommandMergeNextTo>(operands[0], operands[1]));
+//        }
 
         return true;
     }

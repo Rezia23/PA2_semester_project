@@ -8,14 +8,14 @@
 
 #include "CMatrix.h"
 #include "CCommand.h"
-
+#include "CSubtractOperator.h"
 class CCommandSubtract : public CCommand {
 public:
     CCommandSubtract() : CCommand() {}
 
     ~CCommandSubtract() override = default;
 
-    CCommandSubtract(string operand1, string operand2) : m_Operand1(operand1), m_Operand2(operand2) {}
+    CCommandSubtract(string operand1, string operand2) : m_Operand1(std::move(operand1)), m_Operand2(std::move(operand2)) {}
 
     bool Execute(CMemory & memory) override {
         if (!memory.ExistsVariable(m_Operand1) || !memory.ExistsVariable(m_Operand2)) {
@@ -23,9 +23,15 @@ public:
             return false;
         }
         m_Result = "Result of subtraction is:\n";
-        m_ResultMatrix = unique_ptr<CMatrix>(memory.m_Variables.at(m_Operand1)->Subtract(memory.m_Variables.at(m_Operand2)));
-        m_Result += m_ResultMatrix->ToString();
-        return true;
+        CSubtractOperator op (memory.m_Variables.at(m_Operand1),memory.m_Variables.at(m_Operand2));
+        try{
+            m_ResultMatrix = unique_ptr<CMatrix>(op.Evaluate(memory));
+            m_Result += m_ResultMatrix->ToString();
+            return true;
+        }catch(const std::runtime_error& e){
+            "Matrices " + m_Operand1 + " and " + m_Operand2 + " are not compatible for subtraction.";
+            return false;
+        }
     }
 
 private:
