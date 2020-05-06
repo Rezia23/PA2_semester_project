@@ -22,7 +22,7 @@ public:
         m_Right = move(right);
     }
     virtual ~CBinaryOperator() = default;
-    virtual CMatrix * Evaluate(CMemory & memory)= 0;
+    virtual CExpression * Evaluate(CMemory & memory)= 0;
 };
 
 

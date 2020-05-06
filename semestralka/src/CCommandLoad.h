@@ -17,9 +17,11 @@ public:
     ~CCommandLoad() override = default;
 
     CCommandLoad(string varName, vector<vector<double>> matrixNums) : CCommand(), m_VariableName(varName) {
-        m_ResultMatrix = (make_unique<CMatrixStandard>(CMatrixStandard(matrixNums)));
-        if (m_ResultMatrix->ShouldBeSparse()) {
-            m_ResultMatrix = unique_ptr<CMatrix>(m_ResultMatrix->Convert());
+        unique_ptr<CMatrix> tmp = (make_unique<CMatrixStandard>(CMatrixStandard(matrixNums)));
+        if (tmp->ShouldBeSparse()) {
+            m_ResultMatrix = unique_ptr<CMatrix>(tmp->Convert());
+        }else{
+            m_ResultMatrix = move(tmp);
         }
     }
 

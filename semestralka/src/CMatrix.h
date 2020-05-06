@@ -17,8 +17,7 @@ using namespace std;
 class CMatrix:public CExpression {
 
 public:
-    size_t m_NumRows = 0;
-    size_t m_NumCols = 0;
+
     virtual CExpression * Evaluate(CMemory & memory) override = 0;
 
 
@@ -28,7 +27,21 @@ public:
 
     virtual void Print() const = 0;
 
-    virtual double GetNumAtCoords(size_t row, size_t col) const = 0;
+    virtual double GetNumAtCoords(size_t row, size_t col) const override = 0;
+
+    virtual string ToString() const override {
+        string result;
+        for (size_t i = 0; i < m_NumRows; i++) {
+            for (size_t j = 0; j < m_NumCols; j++) {
+                if (j != 0) {
+                    result += " ";
+                }
+                result += to_string(GetNumAtCoords(i, j));
+            }
+            result += "\n";
+        }
+        return result;
+    }
 
     virtual CMatrix *Add(const unique_ptr<CMatrix> &other) const = 0;
 
@@ -74,19 +87,7 @@ public:
         return true;
     }
 
-    string ToString() {
-        string result;
-        for (size_t i = 0; i < m_NumRows; i++) {
-            for (size_t j = 0; j < m_NumCols; j++) {
-                if (j != 0) {
-                    result += " ";
-                }
-                result += to_string(GetNumAtCoords(i, j));
-            }
-            result += "\n";
-        }
-        return result;
-    }
+
 
 protected:
     void switchNumRowsCols() {
