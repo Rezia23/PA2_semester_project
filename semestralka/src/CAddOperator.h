@@ -14,14 +14,9 @@
 class CAddOperator: public CBinaryOperator {
 public:
     CAddOperator(unique_ptr<CExpression> & left, unique_ptr<CExpression> & right)
-    :CBinaryOperator(left, right){
-        if(m_Left->m_NumRows==m_Right->m_NumRows && m_Left->m_NumCols==m_Right->m_NumCols){
-            m_NumRows = m_Left->m_NumRows;
-            m_NumCols = m_Left->m_NumCols;
-        }
-    }
+    :CBinaryOperator(left, right){}
 
-
+    //todo: fix - cannot
     CExpression * Evaluate(CMemory & memory) override{
         unique_ptr<CExpression> left = unique_ptr<CExpression>(m_Left->Evaluate(memory));
         unique_ptr<CExpression> right = unique_ptr<CExpression>(m_Left->Evaluate(memory));
@@ -34,21 +29,12 @@ public:
                 sum[i].push_back(left->GetNumAtCoords(i, j) + right->GetNumAtCoords(i, j));
             }
         }
-
         if (CMatrixStandard(sum).ShouldBeSparse()) {
             return new CMatrixSparse(sum);
         }
         return new CMatrixStandard(sum);
     }
-    string ToString() const override{
-        return m_Left->ToString() + " + " + m_Right->ToString();
-    }
-   double GetNumAtCoords(size_t row, size_t col) const override{
-        if(row>=m_NumRows || col>=m_NumCols){
-            throw "Cannot be added.";
-        }
-        return m_Left->GetNumAtCoords(row,col) + m_Right->GetNumAtCoords(row, col);
-    }
+
 
 };
 

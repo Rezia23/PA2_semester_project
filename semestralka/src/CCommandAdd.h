@@ -23,7 +23,7 @@ public:
         }
         m_Result = "Result of addition is:\n";
         CAddOperator op(memory.m_Variables.at(m_Operand1),memory.m_Variables.at(m_Operand2));
-        m_ResultMatrix = unique_ptr<CExpression>(op.Evaluate(memory));
+        m_ResultMatrix = unique_ptr<CMatrix>(memory.m_Variables.at(m_Operand1)->Add(memory.m_Variables.at(m_Operand2)));
         m_Result += m_ResultMatrix->ToString();
         return true;
     }

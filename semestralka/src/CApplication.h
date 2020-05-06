@@ -19,7 +19,7 @@ class CApplication {
 
 public:
 protected:
-    unique_ptr<CMemory> m_Memory;
+    CMemory m_Memory;
 
     virtual void PrintInstructions() const = 0;
 
@@ -34,7 +34,7 @@ protected:
 public:
 
 
-    CApplication(){};
+    CApplication() = default;
 
     virtual ~CApplication() = default;
 
@@ -45,10 +45,10 @@ public:
             result = "Command could not be parsed.";
             return false;
         }
-//        if (!nextCommand->Execute(m_Memory)) {
-//            result = nextCommand->m_Result;
-//            return false;
-//        }
+        if (!nextCommand->Execute(m_Memory)) {
+            result = nextCommand->m_Result;
+            return false;
+        }
         result = nextCommand->m_Result;
         return true;
     }

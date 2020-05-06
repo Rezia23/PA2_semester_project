@@ -8,12 +8,11 @@
 #include <string>
 #include <map>
 #include <memory>
-class CExpression;
 
 using namespace std;
 class CMemory {
 public:
-    map<string, unique_ptr<CExpression>> m_Variables;
+    map<string, unique_ptr<class CMatrix>> m_Variables;
     CMemory() = default;
     ~CMemory() = default;
 

@@ -14,7 +14,7 @@ class CCommand {
 
 public:
     string m_Result;
-    unique_ptr<CExpression> m_ResultMatrix;
+    unique_ptr<CMatrix> m_ResultMatrix;
 
     CCommand() = default;
 
