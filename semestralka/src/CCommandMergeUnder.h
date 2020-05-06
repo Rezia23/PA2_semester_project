@@ -6,6 +6,7 @@
 #define SEMESTRALKA_CCOMMANDMERGEUNDER_H
 
 #include "CCommand.h"
+#include "CMergeUnderOperator.h"
 
 class CCommandMergeUnder : public CCommand {
 public:
@@ -21,9 +22,15 @@ public:
             return false;
         }
         m_Result = "Result of merge is:\n";
-        m_ResultMatrix = unique_ptr<CMatrix>(memory.m_Variables.at(m_Operand1)->MergeUnder(memory.m_Variables.at(m_Operand2)));
-        m_Result += m_ResultMatrix->ToString();
-        return true;
+        CMergeUnderOperator op (memory.m_Variables.at(m_Operand1),memory.m_Variables.at(m_Operand2));
+        try{
+            m_ResultMatrix = unique_ptr<CMatrix>(op.Evaluate(memory));
+            m_Result += m_ResultMatrix->ToString();
+            return true;
+        }catch(const std::runtime_error& e){
+            m_Result = "Matrices " + m_Operand1 + " and " + m_Operand2 + " are not compatible for merging.";
+            return false;
+        }
     }
 
 private:

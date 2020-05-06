@@ -18,9 +18,9 @@ public:
                                                                     m_Subcommand(move(subCommand)) {}
 
     bool Execute(CMemory & memory) override {
-//        if(!ExistsVariable(m_VariableName, variables)){
-//            memory.m_Variablesinsert(make_pair(m_VariableName, unique_ptr<CMatrix> (new CMatrixStandard())));
-//        }
+        if(!memory.ExistsVariable(m_VariableName)){
+            memory.m_Variables.insert(make_pair(m_VariableName, unique_ptr<CMatrix> (new CMatrixStandard())));
+        }
         if (!m_Subcommand->Execute(memory)) {
             return false;
         }

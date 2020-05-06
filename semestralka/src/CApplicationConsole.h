@@ -16,6 +16,9 @@
 #include "CCommandSubtract.h"
 #include "CCommandMultiply.h"
 #include "CCommandTranspose.h"
+#include "CCommandPut.h"
+#include "CCommandMergeUnder.h"
+#include "CCommandMergeNextTo.h"
 //#include "CCommandPut.h"
 //#include "CCommandTranspose.h"
 //#include "CCommandCut.h"
@@ -90,6 +93,7 @@ private:
                 return false;
             }
             nextCommand = (std::make_unique<CCommandLoad>(varName, matrixNums));
+            return true;
         } else if (in_command == "print") {
             vector<string> operands;
             if (!ParseOperands(input, operands, 1)) {
@@ -100,6 +104,7 @@ private:
                 return false;
             }
             nextCommand = (std::make_unique<CCommandPrint>(operands[0]));
+            return true;
         } else if (in_command == "add") {
             vector<string> operands;
             if (!ParseOperands(input, operands, 2)) {
@@ -110,6 +115,7 @@ private:
                 return false;
             }
             nextCommand = (std::make_unique<CCommandAdd>(operands[0], operands[1]));
+            return true;
         } else if (in_command == "subtract") {
             vector<string> operands;
             if (!ParseOperands(input, operands, 2)) {
@@ -120,6 +126,7 @@ private:
                 return false;
             }
             nextCommand = (std::make_unique<CCommandSubtract>(operands[0], operands[1]));
+            return true;
         } else if (in_command == "multiply") {
             vector<string> operands;
             if (!ParseOperands(input, operands, 2)) {
@@ -130,20 +137,19 @@ private:
                 return false;
             }
             nextCommand = (std::make_unique<CCommandMultiply>(operands[0], operands[1]));
-        }
-//        else if (in_command == "put") {
-//            string name;
-//            if (!LoadOperandName(input, name)) {
-//                return false;
-//            }
-//            unique_ptr<CCommand> subCommand;
-//            if (!ParseCommand(input, subCommand)) {
-//                return false;
-//            }
-//            nextCommand = (std::make_unique<CCommandPut>(name, subCommand));
-//
-//        }
-        else if (in_command == "transpose") {
+            return true;
+        }else if (in_command == "put") {
+            string name;
+            if (!LoadOperandName(input, name)) {
+                return false;
+            }
+            unique_ptr<CCommand> subCommand;
+            if (!ParseCommand(input, subCommand)) {
+                return false;
+            }
+            nextCommand = (std::make_unique<CCommandPut>(name, subCommand));
+            return true;
+        }else if (in_command == "transpose") {
             vector<string> operands;
             if (!ParseOperands(input, operands, 1)) {
                 return false;
@@ -153,6 +159,7 @@ private:
                 return false;
             }
             nextCommand = (std::make_unique<CCommandTranspose>(operands[0]));
+            return true;
         }
 //        else if (in_command == "cut") {
 //            string varName;
@@ -163,29 +170,32 @@ private:
 //                return false;
 //            }
 //            nextCommand = (std::make_unique<CCommandCut>(varName, numRows, numCols, startPoint));
-//        } else if (in_command == "merge_under") {
-//            vector<string> operands;
-//            if (!ParseOperands(input, operands, 2)) {
-//                return false;
-//            }
-//            stringstream inStream(input);
-//            if (!(IsSyntaxCorrect(inStream))) {
-//                return false;
-//            }
-//            nextCommand = (std::make_unique<CCommandMergeUnder>(operands[0], operands[1]));
-//        } else if (in_command == "merge_next_to") {
-//            vector<string> operands;
-//            if (!ParseOperands(input, operands, 2)) {
-//                return false;
-//            }
-//            stringstream inStream(input);
-//            if (!(IsSyntaxCorrect(inStream))) {
-//                return false;
-//            }
-//            nextCommand = (std::make_unique<CCommandMergeNextTo>(operands[0], operands[1]));
 //        }
+        else if (in_command == "merge_under") {
+            vector<string> operands;
+            if (!ParseOperands(input, operands, 2)) {
+                return false;
+            }
+            stringstream inStream(input);
+            if (!(IsSyntaxCorrect(inStream))) {
+                return false;
+            }
+            nextCommand = (std::make_unique<CCommandMergeUnder>(operands[0], operands[1]));
+            return true;
+        }else if (in_command == "merge_next_to") {
+            vector<string> operands;
+            if (!ParseOperands(input, operands, 2)) {
+                return false;
+            }
+            stringstream inStream(input);
+            if (!(IsSyntaxCorrect(inStream))) {
+                return false;
+            }
+            nextCommand = (std::make_unique<CCommandMergeNextTo>(operands[0], operands[1]));
+            return true;
+        }
 
-        return true;
+        return false;
     }
 
     bool LoadOperandName(string &input, string &name) {
