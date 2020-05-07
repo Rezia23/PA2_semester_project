@@ -2,8 +2,8 @@
 // Created by terez on 06.05.2020.
 //
 
-#ifndef SEMESTRALKA_GETDETERMINANT_H
-#define SEMESTRALKA_GETDETERMINANT_H
+#ifndef SEMESTRALKA_CGETDETERMINANT_H
+#define SEMESTRALKA_CGETDETERMINANT_H
 
 
 #include "CMatrix.h"
@@ -11,13 +11,14 @@
 #include <math.h>
 #include <iostream>
 
-class GetDeterminant:public CEliminate {
+class CGetDeterminant: public CEliminate {
 public:
     double ConvertToUpperTriangular(shared_ptr<CMatrix> & matrix) {
         double determinant = 1;
-        int rowsMultipliedBy = 1;
+        double rowsMultipliedBy = 1;
         int numSwaps = SortForElimination(matrix);
         determinant*=pow(-1, numSwaps);
+        matrix->Print();
         for (size_t i = 0; i < matrix->m_NumRows; i++) {
             for (size_t j = 0; j < matrix->m_NumRows; j++) {
                 if (i < j) {
@@ -32,36 +33,11 @@ public:
                 }
             }
         }
-//        for(std::size_t i = 0; i<matrix->m_NumRows;i++){
-//            for(std::size_t j = 0; j<matrix->m_NumRows;j++){
-//                if(i==j){
-//                    determinant*=matrix->GetNumAtCoords(i,j);
-//                }
-//            }
-//        }
         AddDiagonal(determinant, matrix);
         determinant/=rowsMultipliedBy;
         return determinant;
     }
-//    double ConvertToLowerTriangular(shared_ptr<CMatrix> & matrix) {
-//        double determinant = 1;
-//        int numSwaps = SortForElimination(matrix);
-//        determinant*=pow(-1, numSwaps);
-//        for (size_t i = matrix->m_NumRows; i > 0; i--) {
-//            for (size_t j = matrix->m_NumRows; j > 0; j--) {
-//                if (i > j) {
-//                    double temp = matrix->GetNumAtCoords(j - 1, i - 1);
-//                    determinant =matrix->GetNumAtCoords(i-1,i-1);
-//                    for (size_t k = 0; k < matrix->m_NumCols; k++) {
-//                        matrix->SetNumAtCoords(j-1, k, matrix->GetNumAtCoords(j-1, k)*matrix->GetNumAtCoords(i-1,i-1));
-//                        matrix->SetNumAtCoords(j-1, k, matrix->GetNumAtCoords(j-1, k)-(matrix->GetNumAtCoords(i-1,k)*temp));
-//                    }
-//                }
-//            }
-//        }
-//        AddDiagonal(determinant, matrix);
-//        return determinant;
-//    }
+
     void AddDiagonal(double & det, shared_ptr<CMatrix> & matrix) const {
         for (size_t i = 0; i < matrix->m_NumRows; i++) {
             for (size_t j = 0; j < matrix->m_NumCols; j++) {
@@ -129,4 +105,4 @@ public:
 };
 
 
-#endif //SEMESTRALKA_GETDETERMINANT_H
+#endif //SEMESTRALKA_CGETDETERMINANT_H

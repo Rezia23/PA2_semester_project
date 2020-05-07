@@ -11,6 +11,7 @@
 #include "CMergeNextToOperation.h"
 #include "CCutOperator.h"
 #include "CEliminate.h"
+#include "CGetDeterminant.h"
 
 class CInverseOperator: public CEliminate, public CUnaryOperator {
 public:
@@ -65,6 +66,10 @@ public:
            throw runtime_error("Inverse does not exist.");
         }
         //todo: check if inverse exists (non zero determinant)
+        CGetDeterminant det;
+        if(det(m_Operand)==0){
+            throw runtime_error("Inverse does not exist.");
+        }
 
         shared_ptr<CMatrix> identity = shared_ptr<CMatrix> (GetIdentity(m_Operand->m_NumRows));
 

@@ -5,7 +5,7 @@
 #ifndef SEMESTRALKA_CCOMMANDDETERMINANT_H
 #define SEMESTRALKA_CCOMMANDDETERMINANT_H
 #include "CCommand.h"
-#include "GetDeterminant.h"
+#include "CGetDeterminant.h"
 
 class CCommandDeterminant:public CCommand {
 public:
@@ -22,8 +22,9 @@ public:
         }
         m_Result = "Matrix " + m_VarName + " has determinant:\n";
 
-        GetDeterminant det;
+
         try{
+            CGetDeterminant det;
             m_Determinant = det(memory.m_Variables.at(m_VarName));
             m_Result += to_string(m_Determinant);
             return true;

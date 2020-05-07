@@ -22,6 +22,8 @@
 #include "CCommandCut.h"
 #include "CCommandInverse.h"
 #include "CCommandDeterminant.h"
+#include "CCommandGaussElimination.h"
+#include "CCommandOrder.h"
 //#include "CCommandPut.h"
 //#include "CCommandTranspose.h"
 //#include "CCommandCut.h"
@@ -216,6 +218,28 @@ private:
                 return false;
             }
             nextCommand = (std::make_unique<CCommandDeterminant>(operands[0]));
+            return true;
+        }else if (in_command == "gem") {
+            vector<string> operands;
+            if (!ParseOperands(input, operands, 1)) {
+                return false;
+            }
+            stringstream inStream(input);
+            if (!(IsSyntaxCorrect(inStream))) {
+                return false;
+            }
+            nextCommand = (std::make_unique<CCommandGaussElimination>(operands[0]));
+            return true;
+        }else if (in_command == "order") {
+            vector<string> operands;
+            if (!ParseOperands(input, operands, 1)) {
+                return false;
+            }
+            stringstream inStream(input);
+            if (!(IsSyntaxCorrect(inStream))) {
+                return false;
+            }
+            nextCommand = (std::make_unique<CCommandOrder>(operands[0]));
             return true;
         }
 

@@ -30,7 +30,7 @@ public:
             m_Result += m_ResultMatrix->ToString();
             return true;
         }catch(const std::runtime_error& e){
-            m_Result = "Matrix " + m_VarName  + " is not square - cannot find inverse.";
+            m_Result = "Matrix " + m_VarName  + " does not have inverse.";
             return false;
         }
 
