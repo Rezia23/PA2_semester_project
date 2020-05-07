@@ -25,10 +25,15 @@ public:
         m_Result = "Inversion of " + m_VarName + " is:\n";
 
         CInverseOperator op (memory.m_Variables.at(m_VarName));
+        try{
+            m_ResultMatrix = unique_ptr<CMatrix>(op.Evaluate(memory));
+            m_Result += m_ResultMatrix->ToString();
+            return true;
+        }catch(const std::runtime_error& e){
+            m_Result = "Matrix " + m_VarName  + " is not square - cannot find inverse.";
+            return false;
+        }
 
-        m_ResultMatrix = unique_ptr<CMatrix>(op.Evaluate(memory));
-        m_Result += m_ResultMatrix->ToString();
-        return true;
     }
 
 private:

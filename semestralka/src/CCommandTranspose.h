@@ -21,7 +21,7 @@ public:
             m_Result = "Variable does not exist.";
             return false;
         }
-        m_Result = "Matrix" + m_VarName + " has been transposed to:\n";
+        m_Result = "Matrix " + m_VarName + " has been transposed to:\n";
 
         CTransposeOperator op (memory.m_Variables.at(m_VarName));
 

@@ -29,7 +29,7 @@ public:
             m_Result += m_ResultMatrix->ToString();
             return true;
         }catch(const std::runtime_error& e){
-            "Matrices " + m_Operand1 + " and " + m_Operand2 + " are not compatible for subtraction.";
+            m_Result = "Matrices " + m_Operand1 + " and " + m_Operand2 + " are not compatible for subtraction.";
             return false;
         }
     }

@@ -10,8 +10,9 @@
 #include "CMatrixStandard.h"
 #include "CMergeNextToOperation.h"
 #include "CCutOperator.h"
+#include "CEliminate.h"
 
-class CInverseOperator: public CUnaryOperator {
+class CInverseOperator: public CEliminate, public CUnaryOperator {
 public:
     CInverseOperator(shared_ptr<CMatrix> & operand)
     :CUnaryOperator(operand){}
@@ -28,14 +29,7 @@ public:
         }
         return new CMatrixStandard(id);
     }
-    void SortForElimination(shared_ptr<CMatrix> & matrix) {
-        for (size_t i = matrix->m_NumRows - 1; i > 0; i--) {
-            if (matrix->GetNumAtCoords(i - 1, 0) < matrix->GetNumAtCoords(i, 0)) {
-                matrix->SwapRows(i-1,i);
 
-            }
-        }
-    }
     void CreateZeroTriangles(shared_ptr<CMatrix> & matrix) {
         for (size_t i = 0; i < matrix->m_NumRows; i++) {
             for (size_t j = 0; j < matrix->m_NumRows; j++) {

@@ -23,9 +23,15 @@ public:
         m_Result = "Matrix " + m_VarName + " has determinant:\n";
 
         GetDeterminant det;
-        m_Determinant = det(memory.m_Variables.at(m_VarName));
-        m_Result += to_string(m_Determinant);
-        return true;
+        try{
+            m_Determinant = det(memory.m_Variables.at(m_VarName));
+            m_Result += to_string(m_Determinant);
+            return true;
+        }catch(const std::runtime_error& e){
+            m_Result = "Matrix " + m_VarName + " is not square - cannot get determinant.";
+            return false;
+        }
+
     }
     double m_Determinant;
 private:
