@@ -1,0 +1,13 @@
+<map id="src/CInverseOperator.h" name="src/CInverseOperator.h">
+<area shape="rect" id="node2" href="$CUnaryOperator_8h.html" title="CUnaryOperator.h" alt="" coords="525,155,653,181"/>
+<area shape="rect" id="node8" href="$CMatrixStandard_8h.html" title="CMatrixStandard.h" alt="" coords="128,155,259,181"/>
+<area shape="rect" id="node15" href="$CMergeNextToOperation_8h.html" title="CMergeNextToOperation.h" alt="" coords="601,80,780,107"/>
+<area shape="rect" id="node17" href="$CCutOperator_8h.html" title="CCutOperator.h" alt="" coords="176,80,291,107"/>
+<area shape="rect" id="node18" href="$CEliminate_8h.html" title="CEliminate.h" alt="" coords="329,229,426,256"/>
+<area shape="rect" id="node19" href="$CGetDeterminant_8h.html" title="CGetDeterminant.h" alt="" coords="366,155,501,181"/>
+<area shape="rect" id="node3" href="$COperator_8h.html" title="COperator.h" alt="" coords="657,379,751,405"/>
+<area shape="rect" id="node4" href="$CMemory_8h.html" title="CMemory.h" alt="" coords="659,453,749,480"/>
+<area shape="rect" id="node9" href="$CMatrix_8h.html" title="CMatrix.h" alt="" coords="425,304,503,331"/>
+<area shape="rect" id="node13" href="$CMatrixSparse_8h.html" title="CMatrixSparse.h" alt="" coords="133,229,253,256"/>
+<area shape="rect" id="node16" href="$CBinaryOperator_8h.html" title="CBinaryOperator.h" alt="" coords="741,229,872,256"/>
+</map>

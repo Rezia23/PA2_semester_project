@@ -1,0 +1,12 @@
+<map id="COperator" name="COperator">
+<area shape="rect" id="node2" href="$classCBinaryOperator.html" title="CBinaryOperator" alt="" coords="136,132,255,159"/>
+<area shape="rect" id="node8" href="$classCUnaryOperator.html" title="CUnaryOperator" alt="" coords="137,284,254,311"/>
+<area shape="rect" id="node3" href="$classCAddOperator.html" title="CAddOperator" alt="" coords="331,5,436,32"/>
+<area shape="rect" id="node4" href="$classCMergeNextToOperator.html" title="CMergeNextToOperator" alt="" coords="303,56,464,83"/>
+<area shape="rect" id="node5" href="$classCMergeUnderOperator.html" title="CMergeUnderOperator" alt="" coords="307,107,460,133"/>
+<area shape="rect" id="node6" href="$classCMultiplyOperator.html" title="CMultiplyOperator" alt="" coords="320,157,447,184"/>
+<area shape="rect" id="node7" href="$classCSubtractOperator.html" title="CSubtractOperator" alt="" coords="318,208,449,235"/>
+<area shape="rect" id="node9" href="$classCCutOperator.html" title="CCutOperator" alt="" coords="332,259,435,285"/>
+<area shape="rect" id="node10" href="$classCInverseOperator.html" title="CInverseOperator" alt="" coords="321,309,446,336"/>
+<area shape="rect" id="node11" href="$classCTransposeOperator.html" title="CTransposeOperator" alt="" coords="312,360,455,387"/>
+</map>

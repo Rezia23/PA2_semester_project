@@ -63,20 +63,6 @@ public:
 
     virtual void Print() const override;
 
-//    virtual CMatrix *Add(const unique_ptr<CMatrix> &other) const override;
-//    virtual CMatrix *NegateAllNums() const override;
-//    virtual CMatrix *Subtract(const unique_ptr<CMatrix> &other) const override;
-//    virtual CMatrix *Multiply(const unique_ptr<CMatrix> &other) const override;
-
-//    virtual void Transpose() override;
-
-    virtual void ChangeToIdentity(int size) override;
-
-    virtual CMatrixSparse *MergeNextTo(const unique_ptr<CMatrix> &other) const override;
-//
-//    virtual CMatrixSparse *MergeUnder(const unique_ptr<CMatrix> &other) const override;
-//
-    virtual void Cut(size_t numRows, size_t numCols, pair<size_t, size_t> startPoint) override;
 
     virtual bool ShouldBeSparse() const {
         return (m_NumRows * m_NumCols) - m_Matrix.size() > m_Matrix.size();
@@ -102,11 +88,7 @@ public:
         }
     }
 
-    /*tbd
-     * CMatrixSparse* FindInverse()const;
-     * double CalculateDeterminant() const;
-     * int CalculateRank() const;
-     */
+
 
 };
 

@@ -32,20 +32,7 @@ public:
     virtual CMatrix * GetEmptyInstance() const = 0;
     virtual void Resize(std::size_t numRows, std::size_t numCols) = 0;
 
-//    virtual CMatrix *Add(const unique_ptr<CMatrix> &other) const = 0;
-//    virtual CMatrix *NegateAllNums() const = 0;
-//    virtual CMatrix *Subtract(const unique_ptr<CMatrix> &other) const = 0;
-//    virtual CMatrix *Multiply(const unique_ptr<CMatrix> &other) const = 0;
 
-//    virtual void Transpose() = 0;
-
-    virtual CMatrix *MergeNextTo(const unique_ptr<CMatrix> &other) const = 0;
-//
-//    virtual CMatrix *MergeUnder(const unique_ptr<CMatrix> &other) const = 0;
-
-    virtual void ChangeToIdentity(int size) = 0;
-
-    virtual void Cut(size_t numRows, size_t numCols, pair<size_t, size_t> startPoint) = 0;
 
     virtual bool ShouldBeSparse() const = 0;
 

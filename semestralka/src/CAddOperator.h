@@ -18,6 +18,10 @@ public:
 
 
     CMatrix * Evaluate(CMemory & memory) override{
+
+        //todo: can i do this
+        (void) memory; // unused for a reason
+
         if (m_Left->m_NumRows != m_Right->m_NumRows || m_Left->m_NumCols != m_Right->m_NumCols) {
             throw std::runtime_error("Adding incompatible matrices.");
         }

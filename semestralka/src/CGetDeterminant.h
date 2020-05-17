@@ -7,11 +7,12 @@
 
 
 #include "CMatrix.h"
-#include "CEliminate.h"
 #include <math.h>
 #include <iostream>
+#include "elimination.h"
 
-class CGetDeterminant: public CEliminate {
+
+class CGetDeterminant{
 public:
     double ConvertToUpperTriangular(shared_ptr<CMatrix> & matrix) {
         double determinant = 1;

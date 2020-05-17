@@ -10,10 +10,10 @@
 #include "CMatrixStandard.h"
 #include "CMergeNextToOperation.h"
 #include "CCutOperator.h"
-#include "CEliminate.h"
 #include "CGetDeterminant.h"
+#include "elimination.h"
 
-class CInverseOperator: public CEliminate, public CUnaryOperator {
+class CInverseOperator:  public CUnaryOperator {
 public:
     CInverseOperator(shared_ptr<CMatrix> & operand)
     :CUnaryOperator(operand){}

@@ -1,0 +1,354 @@
+\hypertarget{classCMatrixStandard}{}\section{C\+Matrix\+Standard Class Reference}
+\label{classCMatrixStandard}\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+
+
+{\ttfamily \#include $<$C\+Matrix\+Standard.\+h$>$}
+
+
+
+Inheritance diagram for C\+Matrix\+Standard\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classCMatrixStandard__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+Matrix\+Standard\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classCMatrixStandard__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCMatrixStandard_ad862ccde0cbe3a1f72e724091040475d}{C\+Matrix\+Standard} ()
+\item 
+\hyperlink{classCMatrixStandard_a5ae792cb1f82cfd0f8710f22e6c03588}{C\+Matrix\+Standard} (vector$<$ vector$<$ double $>$$>$ matrix)
+\item 
+\hyperlink{classCMatrixStandard_ae2f8784f0d63aab266bbd144c5cc10c6}{C\+Matrix\+Standard} (map$<$ pair$<$ size\+\_\+t, size\+\_\+t $>$, double $>$ matrix, size\+\_\+t num\+Rows, size\+\_\+t num\+Cols)
+\item 
+virtual void \hyperlink{classCMatrixStandard_a8c8a6ce02302a423928b725e41c7730a}{Swap\+Rows} (std\+::size\+\_\+t a, std\+::size\+\_\+t b) override
+\item 
+\hyperlink{classCMatrix}{C\+Matrix} $\ast$ \hyperlink{classCMatrixStandard_a30885c9a67bfe07b8379f7dd7a782ce4}{Clone} () const override
+\item 
+virtual \hyperlink{classCMatrix}{C\+Matrix} $\ast$ \hyperlink{classCMatrixStandard_a73f39b1ac5602dbd233df469ba8f0c3b}{Convert} () const override
+\item 
+virtual \hyperlink{classCMatrixStandard_af1c8dfb0c0bdc2933fe19dc7deef0a80}{$\sim$\+C\+Matrix\+Standard} () override=default
+\item 
+virtual void \hyperlink{classCMatrixStandard_a0ace6054f9ec1fb2b26e0683034e48bd}{Print} () const override
+\item 
+virtual double \hyperlink{classCMatrixStandard_a277c77a453dccdac55de180bb63a8a7f}{Get\+Num\+At\+Coords} (size\+\_\+t row, size\+\_\+t col) const override
+\item 
+virtual void \hyperlink{classCMatrixStandard_a7fe5561630fbc65f7aeac5bd54499c13}{Set\+Num\+At\+Coords} (size\+\_\+t row, size\+\_\+t col, double value) override
+\item 
+\hyperlink{classCMatrix}{C\+Matrix} $\ast$ \hyperlink{classCMatrixStandard_a17e51335d1d9e731441a8205536697f7}{Get\+Empty\+Instance} () const override
+\item 
+void \hyperlink{classCMatrixStandard_ad135e13127c58f91c325a131d1dc8a74}{Resize} (std\+::size\+\_\+t num\+Rows, std\+::size\+\_\+t num\+Cols) override
+\item 
+virtual void \hyperlink{classCMatrixStandard_ac46d74a3b3f53c0eb0bbd69668b7d8a9}{Change\+To\+Identity} (int size) override
+\item 
+virtual \hyperlink{classCMatrixStandard}{C\+Matrix\+Standard} $\ast$ \hyperlink{classCMatrixStandard_ab20191ea5e797c99361f254696d8d351}{Merge\+Next\+To} (const unique\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ \&other) const override
+\item 
+virtual void \hyperlink{classCMatrixStandard_ae1f278e3dde8bb03f953e7b08ea277f5}{Cut} (size\+\_\+t num\+Rows, size\+\_\+t num\+Cols, pair$<$ size\+\_\+t, size\+\_\+t $>$ start\+Point) override
+\item 
+\hyperlink{classCMatrixStandard}{C\+Matrix\+Standard} $\ast$ \hyperlink{classCMatrixStandard_af37a8a7a36869bfdad02e1c7ca80ea91}{Find\+Inverse} () const 
+\item 
+double \hyperlink{classCMatrixStandard_aaba6b3a9cc8a5d9ba7a66e33d7080f5f}{Calculate\+Determinant} () const 
+\item 
+int \hyperlink{classCMatrixStandard_a8c2287c4d13826f272d13cc6d80d46ff}{Calculate\+Rank} () const 
+\item 
+virtual bool \hyperlink{classCMatrixStandard_a603dcb22f4cdf94438d4e59fe44870e4}{Should\+Be\+Sparse} () const override
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCMatrixStandard_a72edc45243a771d13a87eb18b14ed39d}{Sort\+For\+Elimination} ()
+\item 
+void \hyperlink{classCMatrixStandard_ac26185dcf0968bc6e1d5c25b28a6c03c}{Create\+Zero\+Triangles} ()
+\item 
+void \hyperlink{classCMatrixStandard_a8c74a094a4ead185e6fe7749902ffbcd}{Make\+Diagonals\+To1} ()
+\item 
+void \hyperlink{classCMatrixStandard_a87bc6d91cd4a0a6adf4fc91130cbf1c3}{Convert\+To\+LU} ()
+\item 
+void \hyperlink{classCMatrixStandard_a269b662b8f10981d2917f3ed7ad4b29d}{Add\+Diagonal} (vector$<$ double $>$ \&diagonal) const 
+\item 
+void \hyperlink{classCMatrixStandard_a414f4140bceff8303fa220fa9f2b37b9}{Convert\+To\+Upper\+Triangular} (bool print\+Steps=false)
+\item 
+void \hyperlink{classCMatrixStandard_abe2e7eaa5407464157820da7f4c0b58f}{Convert\+To\+Lower\+Triangular} (bool print\+Steps=false)
+\item 
+int \hyperlink{classCMatrixStandard_abaced8ed3d500844af93c5c0a072d0be}{Get\+Count\+Zero\+Rows} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ vector$<$ double $>$ $>$ \hyperlink{classCMatrixStandard_a4b0bafe59e3358e0d3fdbcc42b584dec}{m\+\_\+\+Matrix}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{C\+Matrix\+Standard()}{CMatrixStandard()}}]{\setlength{\rightskip}{0pt plus 5cm}C\+Matrix\+Standard\+::\+C\+Matrix\+Standard (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCMatrixStandard_ad862ccde0cbe3a1f72e724091040475d}{}\label{classCMatrixStandard_ad862ccde0cbe3a1f72e724091040475d}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{C\+Matrix\+Standard(vector$<$ vector$<$ double $>$$>$ matrix)}{CMatrixStandard(vector< vector< double >> matrix)}}]{\setlength{\rightskip}{0pt plus 5cm}C\+Matrix\+Standard\+::\+C\+Matrix\+Standard (
+\begin{DoxyParamCaption}
+\item[{vector$<$ vector$<$ double $>$$>$}]{matrix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCMatrixStandard_a5ae792cb1f82cfd0f8710f22e6c03588}{}\label{classCMatrixStandard_a5ae792cb1f82cfd0f8710f22e6c03588}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{C\+Matrix\+Standard(map$<$ pair$<$ size\+\_\+t, size\+\_\+t $>$, double $>$ matrix, size\+\_\+t num\+Rows, size\+\_\+t num\+Cols)}{CMatrixStandard(map< pair< size_t, size_t >, double > matrix, size_t numRows, size_t numCols)}}]{\setlength{\rightskip}{0pt plus 5cm}C\+Matrix\+Standard\+::\+C\+Matrix\+Standard (
+\begin{DoxyParamCaption}
+\item[{map$<$ pair$<$ size\+\_\+t, size\+\_\+t $>$, double $>$}]{matrix, }
+\item[{size\+\_\+t}]{num\+Rows, }
+\item[{size\+\_\+t}]{num\+Cols}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCMatrixStandard_ae2f8784f0d63aab266bbd144c5cc10c6}{}\label{classCMatrixStandard_ae2f8784f0d63aab266bbd144c5cc10c6}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!````~C\+Matrix\+Standard@{$\sim$\+C\+Matrix\+Standard}}
+\index{````~C\+Matrix\+Standard@{$\sim$\+C\+Matrix\+Standard}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{$\sim$\+C\+Matrix\+Standard() override=default}{~CMatrixStandard() override=default}}]{\setlength{\rightskip}{0pt plus 5cm}virtual C\+Matrix\+Standard\+::$\sim$\+C\+Matrix\+Standard (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [default]}}\hypertarget{classCMatrixStandard_af1c8dfb0c0bdc2933fe19dc7deef0a80}{}\label{classCMatrixStandard_af1c8dfb0c0bdc2933fe19dc7deef0a80}
+
+
+\subsection{Member Function Documentation}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Add\+Diagonal@{Add\+Diagonal}}
+\index{Add\+Diagonal@{Add\+Diagonal}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Add\+Diagonal(vector$<$ double $>$ \&diagonal) const }{AddDiagonal(vector< double > &diagonal) const }}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Matrix\+Standard\+::\+Add\+Diagonal (
+\begin{DoxyParamCaption}
+\item[{vector$<$ double $>$ \&}]{diagonal}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCMatrixStandard_a269b662b8f10981d2917f3ed7ad4b29d}{}\label{classCMatrixStandard_a269b662b8f10981d2917f3ed7ad4b29d}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Calculate\+Determinant@{Calculate\+Determinant}}
+\index{Calculate\+Determinant@{Calculate\+Determinant}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Calculate\+Determinant() const }{CalculateDeterminant() const }}]{\setlength{\rightskip}{0pt plus 5cm}double C\+Matrix\+Standard\+::\+Calculate\+Determinant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classCMatrixStandard_aaba6b3a9cc8a5d9ba7a66e33d7080f5f}{}\label{classCMatrixStandard_aaba6b3a9cc8a5d9ba7a66e33d7080f5f}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Calculate\+Rank@{Calculate\+Rank}}
+\index{Calculate\+Rank@{Calculate\+Rank}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Calculate\+Rank() const }{CalculateRank() const }}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Matrix\+Standard\+::\+Calculate\+Rank (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classCMatrixStandard_a8c2287c4d13826f272d13cc6d80d46ff}{}\label{classCMatrixStandard_a8c2287c4d13826f272d13cc6d80d46ff}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Change\+To\+Identity@{Change\+To\+Identity}}
+\index{Change\+To\+Identity@{Change\+To\+Identity}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Change\+To\+Identity(int size) override}{ChangeToIdentity(int size) override}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Matrix\+Standard\+::\+Change\+To\+Identity (
+\begin{DoxyParamCaption}
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_ac46d74a3b3f53c0eb0bbd69668b7d8a9}{}\label{classCMatrixStandard_ac46d74a3b3f53c0eb0bbd69668b7d8a9}
+
+
+Implements \hyperlink{classCMatrix_acdea7a5c6e3d858c3556881217a43dc3}{C\+Matrix}.
+
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Clone@{Clone}}
+\index{Clone@{Clone}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Clone() const override}{Clone() const override}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Matrix}$\ast$ C\+Matrix\+Standard\+::\+Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_a30885c9a67bfe07b8379f7dd7a782ce4}{}\label{classCMatrixStandard_a30885c9a67bfe07b8379f7dd7a782ce4}
+
+
+Implements \hyperlink{classCMatrix_a42ac1f2a9e69919974febca17971be60}{C\+Matrix}.
+
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Convert@{Convert}}
+\index{Convert@{Convert}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Convert() const override}{Convert() const override}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Matrix} $\ast$ C\+Matrix\+Standard\+::\+Convert (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_a73f39b1ac5602dbd233df469ba8f0c3b}{}\label{classCMatrixStandard_a73f39b1ac5602dbd233df469ba8f0c3b}
+
+
+Implements \hyperlink{classCMatrix_aca808472e6465738fae14a6ac244cf0b}{C\+Matrix}.
+
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Convert\+To\+Lower\+Triangular@{Convert\+To\+Lower\+Triangular}}
+\index{Convert\+To\+Lower\+Triangular@{Convert\+To\+Lower\+Triangular}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Convert\+To\+Lower\+Triangular(bool print\+Steps=false)}{ConvertToLowerTriangular(bool printSteps=false)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Matrix\+Standard\+::\+Convert\+To\+Lower\+Triangular (
+\begin{DoxyParamCaption}
+\item[{bool}]{print\+Steps = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCMatrixStandard_abe2e7eaa5407464157820da7f4c0b58f}{}\label{classCMatrixStandard_abe2e7eaa5407464157820da7f4c0b58f}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Convert\+To\+LU@{Convert\+To\+LU}}
+\index{Convert\+To\+LU@{Convert\+To\+LU}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Convert\+To\+L\+U()}{ConvertToLU()}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Matrix\+Standard\+::\+Convert\+To\+LU (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCMatrixStandard_a87bc6d91cd4a0a6adf4fc91130cbf1c3}{}\label{classCMatrixStandard_a87bc6d91cd4a0a6adf4fc91130cbf1c3}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Convert\+To\+Upper\+Triangular@{Convert\+To\+Upper\+Triangular}}
+\index{Convert\+To\+Upper\+Triangular@{Convert\+To\+Upper\+Triangular}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Convert\+To\+Upper\+Triangular(bool print\+Steps=false)}{ConvertToUpperTriangular(bool printSteps=false)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Matrix\+Standard\+::\+Convert\+To\+Upper\+Triangular (
+\begin{DoxyParamCaption}
+\item[{bool}]{print\+Steps = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCMatrixStandard_a414f4140bceff8303fa220fa9f2b37b9}{}\label{classCMatrixStandard_a414f4140bceff8303fa220fa9f2b37b9}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Create\+Zero\+Triangles@{Create\+Zero\+Triangles}}
+\index{Create\+Zero\+Triangles@{Create\+Zero\+Triangles}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Create\+Zero\+Triangles()}{CreateZeroTriangles()}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Matrix\+Standard\+::\+Create\+Zero\+Triangles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCMatrixStandard_ac26185dcf0968bc6e1d5c25b28a6c03c}{}\label{classCMatrixStandard_ac26185dcf0968bc6e1d5c25b28a6c03c}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Cut@{Cut}}
+\index{Cut@{Cut}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Cut(size\+\_\+t num\+Rows, size\+\_\+t num\+Cols, pair$<$ size\+\_\+t, size\+\_\+t $>$ start\+Point) override}{Cut(size_t numRows, size_t numCols, pair< size_t, size_t > startPoint) override}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Matrix\+Standard\+::\+Cut (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{num\+Rows, }
+\item[{size\+\_\+t}]{num\+Cols, }
+\item[{pair$<$ size\+\_\+t, size\+\_\+t $>$}]{start\+Point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_ae1f278e3dde8bb03f953e7b08ea277f5}{}\label{classCMatrixStandard_ae1f278e3dde8bb03f953e7b08ea277f5}
+
+
+Implements \hyperlink{classCMatrix_adb39522856d76de67d5b29c418c45ccd}{C\+Matrix}.
+
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Find\+Inverse@{Find\+Inverse}}
+\index{Find\+Inverse@{Find\+Inverse}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Find\+Inverse() const }{FindInverse() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Matrix\+Standard} $\ast$ C\+Matrix\+Standard\+::\+Find\+Inverse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classCMatrixStandard_af37a8a7a36869bfdad02e1c7ca80ea91}{}\label{classCMatrixStandard_af37a8a7a36869bfdad02e1c7ca80ea91}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Get\+Count\+Zero\+Rows@{Get\+Count\+Zero\+Rows}}
+\index{Get\+Count\+Zero\+Rows@{Get\+Count\+Zero\+Rows}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Get\+Count\+Zero\+Rows() const }{GetCountZeroRows() const }}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Matrix\+Standard\+::\+Get\+Count\+Zero\+Rows (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCMatrixStandard_abaced8ed3d500844af93c5c0a072d0be}{}\label{classCMatrixStandard_abaced8ed3d500844af93c5c0a072d0be}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Get\+Empty\+Instance@{Get\+Empty\+Instance}}
+\index{Get\+Empty\+Instance@{Get\+Empty\+Instance}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Get\+Empty\+Instance() const override}{GetEmptyInstance() const override}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Matrix}$\ast$ C\+Matrix\+Standard\+::\+Get\+Empty\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_a17e51335d1d9e731441a8205536697f7}{}\label{classCMatrixStandard_a17e51335d1d9e731441a8205536697f7}
+
+
+Implements \hyperlink{classCMatrix_a7495208c2bd786fe46b130f6090e7eb5}{C\+Matrix}.
+
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Get\+Num\+At\+Coords@{Get\+Num\+At\+Coords}}
+\index{Get\+Num\+At\+Coords@{Get\+Num\+At\+Coords}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Get\+Num\+At\+Coords(size\+\_\+t row, size\+\_\+t col) const override}{GetNumAtCoords(size_t row, size_t col) const override}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double C\+Matrix\+Standard\+::\+Get\+Num\+At\+Coords (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{row, }
+\item[{size\+\_\+t}]{col}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_a277c77a453dccdac55de180bb63a8a7f}{}\label{classCMatrixStandard_a277c77a453dccdac55de180bb63a8a7f}
+
+
+Implements \hyperlink{classCMatrix_afa0213e0a6c5823e6b6e786891cc5f2d}{C\+Matrix}.
+
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Make\+Diagonals\+To1@{Make\+Diagonals\+To1}}
+\index{Make\+Diagonals\+To1@{Make\+Diagonals\+To1}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Make\+Diagonals\+To1()}{MakeDiagonalsTo1()}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Matrix\+Standard\+::\+Make\+Diagonals\+To1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCMatrixStandard_a8c74a094a4ead185e6fe7749902ffbcd}{}\label{classCMatrixStandard_a8c74a094a4ead185e6fe7749902ffbcd}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Merge\+Next\+To@{Merge\+Next\+To}}
+\index{Merge\+Next\+To@{Merge\+Next\+To}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Merge\+Next\+To(const unique\+\_\+ptr$<$ C\+Matrix $>$ \&other) const override}{MergeNextTo(const unique_ptr< CMatrix > &other) const override}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Matrix\+Standard} $\ast$ C\+Matrix\+Standard\+::\+Merge\+Next\+To (
+\begin{DoxyParamCaption}
+\item[{const unique\+\_\+ptr$<$ {\bf C\+Matrix} $>$ \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_ab20191ea5e797c99361f254696d8d351}{}\label{classCMatrixStandard_ab20191ea5e797c99361f254696d8d351}
+
+
+Implements \hyperlink{classCMatrix_a2c6c995b372eae3f9544370dda681b48}{C\+Matrix}.
+
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Print@{Print}}
+\index{Print@{Print}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Print() const override}{Print() const override}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Matrix\+Standard\+::\+Print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_a0ace6054f9ec1fb2b26e0683034e48bd}{}\label{classCMatrixStandard_a0ace6054f9ec1fb2b26e0683034e48bd}
+
+
+Implements \hyperlink{classCMatrix_a424a048d20918f0f041f4a8645823ae7}{C\+Matrix}.
+
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Resize@{Resize}}
+\index{Resize@{Resize}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Resize(std\+::size\+\_\+t num\+Rows, std\+::size\+\_\+t num\+Cols) override}{Resize(std::size_t numRows, std::size_t numCols) override}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Matrix\+Standard\+::\+Resize (
+\begin{DoxyParamCaption}
+\item[{std\+::size\+\_\+t}]{num\+Rows, }
+\item[{std\+::size\+\_\+t}]{num\+Cols}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_ad135e13127c58f91c325a131d1dc8a74}{}\label{classCMatrixStandard_ad135e13127c58f91c325a131d1dc8a74}
+
+
+Implements \hyperlink{classCMatrix_adb83eafeeea2025f9c84d172f1bb0f1e}{C\+Matrix}.
+
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Set\+Num\+At\+Coords@{Set\+Num\+At\+Coords}}
+\index{Set\+Num\+At\+Coords@{Set\+Num\+At\+Coords}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Set\+Num\+At\+Coords(size\+\_\+t row, size\+\_\+t col, double value) override}{SetNumAtCoords(size_t row, size_t col, double value) override}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Matrix\+Standard\+::\+Set\+Num\+At\+Coords (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{row, }
+\item[{size\+\_\+t}]{col, }
+\item[{double}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_a7fe5561630fbc65f7aeac5bd54499c13}{}\label{classCMatrixStandard_a7fe5561630fbc65f7aeac5bd54499c13}
+
+
+Implements \hyperlink{classCMatrix_afeba0f7cfcc2623bde41cf6111b0ef6a}{C\+Matrix}.
+
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Should\+Be\+Sparse@{Should\+Be\+Sparse}}
+\index{Should\+Be\+Sparse@{Should\+Be\+Sparse}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Should\+Be\+Sparse() const override}{ShouldBeSparse() const override}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\+Matrix\+Standard\+::\+Should\+Be\+Sparse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_a603dcb22f4cdf94438d4e59fe44870e4}{}\label{classCMatrixStandard_a603dcb22f4cdf94438d4e59fe44870e4}
+
+
+Implements \hyperlink{classCMatrix_a668eaab1f5d9b498e721464124f158c4}{C\+Matrix}.
+
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Sort\+For\+Elimination@{Sort\+For\+Elimination}}
+\index{Sort\+For\+Elimination@{Sort\+For\+Elimination}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Sort\+For\+Elimination()}{SortForElimination()}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Matrix\+Standard\+::\+Sort\+For\+Elimination (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCMatrixStandard_a72edc45243a771d13a87eb18b14ed39d}{}\label{classCMatrixStandard_a72edc45243a771d13a87eb18b14ed39d}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Swap\+Rows@{Swap\+Rows}}
+\index{Swap\+Rows@{Swap\+Rows}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{Swap\+Rows(std\+::size\+\_\+t a, std\+::size\+\_\+t b) override}{SwapRows(std::size_t a, std::size_t b) override}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Matrix\+Standard\+::\+Swap\+Rows (
+\begin{DoxyParamCaption}
+\item[{std\+::size\+\_\+t}]{a, }
+\item[{std\+::size\+\_\+t}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_a8c8a6ce02302a423928b725e41c7730a}{}\label{classCMatrixStandard_a8c8a6ce02302a423928b725e41c7730a}
+
+
+Implements \hyperlink{classCMatrix_aa9f96d82fa2e564f89f35a1781a12d69}{C\+Matrix}.
+
+
+
+\subsection{Member Data Documentation}
+\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!m\+\_\+\+Matrix@{m\+\_\+\+Matrix}}
+\index{m\+\_\+\+Matrix@{m\+\_\+\+Matrix}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
+\subsubsection[{\texorpdfstring{m\+\_\+\+Matrix}{m_Matrix}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$vector$<$double$>$ $>$ C\+Matrix\+Standard\+::m\+\_\+\+Matrix\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCMatrixStandard_a4b0bafe59e3358e0d3fdbcc42b584dec}{}\label{classCMatrixStandard_a4b0bafe59e3358e0d3fdbcc42b584dec}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{CMatrixStandard_8h}{C\+Matrix\+Standard.\+h}\item 
+src/\hyperlink{CMatrixStandard_8cpp}{C\+Matrix\+Standard.\+cpp}\end{DoxyCompactItemize}

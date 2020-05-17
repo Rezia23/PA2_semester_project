@@ -1,0 +1,182 @@
+\hypertarget{classCApplication}{}\section{C\+Application Class Reference}
+\label{classCApplication}\index{C\+Application@{C\+Application}}
+
+
+{\ttfamily \#include $<$C\+Application.\+h$>$}
+
+
+
+Inheritance diagram for C\+Application\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classCApplication__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+Application\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classCApplication__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCApplication_a186bb7420ce66fadac70d2c30311b6ee}{C\+Application} ()=default
+\item 
+virtual \hyperlink{classCApplication_ab4448f8a90f380d4ac2afcc9ee59780d}{$\sim$\+C\+Application} ()=default
+\item 
+bool \hyperlink{classCApplication_a89642c9a6de3ced8f1f77e4fed479e7c}{Evaluate} (string input, string \&result, unique\+\_\+ptr$<$ \hyperlink{classCCommand}{C\+Command} $>$ \&next\+Command)
+\item 
+void \hyperlink{classCApplication_aa069063a23e53ea9858995f3ca34d6fb}{Run} ()
+\item 
+virtual void \hyperlink{classCApplication_a5994ba2f7b8a5d88290040616765baaa}{Show\+Var\+Name} (string name) const =0
+\item 
+virtual void \hyperlink{classCApplication_a8d6b41c059da7fbd01a4857bcb1c06e0}{Show\+Matrix} (unique\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ \&matrix) const =0
+\item 
+virtual void \hyperlink{classCApplication_ab88b3a17d0d6e5c14eba88fb263c9857}{Show\+Msg} (string msg) const =0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classCApplication_a308f31081c5a2b880c1bc96dbac3260d}{Print\+Instructions} () const =0
+\item 
+virtual string \hyperlink{classCApplication_a69a1706c3cf78d8dad7e16734e92b3f6}{Get\+Input} () const =0
+\item 
+virtual bool \hyperlink{classCApplication_ae2fe7afcd1a15cdbf5eb97a69b7731e6}{Parse\+Command} (string \&input, unique\+\_\+ptr$<$ \hyperlink{classCCommand}{C\+Command} $>$ \&next\+Command)=0
+\item 
+virtual void \hyperlink{classCApplication_a13cc1aa745b5b4c4d7e02a77a1bbdac8}{Show\+Result} (string result)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCMemory}{C\+Memory} \hyperlink{classCApplication_a338eac28666e5f1577716eb7097ffadb}{m\+\_\+\+Memory}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{C\+Application@{C\+Application}!C\+Application@{C\+Application}}
+\index{C\+Application@{C\+Application}!C\+Application@{C\+Application}}
+\subsubsection[{\texorpdfstring{C\+Application()=default}{CApplication()=default}}]{\setlength{\rightskip}{0pt plus 5cm}C\+Application\+::\+C\+Application (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\hypertarget{classCApplication_a186bb7420ce66fadac70d2c30311b6ee}{}\label{classCApplication_a186bb7420ce66fadac70d2c30311b6ee}
+\index{C\+Application@{C\+Application}!````~C\+Application@{$\sim$\+C\+Application}}
+\index{````~C\+Application@{$\sim$\+C\+Application}!C\+Application@{C\+Application}}
+\subsubsection[{\texorpdfstring{$\sim$\+C\+Application()=default}{~CApplication()=default}}]{\setlength{\rightskip}{0pt plus 5cm}virtual C\+Application\+::$\sim$\+C\+Application (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}\hypertarget{classCApplication_ab4448f8a90f380d4ac2afcc9ee59780d}{}\label{classCApplication_ab4448f8a90f380d4ac2afcc9ee59780d}
+
+
+\subsection{Member Function Documentation}
+\index{C\+Application@{C\+Application}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!C\+Application@{C\+Application}}
+\subsubsection[{\texorpdfstring{Evaluate(string input, string \&result, unique\+\_\+ptr$<$ C\+Command $>$ \&next\+Command)}{Evaluate(string input, string &result, unique_ptr< CCommand > &nextCommand)}}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Application\+::\+Evaluate (
+\begin{DoxyParamCaption}
+\item[{string}]{input, }
+\item[{string \&}]{result, }
+\item[{unique\+\_\+ptr$<$ {\bf C\+Command} $>$ \&}]{next\+Command}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCApplication_a89642c9a6de3ced8f1f77e4fed479e7c}{}\label{classCApplication_a89642c9a6de3ced8f1f77e4fed479e7c}
+\index{C\+Application@{C\+Application}!Get\+Input@{Get\+Input}}
+\index{Get\+Input@{Get\+Input}!C\+Application@{C\+Application}}
+\subsubsection[{\texorpdfstring{Get\+Input() const =0}{GetInput() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual string C\+Application\+::\+Get\+Input (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{classCApplication_a69a1706c3cf78d8dad7e16734e92b3f6}{}\label{classCApplication_a69a1706c3cf78d8dad7e16734e92b3f6}
+
+
+Implemented in \hyperlink{classCApplicationConsole_a0af959fae7259bf81f7855985e16adff}{C\+Application\+Console}.
+
+\index{C\+Application@{C\+Application}!Parse\+Command@{Parse\+Command}}
+\index{Parse\+Command@{Parse\+Command}!C\+Application@{C\+Application}}
+\subsubsection[{\texorpdfstring{Parse\+Command(string \&input, unique\+\_\+ptr$<$ C\+Command $>$ \&next\+Command)=0}{ParseCommand(string &input, unique_ptr< CCommand > &nextCommand)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\+Application\+::\+Parse\+Command (
+\begin{DoxyParamCaption}
+\item[{string \&}]{input, }
+\item[{unique\+\_\+ptr$<$ {\bf C\+Command} $>$ \&}]{next\+Command}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{classCApplication_ae2fe7afcd1a15cdbf5eb97a69b7731e6}{}\label{classCApplication_ae2fe7afcd1a15cdbf5eb97a69b7731e6}
+
+
+Implemented in \hyperlink{classCApplicationConsole_ae2ee7085fd41f96607d37673ed705e76}{C\+Application\+Console}.
+
+\index{C\+Application@{C\+Application}!Print\+Instructions@{Print\+Instructions}}
+\index{Print\+Instructions@{Print\+Instructions}!C\+Application@{C\+Application}}
+\subsubsection[{\texorpdfstring{Print\+Instructions() const =0}{PrintInstructions() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Application\+::\+Print\+Instructions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{classCApplication_a308f31081c5a2b880c1bc96dbac3260d}{}\label{classCApplication_a308f31081c5a2b880c1bc96dbac3260d}
+
+
+Implemented in \hyperlink{classCApplicationConsole_a77c169050d8faff5ff4019d3204e6ff8}{C\+Application\+Console}.
+
+\index{C\+Application@{C\+Application}!Run@{Run}}
+\index{Run@{Run}!C\+Application@{C\+Application}}
+\subsubsection[{\texorpdfstring{Run()}{Run()}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Application\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCApplication_aa069063a23e53ea9858995f3ca34d6fb}{}\label{classCApplication_aa069063a23e53ea9858995f3ca34d6fb}
+\index{C\+Application@{C\+Application}!Show\+Matrix@{Show\+Matrix}}
+\index{Show\+Matrix@{Show\+Matrix}!C\+Application@{C\+Application}}
+\subsubsection[{\texorpdfstring{Show\+Matrix(unique\+\_\+ptr$<$ C\+Matrix $>$ \&matrix) const =0}{ShowMatrix(unique_ptr< CMatrix > &matrix) const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Application\+::\+Show\+Matrix (
+\begin{DoxyParamCaption}
+\item[{unique\+\_\+ptr$<$ {\bf C\+Matrix} $>$ \&}]{matrix}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classCApplication_a8d6b41c059da7fbd01a4857bcb1c06e0}{}\label{classCApplication_a8d6b41c059da7fbd01a4857bcb1c06e0}
+
+
+Implemented in \hyperlink{classCApplicationConsole_a7c024277c01acd4cc575ad64ffd07a22}{C\+Application\+Console}.
+
+\index{C\+Application@{C\+Application}!Show\+Msg@{Show\+Msg}}
+\index{Show\+Msg@{Show\+Msg}!C\+Application@{C\+Application}}
+\subsubsection[{\texorpdfstring{Show\+Msg(string msg) const =0}{ShowMsg(string msg) const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Application\+::\+Show\+Msg (
+\begin{DoxyParamCaption}
+\item[{string}]{msg}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classCApplication_ab88b3a17d0d6e5c14eba88fb263c9857}{}\label{classCApplication_ab88b3a17d0d6e5c14eba88fb263c9857}
+
+
+Implemented in \hyperlink{classCApplicationConsole_a32152dd2a1793b20fd03ba3179d8e22e}{C\+Application\+Console}.
+
+\index{C\+Application@{C\+Application}!Show\+Result@{Show\+Result}}
+\index{Show\+Result@{Show\+Result}!C\+Application@{C\+Application}}
+\subsubsection[{\texorpdfstring{Show\+Result(string result)=0}{ShowResult(string result)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Application\+::\+Show\+Result (
+\begin{DoxyParamCaption}
+\item[{string}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{classCApplication_a13cc1aa745b5b4c4d7e02a77a1bbdac8}{}\label{classCApplication_a13cc1aa745b5b4c4d7e02a77a1bbdac8}
+
+
+Implemented in \hyperlink{classCApplicationConsole_a311cfc33ddf26daa5f6a759a335ea007}{C\+Application\+Console}.
+
+\index{C\+Application@{C\+Application}!Show\+Var\+Name@{Show\+Var\+Name}}
+\index{Show\+Var\+Name@{Show\+Var\+Name}!C\+Application@{C\+Application}}
+\subsubsection[{\texorpdfstring{Show\+Var\+Name(string name) const =0}{ShowVarName(string name) const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Application\+::\+Show\+Var\+Name (
+\begin{DoxyParamCaption}
+\item[{string}]{name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classCApplication_a5994ba2f7b8a5d88290040616765baaa}{}\label{classCApplication_a5994ba2f7b8a5d88290040616765baaa}
+
+
+Implemented in \hyperlink{classCApplicationConsole_a20c9dbcb6b56834b28ff9909f446848f}{C\+Application\+Console}.
+
+
+
+\subsection{Member Data Documentation}
+\index{C\+Application@{C\+Application}!m\+\_\+\+Memory@{m\+\_\+\+Memory}}
+\index{m\+\_\+\+Memory@{m\+\_\+\+Memory}!C\+Application@{C\+Application}}
+\subsubsection[{\texorpdfstring{m\+\_\+\+Memory}{m_Memory}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Memory} C\+Application\+::m\+\_\+\+Memory\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classCApplication_a338eac28666e5f1577716eb7097ffadb}{}\label{classCApplication_a338eac28666e5f1577716eb7097ffadb}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{CApplication_8h}{C\+Application.\+h}\end{DoxyCompactItemize}

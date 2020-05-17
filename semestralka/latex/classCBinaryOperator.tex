@@ -1,0 +1,99 @@
+\hypertarget{classCBinaryOperator}{}\section{C\+Binary\+Operator Class Reference}
+\label{classCBinaryOperator}\index{C\+Binary\+Operator@{C\+Binary\+Operator}}
+
+
+{\ttfamily \#include $<$C\+Binary\+Operator.\+h$>$}
+
+
+
+Inheritance diagram for C\+Binary\+Operator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCBinaryOperator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+Binary\+Operator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classCBinaryOperator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCBinaryOperator_a0c0b5652ad1d96cc6922a47d7366355f}{C\+Binary\+Operator} ()=default
+\item 
+\hyperlink{classCBinaryOperator_a3db57fcfac0ad4c3c2b29a257bdd6fee}{C\+Binary\+Operator} (shared\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ \&left, shared\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ \&right)
+\item 
+virtual \hyperlink{classCBinaryOperator_a55459c4c7b5102ae41f77f7a1ae60e75}{$\sim$\+C\+Binary\+Operator} ()=default
+\item 
+virtual \hyperlink{classCMatrix}{C\+Matrix} $\ast$ \hyperlink{classCBinaryOperator_aea1eef33f83a4e395091daa0637f4c77}{Evaluate} (\hyperlink{classCMemory}{C\+Memory} \&memory)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+shared\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ \hyperlink{classCBinaryOperator_a05f24960fb48975c94b462da76aa9ad0}{m\+\_\+\+Left}
+\item 
+shared\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ \hyperlink{classCBinaryOperator_a5588bc0fa7e3ca62ef3dbdb23d96f920}{m\+\_\+\+Right}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{C\+Binary\+Operator@{C\+Binary\+Operator}!C\+Binary\+Operator@{C\+Binary\+Operator}}
+\index{C\+Binary\+Operator@{C\+Binary\+Operator}!C\+Binary\+Operator@{C\+Binary\+Operator}}
+\subsubsection[{\texorpdfstring{C\+Binary\+Operator()=default}{CBinaryOperator()=default}}]{\setlength{\rightskip}{0pt plus 5cm}C\+Binary\+Operator\+::\+C\+Binary\+Operator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\hypertarget{classCBinaryOperator_a0c0b5652ad1d96cc6922a47d7366355f}{}\label{classCBinaryOperator_a0c0b5652ad1d96cc6922a47d7366355f}
+\index{C\+Binary\+Operator@{C\+Binary\+Operator}!C\+Binary\+Operator@{C\+Binary\+Operator}}
+\index{C\+Binary\+Operator@{C\+Binary\+Operator}!C\+Binary\+Operator@{C\+Binary\+Operator}}
+\subsubsection[{\texorpdfstring{C\+Binary\+Operator(shared\+\_\+ptr$<$ C\+Matrix $>$ \&left, shared\+\_\+ptr$<$ C\+Matrix $>$ \&right)}{CBinaryOperator(shared_ptr< CMatrix > &left, shared_ptr< CMatrix > &right)}}]{\setlength{\rightskip}{0pt plus 5cm}C\+Binary\+Operator\+::\+C\+Binary\+Operator (
+\begin{DoxyParamCaption}
+\item[{shared\+\_\+ptr$<$ {\bf C\+Matrix} $>$ \&}]{left, }
+\item[{shared\+\_\+ptr$<$ {\bf C\+Matrix} $>$ \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCBinaryOperator_a3db57fcfac0ad4c3c2b29a257bdd6fee}{}\label{classCBinaryOperator_a3db57fcfac0ad4c3c2b29a257bdd6fee}
+\index{C\+Binary\+Operator@{C\+Binary\+Operator}!````~C\+Binary\+Operator@{$\sim$\+C\+Binary\+Operator}}
+\index{````~C\+Binary\+Operator@{$\sim$\+C\+Binary\+Operator}!C\+Binary\+Operator@{C\+Binary\+Operator}}
+\subsubsection[{\texorpdfstring{$\sim$\+C\+Binary\+Operator()=default}{~CBinaryOperator()=default}}]{\setlength{\rightskip}{0pt plus 5cm}virtual C\+Binary\+Operator\+::$\sim$\+C\+Binary\+Operator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}\hypertarget{classCBinaryOperator_a55459c4c7b5102ae41f77f7a1ae60e75}{}\label{classCBinaryOperator_a55459c4c7b5102ae41f77f7a1ae60e75}
+
+
+\subsection{Member Function Documentation}
+\index{C\+Binary\+Operator@{C\+Binary\+Operator}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!C\+Binary\+Operator@{C\+Binary\+Operator}}
+\subsubsection[{\texorpdfstring{Evaluate(\+C\+Memory \&memory)=0}{Evaluate(CMemory &memory)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf C\+Matrix}$\ast$ C\+Binary\+Operator\+::\+Evaluate (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Memory} \&}]{memory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classCBinaryOperator_aea1eef33f83a4e395091daa0637f4c77}{}\label{classCBinaryOperator_aea1eef33f83a4e395091daa0637f4c77}
+
+
+Implements \hyperlink{classCOperator_a45c8237c879a44f839247badefe6eade}{C\+Operator}.
+
+
+
+Implemented in \hyperlink{classCAddOperator_a7fb8e83b7c5831e3f2e6e8544af49523}{C\+Add\+Operator}, \hyperlink{classCMergeNextToOperator_ab914c0ae204819b6f5e9d9857acd1854}{C\+Merge\+Next\+To\+Operator}, \hyperlink{classCMergeUnderOperator_a4b17a385b3f261bd9a5ab3cb4403e9fb}{C\+Merge\+Under\+Operator}, \hyperlink{classCMultiplyOperator_a328c99de6116b51ef3aa52705a748a85}{C\+Multiply\+Operator}, and \hyperlink{classCSubtractOperator_a09c75b8486a0056f82dcec6a5f9fcc58}{C\+Subtract\+Operator}.
+
+
+
+\subsection{Member Data Documentation}
+\index{C\+Binary\+Operator@{C\+Binary\+Operator}!m\+\_\+\+Left@{m\+\_\+\+Left}}
+\index{m\+\_\+\+Left@{m\+\_\+\+Left}!C\+Binary\+Operator@{C\+Binary\+Operator}}
+\subsubsection[{\texorpdfstring{m\+\_\+\+Left}{m_Left}}]{\setlength{\rightskip}{0pt plus 5cm}shared\+\_\+ptr$<${\bf C\+Matrix}$>$ C\+Binary\+Operator\+::m\+\_\+\+Left\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classCBinaryOperator_a05f24960fb48975c94b462da76aa9ad0}{}\label{classCBinaryOperator_a05f24960fb48975c94b462da76aa9ad0}
+\index{C\+Binary\+Operator@{C\+Binary\+Operator}!m\+\_\+\+Right@{m\+\_\+\+Right}}
+\index{m\+\_\+\+Right@{m\+\_\+\+Right}!C\+Binary\+Operator@{C\+Binary\+Operator}}
+\subsubsection[{\texorpdfstring{m\+\_\+\+Right}{m_Right}}]{\setlength{\rightskip}{0pt plus 5cm}shared\+\_\+ptr$<${\bf C\+Matrix}$>$ C\+Binary\+Operator\+::m\+\_\+\+Right\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classCBinaryOperator_a5588bc0fa7e3ca62ef3dbdb23d96f920}{}\label{classCBinaryOperator_a5588bc0fa7e3ca62ef3dbdb23d96f920}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{CBinaryOperator_8h}{C\+Binary\+Operator.\+h}\end{DoxyCompactItemize}

@@ -7,9 +7,13 @@
 
 
 #include <iostream>
-#include "CEliminate.h"
+#include "CMatrix.h"
+#include "elimination.h"
 
-class CGaussElimination: public CEliminate {
+
+
+
+class CGaussElimination{
 public:
     void operator()(shared_ptr<CMatrix> & matrix, vector<shared_ptr<CMatrix>> & eliminationProcess){
         std::cout<<"in\n";

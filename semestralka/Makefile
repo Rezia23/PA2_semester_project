@@ -32,7 +32,8 @@ $(BUILD_DIR)/%.o: src/%.cpp
 clean:
 	rm -rf $(TARGET) $(BUILD_DIR)/ 2>/dev/null
 
-
+doc: doc src/*.h
+	doxygen Doxyfile
 
 # Dependencies
 	$(BUILD_DIR)/CApplicationConsole.o: src/CApplicationConsole.cpp \
