@@ -7,11 +7,12 @@
 
 
 #include "CMatrix.h"
-#include "CCommand.h"
 #include "CSubtractOperator.h"
-class CCommandSubtract : public CCommand {
+#include "CCommandGetMatrix.h"
+
+class CCommandSubtract : public CCommandGetMatrix {
 public:
-    CCommandSubtract() : CCommand() {}
+    CCommandSubtract() =default;
 
     ~CCommandSubtract() override = default;
 

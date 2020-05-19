@@ -7,12 +7,12 @@
 
 #include <utility>
 
-#include "CCommand.h"
+#include "CCommandGetMatrix.h"
 #include "CCutOperator.h"
 
-class CCommandCut : public CCommand {
+class CCommandCut : public CCommandGetMatrix {
 public:
-    CCommandCut() : CCommand() {}
+    CCommandCut() = default;
 
     ~CCommandCut() override = default;
 

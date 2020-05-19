@@ -5,12 +5,12 @@
 #ifndef SEMESTRALKA_CCOMMANDGAUSSELIMINATION_H
 #define SEMESTRALKA_CCOMMANDGAUSSELIMINATION_H
 
-#include "CCommand.h"
+#include "CCommandGetMatrix.h"
 #include "CGaussEliminationOperator.h"
 
-class CCommandGaussElimination:public CCommand{
+class CCommandGaussElimination:public CCommandGetMatrix{
 public:
-    CCommandGaussElimination() : CCommand() {}
+    CCommandGaussElimination() = default;
     ~CCommandGaussElimination() override = default;
 
     bool Execute(CMemory & memory) override {

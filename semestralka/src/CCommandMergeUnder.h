@@ -5,12 +5,12 @@
 #ifndef SEMESTRALKA_CCOMMANDMERGEUNDER_H
 #define SEMESTRALKA_CCOMMANDMERGEUNDER_H
 
-#include "CCommand.h"
+#include "CCommandGetMatrix.h"
 #include "CMergeUnderOperator.h"
 
-class CCommandMergeUnder : public CCommand {
+class CCommandMergeUnder : public CCommandGetMatrix {
 public:
-    CCommandMergeUnder() : CCommand() {}
+    CCommandMergeUnder() = default;
 
     ~CCommandMergeUnder() override = default;
 

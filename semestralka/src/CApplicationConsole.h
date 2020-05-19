@@ -152,7 +152,7 @@ private:
             if (!LoadOperandName(input, name)) {
                 return false;
             }
-            unique_ptr<CCommand> subCommand;
+            unique_ptr<CCommandGetMatrix> subCommand;
             if (!ParseCommand(input, subCommand)) {
                 return false;
             }

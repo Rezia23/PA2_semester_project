@@ -5,12 +5,12 @@
 #ifndef SEMESTRALKA_CCOMMANDMULTIPLY_H
 #define SEMESTRALKA_CCOMMANDMULTIPLY_H
 
-#include "CCommand.h"
+#include "CCommandGetMatrix.h"
 #include "CMultiplyOperator.h"
 
-class CCommandMultiply : public CCommand {
+class CCommandMultiply : public CCommandGetMatrix {
 public:
-    CCommandMultiply() : CCommand() {}
+    CCommandMultiply() = default;
 
     ~CCommandMultiply() override = default;
 

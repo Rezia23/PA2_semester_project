@@ -7,12 +7,12 @@
 
 
 
-#include "CCommand.h"
+#include "CCommandGetMatrix.h"
 #include "CAddOperator.h"
 
-class CCommandAdd : public CCommand {
+class CCommandAdd : public CCommandGetMatrix {
 public:
-    CCommandAdd() : CCommand() {}
+    CCommandAdd() = default;
 
     ~CCommandAdd() override = default;
 

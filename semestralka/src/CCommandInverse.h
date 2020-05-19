@@ -6,12 +6,12 @@
 #define SEMESTRALKA_CCOMMANDINVERSE_H
 
 
-#include "CCommand.h"
+#include "CCommandGetMatrix.h"
 #include "CInverseOperator.h"
 
-class CCommandInverse : public CCommand {
+class CCommandInverse : public CCommandGetMatrix {
 public:
-    CCommandInverse() : CCommand() {}
+    CCommandInverse() = default;
 
     ~CCommandInverse() override = default;
 
