@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['makediagonalsto1',['MakeDiagonalsTo1',['../classCInverseOperator.html#accadb5f47ca24653afdfc77e76c7d344',1,'CInverseOperator::MakeDiagonalsTo1()'],['../classCMatrixStandard.html#a8c74a094a4ead185e6fe7749902ffbcd',1,'CMatrixStandard::MakeDiagonalsTo1()']]],
-  ['mergenextto',['MergeNextTo',['../classCMatrix.html#a2c6c995b372eae3f9544370dda681b48',1,'CMatrix::MergeNextTo()'],['../classCMatrixSparse.html#a7779790e0646bf573afce21c0fc4e1b1',1,'CMatrixSparse::MergeNextTo()'],['../classCMatrixStandard.html#ab20191ea5e797c99361f254696d8d351',1,'CMatrixStandard::MergeNextTo()']]]
+  ['operator_28_29',['operator()',['../classCDeterminantCalculator.html#a1f86ba4955b9cabf3042b96be7563a10',1,'CDeterminantCalculator::operator()()'],['../classCOrderCalculator.html#abe4e4728a60159e28c80da4cd979a60d',1,'COrderCalculator::operator()()']]],
+  ['operator_3d_3d',['operator==',['../classCMatrix.html#a2f26b64fa654512fe2a4e954f18e1f1c',1,'CMatrix']]]
 ];

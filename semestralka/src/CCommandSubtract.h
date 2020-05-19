@@ -23,7 +23,7 @@ public:
             return false;
         }
         m_Result = "Result of subtraction is:\n";
-        CSubtractOperator op (memory.m_Variables.at(m_Operand1),memory.m_Variables.at(m_Operand2));
+        CSubtractOperator op (memory.At(m_Operand1),memory.At(m_Operand2));
         try{
             m_ResultMatrix = unique_ptr<CMatrix>(op.Evaluate(memory));
             m_Result += m_ResultMatrix->ToString();

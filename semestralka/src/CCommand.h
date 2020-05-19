@@ -18,7 +18,6 @@ public:
 
     CCommand() = default;
 
-    //todo check if can be executed (conditions for operations)
     virtual bool Execute(CMemory & memory) = 0;
 
     virtual ~CCommand() = default;

@@ -19,6 +19,18 @@ public:
     bool ExistsVariable(string name) const {
         return m_Variables.find(name)!= m_Variables.end();
     }
+    shared_ptr<CMatrix> & At(const string & name) {
+        return m_Variables.at(name);
+    }
+
+    void Insert(const string & name, shared_ptr<CMatrix> matrix) {
+        if(ExistsVariable(name)){
+            m_Variables.at(name) = matrix;
+        }else{
+            m_Variables[name] = matrix;
+        }
+    }
+
 };
 
 

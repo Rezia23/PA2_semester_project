@@ -10,8 +10,8 @@
 #include "CMatrixStandard.h"
 #include "CMergeNextToOperation.h"
 #include "CCutOperator.h"
-#include "CGetDeterminant.h"
-#include "elimination.h"
+#include "CDeterminantCalculator.h"
+
 
 class CInverseOperator:  public CUnaryOperator {
 public:
@@ -65,8 +65,7 @@ public:
         if (m_Operand->m_NumRows != m_Operand->m_NumCols) {
            throw runtime_error("Inverse does not exist.");
         }
-        //todo: check if inverse exists (non zero determinant)
-        CGetDeterminant det;
+        CDeterminantCalculator det;
         if(det(m_Operand)==0){
             throw runtime_error("Inverse does not exist.");
         }

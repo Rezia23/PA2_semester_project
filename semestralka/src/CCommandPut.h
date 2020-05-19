@@ -26,7 +26,7 @@ public:
         }
         m_Result = "To matrix " + m_VariableName + " has been put:\n";
         m_Result += m_Subcommand->m_ResultMatrix->ToString();
-        memory.m_Variables[m_VariableName] = move(m_Subcommand->m_ResultMatrix);
+        memory.Insert(m_VariableName, move(m_Subcommand->m_ResultMatrix));
         return true;
     }
 

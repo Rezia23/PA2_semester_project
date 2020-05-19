@@ -1,9 +1,10 @@
 <map id="src/CCutOperator.cpp" name="src/CCutOperator.cpp">
-<area shape="rect" id="node2" href="$CCutOperator_8h.html" title="CCutOperator.h" alt="" coords="103,80,217,107"/>
-<area shape="rect" id="node4" href="$CUnaryOperator_8h.html" title="CUnaryOperator.h" alt="" coords="296,155,424,181"/>
-<area shape="rect" id="node10" href="$CMatrixStandard_8h.html" title="CMatrixStandard.h" alt="" coords="95,155,225,181"/>
-<area shape="rect" id="node5" href="$COperator_8h.html" title="COperator.h" alt="" coords="227,379,320,405"/>
-<area shape="rect" id="node6" href="$CMemory_8h.html" title="CMemory.h" alt="" coords="228,453,319,480"/>
-<area shape="rect" id="node11" href="$CMatrix_8h.html" title="CMatrix.h" alt="" coords="134,304,213,331"/>
-<area shape="rect" id="node14" href="$CMatrixSparse_8h.html" title="CMatrixSparse.h" alt="" coords="197,229,317,256"/>
+<area shape="rect" id="node2" href="$CCutOperator_8h.html" title="CCutOperator.h" alt="" coords="113,80,228,107"/>
+<area shape="rect" id="node4" href="$CUnaryOperator_8h.html" title="CUnaryOperator.h" alt="" coords="5,155,133,181"/>
+<area shape="rect" id="node10" href="$CMatrixStandard_8h.html" title="CMatrixStandard.h" alt="" coords="217,155,348,181"/>
+<area shape="rect" id="node5" href="$COperator_8h.html" title="COperator.h" alt="" coords="112,379,205,405"/>
+<area shape="rect" id="node6" href="$CMemory_8h.html" title="CMemory.h" alt="" coords="113,453,204,480"/>
+<area shape="rect" id="node11" href="$CMatrix_8h.html" title="CMatrix.h" alt="" coords="243,304,322,331"/>
+<area shape="rect" id="node14" href="$CMatrixSparse_8h.html" title="CMatrixSparse.h" alt="" coords="355,229,475,256"/>
+<area shape="rect" id="node16" href="$elimination_8h.html" title="elimination.h" alt="" coords="235,229,330,256"/>
 </map>

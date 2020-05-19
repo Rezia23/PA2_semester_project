@@ -1,7 +1,8 @@
 <map id="src/CMatrixStandard.cpp" name="src/CMatrixStandard.cpp">
-<area shape="rect" id="node6" href="$CMatrixStandard_8h.html" title="CMatrixStandard.h" alt="" coords="209,80,340,107"/>
-<area shape="rect" id="node14" href="$CMatrixSparse_8h.html" title="CMatrixSparse.h" alt="" coords="105,155,225,181"/>
-<area shape="rect" id="node7" href="$CMatrix_8h.html" title="CMatrix.h" alt="" coords="253,229,331,256"/>
-<area shape="rect" id="node9" href="$COperator_8h.html" title="COperator.h" alt="" coords="323,304,416,331"/>
-<area shape="rect" id="node10" href="$CMemory_8h.html" title="CMemory.h" alt="" coords="277,379,368,405"/>
+<area shape="rect" id="node6" href="$CMatrixStandard_8h.html" title="CMatrixStandard.h" alt="" coords="279,80,409,107"/>
+<area shape="rect" id="node7" href="$CMatrix_8h.html" title="CMatrix.h" alt="" coords="271,229,350,256"/>
+<area shape="rect" id="node14" href="$CMatrixSparse_8h.html" title="CMatrixSparse.h" alt="" coords="67,155,187,181"/>
+<area shape="rect" id="node15" href="$elimination_8h.html" title="elimination.h" alt="" coords="211,155,306,181"/>
+<area shape="rect" id="node9" href="$COperator_8h.html" title="COperator.h" alt="" coords="164,304,257,331"/>
+<area shape="rect" id="node10" href="$CMemory_8h.html" title="CMemory.h" alt="" coords="165,379,256,405"/>
 </map>

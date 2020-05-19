@@ -1,5 +1,4 @@
 <map id="CInverseOperator" name="CInverseOperator">
-<area shape="rect" id="node2" href="$classCEliminate.html" title="CEliminate" alt="" coords="5,80,92,107"/>
-<area shape="rect" id="node3" href="$classCUnaryOperator.html" title="CUnaryOperator" alt="" coords="117,80,234,107"/>
-<area shape="rect" id="node4" href="$classCOperator.html" title="COperator" alt="" coords="134,5,217,32"/>
+<area shape="rect" id="node2" href="$classCUnaryOperator.html" title="CUnaryOperator" alt="" coords="9,80,127,107"/>
+<area shape="rect" id="node3" href="$classCOperator.html" title="COperator" alt="" coords="27,5,109,32"/>
 </map>

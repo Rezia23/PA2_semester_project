@@ -25,20 +25,55 @@ Collaboration diagram for C\+Gauss\+Elimination\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classCGaussElimination_af835c42ac9eb2509953a03f1e68aac43}{operator()} (shared\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ \&matrix, vector$<$ shared\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$$>$ \&elimination\+Process)
+\hyperlink{classCGaussElimination_a4b7fb086fea498cfd89d0de37349881e}{C\+Gauss\+Elimination} (shared\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ \&operand)
+\item 
+\hyperlink{classCMatrix}{C\+Matrix} $\ast$ \hyperlink{classCGaussElimination_afa7e98ab6cee82e0bd71634576b5d8b4}{Evaluate} (\hyperlink{classCMemory}{C\+Memory} \&memory) override
+\item 
+vector$<$ shared\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ $>$ \hyperlink{classCGaussElimination_a14c0044d73445a7cd1f5efe6edf280cb}{Get\+Elimination\+Process} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ shared\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ $>$ \hyperlink{classCGaussElimination_a82f7f27713bf7b300d6f858013cbe04b}{m\+\_\+\+Elimination\+Process}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
-\subsection{Member Function Documentation}
-\index{C\+Gauss\+Elimination@{C\+Gauss\+Elimination}!operator()@{operator()}}
-\index{operator()@{operator()}!C\+Gauss\+Elimination@{C\+Gauss\+Elimination}}
-\subsubsection[{\texorpdfstring{operator()(shared\+\_\+ptr$<$ C\+Matrix $>$ \&matrix, vector$<$ shared\+\_\+ptr$<$ C\+Matrix $>$$>$ \&elimination\+Process)}{operator()(shared_ptr< CMatrix > &matrix, vector< shared_ptr< CMatrix >> &eliminationProcess)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Gauss\+Elimination\+::operator() (
+\subsection{Constructor \& Destructor Documentation}
+\index{C\+Gauss\+Elimination@{C\+Gauss\+Elimination}!C\+Gauss\+Elimination@{C\+Gauss\+Elimination}}
+\index{C\+Gauss\+Elimination@{C\+Gauss\+Elimination}!C\+Gauss\+Elimination@{C\+Gauss\+Elimination}}
+\subsubsection[{\texorpdfstring{C\+Gauss\+Elimination(shared\+\_\+ptr$<$ C\+Matrix $>$ \&operand)}{CGaussElimination(shared_ptr< CMatrix > &operand)}}]{\setlength{\rightskip}{0pt plus 5cm}C\+Gauss\+Elimination\+::\+C\+Gauss\+Elimination (
 \begin{DoxyParamCaption}
-\item[{shared\+\_\+ptr$<$ {\bf C\+Matrix} $>$ \&}]{matrix, }
-\item[{vector$<$ shared\+\_\+ptr$<$ {\bf C\+Matrix} $>$$>$ \&}]{elimination\+Process}
+\item[{shared\+\_\+ptr$<$ {\bf C\+Matrix} $>$ \&}]{operand}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCGaussElimination_af835c42ac9eb2509953a03f1e68aac43}{}\label{classCGaussElimination_af835c42ac9eb2509953a03f1e68aac43}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCGaussElimination_a4b7fb086fea498cfd89d0de37349881e}{}\label{classCGaussElimination_a4b7fb086fea498cfd89d0de37349881e}
+
+
+\subsection{Member Function Documentation}
+\index{C\+Gauss\+Elimination@{C\+Gauss\+Elimination}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!C\+Gauss\+Elimination@{C\+Gauss\+Elimination}}
+\subsubsection[{\texorpdfstring{Evaluate(\+C\+Memory \&memory) override}{Evaluate(CMemory &memory) override}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Matrix}$\ast$ C\+Gauss\+Elimination\+::\+Evaluate (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Memory} \&}]{memory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCGaussElimination_afa7e98ab6cee82e0bd71634576b5d8b4}{}\label{classCGaussElimination_afa7e98ab6cee82e0bd71634576b5d8b4}
+
+
+Implements \hyperlink{classCUnaryOperator_a17b01d9de023a58642f6fd82f214cde0}{C\+Unary\+Operator}.
+
+\index{C\+Gauss\+Elimination@{C\+Gauss\+Elimination}!Get\+Elimination\+Process@{Get\+Elimination\+Process}}
+\index{Get\+Elimination\+Process@{Get\+Elimination\+Process}!C\+Gauss\+Elimination@{C\+Gauss\+Elimination}}
+\subsubsection[{\texorpdfstring{Get\+Elimination\+Process()}{GetEliminationProcess()}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$shared\+\_\+ptr$<${\bf C\+Matrix}$>$ $>$ C\+Gauss\+Elimination\+::\+Get\+Elimination\+Process (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCGaussElimination_a14c0044d73445a7cd1f5efe6edf280cb}{}\label{classCGaussElimination_a14c0044d73445a7cd1f5efe6edf280cb}
+
+
+\subsection{Member Data Documentation}
+\index{C\+Gauss\+Elimination@{C\+Gauss\+Elimination}!m\+\_\+\+Elimination\+Process@{m\+\_\+\+Elimination\+Process}}
+\index{m\+\_\+\+Elimination\+Process@{m\+\_\+\+Elimination\+Process}!C\+Gauss\+Elimination@{C\+Gauss\+Elimination}}
+\subsubsection[{\texorpdfstring{m\+\_\+\+Elimination\+Process}{m_EliminationProcess}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$shared\+\_\+ptr$<${\bf C\+Matrix}$>$ $>$ C\+Gauss\+Elimination\+::m\+\_\+\+Elimination\+Process\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCGaussElimination_a82f7f27713bf7b300d6f858013cbe04b}{}\label{classCGaussElimination_a82f7f27713bf7b300d6f858013cbe04b}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

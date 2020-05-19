@@ -24,7 +24,7 @@ public:
         }
         m_Result = "Inversion of " + m_VarName + " is:\n";
 
-        CInverseOperator op (memory.m_Variables.at(m_VarName));
+        CInverseOperator op (memory.At(m_VarName));
         try{
             m_ResultMatrix = unique_ptr<CMatrix>(op.Evaluate(memory));
             m_Result += m_ResultMatrix->ToString();

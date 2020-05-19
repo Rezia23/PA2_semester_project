@@ -1,5 +1,5 @@
 //
-// Created by terez on 07.05.2020.
+// Created by terez on 19.05.2020.
 //
 
 #include "CCommandGaussElimination.h"

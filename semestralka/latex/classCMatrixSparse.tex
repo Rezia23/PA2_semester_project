@@ -27,6 +27,8 @@ Collaboration diagram for C\+Matrix\+Sparse\+:\nopagebreak
 \item 
 \hyperlink{classCMatrixSparse_a8b07f6b861304fccebc6229968a0baa0}{C\+Matrix\+Sparse} ()
 \item 
+\hyperlink{classCMatrixSparse_ab2dc89566f3cdcb626a04fb4c89db926}{C\+Matrix\+Sparse} (const shared\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ \&other)
+\item 
 \hyperlink{classCMatrixSparse_a154a1f5510bcedba74fec1eeb6ab4af6}{C\+Matrix\+Sparse} (map$<$ pair$<$ size\+\_\+t, size\+\_\+t $>$, double $>$ matrix, size\+\_\+t num\+Rows, size\+\_\+t num\+Cols)
 \item 
 \hyperlink{classCMatrixSparse_a2477eb8b3d46d83f067fe3c6fcb37772}{C\+Matrix\+Sparse} (vector$<$ vector$<$ double $>$$>$ matrix)
@@ -46,12 +48,6 @@ virtual void \hyperlink{classCMatrixSparse_a675982946fbb61169c625e5eb5d2d2bd}{Se
 void \hyperlink{classCMatrixSparse_a83cd4fce61394f6c2b290bf06d0efd0a}{Resize} (std\+::size\+\_\+t num\+Rows, std\+::size\+\_\+t num\+Cols) override
 \item 
 virtual void \hyperlink{classCMatrixSparse_acf4a7e41666e6fb29e629c3a62a7fd8f}{Print} () const override
-\item 
-virtual void \hyperlink{classCMatrixSparse_a38c51df51129597dd0e837a20f5c0855}{Change\+To\+Identity} (int size) override
-\item 
-virtual \hyperlink{classCMatrixSparse}{C\+Matrix\+Sparse} $\ast$ \hyperlink{classCMatrixSparse_a7779790e0646bf573afce21c0fc4e1b1}{Merge\+Next\+To} (const unique\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ \&other) const override
-\item 
-virtual void \hyperlink{classCMatrixSparse_ac06a94f215245e118df91f16843d148b}{Cut} (size\+\_\+t num\+Rows, size\+\_\+t num\+Cols, pair$<$ size\+\_\+t, size\+\_\+t $>$ start\+Point) override
 \item 
 virtual bool \hyperlink{classCMatrixSparse_a780df7daf904384dadb5f3cd9bd81e40}{Should\+Be\+Sparse} () const 
 \item 
@@ -73,6 +69,13 @@ map$<$ pair$<$ size\+\_\+t, size\+\_\+t $>$, double $>$ \hyperlink{classCMatrixS
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCMatrixSparse_a8b07f6b861304fccebc6229968a0baa0}{}\label{classCMatrixSparse_a8b07f6b861304fccebc6229968a0baa0}
+\index{C\+Matrix\+Sparse@{C\+Matrix\+Sparse}!C\+Matrix\+Sparse@{C\+Matrix\+Sparse}}
+\index{C\+Matrix\+Sparse@{C\+Matrix\+Sparse}!C\+Matrix\+Sparse@{C\+Matrix\+Sparse}}
+\subsubsection[{\texorpdfstring{C\+Matrix\+Sparse(const shared\+\_\+ptr$<$ C\+Matrix $>$ \&other)}{CMatrixSparse(const shared_ptr< CMatrix > &other)}}]{\setlength{\rightskip}{0pt plus 5cm}C\+Matrix\+Sparse\+::\+C\+Matrix\+Sparse (
+\begin{DoxyParamCaption}
+\item[{const shared\+\_\+ptr$<$ {\bf C\+Matrix} $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCMatrixSparse_ab2dc89566f3cdcb626a04fb4c89db926}{}\label{classCMatrixSparse_ab2dc89566f3cdcb626a04fb4c89db926}
 \index{C\+Matrix\+Sparse@{C\+Matrix\+Sparse}!C\+Matrix\+Sparse@{C\+Matrix\+Sparse}}
 \index{C\+Matrix\+Sparse@{C\+Matrix\+Sparse}!C\+Matrix\+Sparse@{C\+Matrix\+Sparse}}
 \subsubsection[{\texorpdfstring{C\+Matrix\+Sparse(map$<$ pair$<$ size\+\_\+t, size\+\_\+t $>$, double $>$ matrix, size\+\_\+t num\+Rows, size\+\_\+t num\+Cols)}{CMatrixSparse(map< pair< size_t, size_t >, double > matrix, size_t numRows, size_t numCols)}}]{\setlength{\rightskip}{0pt plus 5cm}C\+Matrix\+Sparse\+::\+C\+Matrix\+Sparse (
@@ -99,17 +102,6 @@ map$<$ pair$<$ size\+\_\+t, size\+\_\+t $>$, double $>$ \hyperlink{classCMatrixS
 
 
 \subsection{Member Function Documentation}
-\index{C\+Matrix\+Sparse@{C\+Matrix\+Sparse}!Change\+To\+Identity@{Change\+To\+Identity}}
-\index{Change\+To\+Identity@{Change\+To\+Identity}!C\+Matrix\+Sparse@{C\+Matrix\+Sparse}}
-\subsubsection[{\texorpdfstring{Change\+To\+Identity(int size) override}{ChangeToIdentity(int size) override}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Matrix\+Sparse\+::\+Change\+To\+Identity (
-\begin{DoxyParamCaption}
-\item[{int}]{size}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixSparse_a38c51df51129597dd0e837a20f5c0855}{}\label{classCMatrixSparse_a38c51df51129597dd0e837a20f5c0855}
-
-
-Implements \hyperlink{classCMatrix_acdea7a5c6e3d858c3556881217a43dc3}{C\+Matrix}.
-
 \index{C\+Matrix\+Sparse@{C\+Matrix\+Sparse}!Clone@{Clone}}
 \index{Clone@{Clone}!C\+Matrix\+Sparse@{C\+Matrix\+Sparse}}
 \subsubsection[{\texorpdfstring{Clone() const override}{Clone() const override}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Matrix}$\ast$ C\+Matrix\+Sparse\+::\+Clone (
@@ -131,19 +123,6 @@ Implements \hyperlink{classCMatrix_a42ac1f2a9e69919974febca17971be60}{C\+Matrix}
 
 
 Implements \hyperlink{classCMatrix_aca808472e6465738fae14a6ac244cf0b}{C\+Matrix}.
-
-\index{C\+Matrix\+Sparse@{C\+Matrix\+Sparse}!Cut@{Cut}}
-\index{Cut@{Cut}!C\+Matrix\+Sparse@{C\+Matrix\+Sparse}}
-\subsubsection[{\texorpdfstring{Cut(size\+\_\+t num\+Rows, size\+\_\+t num\+Cols, pair$<$ size\+\_\+t, size\+\_\+t $>$ start\+Point) override}{Cut(size_t numRows, size_t numCols, pair< size_t, size_t > startPoint) override}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Matrix\+Sparse\+::\+Cut (
-\begin{DoxyParamCaption}
-\item[{size\+\_\+t}]{num\+Rows, }
-\item[{size\+\_\+t}]{num\+Cols, }
-\item[{pair$<$ size\+\_\+t, size\+\_\+t $>$}]{start\+Point}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixSparse_ac06a94f215245e118df91f16843d148b}{}\label{classCMatrixSparse_ac06a94f215245e118df91f16843d148b}
-
-
-Implements \hyperlink{classCMatrix_adb39522856d76de67d5b29c418c45ccd}{C\+Matrix}.
 
 \index{C\+Matrix\+Sparse@{C\+Matrix\+Sparse}!Get\+Empty\+Instance@{Get\+Empty\+Instance}}
 \index{Get\+Empty\+Instance@{Get\+Empty\+Instance}!C\+Matrix\+Sparse@{C\+Matrix\+Sparse}}
@@ -167,17 +146,6 @@ Implements \hyperlink{classCMatrix_a7495208c2bd786fe46b130f6090e7eb5}{C\+Matrix}
 
 
 Implements \hyperlink{classCMatrix_afa0213e0a6c5823e6b6e786891cc5f2d}{C\+Matrix}.
-
-\index{C\+Matrix\+Sparse@{C\+Matrix\+Sparse}!Merge\+Next\+To@{Merge\+Next\+To}}
-\index{Merge\+Next\+To@{Merge\+Next\+To}!C\+Matrix\+Sparse@{C\+Matrix\+Sparse}}
-\subsubsection[{\texorpdfstring{Merge\+Next\+To(const unique\+\_\+ptr$<$ C\+Matrix $>$ \&other) const override}{MergeNextTo(const unique_ptr< CMatrix > &other) const override}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Matrix\+Sparse} $\ast$ C\+Matrix\+Sparse\+::\+Merge\+Next\+To (
-\begin{DoxyParamCaption}
-\item[{const unique\+\_\+ptr$<$ {\bf C\+Matrix} $>$ \&}]{other}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixSparse_a7779790e0646bf573afce21c0fc4e1b1}{}\label{classCMatrixSparse_a7779790e0646bf573afce21c0fc4e1b1}
-
-
-Implements \hyperlink{classCMatrix_a2c6c995b372eae3f9544370dda681b48}{C\+Matrix}.
 
 \index{C\+Matrix\+Sparse@{C\+Matrix\+Sparse}!Print@{Print}}
 \index{Print@{Print}!C\+Matrix\+Sparse@{C\+Matrix\+Sparse}}

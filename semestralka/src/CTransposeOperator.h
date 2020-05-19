@@ -13,7 +13,6 @@ public:
     CTransposeOperator(shared_ptr<CMatrix> & operand)
     :CUnaryOperator(operand){}
 
-    //todo: fix - cannot
     CMatrix * Evaluate(CMemory & memory) override{
         CMatrix * transposed = m_Operand->GetEmptyInstance();
         transposed->Resize(m_Operand->m_NumCols, m_Operand->m_NumRows);

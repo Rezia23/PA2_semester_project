@@ -24,8 +24,9 @@ public:
             m_Result = "Variable does not exist.";
             return false;
         }
-        m_Result = "Matrix " + m_VarName + " has been cut to:\n";
-        CCutOperator op (memory.m_Variables.at(m_VarName), m_NumRows, m_NumCols, m_StartPoint);
+        m_Result = "Matrix " + m_VarName + " would be cut to:\n";
+        shared_ptr<CMatrix> result = shared_ptr<CMatrix>(memory.At(m_VarName)->Clone());
+        CCutOperator op (result, m_NumRows, m_NumCols, m_StartPoint);
         try{
             m_ResultMatrix = unique_ptr<CMatrix>(op.Evaluate(memory));
             m_Result += m_ResultMatrix->ToString();
@@ -36,7 +37,7 @@ public:
         }
     }
 
-private:
+protected:
     string m_VarName;
     std::size_t m_NumRows{};
     std::size_t m_NumCols{};

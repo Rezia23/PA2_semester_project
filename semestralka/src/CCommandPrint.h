@@ -20,7 +20,7 @@ public:
             m_Result = "Variable " + m_VariableName + " does not exist.";
             return false;
         }
-        m_Result = memory.m_Variables.at(m_VariableName)->ToString();
+        m_Result = memory.At(m_VariableName)->ToString();
         return true;
     }
 

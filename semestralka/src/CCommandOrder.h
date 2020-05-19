@@ -6,7 +6,7 @@
 #define SEMESTRALKA_CCOMMANDORDER_H
 
 #include "CCommand.h"
-#include "GetOrder.h"
+#include "COrderCalculator.h"
 
 class CCommandOrder:public CCommand {
 public:
@@ -23,8 +23,8 @@ public:
         }
         m_Result = "Matrix " + m_VarName + " has order:\n";
 
-        GetOrder order;
-        m_Order = order(memory.m_Variables.at(m_VarName));
+        COrderCalculator order;
+        m_Order = order(memory.At(m_VarName));
         m_Result += to_string(m_Order);
         return true;
 

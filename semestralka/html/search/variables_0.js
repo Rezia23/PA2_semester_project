@@ -1,7 +1,7 @@
 var searchData=
 [
   ['m_5fdeterminant',['m_Determinant',['../classCCommandDeterminant.html#a4a8778e30170613ead5997c7b18438c8',1,'CCommandDeterminant']]],
-  ['m_5feliminationprocess',['m_EliminationProcess',['../classCCommandGaussElimination.html#aeed2262ff0fee51a256d0baa011c5e69',1,'CCommandGaussElimination']]],
+  ['m_5feliminationprocess',['m_EliminationProcess',['../classCGaussEliminationOperator.html#ab0e40cf3182ecc239ff1bcae10e4430e',1,'CGaussEliminationOperator']]],
   ['m_5fleft',['m_Left',['../classCBinaryOperator.html#a05f24960fb48975c94b462da76aa9ad0',1,'CBinaryOperator']]],
   ['m_5fmatrix',['m_Matrix',['../classCMatrixSparse.html#ae73efeb433e6dee92d020dba745f7fc3',1,'CMatrixSparse::m_Matrix()'],['../classCMatrixStandard.html#a4b0bafe59e3358e0d3fdbcc42b584dec',1,'CMatrixStandard::m_Matrix()']]],
   ['m_5fmemory',['m_Memory',['../classCApplication.html#a338eac28666e5f1577716eb7097ffadb',1,'CApplication']]],

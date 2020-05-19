@@ -119,12 +119,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7495208c2bd786fe46b130f6090e7eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb83eafeeea2025f9c84d172f1bb0f1e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrix.html#adb83eafeeea2025f9c84d172f1bb0f1e">Resize</a> (std::size_t numRows, std::size_t numCols)=0</td></tr>
 <tr class="separator:adb83eafeeea2025f9c84d172f1bb0f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c6c995b372eae3f9544370dda681b48"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classCMatrix.html">CMatrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrix.html#a2c6c995b372eae3f9544370dda681b48">MergeNextTo</a> (const unique_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;other) const =0</td></tr>
-<tr class="separator:a2c6c995b372eae3f9544370dda681b48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdea7a5c6e3d858c3556881217a43dc3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrix.html#acdea7a5c6e3d858c3556881217a43dc3">ChangeToIdentity</a> (int size)=0</td></tr>
-<tr class="separator:acdea7a5c6e3d858c3556881217a43dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb39522856d76de67d5b29c418c45ccd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrix.html#adb39522856d76de67d5b29c418c45ccd">Cut</a> (size_t numRows, size_t numCols, pair&lt; size_t, size_t &gt; startPoint)=0</td></tr>
-<tr class="separator:adb39522856d76de67d5b29c418c45ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a668eaab1f5d9b498e721464124f158c4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrix.html#a668eaab1f5d9b498e721464124f158c4">ShouldBeSparse</a> () const =0</td></tr>
 <tr class="separator:a668eaab1f5d9b498e721464124f158c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca808472e6465738fae14a6ac244cf0b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classCMatrix.html">CMatrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrix.html#aca808472e6465738fae14a6ac244cf0b">Convert</a> () const =0</td></tr>
@@ -202,32 +196,6 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="acdea7a5c6e3d858c3556881217a43dc3"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void CMatrix::ChangeToIdentity </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="classCMatrixStandard.html#ac46d74a3b3f53c0eb0bbd69668b7d8a9">CMatrixStandard</a>, and <a class="el" href="classCMatrixSparse.html#a38c51df51129597dd0e837a20f5c0855">CMatrixSparse</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a42ac1f2a9e69919974febca17971be60"></a>
 <div class="memitem">
 <div class="memproto">
@@ -249,7 +217,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classCMatrixStandard.html#a30885c9a67bfe07b8379f7dd7a782ce4">CMatrixStandard</a>, and <a class="el" href="classCMatrixSparse.html#a8074d01357ce15ce0392a95d17fed7ef">CMatrixSparse</a>.</p>
+<p>Implemented in <a class="el" href="classCMatrixSparse.html#a8074d01357ce15ce0392a95d17fed7ef">CMatrixSparse</a>, and <a class="el" href="classCMatrixStandard.html#a30885c9a67bfe07b8379f7dd7a782ce4">CMatrixStandard</a>.</p>
 
 </div>
 </div>
@@ -274,49 +242,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classCMatrixStandard.html#a73f39b1ac5602dbd233df469ba8f0c3b">CMatrixStandard</a>, and <a class="el" href="classCMatrixSparse.html#a1519d4cdef830a6df4d0ec900b4413c7">CMatrixSparse</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="adb39522856d76de67d5b29c418c45ccd"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void CMatrix::Cut </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>numRows</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>numCols</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">pair&lt; size_t, size_t &gt;&#160;</td>
-          <td class="paramname"><em>startPoint</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="classCMatrixStandard.html#ae1f278e3dde8bb03f953e7b08ea277f5">CMatrixStandard</a>, and <a class="el" href="classCMatrixSparse.html#ac06a94f215245e118df91f16843d148b">CMatrixSparse</a>.</p>
+<p>Implemented in <a class="el" href="classCMatrixSparse.html#a1519d4cdef830a6df4d0ec900b4413c7">CMatrixSparse</a>, and <a class="el" href="classCMatrixStandard.html#a73f39b1ac5602dbd233df469ba8f0c3b">CMatrixStandard</a>.</p>
 
 </div>
 </div>
@@ -341,7 +267,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classCMatrixStandard.html#a17e51335d1d9e731441a8205536697f7">CMatrixStandard</a>, and <a class="el" href="classCMatrixSparse.html#a2f545baf72ad2974e1450f8653f9bd06">CMatrixSparse</a>.</p>
+<p>Implemented in <a class="el" href="classCMatrixSparse.html#a2f545baf72ad2974e1450f8653f9bd06">CMatrixSparse</a>, and <a class="el" href="classCMatrixStandard.html#a17e51335d1d9e731441a8205536697f7">CMatrixStandard</a>.</p>
 
 </div>
 </div>
@@ -427,32 +353,6 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2c6c995b372eae3f9544370dda681b48"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="classCMatrix.html">CMatrix</a>* CMatrix::MergeNextTo </td>
-          <td>(</td>
-          <td class="paramtype">const unique_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="classCMatrixStandard.html#ab20191ea5e797c99361f254696d8d351">CMatrixStandard</a>, and <a class="el" href="classCMatrixSparse.html#a7779790e0646bf573afce21c0fc4e1b1">CMatrixSparse</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a2f26b64fa654512fe2a4e954f18e1f1c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -498,7 +398,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classCMatrixStandard.html#a0ace6054f9ec1fb2b26e0683034e48bd">CMatrixStandard</a>, and <a class="el" href="classCMatrixSparse.html#acf4a7e41666e6fb29e629c3a62a7fd8f">CMatrixSparse</a>.</p>
+<p>Implemented in <a class="el" href="classCMatrixSparse.html#acf4a7e41666e6fb29e629c3a62a7fd8f">CMatrixSparse</a>, and <a class="el" href="classCMatrixStandard.html#a0ace6054f9ec1fb2b26e0683034e48bd">CMatrixStandard</a>.</p>
 
 </div>
 </div>
@@ -534,7 +434,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classCMatrixStandard.html#ad135e13127c58f91c325a131d1dc8a74">CMatrixStandard</a>, and <a class="el" href="classCMatrixSparse.html#a83cd4fce61394f6c2b290bf06d0efd0a">CMatrixSparse</a>.</p>
+<p>Implemented in <a class="el" href="classCMatrixSparse.html#a83cd4fce61394f6c2b290bf06d0efd0a">CMatrixSparse</a>, and <a class="el" href="classCMatrixStandard.html#ad135e13127c58f91c325a131d1dc8a74">CMatrixStandard</a>.</p>
 
 </div>
 </div>
@@ -601,7 +501,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classCMatrixStandard.html#a603dcb22f4cdf94438d4e59fe44870e4">CMatrixStandard</a>, and <a class="el" href="classCMatrixSparse.html#a780df7daf904384dadb5f3cd9bd81e40">CMatrixSparse</a>.</p>
+<p>Implemented in <a class="el" href="classCMatrixSparse.html#a780df7daf904384dadb5f3cd9bd81e40">CMatrixSparse</a>, and <a class="el" href="classCMatrixStandard.html#a603dcb22f4cdf94438d4e59fe44870e4">CMatrixStandard</a>.</p>
 
 </div>
 </div>

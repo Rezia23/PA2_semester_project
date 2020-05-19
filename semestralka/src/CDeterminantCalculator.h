@@ -2,8 +2,8 @@
 // Created by terez on 06.05.2020.
 //
 
-#ifndef SEMESTRALKA_CGETDETERMINANT_H
-#define SEMESTRALKA_CGETDETERMINANT_H
+#ifndef SEMESTRALKA_CDETERMINANTCALCULATOR_H
+#define SEMESTRALKA_CDETERMINANTCALCULATOR_H
 
 
 #include "CMatrix.h"
@@ -12,7 +12,7 @@
 #include "elimination.h"
 
 
-class CGetDeterminant{
+class CDeterminantCalculator{
 public:
     double ConvertToUpperTriangular(shared_ptr<CMatrix> & matrix) {
         double determinant = 1;
@@ -106,4 +106,4 @@ public:
 };
 
 
-#endif //SEMESTRALKA_CGETDETERMINANT_H
+#endif //SEMESTRALKA_CDETERMINANTCALCULATOR_H

@@ -30,7 +30,7 @@ public:
         }
         m_Result = "Matrix " + m_VariableName + " successfully loaded.\n";
         m_Result += m_ResultMatrix->ToString();
-        memory.m_Variables.insert(make_pair(m_VariableName, move(m_ResultMatrix)));
+        memory.Insert(m_VariableName, move(m_ResultMatrix));
         return true;
     }
 

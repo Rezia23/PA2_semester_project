@@ -84,7 +84,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classCMatrixStandard-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -136,18 +135,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a17e51335d1d9e731441a8205536697f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad135e13127c58f91c325a131d1dc8a74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixStandard.html#ad135e13127c58f91c325a131d1dc8a74">Resize</a> (std::size_t numRows, std::size_t numCols) override</td></tr>
 <tr class="separator:ad135e13127c58f91c325a131d1dc8a74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac46d74a3b3f53c0eb0bbd69668b7d8a9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixStandard.html#ac46d74a3b3f53c0eb0bbd69668b7d8a9">ChangeToIdentity</a> (int size) override</td></tr>
-<tr class="separator:ac46d74a3b3f53c0eb0bbd69668b7d8a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab20191ea5e797c99361f254696d8d351"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classCMatrixStandard.html">CMatrixStandard</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixStandard.html#ab20191ea5e797c99361f254696d8d351">MergeNextTo</a> (const unique_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;other) const override</td></tr>
-<tr class="separator:ab20191ea5e797c99361f254696d8d351"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1f278e3dde8bb03f953e7b08ea277f5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixStandard.html#ae1f278e3dde8bb03f953e7b08ea277f5">Cut</a> (size_t numRows, size_t numCols, pair&lt; size_t, size_t &gt; startPoint) override</td></tr>
-<tr class="separator:ae1f278e3dde8bb03f953e7b08ea277f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af37a8a7a36869bfdad02e1c7ca80ea91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCMatrixStandard.html">CMatrixStandard</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixStandard.html#af37a8a7a36869bfdad02e1c7ca80ea91">FindInverse</a> () const </td></tr>
-<tr class="separator:af37a8a7a36869bfdad02e1c7ca80ea91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaba6b3a9cc8a5d9ba7a66e33d7080f5f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixStandard.html#aaba6b3a9cc8a5d9ba7a66e33d7080f5f">CalculateDeterminant</a> () const </td></tr>
-<tr class="separator:aaba6b3a9cc8a5d9ba7a66e33d7080f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c2287c4d13826f272d13cc6d80d46ff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixStandard.html#a8c2287c4d13826f272d13cc6d80d46ff">CalculateRank</a> () const </td></tr>
-<tr class="separator:a8c2287c4d13826f272d13cc6d80d46ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a603dcb22f4cdf94438d4e59fe44870e4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixStandard.html#a603dcb22f4cdf94438d4e59fe44870e4">ShouldBeSparse</a> () const override</td></tr>
 <tr class="separator:a603dcb22f4cdf94438d4e59fe44870e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classCMatrix"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCMatrix')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classCMatrix.html">CMatrix</a></td></tr>
@@ -163,25 +150,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2f26b64fa654512fe2a4e954f18e1f1c inherit pub_methods_classCMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9e2348aa0a043915901a39d5f89ea38 inherit pub_methods_classCMatrix"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrix.html#ab9e2348aa0a043915901a39d5f89ea38">ToString</a> ()</td></tr>
 <tr class="separator:ab9e2348aa0a043915901a39d5f89ea38 inherit pub_methods_classCMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a72edc45243a771d13a87eb18b14ed39d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixStandard.html#a72edc45243a771d13a87eb18b14ed39d">SortForElimination</a> ()</td></tr>
-<tr class="separator:a72edc45243a771d13a87eb18b14ed39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac26185dcf0968bc6e1d5c25b28a6c03c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixStandard.html#ac26185dcf0968bc6e1d5c25b28a6c03c">CreateZeroTriangles</a> ()</td></tr>
-<tr class="separator:ac26185dcf0968bc6e1d5c25b28a6c03c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c74a094a4ead185e6fe7749902ffbcd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixStandard.html#a8c74a094a4ead185e6fe7749902ffbcd">MakeDiagonalsTo1</a> ()</td></tr>
-<tr class="separator:a8c74a094a4ead185e6fe7749902ffbcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87bc6d91cd4a0a6adf4fc91130cbf1c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixStandard.html#a87bc6d91cd4a0a6adf4fc91130cbf1c3">ConvertToLU</a> ()</td></tr>
-<tr class="separator:a87bc6d91cd4a0a6adf4fc91130cbf1c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a269b662b8f10981d2917f3ed7ad4b29d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixStandard.html#a269b662b8f10981d2917f3ed7ad4b29d">AddDiagonal</a> (vector&lt; double &gt; &amp;diagonal) const </td></tr>
-<tr class="separator:a269b662b8f10981d2917f3ed7ad4b29d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a414f4140bceff8303fa220fa9f2b37b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixStandard.html#a414f4140bceff8303fa220fa9f2b37b9">ConvertToUpperTriangular</a> (bool printSteps=false)</td></tr>
-<tr class="separator:a414f4140bceff8303fa220fa9f2b37b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe2e7eaa5407464157820da7f4c0b58f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixStandard.html#abe2e7eaa5407464157820da7f4c0b58f">ConvertToLowerTriangular</a> (bool printSteps=false)</td></tr>
-<tr class="separator:abe2e7eaa5407464157820da7f4c0b58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abaced8ed3d500844af93c5c0a072d0be"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixStandard.html#abaced8ed3d500844af93c5c0a072d0be">GetCountZeroRows</a> () const </td></tr>
-<tr class="separator:abaced8ed3d500844af93c5c0a072d0be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -311,86 +279,6 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a269b662b8f10981d2917f3ed7ad4b29d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CMatrixStandard::AddDiagonal </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; double &gt; &amp;&#160;</td>
-          <td class="paramname"><em>diagonal</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aaba6b3a9cc8a5d9ba7a66e33d7080f5f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double CMatrixStandard::CalculateDeterminant </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a8c2287c4d13826f272d13cc6d80d46ff"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int CMatrixStandard::CalculateRank </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ac46d74a3b3f53c0eb0bbd69668b7d8a9"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CMatrixStandard::ChangeToIdentity </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="classCMatrix.html#acdea7a5c6e3d858c3556881217a43dc3">CMatrix</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a30885c9a67bfe07b8379f7dd7a782ce4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -438,180 +326,6 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="classCMatrix.html#aca808472e6465738fae14a6ac244cf0b">CMatrix</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="abe2e7eaa5407464157820da7f4c0b58f"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CMatrixStandard::ConvertToLowerTriangular </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>printSteps</em> = <code>false</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a87bc6d91cd4a0a6adf4fc91130cbf1c3"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CMatrixStandard::ConvertToLU </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a414f4140bceff8303fa220fa9f2b37b9"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CMatrixStandard::ConvertToUpperTriangular </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>printSteps</em> = <code>false</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ac26185dcf0968bc6e1d5c25b28a6c03c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CMatrixStandard::CreateZeroTriangles </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ae1f278e3dde8bb03f953e7b08ea277f5"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CMatrixStandard::Cut </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>numRows</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>numCols</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">pair&lt; size_t, size_t &gt;&#160;</td>
-          <td class="paramname"><em>startPoint</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="classCMatrix.html#adb39522856d76de67d5b29c418c45ccd">CMatrix</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="af37a8a7a36869bfdad02e1c7ca80ea91"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classCMatrixStandard.html">CMatrixStandard</a> * CMatrixStandard::FindInverse </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="abaced8ed3d500844af93c5c0a072d0be"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int CMatrixStandard::GetCountZeroRows </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -673,55 +387,6 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="classCMatrix.html#afa0213e0a6c5823e6b6e786891cc5f2d">CMatrix</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a8c74a094a4ead185e6fe7749902ffbcd"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CMatrixStandard::MakeDiagonalsTo1 </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ab20191ea5e797c99361f254696d8d351"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classCMatrixStandard.html">CMatrixStandard</a> * CMatrixStandard::MergeNextTo </td>
-          <td>(</td>
-          <td class="paramtype">const unique_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="classCMatrix.html#a2c6c995b372eae3f9544370dda681b48">CMatrix</a>.</p>
 
 </div>
 </div>
@@ -850,29 +515,6 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="classCMatrix.html#a668eaab1f5d9b498e721464124f158c4">CMatrix</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a72edc45243a771d13a87eb18b14ed39d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CMatrixStandard::SortForElimination </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>

@@ -5,7 +5,7 @@
 #ifndef SEMESTRALKA_CCOMMANDDETERMINANT_H
 #define SEMESTRALKA_CCOMMANDDETERMINANT_H
 #include "CCommand.h"
-#include "CGetDeterminant.h"
+#include "CDeterminantCalculator.h"
 
 class CCommandDeterminant:public CCommand {
 public:
@@ -24,8 +24,8 @@ public:
 
 
         try{
-            CGetDeterminant det;
-            m_Determinant = det(memory.m_Variables.at(m_VarName));
+            CDeterminantCalculator det;
+            m_Determinant = det(memory.At(m_VarName));
             m_Result += to_string(m_Determinant);
             return true;
         }catch(const std::runtime_error& e){

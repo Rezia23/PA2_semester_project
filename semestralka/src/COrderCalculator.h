@@ -2,14 +2,14 @@
 // Created by terez on 07.05.2020.
 //
 
-#ifndef SEMESTRALKA_GETORDER_H
-#define SEMESTRALKA_GETORDER_H
+#ifndef SEMESTRALKA_CORDERCALCULATOR_H
+#define SEMESTRALKA_CORDERCALCULATOR_H
 
 
 #include "CMatrix.h"
-#include "CGaussElimination.h"
+#include "CGaussEliminationOperator.h"
 
-class GetOrder {
+class COrderCalculator {
 public:
     int GetCountZeroRows(const shared_ptr<CMatrix> & matrix) const {
         int count = 0;
@@ -30,12 +30,10 @@ public:
     }
     int operator()(const shared_ptr<CMatrix> & matrix){
         shared_ptr<CMatrix> tmp = shared_ptr<CMatrix> (matrix->Clone());
-        CGaussElimination eliminate;
-        vector<shared_ptr<CMatrix>> placeholder; //todo
-        eliminate(tmp, placeholder);
+        Gem(tmp);
         return matrix->m_NumRows - GetCountZeroRows(tmp);
     }
 };
 
 
-#endif //SEMESTRALKA_GETORDER_H
+#endif //SEMESTRALKA_CORDERCALCULATOR_H

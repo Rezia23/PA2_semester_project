@@ -113,6 +113,8 @@ Collaboration diagram for CMatrixSparse:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8b07f6b861304fccebc6229968a0baa0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixSparse.html#a8b07f6b861304fccebc6229968a0baa0">CMatrixSparse</a> ()</td></tr>
 <tr class="separator:a8b07f6b861304fccebc6229968a0baa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2dc89566f3cdcb626a04fb4c89db926"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixSparse.html#ab2dc89566f3cdcb626a04fb4c89db926">CMatrixSparse</a> (const shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;other)</td></tr>
+<tr class="separator:ab2dc89566f3cdcb626a04fb4c89db926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a154a1f5510bcedba74fec1eeb6ab4af6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixSparse.html#a154a1f5510bcedba74fec1eeb6ab4af6">CMatrixSparse</a> (map&lt; pair&lt; size_t, size_t &gt;, double &gt; matrix, size_t numRows, size_t numCols)</td></tr>
 <tr class="separator:a154a1f5510bcedba74fec1eeb6ab4af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2477eb8b3d46d83f067fe3c6fcb37772"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixSparse.html#a2477eb8b3d46d83f067fe3c6fcb37772">CMatrixSparse</a> (vector&lt; vector&lt; double &gt;&gt; matrix)</td></tr>
@@ -133,12 +135,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a83cd4fce61394f6c2b290bf06d0efd0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf4a7e41666e6fb29e629c3a62a7fd8f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixSparse.html#acf4a7e41666e6fb29e629c3a62a7fd8f">Print</a> () const override</td></tr>
 <tr class="separator:acf4a7e41666e6fb29e629c3a62a7fd8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38c51df51129597dd0e837a20f5c0855"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixSparse.html#a38c51df51129597dd0e837a20f5c0855">ChangeToIdentity</a> (int size) override</td></tr>
-<tr class="separator:a38c51df51129597dd0e837a20f5c0855"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7779790e0646bf573afce21c0fc4e1b1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classCMatrixSparse.html">CMatrixSparse</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixSparse.html#a7779790e0646bf573afce21c0fc4e1b1">MergeNextTo</a> (const unique_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;other) const override</td></tr>
-<tr class="separator:a7779790e0646bf573afce21c0fc4e1b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac06a94f215245e118df91f16843d148b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixSparse.html#ac06a94f215245e118df91f16843d148b">Cut</a> (size_t numRows, size_t numCols, pair&lt; size_t, size_t &gt; startPoint) override</td></tr>
-<tr class="separator:ac06a94f215245e118df91f16843d148b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a780df7daf904384dadb5f3cd9bd81e40"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixSparse.html#a780df7daf904384dadb5f3cd9bd81e40">ShouldBeSparse</a> () const </td></tr>
 <tr class="separator:a780df7daf904384dadb5f3cd9bd81e40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09c9471dbb6d83f6f51f25cc24554293"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrixSparse.html#a09c9471dbb6d83f6f51f25cc24554293">SwapRows</a> (std::size_t a, std::size_t b) override</td></tr>
@@ -185,6 +181,30 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">CMatrixSparse::CMatrixSparse </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab2dc89566f3cdcb626a04fb4c89db926"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CMatrixSparse::CMatrixSparse </td>
+          <td>(</td>
+          <td class="paramtype">const shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -285,32 +305,6 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a38c51df51129597dd0e837a20f5c0855"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CMatrixSparse::ChangeToIdentity </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="classCMatrix.html#acdea7a5c6e3d858c3556881217a43dc3">CMatrix</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a8074d01357ce15ce0392a95d17fed7ef"></a>
 <div class="memitem">
 <div class="memproto">
@@ -358,48 +352,6 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="classCMatrix.html#aca808472e6465738fae14a6ac244cf0b">CMatrix</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ac06a94f215245e118df91f16843d148b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CMatrixSparse::Cut </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>numRows</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>numCols</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">pair&lt; size_t, size_t &gt;&#160;</td>
-          <td class="paramname"><em>startPoint</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="classCMatrix.html#adb39522856d76de67d5b29c418c45ccd">CMatrix</a>.</p>
 
 </div>
 </div>
@@ -461,32 +413,6 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="classCMatrix.html#afa0213e0a6c5823e6b6e786891cc5f2d">CMatrix</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a7779790e0646bf573afce21c0fc4e1b1"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classCMatrixSparse.html">CMatrixSparse</a> * CMatrixSparse::MergeNextTo </td>
-          <td>(</td>
-          <td class="paramtype">const unique_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="classCMatrix.html#a2c6c995b372eae3f9544370dda681b48">CMatrix</a>.</p>
 
 </div>
 </div>

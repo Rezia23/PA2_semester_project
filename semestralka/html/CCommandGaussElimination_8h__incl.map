@@ -1,8 +1,11 @@
 <map id="src/CCommandGaussElimination.h" name="src/CCommandGaussElimination.h">
-<area shape="rect" id="node2" href="$CCommand_8h.html" title="CCommand.h" alt="" coords="11,155,114,181"/>
-<area shape="rect" id="node11" href="$CGaussElimination_8h.html" title="CGaussElimination.h" alt="" coords="102,80,247,107"/>
-<area shape="rect" id="node4" href="$CMatrix_8h.html" title="CMatrix.h" alt="" coords="243,229,322,256"/>
-<area shape="rect" id="node9" href="$CMemory_8h.html" title="CMemory.h" alt="" coords="100,379,191,405"/>
-<area shape="rect" id="node8" href="$COperator_8h.html" title="COperator.h" alt="" coords="151,304,244,331"/>
-<area shape="rect" id="node13" href="$CEliminate_8h.html" title="CEliminate.h" alt="" coords="235,155,333,181"/>
+<area shape="rect" id="node2" href="$CCommand_8h.html" title="CCommand.h" alt="" coords="40,304,143,331"/>
+<area shape="rect" id="node11" href="$CGaussEliminationOperator_8h.html" title="CGaussEliminationOperator.h" alt="" coords="394,80,589,107"/>
+<area shape="rect" id="node4" href="$CMatrix_8h.html" title="CMatrix.h" alt="" coords="344,379,423,405"/>
+<area shape="rect" id="node9" href="$CMemory_8h.html" title="CMemory.h" alt="" coords="113,528,204,555"/>
+<area shape="rect" id="node8" href="$COperator_8h.html" title="COperator.h" alt="" coords="146,453,240,480"/>
+<area shape="rect" id="node13" href="$CMatrixSparse_8h.html" title="CMatrixSparse.h" alt="" coords="376,155,496,181"/>
+<area shape="rect" id="node16" href="$elimination_8h.html" title="elimination.h" alt="" coords="499,304,594,331"/>
+<area shape="rect" id="node17" href="$CUnaryOperator_8h.html" title="CUnaryOperator.h" alt="" coords="129,379,257,405"/>
+<area shape="rect" id="node14" href="$CMatrixStandard_8h.html" title="CMatrixStandard.h" alt="" coords="370,229,501,256"/>
 </map>

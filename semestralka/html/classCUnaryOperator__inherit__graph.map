@@ -1,6 +1,7 @@
 <map id="CUnaryOperator" name="CUnaryOperator">
 <area shape="rect" id="node3" href="$classCCutOperator.html" title="CCutOperator" alt="" coords="5,155,108,181"/>
-<area shape="rect" id="node4" href="$classCInverseOperator.html" title="CInverseOperator" alt="" coords="133,155,258,181"/>
-<area shape="rect" id="node5" href="$classCTransposeOperator.html" title="CTransposeOperator" alt="" coords="283,155,425,181"/>
-<area shape="rect" id="node2" href="$classCOperator.html" title="COperator" alt="" coords="154,5,237,32"/>
+<area shape="rect" id="node4" href="$classCGaussEliminationOperator.html" title="CGaussEliminationOperator" alt="" coords="133,155,317,181"/>
+<area shape="rect" id="node5" href="$classCInverseOperator.html" title="CInverseOperator" alt="" coords="341,155,466,181"/>
+<area shape="rect" id="node6" href="$classCTransposeOperator.html" title="CTransposeOperator" alt="" coords="491,155,633,181"/>
+<area shape="rect" id="node2" href="$classCOperator.html" title="COperator" alt="" coords="273,5,355,32"/>
 </map>

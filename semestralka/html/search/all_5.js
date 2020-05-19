@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['haszeroroworcol',['HasZeroRowOrCol',['../classCGetDeterminant.html#a77d6f05d99ec7f1519bed6a49927bb3a',1,'CGetDeterminant']]]
+  ['insert',['Insert',['../classCMemory.html#a8d76cdcaabb8e18d3956e7f334a9fb0b',1,'CMemory']]],
+  ['issyntaxcorrect',['IsSyntaxCorrect',['../classCApplicationConsole.html#a6ca78c0250dfbdf71a995277c0485e5a',1,'CApplicationConsole']]]
 ];

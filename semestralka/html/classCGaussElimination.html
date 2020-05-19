@@ -84,6 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classCGaussElimination-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">CGaussElimination Class Reference</div>  </div>
@@ -96,7 +97,8 @@ Inheritance diagram for CGaussElimination:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCGaussElimination__inherit__graph.png" border="0" usemap="#CGaussElimination_inherit__map" alt="Inheritance graph"/></div>
 <map name="CGaussElimination_inherit__map" id="CGaussElimination_inherit__map">
-<area shape="rect" id="node2" href="classCEliminate.html" title="CEliminate" alt="" coords="29,5,116,32"/>
+<area shape="rect" id="node2" href="classCUnaryOperator.html" title="CUnaryOperator" alt="" coords="14,80,131,107"/>
+<area shape="rect" id="node3" href="classCOperator.html" title="COperator" alt="" coords="31,5,114,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -104,23 +106,45 @@ Collaboration diagram for CGaussElimination:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCGaussElimination__coll__graph.png" border="0" usemap="#CGaussElimination_coll__map" alt="Collaboration graph"/></div>
 <map name="CGaussElimination_coll__map" id="CGaussElimination_coll__map">
-<area shape="rect" id="node2" href="classCEliminate.html" title="CEliminate" alt="" coords="29,5,116,32"/>
+<area shape="rect" id="node2" href="classCUnaryOperator.html" title="CUnaryOperator" alt="" coords="14,80,131,107"/>
+<area shape="rect" id="node3" href="classCOperator.html" title="COperator" alt="" coords="31,5,114,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af835c42ac9eb2509953a03f1e68aac43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCGaussElimination.html#af835c42ac9eb2509953a03f1e68aac43">operator()</a> (shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;matrix, vector&lt; shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt;&gt; &amp;eliminationProcess)</td></tr>
-<tr class="separator:af835c42ac9eb2509953a03f1e68aac43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b7fb086fea498cfd89d0de37349881e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCGaussElimination.html#a4b7fb086fea498cfd89d0de37349881e">CGaussElimination</a> (shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;operand)</td></tr>
+<tr class="separator:a4b7fb086fea498cfd89d0de37349881e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa7e98ab6cee82e0bd71634576b5d8b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCMatrix.html">CMatrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCGaussElimination.html#afa7e98ab6cee82e0bd71634576b5d8b4">Evaluate</a> (<a class="el" href="classCMemory.html">CMemory</a> &amp;memory) override</td></tr>
+<tr class="separator:afa7e98ab6cee82e0bd71634576b5d8b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14c0044d73445a7cd1f5efe6edf280cb"><td class="memItemLeft" align="right" valign="top">vector&lt; shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCGaussElimination.html#a14c0044d73445a7cd1f5efe6edf280cb">GetEliminationProcess</a> ()</td></tr>
+<tr class="separator:a14c0044d73445a7cd1f5efe6edf280cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classCUnaryOperator"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCUnaryOperator')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classCUnaryOperator.html">CUnaryOperator</a></td></tr>
+<tr class="memitem:adffd1d4c0bf2cd8f53be92366c5fd520 inherit pub_methods_classCUnaryOperator"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCUnaryOperator.html#adffd1d4c0bf2cd8f53be92366c5fd520">CUnaryOperator</a> ()=default</td></tr>
+<tr class="separator:adffd1d4c0bf2cd8f53be92366c5fd520 inherit pub_methods_classCUnaryOperator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2472f6fb06919bbc7c5e460a337cf9d3 inherit pub_methods_classCUnaryOperator"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCUnaryOperator.html#a2472f6fb06919bbc7c5e460a337cf9d3">CUnaryOperator</a> (shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;operand)</td></tr>
+<tr class="separator:a2472f6fb06919bbc7c5e460a337cf9d3 inherit pub_methods_classCUnaryOperator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae12e63cdb2573b8b6d0470879478f326 inherit pub_methods_classCUnaryOperator"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCUnaryOperator.html#ae12e63cdb2573b8b6d0470879478f326">~CUnaryOperator</a> ()=default</td></tr>
+<tr class="separator:ae12e63cdb2573b8b6d0470879478f326 inherit pub_methods_classCUnaryOperator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classCOperator"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCOperator')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classCOperator.html">COperator</a></td></tr>
+<tr class="memitem:a87e51bbea921716008a02f2c01cc22ae inherit pub_methods_classCOperator"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCOperator.html#a87e51bbea921716008a02f2c01cc22ae">COperator</a> ()=default</td></tr>
+<tr class="separator:a87e51bbea921716008a02f2c01cc22ae inherit pub_methods_classCOperator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55ebb3beea88394151be9204cc29ccac inherit pub_methods_classCOperator"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCOperator.html#a55ebb3beea88394151be9204cc29ccac">~COperator</a> ()=default</td></tr>
+<tr class="separator:a55ebb3beea88394151be9204cc29ccac inherit pub_methods_classCOperator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a82f7f27713bf7b300d6f858013cbe04b"><td class="memItemLeft" align="right" valign="top">vector&lt; shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCGaussElimination.html#a82f7f27713bf7b300d6f858013cbe04b">m_EliminationProcess</a></td></tr>
+<tr class="separator:a82f7f27713bf7b300d6f858013cbe04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_classCEliminate"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classCEliminate')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classCEliminate.html">CEliminate</a></td></tr>
-<tr class="memitem:a67166e2e9d0bad853d736bb4de8d7473 inherit pro_methods_classCEliminate"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCEliminate.html#a67166e2e9d0bad853d736bb4de8d7473">SortForElimination</a> (shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;matrix)</td></tr>
-<tr class="separator:a67166e2e9d0bad853d736bb4de8d7473 inherit pro_methods_classCEliminate"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classCUnaryOperator"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classCUnaryOperator')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classCUnaryOperator.html">CUnaryOperator</a></td></tr>
+<tr class="memitem:a36090d3cf3f21ebf4b9dca948aa5dcfc inherit pro_attribs_classCUnaryOperator"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCUnaryOperator.html#a36090d3cf3f21ebf4b9dca948aa5dcfc">m_Operand</a></td></tr>
+<tr class="separator:a36090d3cf3f21ebf4b9dca948aa5dcfc inherit pro_attribs_classCUnaryOperator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="af835c42ac9eb2509953a03f1e68aac43"></a>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a4b7fb086fea498cfd89d0de37349881e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -128,26 +152,87 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CGaussElimination::operator() </td>
+          <td class="memname">CGaussElimination::CGaussElimination </td>
           <td>(</td>
           <td class="paramtype">shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>matrix</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>operand</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">vector&lt; shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt;&gt; &amp;&#160;</td>
-          <td class="paramname"><em>eliminationProcess</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="afa7e98ab6cee82e0bd71634576b5d8b4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCMatrix.html">CMatrix</a>* CGaussElimination::Evaluate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCMemory.html">CMemory</a> &amp;&#160;</td>
+          <td class="paramname"><em>memory</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classCUnaryOperator.html#a17b01d9de023a58642f6fd82f214cde0">CUnaryOperator</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a14c0044d73445a7cd1f5efe6edf280cb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;shared_ptr&lt;<a class="el" href="classCMatrix.html">CMatrix</a>&gt; &gt; CGaussElimination::GetEliminationProcess </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a82f7f27713bf7b300d6f858013cbe04b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;shared_ptr&lt;<a class="el" href="classCMatrix.html">CMatrix</a>&gt; &gt; CGaussElimination::m_EliminationProcess</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
