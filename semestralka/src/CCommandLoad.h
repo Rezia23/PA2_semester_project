@@ -6,17 +6,17 @@
 #define SEMESTRALKA_CCOMMANDLOAD_H
 
 
-#include "CCommandGetMatrix.h"
+#include "CCommand.h"
 #include "CMatrix.h"
 #include "CMatrixStandard.h"
 
-class CCommandLoad : public CCommandGetMatrix {
+class CCommandLoad : public CCommand {
 public:
-    CCommandLoad() =default;
+    CCommandLoad() : CCommand() {}
 
     ~CCommandLoad() override = default;
 
-    CCommandLoad(string varName, vector<vector<double>> matrixNums) :  m_VariableName(varName) {
+    CCommandLoad(string varName, vector<vector<double>> matrixNums) : CCommand(), m_VariableName(varName) {
         m_ResultMatrix = (make_unique<CMatrixStandard>(CMatrixStandard(matrixNums)));
         if (m_ResultMatrix->ShouldBeSparse()) {
             m_ResultMatrix = unique_ptr<CMatrix>(m_ResultMatrix->Convert());

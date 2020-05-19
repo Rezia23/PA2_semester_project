@@ -8,13 +8,13 @@
 #include "CCommand.h"
 #include "CMatrixStandard.h"
 
-class CCommandPut : public CCommandGetMatrix {
+class CCommandPut : public CCommand {
 public:
-    CCommandPut() = default;
+    CCommandPut() : CCommand() {}
 
     ~CCommandPut() override = default;
 
-    CCommandPut(string varName, unique_ptr<CCommandGetMatrix> &subCommand) : m_VariableName(varName),
+    CCommandPut(string varName, unique_ptr<CCommand> &subCommand) : m_VariableName(varName),
                                                                     m_Subcommand(move(subCommand)) {}
 
     bool Execute(CMemory & memory) override {
@@ -32,7 +32,7 @@ public:
 
 private:
     string m_VariableName;
-    unique_ptr<CCommandGetMatrix> m_Subcommand;
+    unique_ptr<CCommand> m_Subcommand;
 };
 
 

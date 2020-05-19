@@ -5,12 +5,12 @@
 #ifndef SEMESTRALKA_CCOMMANDTRANSPOSE_H
 #define SEMESTRALKA_CCOMMANDTRANSPOSE_H
 
-#include "CCommandGetMatrix.h"
+#include "CCommand.h"
 #include "CTransposeOperator.h"
 
-class CCommandTranspose : public CCommandGetMatrix {
+class CCommandTranspose : public CCommand {
 public:
-    CCommandTranspose() = default;
+    CCommandTranspose() : CCommand() {}
 
     ~CCommandTranspose() override = default;
 

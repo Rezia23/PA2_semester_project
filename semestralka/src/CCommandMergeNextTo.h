@@ -5,12 +5,12 @@
 #ifndef SEMESTRALKA_CCOMMANDMERGENEXTTO_H
 #define SEMESTRALKA_CCOMMANDMERGENEXTTO_H
 
-#include "CCommandGetMatrix.h"
+#include "CCommand.h"
 #include "CMergeNextToOperation.h"
 
-class CCommandMergeNextTo : public CCommandGetMatrix {
+class CCommandMergeNextTo : public CCommand {
 public:
-    CCommandMergeNextTo() = default;
+    CCommandMergeNextTo() : CCommand() {}
 
     ~CCommandMergeNextTo() override = default;
 
