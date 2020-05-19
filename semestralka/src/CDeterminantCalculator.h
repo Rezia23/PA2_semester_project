@@ -87,7 +87,6 @@ public:
         }
         shared_ptr<CMatrix> tmpMatrix = shared_ptr<CMatrix>(matrix->Clone());
         vector<double> diagonal(tmpMatrix->m_NumRows, 1);
-        //CMatrixStandard tmp = *this;
         double det = 1;
         det = ConvertToUpperTriangular(tmpMatrix);
 

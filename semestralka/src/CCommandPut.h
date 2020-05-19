@@ -24,6 +24,10 @@ public:
         if (!m_Subcommand->Execute(memory)) {
             return false;
         }
+        if(m_Subcommand->m_ResultMatrix == nullptr){
+            m_Result = "Could not put such value to " + m_VariableName;
+            return false;
+        }
         m_Result = "To matrix " + m_VariableName + " has been put:\n";
         m_Result += m_Subcommand->m_ResultMatrix->ToString();
         memory.Insert(m_VariableName, move(m_Subcommand->m_ResultMatrix));

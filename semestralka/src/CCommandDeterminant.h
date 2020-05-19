@@ -13,7 +13,7 @@ public:
 
     ~CCommandDeterminant() override = default;
 
-    CCommandDeterminant(string varName) : m_VarName(varName) {}
+    CCommandDeterminant(string varName) : m_VarName(move(varName)) {}
 
     bool Execute(CMemory & memory) override {
         if (!memory.ExistsVariable(m_VarName)) {
