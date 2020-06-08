@@ -3,6 +3,7 @@
 //
 
 #include "elimination.h"
+
 int SortForElimination(shared_ptr<CMatrix> &matrix) {
     int numSwaps = 0;
     bool isChange = true;
@@ -20,7 +21,7 @@ int SortForElimination(shared_ptr<CMatrix> &matrix) {
 }
 
 
-void Gem(shared_ptr<CMatrix> & matrix, vector<shared_ptr<CMatrix>> & eliminationProcess){
+void Gem(shared_ptr<CMatrix> &matrix, vector<shared_ptr<CMatrix>> &eliminationProcess) {
     bool wasMadeChange = false;
     eliminationProcess.push_back(shared_ptr<CMatrix>(matrix->Clone()));
     SortForElimination(matrix);
@@ -31,14 +32,14 @@ void Gem(shared_ptr<CMatrix> & matrix, vector<shared_ptr<CMatrix>> & elimination
             if (i < j) {
                 double temp = matrix->GetNumAtCoords(j, i);
                 for (size_t k = 0; k < matrix->m_NumCols; k++) {
-                    if(temp==0){
+                    if (temp == 0) {
                         wasMadeChange = true;
                         break;
                     }
-                    matrix->SetNumAtCoords(j,k, matrix->GetNumAtCoords(j,k)*matrix->GetNumAtCoords(i,i));
-                    matrix->SetNumAtCoords(j, k, matrix->GetNumAtCoords(j, k)-(matrix->GetNumAtCoords(i,k)*temp));
+                    matrix->SetNumAtCoords(j, k, matrix->GetNumAtCoords(j, k) * matrix->GetNumAtCoords(i, i));
+                    matrix->SetNumAtCoords(j, k, matrix->GetNumAtCoords(j, k) - (matrix->GetNumAtCoords(i, k) * temp));
                 }
-                if(!wasMadeChange){
+                if (!wasMadeChange) {
                     eliminationProcess.push_back(shared_ptr<CMatrix>(matrix->Clone()));
                 }
                 wasMadeChange = false;
@@ -46,7 +47,8 @@ void Gem(shared_ptr<CMatrix> & matrix, vector<shared_ptr<CMatrix>> & elimination
         }
     }
 }
-void Gem(shared_ptr<CMatrix> & matrix){
+
+void Gem(shared_ptr<CMatrix> &matrix) {
     SortForElimination(matrix);
 
     for (size_t i = 0; i < matrix->m_NumRows; i++) {
@@ -54,8 +56,8 @@ void Gem(shared_ptr<CMatrix> & matrix){
             if (i < j) {
                 double temp = matrix->GetNumAtCoords(j, i);
                 for (size_t k = 0; k < matrix->m_NumCols; k++) {
-                    matrix->SetNumAtCoords(j,k, matrix->GetNumAtCoords(j,k)*matrix->GetNumAtCoords(i,i));
-                    matrix->SetNumAtCoords(j, k, matrix->GetNumAtCoords(j, k)-(matrix->GetNumAtCoords(i,k)*temp));
+                    matrix->SetNumAtCoords(j, k, matrix->GetNumAtCoords(j, k) * matrix->GetNumAtCoords(i, i));
+                    matrix->SetNumAtCoords(j, k, matrix->GetNumAtCoords(j, k) - (matrix->GetNumAtCoords(i, k) * temp));
                 }
             }
         }

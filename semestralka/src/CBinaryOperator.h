@@ -9,20 +9,24 @@
 #include "COperator.h"
 #include "CMatrix.h"
 #include <memory>
+
 using namespace std;
 
-class CBinaryOperator: public COperator {
+class CBinaryOperator : public COperator {
 protected:
     shared_ptr<CMatrix> m_Left;
     shared_ptr<CMatrix> m_Right;
 public:
     CBinaryOperator() = default;
-    CBinaryOperator(shared_ptr<CMatrix> & left, shared_ptr<CMatrix> & right){
+
+    CBinaryOperator(shared_ptr<CMatrix> &left, shared_ptr<CMatrix> &right) {
         m_Left = (left);
         m_Right = (right);
     }
+
     virtual ~CBinaryOperator() = default;
-    virtual CMatrix * Evaluate(CMemory & memory)= 0;
+
+    virtual CMatrix *Evaluate(CMemory &memory) = 0;
 };
 
 

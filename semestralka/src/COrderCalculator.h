@@ -11,7 +11,7 @@
 
 class COrderCalculator {
 public:
-    int GetCountZeroRows(const shared_ptr<CMatrix> & matrix) const {
+    int GetCountZeroRows(const shared_ptr<CMatrix> &matrix) const {
         int count = 0;
         bool isRowZero;
         for (size_t i = 0; i < matrix->m_NumRows; i++) {
@@ -28,8 +28,9 @@ public:
         }
         return count;
     }
-    int operator()(const shared_ptr<CMatrix> & matrix){
-        shared_ptr<CMatrix> tmp = shared_ptr<CMatrix> (matrix->Clone());
+
+    int operator()(const shared_ptr<CMatrix> &matrix) const {
+        shared_ptr<CMatrix> tmp = shared_ptr<CMatrix>(matrix->Clone());
         Gem(tmp);
         return matrix->m_NumRows - GetCountZeroRows(tmp);
     }

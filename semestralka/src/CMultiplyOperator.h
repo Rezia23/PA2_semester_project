@@ -11,7 +11,7 @@
 #include "CMemory.h"
 #include "CMatrixStandard.h"
 
-class CMultiplyOperator: public CBinaryOperator {
+class CMultiplyOperator : public CBinaryOperator {
 public:
     CMultiplyOperator(shared_ptr<CMatrix> &left, shared_ptr<CMatrix> &right)
             : CBinaryOperator(left, right) {}

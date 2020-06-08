@@ -7,23 +7,24 @@
 
 #include "CCommandTranspose.h"
 
-class CCommandTransposeDestructive:public CCommandTranspose {
+class CCommandTransposeDestructive : public CCommandTranspose {
 public:
-    bool Execute(CMemory & memory) override {
+    bool Execute(CMemory &memory) override {
         if (!memory.ExistsVariable(m_VarName)) {
             m_Result = "Variable does not exist.";
             return false;
         }
         m_Result = "Matrix " + m_VarName + " has been transposed to:\n";
 
-        CTransposeOperator op (memory.At(m_VarName));
+        CTransposeOperator op(memory.At(m_VarName));
 
         memory.Insert(m_VarName, shared_ptr<CMatrix>(op.Evaluate(memory)));
         m_ResultMatrix = unique_ptr<CMatrix>(memory.At(m_VarName)->Clone());
         m_Result += m_ResultMatrix->ToString();
         return true;
     }
-    CCommandTransposeDestructive(string varName):CCommandTranspose(varName){}
+
+    CCommandTransposeDestructive(string varName) : CCommandTranspose(varName) {}
 
 };
 

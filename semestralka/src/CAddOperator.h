@@ -11,13 +11,13 @@
 #include "CMemory.h"
 #include "CMatrixStandard.h"
 
-class CAddOperator: public CBinaryOperator {
+class CAddOperator : public CBinaryOperator {
 public:
-    CAddOperator(shared_ptr<CMatrix> & left, shared_ptr<CMatrix> & right)
-    :CBinaryOperator(left, right){}
+    CAddOperator(shared_ptr<CMatrix> &left, shared_ptr<CMatrix> &right)
+            : CBinaryOperator(left, right) {}
 
 
-    CMatrix * Evaluate(CMemory & memory) override{
+    CMatrix *Evaluate(CMemory &memory) override {
 
         //todo: can i do this
         (void) memory; // unused for a reason

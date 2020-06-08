@@ -28,11 +28,7 @@
 #include "CCommandGaussElimination.h"
 #include "CCommandTransposeDestructive.h"
 #include "CCommandCutDestructive.h"
-//#include "CCommandPut.h"
-//#include "CCommandTranspose.h"
-//#include "CCommandCut.h"
-//#include "CCommandMergeUnder.h"
-//#include "CCommandMergeNextTo.h"
+
 
 using namespace std;
 
@@ -43,7 +39,7 @@ public:
     ~CApplicationConsole() override = default;
 
     void PrintInstructions() const override {
-        cout << "TBD instructions how to use" << endl;
+        cout << USAGE_INSTRUCTIONS << endl;
     }
 
 private:
@@ -53,14 +49,6 @@ private:
         cout << msg << endl;
     }
 
-    void ShowVarName(string name) const override {
-        cout << name << ":" << endl;
-    }
-
-    void ShowMatrix(unique_ptr<CMatrix> &matrix) const override {
-        //to be corrected
-        matrix->Print();
-    }
 
     bool getVariableName(string &input, string &varName) const;
 
@@ -73,7 +61,7 @@ private:
         return (inStream >> delimiter) && delimiter == ';';
     }
 
-    void ShowResult(string result) {
+    void ShowResult(string result) const override {
         cout << result << endl;
     }
 
@@ -89,7 +77,7 @@ private:
         return true;
     }
 
-    //tbd add other commands, separate into functions
+    //todo add other commands, separate into functions
     bool ParseCommand(string &input, unique_ptr<CCommand> &nextCommand) override {
         string in_command;
         if (!ParseCommandWord(input, in_command)) {
@@ -147,7 +135,7 @@ private:
             }
             nextCommand = (std::make_unique<CCommandMultiply>(operands[0], operands[1]));
             return true;
-        }else if (in_command == COMMAND_PUT) {
+        } else if (in_command == COMMAND_PUT) {
             string name;
             if (!LoadOperandName(input, name)) {
                 return false;
@@ -158,7 +146,7 @@ private:
             }
             nextCommand = (std::make_unique<CCommandPut>(name, subCommand));
             return true;
-        }else if (in_command == COMMAND_TRANSPOSE || in_command == COMMAND_TRANSPOSE_DESTRUCTIVE) {
+        } else if (in_command == COMMAND_TRANSPOSE || in_command == COMMAND_TRANSPOSE_DESTRUCTIVE) {
             vector<string> operands;
             if (!ParseOperands(input, operands, 1)) {
                 return false;
@@ -167,9 +155,9 @@ private:
             if (!(IsSyntaxCorrect(inStream))) {
                 return false;
             }
-            if(in_command == COMMAND_TRANSPOSE){
+            if (in_command == COMMAND_TRANSPOSE) {
                 nextCommand = (std::make_unique<CCommandTranspose>(operands[0]));
-            }else{
+            } else {
                 nextCommand = (std::make_unique<CCommandTransposeDestructive>(operands[0]));
             }
 
@@ -182,9 +170,9 @@ private:
             if (!ParseCutting(input, varName, numRows, numCols, startPoint)) {
                 return false;
             }
-            if(in_command==COMMAND_CUT){
+            if (in_command == COMMAND_CUT) {
                 nextCommand = (std::make_unique<CCommandCut>(varName, numRows, numCols, startPoint));
-            }else{
+            } else {
                 nextCommand = (std::make_unique<CCommandCutDestructive>(varName, numRows, numCols, startPoint));
             }
             return true;
@@ -199,7 +187,7 @@ private:
             }
             nextCommand = (std::make_unique<CCommandMergeUnder>(operands[0], operands[1]));
             return true;
-        }else if (in_command == COMMAND_MERGE_NEXT_TO) {
+        } else if (in_command == COMMAND_MERGE_NEXT_TO) {
             vector<string> operands;
             if (!ParseOperands(input, operands, 2)) {
                 return false;
@@ -210,7 +198,7 @@ private:
             }
             nextCommand = (std::make_unique<CCommandMergeNextTo>(operands[0], operands[1]));
             return true;
-        }else if (in_command == COMMAND_INVERSE) {
+        } else if (in_command == COMMAND_INVERSE) {
             vector<string> operands;
             if (!ParseOperands(input, operands, 1)) {
                 return false;
@@ -221,7 +209,7 @@ private:
             }
             nextCommand = (std::make_unique<CCommandInverse>(operands[0]));
             return true;
-        }else if (in_command == COMMAND_DETERMINANT) {
+        } else if (in_command == COMMAND_DETERMINANT) {
             vector<string> operands;
             if (!ParseOperands(input, operands, 1)) {
                 return false;
@@ -232,7 +220,7 @@ private:
             }
             nextCommand = (std::make_unique<CCommandDeterminant>(operands[0]));
             return true;
-        }else if (in_command == COMMAND_GAUSS_ELIMINATION || in_command == COMMAND_GAUSS_ELIMINATION_DESTRUCTIVE) {
+        } else if (in_command == COMMAND_GAUSS_ELIMINATION || in_command == COMMAND_GAUSS_ELIMINATION_DESTRUCTIVE) {
             vector<string> operands;
             if (!ParseOperands(input, operands, 1)) {
                 return false;
@@ -241,14 +229,14 @@ private:
             if (!(IsSyntaxCorrect(inStream))) {
                 return false;
             }
-            if(in_command==COMMAND_GAUSS_ELIMINATION){
+            if (in_command == COMMAND_GAUSS_ELIMINATION) {
                 nextCommand = (std::make_unique<CCommandGaussElimination>(operands[0]));
-            }else{
+            } else {
                 nextCommand = (std::make_unique<CCommandGaussEliminationDestructive>(operands[0]));
             }
 
             return true;
-        }else if (in_command == COMMAND_ORDER) {
+        } else if (in_command == COMMAND_ORDER) {
             vector<string> operands;
             if (!ParseOperands(input, operands, 1)) {
                 return false;

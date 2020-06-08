@@ -23,7 +23,7 @@ public:
         }
     }
 
-    bool Execute(CMemory & memory) override {
+    bool Execute(CMemory &memory) override {
         if (memory.ExistsVariable(m_VariableName)) {
             m_Result = "Cannot create variable with same name as existing.";
             return false;

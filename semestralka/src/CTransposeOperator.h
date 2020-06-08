@@ -8,17 +8,17 @@
 #include "CUnaryOperator.h"
 #include "CMatrixStandard.h"
 
-class CTransposeOperator:public CUnaryOperator {
+class CTransposeOperator : public CUnaryOperator {
 public:
-    CTransposeOperator(shared_ptr<CMatrix> & operand)
-    :CUnaryOperator(operand){}
+    CTransposeOperator(shared_ptr<CMatrix> &operand)
+            : CUnaryOperator(operand) {}
 
-    CMatrix * Evaluate(CMemory & memory) override{
-        CMatrix * transposed = m_Operand->GetEmptyInstance();
+    CMatrix *Evaluate(CMemory &memory) override {
+        CMatrix *transposed = m_Operand->GetEmptyInstance();
         transposed->Resize(m_Operand->m_NumCols, m_Operand->m_NumRows);
         for (size_t i = 0; i < transposed->m_NumRows; i++) {
             for (size_t j = 0; j < transposed->m_NumCols; j++) {
-                transposed->SetNumAtCoords(i,j,m_Operand->GetNumAtCoords(j,i));
+                transposed->SetNumAtCoords(i, j, m_Operand->GetNumAtCoords(j, i));
             }
         }
         return transposed;

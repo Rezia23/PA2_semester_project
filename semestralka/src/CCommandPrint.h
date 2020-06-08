@@ -15,7 +15,7 @@ public:
 
     CCommandPrint(string varName) : CCommand(), m_VariableName(varName) {}
 
-    bool Execute(CMemory & memory) override {
+    bool Execute(CMemory &memory) override {
         if (!memory.ExistsVariable(m_VariableName)) {
             m_Result = "Variable " + m_VariableName + " does not exist.";
             return false;

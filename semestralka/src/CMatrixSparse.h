@@ -19,12 +19,12 @@ private:
 public:
     CMatrixSparse() : CMatrix() {}
 
-    CMatrixSparse(const shared_ptr<CMatrix> & other):CMatrix(){
+    CMatrixSparse(const shared_ptr<CMatrix> &other) : CMatrix() {
         m_NumRows = other->m_NumRows;
         m_NumCols = other->m_NumCols;
-        for(size_t i = 0; i<m_NumRows;i++){
-            for(size_t j = 0; j<m_NumCols;j++){
-                SetNumAtCoords(i,j, other->GetNumAtCoords(i,j));
+        for (size_t i = 0; i < m_NumRows; i++) {
+            for (size_t j = 0; j < m_NumCols; j++) {
+                SetNumAtCoords(i, j, other->GetNumAtCoords(i, j));
             }
         }
     }
@@ -55,18 +55,21 @@ public:
     virtual ~CMatrixSparse() override = default;
 
     virtual double GetNumAtCoords(size_t row, size_t col) const override;
-    virtual void SetNumAtCoords(size_t row, size_t col, double value) override{
-        if(GetNumAtCoords(row, col)!=0){
+
+    virtual void SetNumAtCoords(size_t row, size_t col, double value) override {
+        if (GetNumAtCoords(row, col) != 0) {
             m_Matrix.erase({row, col});
         }
-        if(value!=0){
+        if (value != 0) {
             m_Matrix[{row, col}] = value;
         }
     }
-    CMatrix * GetEmptyInstance() const override{
+
+    CMatrix *GetEmptyInstance() const override {
         return new CMatrixSparse();
     }
-    void Resize(std::size_t numRows, std::size_t numCols) override{
+
+    void Resize(std::size_t numRows, std::size_t numCols) override {
         m_NumRows = numRows;
         m_NumCols = numCols;
     }
@@ -77,27 +80,27 @@ public:
     virtual bool ShouldBeSparse() const {
         return (m_NumRows * m_NumCols) - m_Matrix.size() > m_Matrix.size();
     }
-    virtual void SwapRows(std::size_t a, std::size_t b)override{
+
+    virtual void SwapRows(std::size_t a, std::size_t b) override {
         map<pair<std::size_t, size_t>, double> nums;
-        for(size_t i = 0; i<m_NumCols;i++){
-            double nextNum = GetNumAtCoords(a,i);
-            if(nextNum!=0){
-                nums[{a,i}] = nextNum;
-                m_Matrix.erase({a,i});
+        for (size_t i = 0; i < m_NumCols; i++) {
+            double nextNum = GetNumAtCoords(a, i);
+            if (nextNum != 0) {
+                nums[{a, i}] = nextNum;
+                m_Matrix.erase({a, i});
             }
         }
-        for(std::size_t i = 0; i<m_NumCols;i++){
-            double nextNum = GetNumAtCoords(b,i);
-            if(nextNum!=0){
-                m_Matrix.erase({b,i});
-                m_Matrix[{a,i}] = nextNum;
+        for (std::size_t i = 0; i < m_NumCols; i++) {
+            double nextNum = GetNumAtCoords(b, i);
+            if (nextNum != 0) {
+                m_Matrix.erase({b, i});
+                m_Matrix[{a, i}] = nextNum;
             }
         }
-        for(auto a : nums){
+        for (auto a : nums) {
             m_Matrix[{b, a.first.second}] = a.second;
         }
     }
-
 
 
 };

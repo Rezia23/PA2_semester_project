@@ -13,21 +13,19 @@
 #include "elimination.h"
 
 
-
-
-class CGaussEliminationOperator: public CUnaryOperator{
+class CGaussEliminationOperator : public CUnaryOperator {
 public:
-    CGaussEliminationOperator(shared_ptr<CMatrix> & operand)
-    :CUnaryOperator(operand){}
+    CGaussEliminationOperator(shared_ptr<CMatrix> &operand)
+            : CUnaryOperator(operand) {}
 
 
-
-    CMatrix * Evaluate(CMemory & memory) override{
+    CMatrix *Evaluate(CMemory &memory) override {
         shared_ptr<CMatrix> result = unique_ptr<CMatrix>(m_Operand->Clone());
         Gem(result, m_EliminationProcess);
         return new CMatrixSparse(result);
     }
-    vector<shared_ptr<CMatrix>> GetEliminationProcess(){
+
+    vector<shared_ptr<CMatrix>> GetEliminationProcess() {
         return m_EliminationProcess;
     }
 

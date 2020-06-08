@@ -9,8 +9,10 @@
 
 
 int SortForElimination(shared_ptr<CMatrix> &matrix);
-void Gem(shared_ptr<CMatrix> & matrix, vector<shared_ptr<CMatrix>> & eliminationProcess);
-void Gem(shared_ptr<CMatrix> & matrix);
+
+void Gem(shared_ptr<CMatrix> &matrix, vector<shared_ptr<CMatrix>> &eliminationProcess);
+
+void Gem(shared_ptr<CMatrix> &matrix);
 
 
 #endif //SEMESTRALKA_ELIMINATION_H

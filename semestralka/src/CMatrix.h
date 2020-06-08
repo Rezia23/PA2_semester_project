@@ -14,7 +14,7 @@
 
 using namespace std;
 
-class CMatrix{
+class CMatrix {
 
 public:
     size_t m_NumRows = 0;
@@ -28,10 +28,12 @@ public:
     virtual void Print() const = 0;
 
     virtual double GetNumAtCoords(size_t row, size_t col) const = 0;
-    virtual void SetNumAtCoords(size_t row, size_t col, double value) = 0;
-    virtual CMatrix * GetEmptyInstance() const = 0;
-    virtual void Resize(std::size_t numRows, std::size_t numCols) = 0;
 
+    virtual void SetNumAtCoords(size_t row, size_t col, double value) = 0;
+
+    virtual CMatrix *GetEmptyInstance() const = 0;
+
+    virtual void Resize(std::size_t numRows, std::size_t numCols) = 0;
 
 
     virtual bool ShouldBeSparse() const = 0;
@@ -39,12 +41,15 @@ public:
     virtual CMatrix *Convert() const = 0;
 
     virtual CMatrix *Clone() const = 0;
-    std::size_t GetNumRows() const{
+
+    std::size_t GetNumRows() const {
         return m_NumRows;
     }
+
     std::size_t GetNumCols() const {
         return m_NumCols;
     }
+
     virtual void SwapRows(std::size_t a, std::size_t b) = 0;
 
     bool operator==(const CMatrix &other) {

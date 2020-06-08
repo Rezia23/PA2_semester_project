@@ -8,7 +8,7 @@
 #include "CCommand.h"
 #include "COrderCalculator.h"
 
-class CCommandOrder:public CCommand {
+class CCommandOrder : public CCommand {
 public:
     CCommandOrder() : CCommand() {}
 
@@ -16,7 +16,7 @@ public:
 
     CCommandOrder(string varName) : m_VarName(varName) {}
 
-    bool Execute(CMemory & memory) override {
+    bool Execute(CMemory &memory) override {
         if (!memory.ExistsVariable(m_VarName)) {
             m_Result = "Variable does not exist.";
             return false;
@@ -29,6 +29,7 @@ public:
         return true;
 
     }
+
     int m_Order;
 private:
     string m_VarName;

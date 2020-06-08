@@ -27,8 +27,7 @@ protected:
 
     virtual bool ParseCommand(string &input, unique_ptr<CCommand> &nextCommand) = 0;
 
-    virtual void ShowResult(string result) = 0;
-
+    virtual void ShowResult(string result) const = 0;
 
 
 public:
@@ -63,19 +62,16 @@ public:
             string result;
             unique_ptr<CCommand> nextCommand;
             if (!Evaluate(input, result, nextCommand)) {
-//              ShowWrongInputMessage();
-//              continue;
+                ShowMsg("Operation failed:");
             }
             ShowResult(result);
 
         }
     }
 
-    virtual void ShowVarName(string name) const = 0;
-
-    virtual void ShowMatrix(unique_ptr<CMatrix> &matrix) const = 0;
 
     virtual void ShowMsg(string msg) const = 0;
+
 
     //todo fix
 //    void ShowVariables() const {

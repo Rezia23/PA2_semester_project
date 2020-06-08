@@ -23,6 +23,7 @@ public:
     CMatrixStandard() : CMatrix() {
         m_Matrix.resize(0);
     }
+
     CMatrixStandard(vector<vector<double>> matrix) : CMatrix(), m_Matrix(std::move(matrix)) {
         m_NumRows = m_Matrix.size();
         m_NumCols = m_Matrix[0].size();
@@ -42,7 +43,8 @@ public:
             }
         }
     }
-    virtual void SwapRows(std::size_t a, std::size_t b)override{
+
+    virtual void SwapRows(std::size_t a, std::size_t b) override {
         swap(m_Matrix[a], m_Matrix[b]);
     }
 
@@ -57,21 +59,23 @@ public:
     virtual void Print() const override;
 
     virtual double GetNumAtCoords(size_t row, size_t col) const override { return m_Matrix[row][col]; }
-    virtual void SetNumAtCoords(size_t row, size_t col, double value) override{
+
+    virtual void SetNumAtCoords(size_t row, size_t col, double value) override {
         m_Matrix[row][col] = value;
     }
-    CMatrix * GetEmptyInstance() const override{
+
+    CMatrix *GetEmptyInstance() const override {
         return new CMatrixStandard();
     }
-    void Resize(std::size_t numRows, std::size_t numCols) override{
+
+    void Resize(std::size_t numRows, std::size_t numCols) override {
         m_NumRows = numRows;
         m_NumCols = numCols;
         m_Matrix.resize(numRows);
-        for(std::size_t i = 0; i<m_NumRows; i++){
+        for (std::size_t i = 0; i < m_NumRows; i++) {
             m_Matrix[i].resize(m_NumCols);
         }
     }
-
 
 
     virtual bool ShouldBeSparse() const override {

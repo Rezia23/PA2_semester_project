@@ -11,13 +11,13 @@
 #include "CMemory.h"
 #include "CMatrixStandard.h"
 
-class CMergeUnderOperator: public CBinaryOperator {
+class CMergeUnderOperator : public CBinaryOperator {
 public:
-    CMergeUnderOperator(shared_ptr<CMatrix> & left, shared_ptr<CMatrix> & right)
-            :CBinaryOperator(left, right){}
+    CMergeUnderOperator(shared_ptr<CMatrix> &left, shared_ptr<CMatrix> &right)
+            : CBinaryOperator(left, right) {}
 
 
-    CMatrix * Evaluate(CMemory & memory) override{
+    CMatrix *Evaluate(CMemory &memory) override {
         if (m_Left->m_NumCols != m_Right->m_NumCols) {
             throw std::runtime_error("Merging incompatible matrices.");
         }
@@ -25,10 +25,10 @@ public:
         for (size_t i = 0; i < m_Left->m_NumRows + m_Right->m_NumRows; i++) {
             for (size_t j = 0; j < m_Left->m_NumCols; j++) {
                 double nextNum;
-                if(i<m_Left->m_NumRows){
-                    nextNum = m_Left->GetNumAtCoords(i,j);
-                }else{
-                    nextNum = m_Right->GetNumAtCoords(i-m_Left->m_NumRows, j);
+                if (i < m_Left->m_NumRows) {
+                    nextNum = m_Left->GetNumAtCoords(i, j);
+                } else {
+                    nextNum = m_Right->GetNumAtCoords(i - m_Left->m_NumRows, j);
                 }
                 merged[i].push_back(nextNum);
             }

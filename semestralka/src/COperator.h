@@ -10,8 +10,10 @@
 class COperator {
 public:
     COperator() = default;
+
     virtual ~COperator() = default;
-    virtual class CMatrix * Evaluate(CMemory & memory) = 0;
+
+    virtual class CMatrix *Evaluate(CMemory &memory) = 0;
 };
 
 

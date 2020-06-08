@@ -18,10 +18,9 @@ public:
 
     CCommand() = default;
 
-    virtual bool Execute(CMemory & memory) = 0;
+    virtual bool Execute(CMemory &memory) = 0;
 
     virtual ~CCommand() = default;
-
 
 
 };
