@@ -25,14 +25,24 @@ const char *const COMMAND_TRANSPOSE = "transpose";
 const char *const COMMAND_TRANSPOSE_DESTRUCTIVE = "Transpose";
 //todo create command help
 const char *const COMMAND_HELP = "help";
+const char *const COMMAND_EXIT = "exit";
 
-const string DESC_COMMAND_HELP = "show description and usage of a particular command | usage: 'help:command_name ;'";
-const string DESC_COMMAND_LOAD = "store a variable into memory";
-const string DESC_COMMAND_PUT = "store result of operation to a variable";
+const vector<vector<string>> HELP = {
+        {{"Command name"},{"description"},{"usage"}},
+        {{COMMAND_EXIT},{"exit the app"},{"exit"}},
+        {{COMMAND_HELP},{"show this help"},{"help"}},
+        {{"really long name"},{"the description is even longer"},{"and the usage too"}}
+
+
+};
+//        "Command name         description           usage\n" +
+//        string(COMMAND_EXIT) + " - " + "exit the app" +
+//        string(COMMAND_HELP) + " - " + "exit the app" +
+//        string(COMMAND_EXIT) + " - " + "exit the app" +
+//        string(COMMAND_EXIT) + " - " + "exit the app" +
+//        "show description and usage of a particular command | usage: 'help:command_name ;'";
+
 
 const string USAGE_INSTRUCTIONS =
-        "Welcome to the MATRIX! calculator.\nCalculator is controlled by commands listed below.\n--------------------------------------\n" +
-        string(COMMAND_HELP) + ": " + DESC_COMMAND_HELP + "\n" +
-        string(COMMAND_LOAD) + ": " + DESC_COMMAND_LOAD + "\n" +
-        string(COMMAND_PUT) + ": " + DESC_COMMAND_PUT + "\n";
+        "Welcome to the MATRIX! calculator.\nFor exit type '" + string(COMMAND_EXIT) + "' for help type '" + string(COMMAND_HELP) + "'.\n-------------------------------------------\n";
 #endif //SEMESTRALKA_MESSAGES_H

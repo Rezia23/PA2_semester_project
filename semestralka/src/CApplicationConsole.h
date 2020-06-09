@@ -8,6 +8,7 @@
 #include <cstdio>
 #include <memory>
 #include <sstream>
+#include <iomanip>
 #include "CApplication.h"
 #include "CMatrixSparse.h"
 #include "CCommandLoad.h"
@@ -47,6 +48,15 @@ private:
 
     void ShowMsg(string msg) const override {
         cout << msg << endl;
+    }
+    void ShowHelp()const override{
+        for(std::size_t i = 0; i<HELP.size();i++){
+            cout<<HELP[i][0]<<setw(70-HELP[i][0].size())<<HELP[i][1]<<"         "<<HELP[i][2]<<endl;
+//            if(i==0){
+//                cout<<setfill('-')<<setw(60)<<"\n";
+//                cout<<setfill(' ');
+//            }
+        }
     }
 
 

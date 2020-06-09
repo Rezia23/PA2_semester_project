@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classCCommandGaussElimination-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">CCommandGaussElimination Class Reference</div>  </div>
@@ -97,6 +97,7 @@ Inheritance diagram for CCommandGaussElimination:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCCommandGaussElimination__inherit__graph.png" border="0" usemap="#CCommandGaussElimination_inherit__map" alt="Inheritance graph"/></div>
 <map name="CCommandGaussElimination_inherit__map" id="CCommandGaussElimination_inherit__map">
+<area shape="rect" id="node3" href="classCCommandGaussEliminationDestructive.html" title="CCommandGaussElimination\lDestructive" alt="" coords="5,155,200,196"/>
 <area shape="rect" id="node2" href="classCCommand.html" title="CCommand" alt="" coords="57,5,149,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -125,8 +126,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8b2c385d38a996872c963fcff08b3809 inherit pub_methods_classCCommand"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCCommand.html#a8b2c385d38a996872c963fcff08b3809">~CCommand</a> ()=default</td></tr>
 <tr class="separator:a8b2c385d38a996872c963fcff08b3809 inherit pub_methods_classCCommand"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
 <tr class="memitem:a2e619e3d9fb79bca7076ab72c21c09b4"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCCommandGaussElimination.html#a2e619e3d9fb79bca7076ab72c21c09b4">m_VarName</a></td></tr>
 <tr class="separator:a2e619e3d9fb79bca7076ab72c21c09b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -135,7 +136,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_classCCommand"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classCCommand')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classCCommand.html">CCommand</a></td></tr>
 <tr class="memitem:a95d58d40a428b703b727d8f847e6de1e inherit pub_attribs_classCCommand"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCCommand.html#a95d58d40a428b703b727d8f847e6de1e">m_Result</a></td></tr>
 <tr class="separator:a95d58d40a428b703b727d8f847e6de1e inherit pub_attribs_classCCommand"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5192105298cdb9ea3ef5c3d3aaeba50e inherit pub_attribs_classCCommand"><td class="memItemLeft" align="right" valign="top">unique_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCCommand.html#a5192105298cdb9ea3ef5c3d3aaeba50e">m_ResultMatrix</a></td></tr>
+<tr class="memitem:a5192105298cdb9ea3ef5c3d3aaeba50e inherit pub_attribs_classCCommand"><td class="memItemLeft" align="right" valign="top">unique_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCCommand.html#a5192105298cdb9ea3ef5c3d3aaeba50e">m_ResultMatrix</a> = nullptr</td></tr>
 <tr class="separator:a5192105298cdb9ea3ef5c3d3aaeba50e inherit pub_attribs_classCCommand"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -234,6 +235,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classCCommand.html#ad9361ea814093c4ebecf22bb0a3f8b79">CCommand</a>.</p>
 
+<p>Reimplemented in <a class="el" href="classCCommandGaussEliminationDestructive.html#a6bb98f06cdb90b5dbe129286d7d08cc7">CCommandGaussEliminationDestructive</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -250,7 +253,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

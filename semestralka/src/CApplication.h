@@ -14,6 +14,7 @@
 #include "CMatrixStandard.h"
 #include "CCommand.h"
 #include "CMemory.h"
+#include "messages.h"
 
 class CApplication {
 
@@ -55,9 +56,12 @@ public:
     void Run() {
         while (true) {
             string input = GetInput();
-            if (input == "exit ;") {
+            if (input == COMMAND_EXIT) {
                 ShowMsg("Closing the app.");
                 break;
+            } else if (input==COMMAND_HELP){
+                ShowHelp();
+                continue;
             }
             string result;
             unique_ptr<CCommand> nextCommand;
@@ -71,6 +75,7 @@ public:
 
 
     virtual void ShowMsg(string msg) const = 0;
+    virtual void ShowHelp() const = 0;
 
 
     //todo fix
