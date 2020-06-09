@@ -22,12 +22,29 @@ public:
 protected:
     CMemory m_Memory;
 
+    /**
+     * print basic usage instructions
+     */
     virtual void PrintInstructions() const = 0;
 
+    /**
+     * get input from user
+     * @return input data in string
+     */
     virtual string GetInput() const = 0;
 
-    virtual bool ParseCommand(string &input, unique_ptr<CCommand> &nextCommand) = 0;
+    /**
+     * parse input data into commands
+     * @param input input data
+     * @param command parsed command
+     * @return true if command successfully parsed, false otherwise
+     */
+    virtual bool ParseCommand(string &input, unique_ptr<CCommand> &command) = 0;
 
+    /**
+     * show result of operation on screen
+     * @param result result of operation
+     */
     virtual void ShowResult(string result) const = 0;
 
 
@@ -38,28 +55,37 @@ public:
 
     virtual ~CApplication() = default;
 
+    /**
+     * evaluate input from user
+     * @param input input data
+     * @param result string representation of result of operation
+     * @param command command to be parsed
+     * @return true if evaluation successful, false otherwise
+     */
+    bool Evaluate(string input, string &result, unique_ptr<CCommand> &command) {
 
-    bool Evaluate(string input, string &result, unique_ptr<CCommand> &nextCommand) {
-
-        if (!ParseCommand(input, nextCommand)) {
+        if (!ParseCommand(input, command)) {
             result = "Command could not be parsed.";
             return false;
         }
-        if (!nextCommand->Execute(m_Memory)) {
-            result = nextCommand->m_Result;
+        if (!command->Execute(m_Memory)) {
+            result = command->m_Result;
             return false;
         }
-        result = nextCommand->m_Result;
+        result = command->m_Result;
         return true;
     }
 
+    /**
+     * run application
+     */
     void Run() {
         while (true) {
             string input = GetInput();
             if (input == COMMAND_EXIT) {
                 ShowMsg("Closing the app.");
                 break;
-            } else if (input==COMMAND_HELP){
+            } else if (input == COMMAND_HELP) {
                 ShowHelp();
                 continue;
             }
@@ -73,23 +99,17 @@ public:
         }
     }
 
-
+    /**
+     * show message on the screen
+     * @param msg message to be shown
+     */
     virtual void ShowMsg(string msg) const = 0;
+
+    /**
+     * show description of commands on the screen
+     */
     virtual void ShowHelp() const = 0;
 
-
-    //todo fix
-//    void ShowVariables() const {
-//        if (m_Variables.size() == 0) {
-//            ShowMsg("No variables to be shown.");
-//        }
-//        for (auto a = m_Variables.begin(); a != m_Variables.end(); a++) {
-//            ShowVarName(a->first);
-//            //getstring representation
-//            //show
-//            a->second->Print();
-//        }
-//    }
 };
 
 
