@@ -3,6 +3,9 @@
 //
 
 #include "CMatrix.h"
+#include <sstream>
+#include <iomanip>
+#include <iostream>
 
 
 bool CMatrix::operator==(const CMatrix &other) {
@@ -20,15 +23,38 @@ bool CMatrix::operator==(const CMatrix &other) {
 }
 
 string CMatrix::ToString() const {
-    string result;
+    int width = SetCellWidth();
+    stringstream ss;
     for (size_t i = 0; i < m_NumRows; i++) {
         for (size_t j = 0; j < m_NumCols; j++) {
-            if (j != 0) {
-                result += " ";
-            }
-            result += to_string(GetNumAtCoords(i, j));
+            ss<<setw(width)<<GetNumAtCoords(i,j);
         }
-        result += "\n";
+        ss<<'\n';
     }
-    return result;
+    return ss.str();
+}
+
+int CMatrix::SetCellWidth() const {
+    for(size_t i = 0;i<m_NumRows;i++){
+        for(std::size_t j = 0; j<m_NumCols;j++){
+            int numLength = GetNumLength(i,j);
+            if(numLength>=5){
+                return 14;
+            }
+        }
+    }
+    return 6;
+}
+
+int CMatrix::GetNumLength(std::size_t row, std::size_t column) const {
+    string number = to_string(GetNumAtCoords(row,column));
+    int length = number.length();
+    std::size_t it = number.length()-1;
+    char digit = number[it];
+    while(digit=='0'){
+        length--;
+        it--;
+        digit=number[it];
+    }
+    return length;
 }

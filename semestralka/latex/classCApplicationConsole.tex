@@ -54,13 +54,16 @@ bool \hyperlink{classCApplicationConsole_a4ae836d72b1ecdc4b3c3e15ff5f171b6}{Pars
 \item 
 bool \hyperlink{classCApplicationConsole_ab17d9e0bf16052fff75f721f9aaaafc8}{Parse\+Command} (string \&input, unique\+\_\+ptr$<$ \hyperlink{classCCommand}{C\+Command} $>$ \&command) override
 \item 
-bool \hyperlink{classCApplicationConsole_a12531e44827274807a3a0787e66345fe}{Load\+Operand\+Name} (string \&input, string \&name)
-\item 
 bool \hyperlink{classCApplicationConsole_a092af2533775a460a05e7c5198d991fa}{Parse\+Loading} (string \&input, string \&var\+Name, vector$<$ vector$<$ double $>$$>$ \&matrix\+Nums)
 \item 
-bool \hyperlink{classCApplicationConsole_a00a40d89b87f545373a7ce3d22a7c996}{Parse\+Operands} (string \&input, vector$<$ string $>$ \&operands, std\+::size\+\_\+t num\+Of\+Operands=1)
-\item 
 bool \hyperlink{classCApplicationConsole_ae3c29fe61ba160f51ead41382df8c494}{Parse\+Cutting} (string \&input, string \&var\+Name, std\+::size\+\_\+t \&num\+Rows, size\+\_\+t \&num\+Cols, pair$<$ size\+\_\+t, size\+\_\+t $>$ \&start\+Point)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classCApplicationConsole_a12531e44827274807a3a0787e66345fe}{Load\+Operand\+Name} (string \&input, string \&name)
+\item 
+static bool \hyperlink{classCApplicationConsole_a00a40d89b87f545373a7ce3d22a7c996}{Parse\+Operands} (string \&input, vector$<$ string $>$ \&operands, std\+::size\+\_\+t num\+Of\+Operands=1)
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -137,7 +140,7 @@ true if properly ended
 \item[{string \&}]{input, }
 \item[{string \&}]{name}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classCApplicationConsole_a12531e44827274807a3a0787e66345fe}{}\label{classCApplicationConsole_a12531e44827274807a3a0787e66345fe}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{classCApplicationConsole_a12531e44827274807a3a0787e66345fe}{}\label{classCApplicationConsole_a12531e44827274807a3a0787e66345fe}
 Load name of operand variable. 
 \begin{DoxyParams}{Parameters}
 {\em input} & input data \\
@@ -155,7 +158,7 @@ true if loaded successfully, false otherwise (incorrect syntax)
 \item[{string \&}]{input, }
 \item[{unique\+\_\+ptr$<$ {\bf C\+Command} $>$ \&}]{command}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{classCApplicationConsole_ab17d9e0bf16052fff75f721f9aaaafc8}{}\label{classCApplicationConsole_ab17d9e0bf16052fff75f721f9aaaafc8}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{classCApplicationConsole_ab17d9e0bf16052fff75f721f9aaaafc8}{}\label{classCApplicationConsole_ab17d9e0bf16052fff75f721f9aaaafc8}
 Parse input data into commands. 
 \begin{DoxyParams}{Parameters}
 {\em input} & input data \\
@@ -177,7 +180,7 @@ Implements \hyperlink{classCApplication_abfa3357f4517c85261fac0bc307e1ab7}{C\+Ap
 \item[{string \&}]{input, }
 \item[{string \&}]{in\+\_\+command}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classCApplicationConsole_a4ae836d72b1ecdc4b3c3e15ff5f171b6}{}\label{classCApplicationConsole_a4ae836d72b1ecdc4b3c3e15ff5f171b6}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCApplicationConsole_a4ae836d72b1ecdc4b3c3e15ff5f171b6}{}\label{classCApplicationConsole_a4ae836d72b1ecdc4b3c3e15ff5f171b6}
 Parse name of the command from input. 
 \begin{DoxyParams}{Parameters}
 {\em input} & input data \\
@@ -198,7 +201,7 @@ true if parsed successfully, false otherwise (incorrect syntax)
 \item[{size\+\_\+t \&}]{num\+Cols, }
 \item[{pair$<$ size\+\_\+t, size\+\_\+t $>$ \&}]{start\+Point}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classCApplicationConsole_ae3c29fe61ba160f51ead41382df8c494}{}\label{classCApplicationConsole_ae3c29fe61ba160f51ead41382df8c494}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCApplicationConsole_ae3c29fe61ba160f51ead41382df8c494}{}\label{classCApplicationConsole_ae3c29fe61ba160f51ead41382df8c494}
 Parse parameters for cutting of a matrix. 
 \begin{DoxyParams}{Parameters}
 {\em input} & input data \\
@@ -223,7 +226,7 @@ true if successful, false otherwise (incorrect syntax)
 \item[{string \&}]{var\+Name, }
 \item[{vector$<$ vector$<$ double $>$$>$ \&}]{matrix\+Nums}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classCApplicationConsole_a092af2533775a460a05e7c5198d991fa}{}\label{classCApplicationConsole_a092af2533775a460a05e7c5198d991fa}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCApplicationConsole_a092af2533775a460a05e7c5198d991fa}{}\label{classCApplicationConsole_a092af2533775a460a05e7c5198d991fa}
 Parse parameters for loading of a matrix. 
 \begin{DoxyParams}{Parameters}
 {\em input} & input data \\
@@ -244,7 +247,7 @@ true if successful, false otherwise (incorrect syntax)
 \item[{vector$<$ string $>$ \&}]{operands, }
 \item[{std\+::size\+\_\+t}]{num\+Of\+Operands = {\ttfamily 1}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classCApplicationConsole_a00a40d89b87f545373a7ce3d22a7c996}{}\label{classCApplicationConsole_a00a40d89b87f545373a7ce3d22a7c996}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{classCApplicationConsole_a00a40d89b87f545373a7ce3d22a7c996}{}\label{classCApplicationConsole_a00a40d89b87f545373a7ce3d22a7c996}
 Parse operand variable names. 
 \begin{DoxyParams}{Parameters}
 {\em input} & input data \\
@@ -264,7 +267,7 @@ true if successfull, false otherwise (incorrect syntax)
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCApplicationConsole_a77c169050d8faff5ff4019d3204e6ff8}{}\label{classCApplicationConsole_a77c169050d8faff5ff4019d3204e6ff8}
-Shoq basic usage instructions on the screen. 
+Show basic usage instructions on the screen. 
 
 Implements \hyperlink{classCApplication_a308f31081c5a2b880c1bc96dbac3260d}{C\+Application}.
 

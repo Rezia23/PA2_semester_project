@@ -116,6 +116,9 @@ public:
      //todo maybe format somehow better
     string ToString() const;
 
+    int SetCellWidth() const;
+
+    int GetNumLength(std::size_t rows, std::size_t cols) const;
 };
 
 

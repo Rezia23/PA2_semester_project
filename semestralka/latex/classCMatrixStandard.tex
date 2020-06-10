@@ -48,8 +48,6 @@ virtual void \hyperlink{classCMatrixStandard_a7fe5561630fbc65f7aeac5bd54499c13}{
 \hyperlink{classCMatrix}{C\+Matrix} $\ast$ \hyperlink{classCMatrixStandard_a17e51335d1d9e731441a8205536697f7}{Get\+Empty\+Instance} () const override
 \item 
 void \hyperlink{classCMatrixStandard_ad135e13127c58f91c325a131d1dc8a74}{Resize} (std\+::size\+\_\+t num\+Rows, std\+::size\+\_\+t num\+Cols) override
-\item 
-virtual bool \hyperlink{classCMatrixStandard_a603dcb22f4cdf94438d4e59fe44870e4}{Should\+Be\+Sparse} () const override
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -83,6 +81,15 @@ vector$<$ vector$<$ double $>$ $>$ \hyperlink{classCMatrixStandard_a4b0bafe59e33
 \item[{size\+\_\+t}]{num\+Cols}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCMatrixStandard_ae2f8784f0d63aab266bbd144c5cc10c6}{}\label{classCMatrixStandard_ae2f8784f0d63aab266bbd144c5cc10c6}
+Construct matrix from non-\/zero values stored in map and matrix dimensions 
+\begin{DoxyParams}{Parameters}
+{\em matrix} & values of a matrix \\
+\hline
+{\em num\+Rows} & number of rows \\
+\hline
+{\em num\+Cols} & number of columns \\
+\hline
+\end{DoxyParams}
 \index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!````~C\+Matrix\+Standard@{$\sim$\+C\+Matrix\+Standard}}
 \index{````~C\+Matrix\+Standard@{$\sim$\+C\+Matrix\+Standard}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
 \subsubsection[{\texorpdfstring{$\sim$\+C\+Matrix\+Standard() override=default}{~CMatrixStandard() override=default}}]{\setlength{\rightskip}{0pt plus 5cm}virtual C\+Matrix\+Standard\+::$\sim$\+C\+Matrix\+Standard (
@@ -175,7 +182,7 @@ Implements \hyperlink{classCMatrix_a424a048d20918f0f041f4a8645823ae7}{C\+Matrix}
 \item[{std\+::size\+\_\+t}]{num\+Rows, }
 \item[{std\+::size\+\_\+t}]{num\+Cols}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_ad135e13127c58f91c325a131d1dc8a74}{}\label{classCMatrixStandard_ad135e13127c58f91c325a131d1dc8a74}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_ad135e13127c58f91c325a131d1dc8a74}{}\label{classCMatrixStandard_ad135e13127c58f91c325a131d1dc8a74}
 Set sizes of a matrix. 
 \begin{DoxyParams}{Parameters}
 {\em num\+Rows} & number of rows to be set \\
@@ -208,20 +215,6 @@ Set value of matrix at given coordinates.
 
 
 Implements \hyperlink{classCMatrix_afeba0f7cfcc2623bde41cf6111b0ef6a}{C\+Matrix}.
-
-\index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Should\+Be\+Sparse@{Should\+Be\+Sparse}}
-\index{Should\+Be\+Sparse@{Should\+Be\+Sparse}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}
-\subsubsection[{\texorpdfstring{Should\+Be\+Sparse() const override}{ShouldBeSparse() const override}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\+Matrix\+Standard\+::\+Should\+Be\+Sparse (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_a603dcb22f4cdf94438d4e59fe44870e4}{}\label{classCMatrixStandard_a603dcb22f4cdf94438d4e59fe44870e4}
-Check if matrix should be represented as sparse. If number of zero values is bigger than number of other values, matrix should be sparse. \begin{DoxyReturn}{Returns}
-true if should be sparse, false otherwise 
-\end{DoxyReturn}
-
-
-Implements \hyperlink{classCMatrix_a668eaab1f5d9b498e721464124f158c4}{C\+Matrix}.
 
 \index{C\+Matrix\+Standard@{C\+Matrix\+Standard}!Swap\+Rows@{Swap\+Rows}}
 \index{Swap\+Rows@{Swap\+Rows}!C\+Matrix\+Standard@{C\+Matrix\+Standard}}

@@ -41,7 +41,7 @@ virtual \hyperlink{classCMatrixSparse_a40f32c0d13b58937ecbb279b670e9ebc}{$\sim$\
 \item 
 virtual double \hyperlink{classCMatrixSparse_a1f071b5ed04bb2fb015f97ce7074702d}{Get\+Num\+At\+Coords} (size\+\_\+t row, size\+\_\+t col) const override
 \item 
-virtual void \hyperlink{classCMatrixSparse_a675982946fbb61169c625e5eb5d2d2bd}{Set\+Num\+At\+Coords} (size\+\_\+t row, size\+\_\+t col, double value) override
+virtual void \hyperlink{classCMatrixSparse_a679c5dd5db307e5c392a424d06b20465}{Set\+Num\+At\+Coords} (size\+\_\+t row, size\+\_\+t col, double value) override
 \item 
 \hyperlink{classCMatrix}{C\+Matrix} $\ast$ \hyperlink{classCMatrixSparse_a2f545baf72ad2974e1450f8653f9bd06}{Get\+Empty\+Instance} () const override
 \item 
@@ -49,9 +49,9 @@ void \hyperlink{classCMatrixSparse_a83cd4fce61394f6c2b290bf06d0efd0a}{Resize} (s
 \item 
 virtual void \hyperlink{classCMatrixSparse_acf4a7e41666e6fb29e629c3a62a7fd8f}{Print} () const override
 \item 
-virtual bool \hyperlink{classCMatrixSparse_a780df7daf904384dadb5f3cd9bd81e40}{Should\+Be\+Sparse} () const 
+virtual bool \hyperlink{classCMatrixSparse_ac93b335e198a0dfbb32de9b54c5b77b8}{Should\+Be\+Sparse} () const override
 \item 
-virtual void \hyperlink{classCMatrixSparse_a09c9471dbb6d83f6f51f25cc24554293}{Swap\+Rows} (std\+::size\+\_\+t a, std\+::size\+\_\+t b) override
+virtual void \hyperlink{classCMatrixSparse_a0071cd61958d00c313dc524099f1ac4d}{Swap\+Rows} (std\+::size\+\_\+t a, std\+::size\+\_\+t b) override
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -92,6 +92,11 @@ map$<$ pair$<$ size\+\_\+t, size\+\_\+t $>$, double $>$ \hyperlink{classCMatrixS
 \item[{vector$<$ vector$<$ double $>$$>$}]{matrix}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCMatrixSparse_a2477eb8b3d46d83f067fe3c6fcb37772}{}\label{classCMatrixSparse_a2477eb8b3d46d83f067fe3c6fcb37772}
+Construct matrix from values in two dimensional vector 
+\begin{DoxyParams}{Parameters}
+{\em matrix} & values of matrix to be constructed \\
+\hline
+\end{DoxyParams}
 \index{C\+Matrix\+Sparse@{C\+Matrix\+Sparse}!````~C\+Matrix\+Sparse@{$\sim$\+C\+Matrix\+Sparse}}
 \index{````~C\+Matrix\+Sparse@{$\sim$\+C\+Matrix\+Sparse}!C\+Matrix\+Sparse@{C\+Matrix\+Sparse}}
 \subsubsection[{\texorpdfstring{$\sim$\+C\+Matrix\+Sparse() override=default}{~CMatrixSparse() override=default}}]{\setlength{\rightskip}{0pt plus 5cm}virtual C\+Matrix\+Sparse\+::$\sim$\+C\+Matrix\+Sparse (
@@ -198,13 +203,13 @@ Implements \hyperlink{classCMatrix_adb83eafeeea2025f9c84d172f1bb0f1e}{C\+Matrix}
 
 \index{C\+Matrix\+Sparse@{C\+Matrix\+Sparse}!Set\+Num\+At\+Coords@{Set\+Num\+At\+Coords}}
 \index{Set\+Num\+At\+Coords@{Set\+Num\+At\+Coords}!C\+Matrix\+Sparse@{C\+Matrix\+Sparse}}
-\subsubsection[{\texorpdfstring{Set\+Num\+At\+Coords(size\+\_\+t row, size\+\_\+t col, double value) override}{SetNumAtCoords(size_t row, size_t col, double value) override}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Matrix\+Sparse\+::\+Set\+Num\+At\+Coords (
+\subsubsection[{\texorpdfstring{Set\+Num\+At\+Coords(size\+\_\+t row, size\+\_\+t col, double value) override}{SetNumAtCoords(size_t row, size_t col, double value) override}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Matrix\+Sparse\+::\+Set\+Num\+At\+Coords (
 \begin{DoxyParamCaption}
 \item[{size\+\_\+t}]{row, }
 \item[{size\+\_\+t}]{col, }
 \item[{double}]{value}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixSparse_a675982946fbb61169c625e5eb5d2d2bd}{}\label{classCMatrixSparse_a675982946fbb61169c625e5eb5d2d2bd}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixSparse_a679c5dd5db307e5c392a424d06b20465}{}\label{classCMatrixSparse_a679c5dd5db307e5c392a424d06b20465}
 Set value of matrix at given coordinates. 
 \begin{DoxyParams}{Parameters}
 {\em row} & index of a row of a value \\
@@ -220,26 +225,26 @@ Implements \hyperlink{classCMatrix_afeba0f7cfcc2623bde41cf6111b0ef6a}{C\+Matrix}
 
 \index{C\+Matrix\+Sparse@{C\+Matrix\+Sparse}!Should\+Be\+Sparse@{Should\+Be\+Sparse}}
 \index{Should\+Be\+Sparse@{Should\+Be\+Sparse}!C\+Matrix\+Sparse@{C\+Matrix\+Sparse}}
-\subsubsection[{\texorpdfstring{Should\+Be\+Sparse() const }{ShouldBeSparse() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\+Matrix\+Sparse\+::\+Should\+Be\+Sparse (
+\subsubsection[{\texorpdfstring{Should\+Be\+Sparse() const override}{ShouldBeSparse() const override}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\+Matrix\+Sparse\+::\+Should\+Be\+Sparse (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixSparse_a780df7daf904384dadb5f3cd9bd81e40}{}\label{classCMatrixSparse_a780df7daf904384dadb5f3cd9bd81e40}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixSparse_ac93b335e198a0dfbb32de9b54c5b77b8}{}\label{classCMatrixSparse_ac93b335e198a0dfbb32de9b54c5b77b8}
 Check if matrix should be represented as sparse. If number of zero values is bigger than number of other values, matrix should be sparse. \begin{DoxyReturn}{Returns}
 true if should be sparse, false otherwise 
 \end{DoxyReturn}
 
 
-Implements \hyperlink{classCMatrix_a668eaab1f5d9b498e721464124f158c4}{C\+Matrix}.
+Reimplemented from \hyperlink{classCMatrix_a3a3a7803344733bc8a421497097feeac}{C\+Matrix}.
 
 \index{C\+Matrix\+Sparse@{C\+Matrix\+Sparse}!Swap\+Rows@{Swap\+Rows}}
 \index{Swap\+Rows@{Swap\+Rows}!C\+Matrix\+Sparse@{C\+Matrix\+Sparse}}
-\subsubsection[{\texorpdfstring{Swap\+Rows(std\+::size\+\_\+t a, std\+::size\+\_\+t b) override}{SwapRows(std::size_t a, std::size_t b) override}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Matrix\+Sparse\+::\+Swap\+Rows (
+\subsubsection[{\texorpdfstring{Swap\+Rows(std\+::size\+\_\+t a, std\+::size\+\_\+t b) override}{SwapRows(std::size_t a, std::size_t b) override}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Matrix\+Sparse\+::\+Swap\+Rows (
 \begin{DoxyParamCaption}
 \item[{std\+::size\+\_\+t}]{a, }
 \item[{std\+::size\+\_\+t}]{b}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixSparse_a09c9471dbb6d83f6f51f25cc24554293}{}\label{classCMatrixSparse_a09c9471dbb6d83f6f51f25cc24554293}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixSparse_a0071cd61958d00c313dc524099f1ac4d}{}\label{classCMatrixSparse_a0071cd61958d00c313dc524099f1ac4d}
 Swap rows of a matrix. 
 \begin{DoxyParams}{Parameters}
 {\em a} & first row to be swapped \\
