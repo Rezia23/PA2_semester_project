@@ -17,24 +17,7 @@ public:
 
     CCommandInverse(string varName) : m_VarName(varName) {}
 
-    bool Execute(CMemory &memory) override {
-        if (!memory.ExistsVariable(m_VarName)) {
-            m_Result = "Variable does not exist.";
-            return false;
-        }
-        m_Result = "Inversion of " + m_VarName + " is:\n";
-
-        CInverseOperator op(memory.At(m_VarName));
-        try {
-            m_ResultMatrix = unique_ptr<CMatrix>(op.Evaluate(memory));
-            m_Result += m_ResultMatrix->ToString();
-            return true;
-        } catch (const std::runtime_error &e) {
-            m_Result = "Matrix " + m_VarName + " does not have inverse.";
-            return false;
-        }
-
-    }
+    bool Execute(CMemory &memory) override;
 
 private:
     string m_VarName;

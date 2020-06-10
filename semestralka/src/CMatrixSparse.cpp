@@ -42,4 +42,34 @@ double CMatrixSparse::GetNumAtCoords(size_t row, size_t col) const {
     }
 }
 
+void CMatrixSparse::SetNumAtCoords(size_t row, size_t col, double value) {
+    if (GetNumAtCoords(row, col) != 0) {
+        m_Matrix.erase({row, col});
+    }
+    if (value != 0) {
+        m_Matrix[{row, col}] = value;
+    }
+}
+
+void CMatrixSparse::SwapRows(std::size_t a, std::size_t b) {
+    map<pair<std::size_t, size_t>, double> nums;
+    for (size_t i = 0; i < m_NumCols; i++) {
+        double nextNum = GetNumAtCoords(a, i);
+        if (nextNum != 0) {
+            nums[{a, i}] = nextNum;
+            m_Matrix.erase({a, i});
+        }
+    }
+    for (std::size_t i = 0; i < m_NumCols; i++) {
+        double nextNum = GetNumAtCoords(b, i);
+        if (nextNum != 0) {
+            m_Matrix.erase({b, i});
+            m_Matrix[{a, i}] = nextNum;
+        }
+    }
+    for (auto a : nums) {
+        m_Matrix[{b, a.first.second}] = a.second;
+    }
+}
+
 

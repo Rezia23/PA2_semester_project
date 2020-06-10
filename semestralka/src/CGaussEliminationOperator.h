@@ -21,11 +21,7 @@ public:
     /**
      * Transform variable to upper triangular form.
      */
-    CMatrix *Evaluate(CMemory &memory) override {
-        shared_ptr<CMatrix> result = unique_ptr<CMatrix>(m_Operand->Clone());
-        Gem(result, m_EliminationProcess);
-        return new CMatrixSparse(result);
-    }
+    CMatrix *Evaluate(CMemory &memory) override;
     /**
      * Get matrices from each step of elimination process.
      * @return vector of matrices

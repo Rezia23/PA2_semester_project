@@ -34,3 +34,12 @@ void CMatrixStandard::Print() const {
         cout << endl;
     }
 }
+
+void CMatrixStandard::Resize(std::size_t numRows, std::size_t numCols) {
+    m_NumRows = numRows;
+    m_NumCols = numCols;
+    m_Matrix.resize(numRows);
+    for (std::size_t i = 0; i < m_NumRows; i++) {
+        m_Matrix[i].resize(m_NumCols);
+    }
+}

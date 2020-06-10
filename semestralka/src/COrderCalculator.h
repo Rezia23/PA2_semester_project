@@ -16,11 +16,7 @@ public:
      * @param matrix matrix to have order calculated
      * @return order of a matrix
      */
-    int operator()(const shared_ptr<CMatrix> &matrix) const {
-        shared_ptr<CMatrix> tmp = shared_ptr<CMatrix>(matrix->Clone());
-        Gem(tmp);
-        return matrix->GetNumRows() - GetCountZeroRows(tmp);
-    }
+    int operator()(const shared_ptr<CMatrix> &matrix) const;
 
 private:
     /**
@@ -28,23 +24,7 @@ private:
      * @param matrix
      * @return number of zero rows
      */
-    static int GetCountZeroRows(const shared_ptr<CMatrix> &matrix) {
-        int count = 0;
-        bool isRowZero;
-        for (size_t i = 0; i < matrix->GetNumRows(); i++) {
-            isRowZero = true;
-            for (size_t j = 0; j < matrix->GetNumCols(); j++) {
-                if (matrix->GetNumAtCoords(i, j) != 0) {
-                    isRowZero = false;
-                    break;
-                }
-            }
-            if (isRowZero) {
-                count++;
-            }
-        }
-        return count;
-    }
+    static int GetCountZeroRows(const shared_ptr<CMatrix> &matrix);
 };
 
 

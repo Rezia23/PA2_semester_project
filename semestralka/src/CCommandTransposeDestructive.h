@@ -9,20 +9,7 @@
 
 class CCommandTransposeDestructive : public CCommandTranspose {
 public:
-    bool Execute(CMemory &memory) override {
-        if (!memory.ExistsVariable(m_VarName)) {
-            m_Result = "Variable does not exist.";
-            return false;
-        }
-        m_Result = "Matrix " + m_VarName + " has been transposed to:\n";
-
-        CTransposeOperator op(memory.At(m_VarName));
-
-        memory.Insert(m_VarName, shared_ptr<CMatrix>(op.Evaluate(memory))); //replace original variable with result
-        m_ResultMatrix = unique_ptr<CMatrix>(memory.At(m_VarName)->Clone());
-        m_Result += m_ResultMatrix->ToString();
-        return true;
-    }
+    bool Execute(CMemory &memory) override;
 
     CCommandTransposeDestructive(string varName) : CCommandTranspose(varName) {}
 

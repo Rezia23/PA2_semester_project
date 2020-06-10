@@ -29,6 +29,12 @@ public:
         m_NumCols = m_Matrix[0].size();
     }
 
+    /**
+     * Construct matrix from non-zero values stored in map and matrix dimensions
+     * @param matrix values of a matrix
+     * @param numRows number of rows
+     * @param numCols number of columns
+     */
     CMatrixStandard(map<pair<size_t, size_t>, double> matrix, size_t numRows, size_t numCols) : CMatrix() {
         m_NumRows = numRows;
         m_NumCols = numCols;
@@ -68,27 +74,8 @@ public:
         return new CMatrixStandard();
     }
 
-    void Resize(std::size_t numRows, std::size_t numCols) override {
-        m_NumRows = numRows;
-        m_NumCols = numCols;
-        m_Matrix.resize(numRows);
-        for (std::size_t i = 0; i < m_NumRows; i++) {
-            m_Matrix[i].resize(m_NumCols);
-        }
-    }
+    void Resize(std::size_t numRows, std::size_t numCols) override;
 
-
-    virtual bool ShouldBeSparse() const override {
-        size_t zeroCount = 0;
-        for (size_t i = 0; i < m_NumRows; i++) {
-            for (size_t j = 0; j < m_NumCols; j++) {
-                if (GetNumAtCoords(i, j) == 0) {
-                    zeroCount++;
-                }
-            }
-        }
-        return zeroCount > (m_NumRows * m_NumCols) - zeroCount;
-    }
 };
 
 

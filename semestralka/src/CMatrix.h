@@ -70,7 +70,17 @@ public:
      * If number of zero values is bigger than number of other values, matrix should be sparse.
      * @return true if should be sparse, false otherwise
      */
-    virtual bool ShouldBeSparse() const = 0;
+    virtual bool ShouldBeSparse() const {
+        size_t zeroCount = 0;
+        for (size_t i = 0; i < m_NumRows; i++) {
+            for (size_t j = 0; j < m_NumCols; j++) {
+                if (GetNumAtCoords(i, j) == 0) {
+                    zeroCount++;
+                }
+            }
+        }
+        return zeroCount > (m_NumRows * m_NumCols) - zeroCount;
+    }
 
     /**
      * Convert matrix to different representation.
@@ -97,38 +107,14 @@ public:
      * @param other
      * @return true if matrices are equal
      */
-    bool operator==(const CMatrix &other) {
-        if (m_NumRows != other.m_NumRows || m_NumCols != other.m_NumCols) {
-            return false;
-        }
-        for (size_t i = 0; i < m_NumRows; i++) {
-            for (size_t j = 0; j < m_NumCols; j++) {
-                if (GetNumAtCoords(i, j) != other.GetNumAtCoords(i, j)) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
+    bool operator==(const CMatrix &other);
 
     /**
      * Convert matrix to string.
      * @return matrix in string
      */
      //todo maybe format somehow better
-    string ToString() {
-        string result;
-        for (size_t i = 0; i < m_NumRows; i++) {
-            for (size_t j = 0; j < m_NumCols; j++) {
-                if (j != 0) {
-                    result += " ";
-                }
-                result += to_string(GetNumAtCoords(i, j));
-            }
-            result += "\n";
-        }
-        return result;
-    }
+    string ToString() const;
 
 };
 

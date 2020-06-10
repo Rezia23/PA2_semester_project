@@ -34,6 +34,10 @@ public:
         m_NumCols = numCols;
     }
 
+    /**
+     * Construct matrix from values in two dimensional vector
+     * @param matrix values of matrix to be constructed
+     */
     CMatrixSparse(vector<vector<double>> matrix) : CMatrix() {
         m_NumRows = matrix.size();
         m_NumCols = matrix[0].size();
@@ -56,14 +60,7 @@ public:
 
     virtual double GetNumAtCoords(size_t row, size_t col) const override;
 
-    virtual void SetNumAtCoords(size_t row, size_t col, double value) override {
-        if (GetNumAtCoords(row, col) != 0) {
-            m_Matrix.erase({row, col});
-        }
-        if (value != 0) {
-            m_Matrix[{row, col}] = value;
-        }
-    }
+    virtual void SetNumAtCoords(size_t row, size_t col, double value) override;
 
     CMatrix *GetEmptyInstance() const override {
         return new CMatrixSparse();
@@ -77,30 +74,11 @@ public:
     virtual void Print() const override;
 
 
-    virtual bool ShouldBeSparse() const {
+    virtual bool ShouldBeSparse() const override {
         return (m_NumRows * m_NumCols) - m_Matrix.size() > m_Matrix.size();
     }
 
-    virtual void SwapRows(std::size_t a, std::size_t b) override {
-        map<pair<std::size_t, size_t>, double> nums;
-        for (size_t i = 0; i < m_NumCols; i++) {
-            double nextNum = GetNumAtCoords(a, i);
-            if (nextNum != 0) {
-                nums[{a, i}] = nextNum;
-                m_Matrix.erase({a, i});
-            }
-        }
-        for (std::size_t i = 0; i < m_NumCols; i++) {
-            double nextNum = GetNumAtCoords(b, i);
-            if (nextNum != 0) {
-                m_Matrix.erase({b, i});
-                m_Matrix[{a, i}] = nextNum;
-            }
-        }
-        for (auto a : nums) {
-            m_Matrix[{b, a.first.second}] = a.second;
-        }
-    }
+    virtual void SwapRows(std::size_t a, std::size_t b) override;
 
 
 };

@@ -23,16 +23,7 @@ public:
         }
     }
 
-    bool Execute(CMemory &memory) override {
-        if (memory.ExistsVariable(m_VariableName)) {
-            m_Result = "Cannot create variable with same name as existing.";
-            return false;
-        }
-        m_Result = "Matrix " + m_VariableName + " successfully loaded.\n";
-        m_Result += m_ResultMatrix->ToString();
-        memory.Insert(m_VariableName, move(m_ResultMatrix));
-        return true;
-    }
+    bool Execute(CMemory &memory) override;
 
 private:
     string m_VariableName;

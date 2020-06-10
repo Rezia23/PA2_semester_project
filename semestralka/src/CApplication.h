@@ -18,12 +18,11 @@
 
 class CApplication {
 
-public:
 protected:
     CMemory m_Memory;
 
     /**
-     * Shoq basic usage instructions on the screen.
+     * Show basic usage instructions on the screen.
      */
     virtual void PrintInstructions() const = 0;
 
@@ -62,42 +61,12 @@ public:
      * @param command command to be parsed
      * @return true if evaluation successful, false otherwise
      */
-    bool Evaluate(string input, string &result, unique_ptr<CCommand> &command) {
-
-        if (!ParseCommand(input, command)) {
-            result = "Command could not be parsed.";
-            return false;
-        }
-        if (!command->Execute(m_Memory)) {
-            result = command->m_Result;
-            return false;
-        }
-        result = command->m_Result;
-        return true;
-    }
+    bool Evaluate(string input, string &result, unique_ptr<CCommand> &command);
 
     /**
      * Run application.
      */
-    void Run() {
-        while (true) {
-            string input = GetInput();
-            if (input == COMMAND_EXIT) {
-                ShowMsg("Closing the app.");
-                break;
-            } else if (input == COMMAND_HELP) {
-                ShowHelp();
-                continue;
-            }
-            string result;
-            unique_ptr<CCommand> nextCommand;
-            if (!Evaluate(input, result, nextCommand)) {
-                ShowMsg("Operation failed:");
-            }
-            ShowResult(result);
-
-        }
-    }
+    void Run();
 
     /**
      * Show message on the screen.
