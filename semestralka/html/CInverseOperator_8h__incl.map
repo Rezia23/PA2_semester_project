@@ -1,7 +1,7 @@
 <map id="src/CInverseOperator.h" name="src/CInverseOperator.h">
 <area shape="rect" id="node2" href="$CUnaryOperator_8h.html" title="CUnaryOperator.h" alt="" coords="5,155,133,181"/>
 <area shape="rect" id="node8" href="$CMatrixStandard_8h.html" title="CMatrixStandard.h" alt="" coords="208,155,339,181"/>
-<area shape="rect" id="node16" href="$CMergeNextToOperation_8h.html" title="CMergeNextToOperation.h" alt="" coords="493,80,672,107"/>
+<area shape="rect" id="node16" href="$CMergeNextToOperator_8h.html" title="CMergeNextToOperator.h" alt="" coords="499,80,671,107"/>
 <area shape="rect" id="node18" href="$CCutOperator_8h.html" title="CCutOperator.h" alt="" coords="117,80,232,107"/>
 <area shape="rect" id="node19" href="$CDeterminantCalculator_8h.html" title="CDeterminantCalculator.h" alt="" coords="623,155,796,181"/>
 <area shape="rect" id="node3" href="$COperator_8h.html" title="COperator.h" alt="" coords="705,379,799,405"/>

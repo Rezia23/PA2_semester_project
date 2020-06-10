@@ -1,6 +1,7 @@
 var searchData=
 [
   ['caddoperator',['CAddOperator',['../classCAddOperator.html#aa8b0f16536813f81d9b957a66d540e81',1,'CAddOperator']]],
+  ['calculatedeterminant',['CalculateDeterminant',['../classCDeterminantCalculator.html#a1b56e8907eb6d7bbc9083d7f10118186',1,'CDeterminantCalculator']]],
   ['capplication',['CApplication',['../classCApplication.html#a186bb7420ce66fadac70d2c30311b6ee',1,'CApplication']]],
   ['capplicationconsole',['CApplicationConsole',['../classCApplicationConsole.html#a5d2e88210a41c621fbfb933eedb181b1',1,'CApplicationConsole']]],
   ['cbinaryoperator',['CBinaryOperator',['../classCBinaryOperator.html#a0c0b5652ad1d96cc6922a47d7366355f',1,'CBinaryOperator::CBinaryOperator()=default'],['../classCBinaryOperator.html#a3db57fcfac0ad4c3c2b29a257bdd6fee',1,'CBinaryOperator::CBinaryOperator(shared_ptr&lt; CMatrix &gt; &amp;left, shared_ptr&lt; CMatrix &gt; &amp;right)']]],
@@ -35,7 +36,6 @@ var searchData=
   ['cmultiplyoperator',['CMultiplyOperator',['../classCMultiplyOperator.html#a18013bd183ce4302192adb52843779fb',1,'CMultiplyOperator']]],
   ['convert',['Convert',['../classCMatrix.html#aca808472e6465738fae14a6ac244cf0b',1,'CMatrix::Convert()'],['../classCMatrixSparse.html#a1519d4cdef830a6df4d0ec900b4413c7',1,'CMatrixSparse::Convert()'],['../classCMatrixStandard.html#a73f39b1ac5602dbd233df469ba8f0c3b',1,'CMatrixStandard::Convert()']]],
   ['converttolu',['ConvertToLU',['../classCInverseOperator.html#ad931eb04b739afe11d45b05e09f760ab',1,'CInverseOperator']]],
-  ['converttouppertriangular',['ConvertToUpperTriangular',['../classCDeterminantCalculator.html#a118a6d889ca2e24f2e77d2441e788181',1,'CDeterminantCalculator']]],
   ['coperator',['COperator',['../classCOperator.html#a87e51bbea921716008a02f2c01cc22ae',1,'COperator']]],
   ['createzerotriangles',['CreateZeroTriangles',['../classCInverseOperator.html#a061d632bb989d6cf75e0f08120e22e03',1,'CInverseOperator']]],
   ['csubtractoperator',['CSubtractOperator',['../classCSubtractOperator.html#a8a17b585966d93c00fbfef857e7789cf',1,'CSubtractOperator']]],

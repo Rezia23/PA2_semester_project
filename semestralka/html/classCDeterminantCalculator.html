@@ -84,7 +84,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="classCDeterminantCalculator-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">CDeterminantCalculator Class Reference</div>  </div>
@@ -95,15 +96,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a118a6d889ca2e24f2e77d2441e788181"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDeterminantCalculator.html#a118a6d889ca2e24f2e77d2441e788181">ConvertToUpperTriangular</a> (shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;matrix)</td></tr>
-<tr class="separator:a118a6d889ca2e24f2e77d2441e788181"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9da30150339c152a64e7e43b10d98d08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDeterminantCalculator.html#a9da30150339c152a64e7e43b10d98d08">AddDiagonal</a> (double &amp;det, shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;matrix) const </td></tr>
-<tr class="separator:a9da30150339c152a64e7e43b10d98d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f86ba4955b9cabf3042b96be7563a10"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDeterminantCalculator.html#a1f86ba4955b9cabf3042b96be7563a10">operator()</a> (const shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;matrix)</td></tr>
 <tr class="separator:a1f86ba4955b9cabf3042b96be7563a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a1b56e8907eb6d7bbc9083d7f10118186"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDeterminantCalculator.html#a1b56e8907eb6d7bbc9083d7f10118186">CalculateDeterminant</a> (shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;matrix)</td></tr>
+<tr class="separator:a1b56e8907eb6d7bbc9083d7f10118186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9da30150339c152a64e7e43b10d98d08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDeterminantCalculator.html#a9da30150339c152a64e7e43b10d98d08">AddDiagonal</a> (double &amp;det, shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;matrix) const </td></tr>
+<tr class="separator:a9da30150339c152a64e7e43b10d98d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
 <tr class="memitem:a3cda3c851df4a12fa39cef7b5fe08261"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCDeterminantCalculator.html#a3cda3c851df4a12fa39cef7b5fe08261">HasZeroRowOrCol</a> (const shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;matrix)</td></tr>
 <tr class="separator:a3cda3c851df4a12fa39cef7b5fe08261"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -135,14 +139,21 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Multiply diagonal values of a square matrix. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">det</td><td></td></tr>
+    <tr><td class="paramname">matrix</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="a118a6d889ca2e24f2e77d2441e788181"></a>
+<a class="anchor" id="a1b56e8907eb6d7bbc9083d7f10118186"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -150,7 +161,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double CDeterminantCalculator::ConvertToUpperTriangular </td>
+          <td class="memname">double CDeterminantCalculator::CalculateDeterminant </td>
           <td>(</td>
           <td class="paramtype">shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>matrix</em></td><td>)</td>
@@ -159,10 +170,17 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Calculate determinant by converting matrix to lower upper triangular form. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">matrix</td><td>matrix to have determinant calculated </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>determinant </dd></dl>
 
 </div>
 </div>
@@ -183,10 +201,17 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Check if matrix has a row or a column with only zeroes. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">matrix</td><td>input matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if has only zero row or column, false otherwise </dd></dl>
 
 </div>
 </div>
@@ -211,6 +236,13 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Calculate determinant of a matrix. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">matrix</td><td>matrix to have determinant calculated </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>determinant </dd></dl>
 
 </div>
 </div>

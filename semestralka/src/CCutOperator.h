@@ -22,12 +22,14 @@ public:
                  pair<size_t, size_t> startPoint)
             : CUnaryOperator(operand), m_NumRows(numRows), m_NumCols(numCols), m_StartPoint(std::move(startPoint)) {}
 
-
+    /**
+     * Cut matrix according to parameters.
+     */
     CMatrix *Evaluate(CMemory &memory) override {
-        if (m_NumRows > m_Operand->m_NumRows || m_NumCols > m_Operand->m_NumCols) {
+        if (m_NumRows > m_Operand->GetNumRows() || m_NumCols > m_Operand->GetNumCols()) {
             throw runtime_error("Wrong dimensions, cannot cut.");
-        } else if (m_StartPoint.first > m_Operand->m_NumRows - m_NumRows ||
-                   m_StartPoint.second > m_Operand->m_NumCols - m_NumCols) {
+        } else if (m_StartPoint.first > m_Operand->GetNumRows() - m_NumRows ||
+                   m_StartPoint.second > m_Operand->GetNumCols() - m_NumCols) {
             throw runtime_error("Wrong dimensions2, cannot cut.");
         }
         vector<vector<double>> cut(m_NumRows);

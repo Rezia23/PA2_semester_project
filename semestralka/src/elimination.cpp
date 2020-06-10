@@ -9,7 +9,7 @@ int SortForElimination(shared_ptr<CMatrix> &matrix) {
     bool isChange = true;
     while (isChange) {
         isChange = false;
-        for (size_t i = matrix->m_NumRows - 1; i > 0; i--) {
+        for (size_t i = matrix->GetNumRows() - 1; i > 0; i--) {
             if (matrix->GetNumAtCoords(i - 1, 0) < matrix->GetNumAtCoords(i, 0)) {
                 matrix->SwapRows(i - 1, i);
                 numSwaps++;
@@ -27,11 +27,11 @@ void Gem(shared_ptr<CMatrix> &matrix, vector<shared_ptr<CMatrix>> &eliminationPr
     SortForElimination(matrix);
     eliminationProcess.push_back(shared_ptr<CMatrix>(matrix->Clone()));
 
-    for (size_t i = 0; i < matrix->m_NumRows; i++) {
-        for (size_t j = 0; j < matrix->m_NumRows; j++) {
+    for (size_t i = 0; i < matrix->GetNumRows(); i++) {
+        for (size_t j = 0; j < matrix->GetNumRows(); j++) {
             if (i < j) {
                 double temp = matrix->GetNumAtCoords(j, i);
-                for (size_t k = 0; k < matrix->m_NumCols; k++) {
+                for (size_t k = 0; k < matrix->GetNumCols(); k++) {
                     if (temp == 0) {
                         wasMadeChange = true;
                         break;
@@ -51,11 +51,11 @@ void Gem(shared_ptr<CMatrix> &matrix, vector<shared_ptr<CMatrix>> &eliminationPr
 void Gem(shared_ptr<CMatrix> &matrix) {
     SortForElimination(matrix);
 
-    for (size_t i = 0; i < matrix->m_NumRows; i++) {
-        for (size_t j = 0; j < matrix->m_NumRows; j++) {
+    for (size_t i = 0; i < matrix->GetNumRows(); i++) {
+        for (size_t j = 0; j < matrix->GetNumRows(); j++) {
             if (i < j) {
                 double temp = matrix->GetNumAtCoords(j, i);
-                for (size_t k = 0; k < matrix->m_NumCols; k++) {
+                for (size_t k = 0; k < matrix->GetNumCols(); k++) {
                     matrix->SetNumAtCoords(j, k, matrix->GetNumAtCoords(j, k) * matrix->GetNumAtCoords(i, i));
                     matrix->SetNumAtCoords(j, k, matrix->GetNumAtCoords(j, k) - (matrix->GetNumAtCoords(i, k) * temp));
                 }

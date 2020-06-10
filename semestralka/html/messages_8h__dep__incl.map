@@ -1,5 +1,7 @@
 <map id="src/messages.h" name="src/messages.h">
-<area shape="rect" id="node2" href="$CApplicationConsole_8h.html" title="src/CApplicationConsole.h" alt="" coords="96,80,273,107"/>
-<area shape="rect" id="node3" href="$CApplicationConsole_8cpp.html" title="src/CApplicationConsole.cpp" alt="" coords="5,155,196,181"/>
-<area shape="rect" id="node4" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="220,155,317,181"/>
+<area shape="rect" id="node2" href="$CApplication_8h.html" title="src/CApplication.h" alt="" coords="93,80,223,107"/>
+<area shape="rect" id="node4" href="$CApplicationConsole_8h.html" title="src/CApplicationConsole.h" alt="" coords="172,155,349,181"/>
+<area shape="rect" id="node3" href="$CApplication_8cpp.html" title="src/CApplication.cpp" alt="" coords="5,155,148,181"/>
+<area shape="rect" id="node5" href="$CApplicationConsole_8cpp.html" title="src/CApplicationConsole.cpp" alt="" coords="81,229,272,256"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="296,229,393,256"/>
 </map>

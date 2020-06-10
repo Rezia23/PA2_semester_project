@@ -58,6 +58,11 @@ void \hyperlink{classCInverseOperator_ad931eb04b739afe11d45b05e09f760ab}{Convert
 \item[{shared\+\_\+ptr$<$ {\bf C\+Matrix} $>$ \&}]{matrix}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCInverseOperator_ad931eb04b739afe11d45b05e09f760ab}{}\label{classCInverseOperator_ad931eb04b739afe11d45b05e09f760ab}
+Convert augumented matrix so that it begins with an identity matrix. 
+\begin{DoxyParams}{Parameters}
+{\em matrix} & matrix to be converted \\
+\hline
+\end{DoxyParams}
 \index{C\+Inverse\+Operator@{C\+Inverse\+Operator}!Create\+Zero\+Triangles@{Create\+Zero\+Triangles}}
 \index{Create\+Zero\+Triangles@{Create\+Zero\+Triangles}!C\+Inverse\+Operator@{C\+Inverse\+Operator}}
 \subsubsection[{\texorpdfstring{Create\+Zero\+Triangles(shared\+\_\+ptr$<$ C\+Matrix $>$ \&matrix)}{CreateZeroTriangles(shared_ptr< CMatrix > &matrix)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Inverse\+Operator\+::\+Create\+Zero\+Triangles (
@@ -65,6 +70,11 @@ void \hyperlink{classCInverseOperator_ad931eb04b739afe11d45b05e09f760ab}{Convert
 \item[{shared\+\_\+ptr$<$ {\bf C\+Matrix} $>$ \&}]{matrix}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCInverseOperator_a061d632bb989d6cf75e0f08120e22e03}{}\label{classCInverseOperator_a061d632bb989d6cf75e0f08120e22e03}
+Convert augumented matrix so that it begins with a square matrix in lower upper triangular form (diagonal). 
+\begin{DoxyParams}{Parameters}
+{\em matrix} & matrix to be converted \\
+\hline
+\end{DoxyParams}
 \index{C\+Inverse\+Operator@{C\+Inverse\+Operator}!Evaluate@{Evaluate}}
 \index{Evaluate@{Evaluate}!C\+Inverse\+Operator@{C\+Inverse\+Operator}}
 \subsubsection[{\texorpdfstring{Evaluate(\+C\+Memory \&memory) override}{Evaluate(CMemory &memory) override}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Matrix}$\ast$ C\+Inverse\+Operator\+::\+Evaluate (
@@ -72,7 +82,7 @@ void \hyperlink{classCInverseOperator_ad931eb04b739afe11d45b05e09f760ab}{Convert
 \item[{{\bf C\+Memory} \&}]{memory}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCInverseOperator_a72d6bb822dcc0d7944c9aaf53fa62b9f}{}\label{classCInverseOperator_a72d6bb822dcc0d7944c9aaf53fa62b9f}
-
+Find inverse of a variable. 
 
 Implements \hyperlink{classCUnaryOperator_a17b01d9de023a58642f6fd82f214cde0}{C\+Unary\+Operator}.
 
@@ -83,6 +93,14 @@ Implements \hyperlink{classCUnaryOperator_a17b01d9de023a58642f6fd82f214cde0}{C\+
 \item[{std\+::size\+\_\+t}]{dimension}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCInverseOperator_a007fc0315502d838a79e83e0d2379083}{}\label{classCInverseOperator_a007fc0315502d838a79e83e0d2379083}
+Get new identity matrix. 
+\begin{DoxyParams}{Parameters}
+{\em dimension} & size of matrix to be created \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new identity matrix 
+\end{DoxyReturn}
 \index{C\+Inverse\+Operator@{C\+Inverse\+Operator}!Make\+Diagonals\+To1@{Make\+Diagonals\+To1}}
 \index{Make\+Diagonals\+To1@{Make\+Diagonals\+To1}!C\+Inverse\+Operator@{C\+Inverse\+Operator}}
 \subsubsection[{\texorpdfstring{Make\+Diagonals\+To1(shared\+\_\+ptr$<$ C\+Matrix $>$ \&matrix)}{MakeDiagonalsTo1(shared_ptr< CMatrix > &matrix)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Inverse\+Operator\+::\+Make\+Diagonals\+To1 (
@@ -90,6 +108,11 @@ Implements \hyperlink{classCUnaryOperator_a17b01d9de023a58642f6fd82f214cde0}{C\+
 \item[{shared\+\_\+ptr$<$ {\bf C\+Matrix} $>$ \&}]{matrix}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCInverseOperator_accadb5f47ca24653afdfc77e76c7d344}{}\label{classCInverseOperator_accadb5f47ca24653afdfc77e76c7d344}
+Make diagonal of beginning square matrix of augumented matrix to 1. Each row is divided by number on the diagonal of the beginning square matrix. 
+\begin{DoxyParams}{Parameters}
+{\em matrix} & augumented matrix to be converted \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -100,6 +100,9 @@ vector$<$ vector$<$ double $>$ $>$ \hyperlink{classCMatrixStandard_a4b0bafe59e33
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_a30885c9a67bfe07b8379f7dd7a782ce4}{}\label{classCMatrixStandard_a30885c9a67bfe07b8379f7dd7a782ce4}
+Get new instance of the same matrix. \begin{DoxyReturn}{Returns}
+new instance 
+\end{DoxyReturn}
 
 
 Implements \hyperlink{classCMatrix_a42ac1f2a9e69919974febca17971be60}{C\+Matrix}.
@@ -111,6 +114,9 @@ Implements \hyperlink{classCMatrix_a42ac1f2a9e69919974febca17971be60}{C\+Matrix}
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_a73f39b1ac5602dbd233df469ba8f0c3b}{}\label{classCMatrixStandard_a73f39b1ac5602dbd233df469ba8f0c3b}
+Convert matrix to different representation. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 
 
 Implements \hyperlink{classCMatrix_aca808472e6465738fae14a6ac244cf0b}{C\+Matrix}.
@@ -122,6 +128,9 @@ Implements \hyperlink{classCMatrix_aca808472e6465738fae14a6ac244cf0b}{C\+Matrix}
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_a17e51335d1d9e731441a8205536697f7}{}\label{classCMatrixStandard_a17e51335d1d9e731441a8205536697f7}
+Get empty instance of a matrix. \begin{DoxyReturn}{Returns}
+new matrix pointer 
+\end{DoxyReturn}
 
 
 Implements \hyperlink{classCMatrix_a7495208c2bd786fe46b130f6090e7eb5}{C\+Matrix}.
@@ -134,6 +143,16 @@ Implements \hyperlink{classCMatrix_a7495208c2bd786fe46b130f6090e7eb5}{C\+Matrix}
 \item[{size\+\_\+t}]{col}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_a277c77a453dccdac55de180bb63a8a7f}{}\label{classCMatrixStandard_a277c77a453dccdac55de180bb63a8a7f}
+Get value from a matrix from given coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em row} & index of a row of a value \\
+\hline
+{\em col} & index of a column of a value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value on indexes \mbox{[}row\mbox{]}\mbox{[}col\mbox{]} 
+\end{DoxyReturn}
 
 
 Implements \hyperlink{classCMatrix_afa0213e0a6c5823e6b6e786891cc5f2d}{C\+Matrix}.
@@ -145,7 +164,7 @@ Implements \hyperlink{classCMatrix_afa0213e0a6c5823e6b6e786891cc5f2d}{C\+Matrix}
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_a0ace6054f9ec1fb2b26e0683034e48bd}{}\label{classCMatrixStandard_a0ace6054f9ec1fb2b26e0683034e48bd}
-
+Debug function to print matrix. 
 
 Implements \hyperlink{classCMatrix_a424a048d20918f0f041f4a8645823ae7}{C\+Matrix}.
 
@@ -157,6 +176,13 @@ Implements \hyperlink{classCMatrix_a424a048d20918f0f041f4a8645823ae7}{C\+Matrix}
 \item[{std\+::size\+\_\+t}]{num\+Cols}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_ad135e13127c58f91c325a131d1dc8a74}{}\label{classCMatrixStandard_ad135e13127c58f91c325a131d1dc8a74}
+Set sizes of a matrix. 
+\begin{DoxyParams}{Parameters}
+{\em num\+Rows} & number of rows to be set \\
+\hline
+{\em num\+Cols} & number of columns to be set \\
+\hline
+\end{DoxyParams}
 
 
 Implements \hyperlink{classCMatrix_adb83eafeeea2025f9c84d172f1bb0f1e}{C\+Matrix}.
@@ -170,6 +196,15 @@ Implements \hyperlink{classCMatrix_adb83eafeeea2025f9c84d172f1bb0f1e}{C\+Matrix}
 \item[{double}]{value}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_a7fe5561630fbc65f7aeac5bd54499c13}{}\label{classCMatrixStandard_a7fe5561630fbc65f7aeac5bd54499c13}
+Set value of matrix at given coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em row} & index of a row of a value \\
+\hline
+{\em col} & index of a column of a value \\
+\hline
+{\em value} & value to be set \\
+\hline
+\end{DoxyParams}
 
 
 Implements \hyperlink{classCMatrix_afeba0f7cfcc2623bde41cf6111b0ef6a}{C\+Matrix}.
@@ -181,6 +216,9 @@ Implements \hyperlink{classCMatrix_afeba0f7cfcc2623bde41cf6111b0ef6a}{C\+Matrix}
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_a603dcb22f4cdf94438d4e59fe44870e4}{}\label{classCMatrixStandard_a603dcb22f4cdf94438d4e59fe44870e4}
+Check if matrix should be represented as sparse. If number of zero values is bigger than number of other values, matrix should be sparse. \begin{DoxyReturn}{Returns}
+true if should be sparse, false otherwise 
+\end{DoxyReturn}
 
 
 Implements \hyperlink{classCMatrix_a668eaab1f5d9b498e721464124f158c4}{C\+Matrix}.
@@ -193,6 +231,13 @@ Implements \hyperlink{classCMatrix_a668eaab1f5d9b498e721464124f158c4}{C\+Matrix}
 \item[{std\+::size\+\_\+t}]{b}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCMatrixStandard_a8c8a6ce02302a423928b725e41c7730a}{}\label{classCMatrixStandard_a8c8a6ce02302a423928b725e41c7730a}
+Swap rows of a matrix. 
+\begin{DoxyParams}{Parameters}
+{\em a} & first row to be swapped \\
+\hline
+{\em b} & second row to be swapped \\
+\hline
+\end{DoxyParams}
 
 
 Implements \hyperlink{classCMatrix_aa9f96d82fa2e564f89f35a1781a12d69}{C\+Matrix}.

@@ -16,19 +16,21 @@ public:
     CMergeUnderOperator(shared_ptr<CMatrix> &left, shared_ptr<CMatrix> &right)
             : CBinaryOperator(left, right) {}
 
-
+    /**
+     * Combine two variables into a new one. Variables are combined by placing one below the other.
+     */
     CMatrix *Evaluate(CMemory &memory) override {
-        if (m_Left->m_NumCols != m_Right->m_NumCols) {
+        if (m_Left->GetNumCols() != m_Right->GetNumCols()) {
             throw std::runtime_error("Merging incompatible matrices.");
         }
-        vector<vector<double>> merged(m_Left->m_NumRows + m_Right->m_NumRows);
-        for (size_t i = 0; i < m_Left->m_NumRows + m_Right->m_NumRows; i++) {
-            for (size_t j = 0; j < m_Left->m_NumCols; j++) {
+        vector<vector<double>> merged(m_Left->GetNumRows() + m_Right->GetNumRows());
+        for (size_t i = 0; i < m_Left->GetNumRows() + m_Right->GetNumRows(); i++) {
+            for (size_t j = 0; j < m_Left->GetNumCols(); j++) {
                 double nextNum;
-                if (i < m_Left->m_NumRows) {
+                if (i < m_Left->GetNumRows()) {
                     nextNum = m_Left->GetNumAtCoords(i, j);
                 } else {
-                    nextNum = m_Right->GetNumAtCoords(i - m_Left->m_NumRows, j);
+                    nextNum = m_Right->GetNumAtCoords(i - m_Left->GetNumRows(), j);
                 }
                 merged[i].push_back(nextNum);
             }

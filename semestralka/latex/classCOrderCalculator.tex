@@ -7,27 +7,46 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{classCOrderCalculator_ac4b392de504c60ef15d17d9ebc78166e}{Get\+Count\+Zero\+Rows} (const shared\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ \&matrix) const 
+int \hyperlink{classCOrderCalculator_a34946aaf27501915d1bc854df890ac1d}{operator()} (const shared\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ \&matrix) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
 \item 
-int \hyperlink{classCOrderCalculator_abe4e4728a60159e28c80da4cd979a60d}{operator()} (const shared\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ \&matrix)
+static int \hyperlink{classCOrderCalculator_a6dd367054326190a149d1df3683cce00}{Get\+Count\+Zero\+Rows} (const shared\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ \&matrix)
 \end{DoxyCompactItemize}
 
 
 \subsection{Member Function Documentation}
 \index{C\+Order\+Calculator@{C\+Order\+Calculator}!Get\+Count\+Zero\+Rows@{Get\+Count\+Zero\+Rows}}
 \index{Get\+Count\+Zero\+Rows@{Get\+Count\+Zero\+Rows}!C\+Order\+Calculator@{C\+Order\+Calculator}}
-\subsubsection[{\texorpdfstring{Get\+Count\+Zero\+Rows(const shared\+\_\+ptr$<$ C\+Matrix $>$ \&matrix) const }{GetCountZeroRows(const shared_ptr< CMatrix > &matrix) const }}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Order\+Calculator\+::\+Get\+Count\+Zero\+Rows (
+\subsubsection[{\texorpdfstring{Get\+Count\+Zero\+Rows(const shared\+\_\+ptr$<$ C\+Matrix $>$ \&matrix)}{GetCountZeroRows(const shared_ptr< CMatrix > &matrix)}}]{\setlength{\rightskip}{0pt plus 5cm}static int C\+Order\+Calculator\+::\+Get\+Count\+Zero\+Rows (
 \begin{DoxyParamCaption}
 \item[{const shared\+\_\+ptr$<$ {\bf C\+Matrix} $>$ \&}]{matrix}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCOrderCalculator_ac4b392de504c60ef15d17d9ebc78166e}{}\label{classCOrderCalculator_ac4b392de504c60ef15d17d9ebc78166e}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{classCOrderCalculator_a6dd367054326190a149d1df3683cce00}{}\label{classCOrderCalculator_a6dd367054326190a149d1df3683cce00}
+Count number of rows in matrix which have only zero values. 
+\begin{DoxyParams}{Parameters}
+{\em matrix} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of zero rows 
+\end{DoxyReturn}
 \index{C\+Order\+Calculator@{C\+Order\+Calculator}!operator()@{operator()}}
 \index{operator()@{operator()}!C\+Order\+Calculator@{C\+Order\+Calculator}}
-\subsubsection[{\texorpdfstring{operator()(const shared\+\_\+ptr$<$ C\+Matrix $>$ \&matrix)}{operator()(const shared_ptr< CMatrix > &matrix)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Order\+Calculator\+::operator() (
+\subsubsection[{\texorpdfstring{operator()(const shared\+\_\+ptr$<$ C\+Matrix $>$ \&matrix) const }{operator()(const shared_ptr< CMatrix > &matrix) const }}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Order\+Calculator\+::operator() (
 \begin{DoxyParamCaption}
 \item[{const shared\+\_\+ptr$<$ {\bf C\+Matrix} $>$ \&}]{matrix}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCOrderCalculator_abe4e4728a60159e28c80da4cd979a60d}{}\label{classCOrderCalculator_abe4e4728a60159e28c80da4cd979a60d}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCOrderCalculator_a34946aaf27501915d1bc854df890ac1d}{}\label{classCOrderCalculator_a34946aaf27501915d1bc854df890ac1d}
+Calculate order of a matrix. 
+\begin{DoxyParams}{Parameters}
+{\em matrix} & matrix to have order calculated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+order of a matrix 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

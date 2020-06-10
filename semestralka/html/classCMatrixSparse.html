@@ -165,9 +165,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:affdcac23fd59da78e6e3902a32f48da3 inherit pub_attribs_classCMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a672c792e0f63bd7d5149f737e21d6abc inherit pub_attribs_classCMatrix"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrix.html#a672c792e0f63bd7d5149f737e21d6abc">m_NumCols</a> = 0</td></tr>
 <tr class="separator:a672c792e0f63bd7d5149f737e21d6abc inherit pub_attribs_classCMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classCMatrix"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classCMatrix')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classCMatrix.html">CMatrix</a></td></tr>
-<tr class="memitem:ab28e9060c23d5e42bea9907884567d5b inherit pro_methods_classCMatrix"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrix.html#ab28e9060c23d5e42bea9907884567d5b">switchNumRowsCols</a> ()</td></tr>
-<tr class="separator:ab28e9060c23d5e42bea9907884567d5b inherit pro_methods_classCMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8b07f6b861304fccebc6229968a0baa0"></a>
@@ -325,6 +322,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get new instance of the same matrix. </p><dl class="section return"><dt>Returns</dt><dd>new instance </dd></dl>
 
 <p>Implements <a class="el" href="classCMatrix.html#a42ac1f2a9e69919974febca17971be60">CMatrix</a>.</p>
 
@@ -350,6 +348,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Convert matrix to different representation. </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 <p>Implements <a class="el" href="classCMatrix.html#aca808472e6465738fae14a6ac244cf0b">CMatrix</a>.</p>
 
@@ -375,6 +374,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get empty instance of a matrix. </p><dl class="section return"><dt>Returns</dt><dd>new matrix pointer </dd></dl>
 
 <p>Implements <a class="el" href="classCMatrix.html#a7495208c2bd786fe46b130f6090e7eb5">CMatrix</a>.</p>
 
@@ -411,6 +411,14 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get value from a matrix from given coordinates. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>index of a row of a value </td></tr>
+    <tr><td class="paramname">col</td><td>index of a column of a value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>value on indexes [row][col] </dd></dl>
 
 <p>Implements <a class="el" href="classCMatrix.html#afa0213e0a6c5823e6b6e786891cc5f2d">CMatrix</a>.</p>
 
@@ -436,6 +444,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Debug function to print matrix. </p>
 
 <p>Implements <a class="el" href="classCMatrix.html#a424a048d20918f0f041f4a8645823ae7">CMatrix</a>.</p>
 
@@ -472,6 +481,13 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Set sizes of a matrix. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numRows</td><td>number of rows to be set </td></tr>
+    <tr><td class="paramname">numCols</td><td>number of columns to be set </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="classCMatrix.html#adb83eafeeea2025f9c84d172f1bb0f1e">CMatrix</a>.</p>
 
@@ -514,6 +530,14 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Set value of matrix at given coordinates. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>index of a row of a value </td></tr>
+    <tr><td class="paramname">col</td><td>index of a column of a value </td></tr>
+    <tr><td class="paramname">value</td><td>value to be set </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="classCMatrix.html#afeba0f7cfcc2623bde41cf6111b0ef6a">CMatrix</a>.</p>
 
@@ -539,6 +563,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Check if matrix should be represented as sparse. If number of zero values is bigger than number of other values, matrix should be sparse. </p><dl class="section return"><dt>Returns</dt><dd>true if should be sparse, false otherwise </dd></dl>
 
 <p>Implements <a class="el" href="classCMatrix.html#a668eaab1f5d9b498e721464124f158c4">CMatrix</a>.</p>
 
@@ -575,6 +600,13 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Swap rows of a matrix. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>first row to be swapped </td></tr>
+    <tr><td class="paramname">b</td><td>second row to be swapped </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="classCMatrix.html#aa9f96d82fa2e564f89f35a1781a12d69">CMatrix</a>.</p>
 

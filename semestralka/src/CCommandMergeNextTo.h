@@ -6,7 +6,7 @@
 #define SEMESTRALKA_CCOMMANDMERGENEXTTO_H
 
 #include "CCommand.h"
-#include "CMergeNextToOperation.h"
+#include "CMergeNextToOperator.h"
 
 class CCommandMergeNextTo : public CCommand {
 public:

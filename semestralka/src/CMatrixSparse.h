@@ -20,8 +20,8 @@ public:
     CMatrixSparse() : CMatrix() {}
 
     CMatrixSparse(const shared_ptr<CMatrix> &other) : CMatrix() {
-        m_NumRows = other->m_NumRows;
-        m_NumCols = other->m_NumCols;
+        m_NumRows = other->GetNumRows();
+        m_NumCols = other->GetNumCols();
         for (size_t i = 0; i < m_NumRows; i++) {
             for (size_t j = 0; j < m_NumCols; j++) {
                 SetNumAtCoords(i, j, other->GetNumAtCoords(i, j));

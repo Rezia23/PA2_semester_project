@@ -38,9 +38,7 @@ string \hyperlink{classCApplicationConsole_a0af959fae7259bf81f7855985e16adff}{Ge
 \item 
 void \hyperlink{classCApplicationConsole_a32152dd2a1793b20fd03ba3179d8e22e}{Show\+Msg} (string msg) const override
 \item 
-void \hyperlink{classCApplicationConsole_a20c9dbcb6b56834b28ff9909f446848f}{Show\+Var\+Name} (string name) const override
-\item 
-void \hyperlink{classCApplicationConsole_a7c024277c01acd4cc575ad64ffd07a22}{Show\+Matrix} (unique\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ \&matrix) const override
+void \hyperlink{classCApplicationConsole_ad9d3e1cdadd2cc2e89dfa3591942f5f3}{Show\+Help} () const override
 \item 
 bool \hyperlink{classCApplicationConsole_a95f0c288b2224cc1273cf20472cbc34f}{get\+Variable\+Name} (string \&input, string \&var\+Name) const 
 \item 
@@ -50,11 +48,11 @@ bool \hyperlink{classCApplicationConsole_a2323e596b3a019fe843f88955218baba}{Read
 \item 
 bool \hyperlink{classCApplicationConsole_a6ca78c0250dfbdf71a995277c0485e5a}{Is\+Syntax\+Correct} (istream \&in\+Stream) const 
 \item 
-void \hyperlink{classCApplicationConsole_a311cfc33ddf26daa5f6a759a335ea007}{Show\+Result} (string result)
+void \hyperlink{classCApplicationConsole_a4bca66a2f575557ca929d2fa8c8f9028}{Show\+Result} (string result) const override
 \item 
 bool \hyperlink{classCApplicationConsole_a4ae836d72b1ecdc4b3c3e15ff5f171b6}{Parse\+Command\+Word} (string \&input, string \&in\+\_\+command)
 \item 
-bool \hyperlink{classCApplicationConsole_ae2ee7085fd41f96607d37673ed705e76}{Parse\+Command} (string \&input, unique\+\_\+ptr$<$ \hyperlink{classCCommand}{C\+Command} $>$ \&next\+Command) override
+bool \hyperlink{classCApplicationConsole_ab17d9e0bf16052fff75f721f9aaaafc8}{Parse\+Command} (string \&input, unique\+\_\+ptr$<$ \hyperlink{classCCommand}{C\+Command} $>$ \&command) override
 \item 
 bool \hyperlink{classCApplicationConsole_a12531e44827274807a3a0787e66345fe}{Load\+Operand\+Name} (string \&input, string \&name)
 \item 
@@ -92,6 +90,9 @@ bool \hyperlink{classCApplicationConsole_ae3c29fe61ba160f51ead41382df8c494}{Pars
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{classCApplicationConsole_a0af959fae7259bf81f7855985e16adff}{}\label{classCApplicationConsole_a0af959fae7259bf81f7855985e16adff}
+Get input from user. \begin{DoxyReturn}{Returns}
+input data in string 
+\end{DoxyReturn}
 
 
 Implements \hyperlink{classCApplication_a69a1706c3cf78d8dad7e16734e92b3f6}{C\+Application}.
@@ -104,6 +105,16 @@ Implements \hyperlink{classCApplication_a69a1706c3cf78d8dad7e16734e92b3f6}{C\+Ap
 \item[{string \&}]{var\+Name}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCApplicationConsole_a95f0c288b2224cc1273cf20472cbc34f}{}\label{classCApplicationConsole_a95f0c288b2224cc1273cf20472cbc34f}
+Read name of a variable from input. 
+\begin{DoxyParams}{Parameters}
+{\em input} & input data \\
+\hline
+{\em var\+Name} & name of variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if variable name read successfully, false otherwise (incorrect syntax) 
+\end{DoxyReturn}
 \index{C\+Application\+Console@{C\+Application\+Console}!Is\+Syntax\+Correct@{Is\+Syntax\+Correct}}
 \index{Is\+Syntax\+Correct@{Is\+Syntax\+Correct}!C\+Application\+Console@{C\+Application\+Console}}
 \subsubsection[{\texorpdfstring{Is\+Syntax\+Correct(istream \&in\+Stream) const }{IsSyntaxCorrect(istream &inStream) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Application\+Console\+::\+Is\+Syntax\+Correct (
@@ -111,6 +122,14 @@ Implements \hyperlink{classCApplication_a69a1706c3cf78d8dad7e16734e92b3f6}{C\+Ap
 \item[{istream \&}]{in\+Stream}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classCApplicationConsole_a6ca78c0250dfbdf71a995277c0485e5a}{}\label{classCApplicationConsole_a6ca78c0250dfbdf71a995277c0485e5a}
+Check if command is properly ended. 
+\begin{DoxyParams}{Parameters}
+{\em in\+Stream} & input stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if properly ended 
+\end{DoxyReturn}
 \index{C\+Application\+Console@{C\+Application\+Console}!Load\+Operand\+Name@{Load\+Operand\+Name}}
 \index{Load\+Operand\+Name@{Load\+Operand\+Name}!C\+Application\+Console@{C\+Application\+Console}}
 \subsubsection[{\texorpdfstring{Load\+Operand\+Name(string \&input, string \&name)}{LoadOperandName(string &input, string &name)}}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Application\+Console\+::\+Load\+Operand\+Name (
@@ -119,17 +138,37 @@ Implements \hyperlink{classCApplication_a69a1706c3cf78d8dad7e16734e92b3f6}{C\+Ap
 \item[{string \&}]{name}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classCApplicationConsole_a12531e44827274807a3a0787e66345fe}{}\label{classCApplicationConsole_a12531e44827274807a3a0787e66345fe}
+Load name of operand variable. 
+\begin{DoxyParams}{Parameters}
+{\em input} & input data \\
+\hline
+{\em name} & variable name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if loaded successfully, false otherwise (incorrect syntax) 
+\end{DoxyReturn}
 \index{C\+Application\+Console@{C\+Application\+Console}!Parse\+Command@{Parse\+Command}}
 \index{Parse\+Command@{Parse\+Command}!C\+Application\+Console@{C\+Application\+Console}}
-\subsubsection[{\texorpdfstring{Parse\+Command(string \&input, unique\+\_\+ptr$<$ C\+Command $>$ \&next\+Command) override}{ParseCommand(string &input, unique_ptr< CCommand > &nextCommand) override}}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Application\+Console\+::\+Parse\+Command (
+\subsubsection[{\texorpdfstring{Parse\+Command(string \&input, unique\+\_\+ptr$<$ C\+Command $>$ \&command) override}{ParseCommand(string &input, unique_ptr< CCommand > &command) override}}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Application\+Console\+::\+Parse\+Command (
 \begin{DoxyParamCaption}
 \item[{string \&}]{input, }
-\item[{unique\+\_\+ptr$<$ {\bf C\+Command} $>$ \&}]{next\+Command}
+\item[{unique\+\_\+ptr$<$ {\bf C\+Command} $>$ \&}]{command}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{classCApplicationConsole_ae2ee7085fd41f96607d37673ed705e76}{}\label{classCApplicationConsole_ae2ee7085fd41f96607d37673ed705e76}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{classCApplicationConsole_ab17d9e0bf16052fff75f721f9aaaafc8}{}\label{classCApplicationConsole_ab17d9e0bf16052fff75f721f9aaaafc8}
+Parse input data into commands. 
+\begin{DoxyParams}{Parameters}
+{\em input} & input data \\
+\hline
+{\em command} & parsed command \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command successfully parsed, false otherwise 
+\end{DoxyReturn}
 
 
-Implements \hyperlink{classCApplication_ae2fe7afcd1a15cdbf5eb97a69b7731e6}{C\+Application}.
+Implements \hyperlink{classCApplication_abfa3357f4517c85261fac0bc307e1ab7}{C\+Application}.
 
 \index{C\+Application\+Console@{C\+Application\+Console}!Parse\+Command\+Word@{Parse\+Command\+Word}}
 \index{Parse\+Command\+Word@{Parse\+Command\+Word}!C\+Application\+Console@{C\+Application\+Console}}
@@ -139,6 +178,16 @@ Implements \hyperlink{classCApplication_ae2fe7afcd1a15cdbf5eb97a69b7731e6}{C\+Ap
 \item[{string \&}]{in\+\_\+command}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classCApplicationConsole_a4ae836d72b1ecdc4b3c3e15ff5f171b6}{}\label{classCApplicationConsole_a4ae836d72b1ecdc4b3c3e15ff5f171b6}
+Parse name of the command from input. 
+\begin{DoxyParams}{Parameters}
+{\em input} & input data \\
+\hline
+{\em in\+\_\+command} & name of the command \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if parsed successfully, false otherwise (incorrect syntax) 
+\end{DoxyReturn}
 \index{C\+Application\+Console@{C\+Application\+Console}!Parse\+Cutting@{Parse\+Cutting}}
 \index{Parse\+Cutting@{Parse\+Cutting}!C\+Application\+Console@{C\+Application\+Console}}
 \subsubsection[{\texorpdfstring{Parse\+Cutting(string \&input, string \&var\+Name, std\+::size\+\_\+t \&num\+Rows, size\+\_\+t \&num\+Cols, pair$<$ size\+\_\+t, size\+\_\+t $>$ \&start\+Point)}{ParseCutting(string &input, string &varName, std::size_t &numRows, size_t &numCols, pair< size_t, size_t > &startPoint)}}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Application\+Console\+::\+Parse\+Cutting (
@@ -150,6 +199,22 @@ Implements \hyperlink{classCApplication_ae2fe7afcd1a15cdbf5eb97a69b7731e6}{C\+Ap
 \item[{pair$<$ size\+\_\+t, size\+\_\+t $>$ \&}]{start\+Point}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classCApplicationConsole_ae3c29fe61ba160f51ead41382df8c494}{}\label{classCApplicationConsole_ae3c29fe61ba160f51ead41382df8c494}
+Parse parameters for cutting of a matrix. 
+\begin{DoxyParams}{Parameters}
+{\em input} & input data \\
+\hline
+{\em var\+Name} & input variable name \\
+\hline
+{\em num\+Rows} & number of rows of the cut matrix \\
+\hline
+{\em num\+Cols} & number of columns of the cut matrix \\
+\hline
+{\em start\+Point} & row and column index where to start cutting \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise (incorrect syntax) 
+\end{DoxyReturn}
 \index{C\+Application\+Console@{C\+Application\+Console}!Parse\+Loading@{Parse\+Loading}}
 \index{Parse\+Loading@{Parse\+Loading}!C\+Application\+Console@{C\+Application\+Console}}
 \subsubsection[{\texorpdfstring{Parse\+Loading(string \&input, string \&var\+Name, vector$<$ vector$<$ double $>$$>$ \&matrix\+Nums)}{ParseLoading(string &input, string &varName, vector< vector< double >> &matrixNums)}}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Application\+Console\+::\+Parse\+Loading (
@@ -159,6 +224,18 @@ Implements \hyperlink{classCApplication_ae2fe7afcd1a15cdbf5eb97a69b7731e6}{C\+Ap
 \item[{vector$<$ vector$<$ double $>$$>$ \&}]{matrix\+Nums}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classCApplicationConsole_a092af2533775a460a05e7c5198d991fa}{}\label{classCApplicationConsole_a092af2533775a460a05e7c5198d991fa}
+Parse parameters for loading of a matrix. 
+\begin{DoxyParams}{Parameters}
+{\em input} & input data \\
+\hline
+{\em var\+Name} & name of variable to be loaded \\
+\hline
+{\em matrix\+Nums} & values of a loaded matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful, false otherwise (incorrect syntax) 
+\end{DoxyReturn}
 \index{C\+Application\+Console@{C\+Application\+Console}!Parse\+Operands@{Parse\+Operands}}
 \index{Parse\+Operands@{Parse\+Operands}!C\+Application\+Console@{C\+Application\+Console}}
 \subsubsection[{\texorpdfstring{Parse\+Operands(string \&input, vector$<$ string $>$ \&operands, std\+::size\+\_\+t num\+Of\+Operands=1)}{ParseOperands(string &input, vector< string > &operands, std::size_t numOfOperands=1)}}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Application\+Console\+::\+Parse\+Operands (
@@ -168,6 +245,18 @@ Implements \hyperlink{classCApplication_ae2fe7afcd1a15cdbf5eb97a69b7731e6}{C\+Ap
 \item[{std\+::size\+\_\+t}]{num\+Of\+Operands = {\ttfamily 1}}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classCApplicationConsole_a00a40d89b87f545373a7ce3d22a7c996}{}\label{classCApplicationConsole_a00a40d89b87f545373a7ce3d22a7c996}
+Parse operand variable names. 
+\begin{DoxyParams}{Parameters}
+{\em input} & input data \\
+\hline
+{\em operands} & vector to store operands \\
+\hline
+{\em num\+Of\+Operands} & number of operands to parse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successfull, false otherwise (incorrect syntax) 
+\end{DoxyReturn}
 \index{C\+Application\+Console@{C\+Application\+Console}!Print\+Instructions@{Print\+Instructions}}
 \index{Print\+Instructions@{Print\+Instructions}!C\+Application\+Console@{C\+Application\+Console}}
 \subsubsection[{\texorpdfstring{Print\+Instructions() const override}{PrintInstructions() const override}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Application\+Console\+::\+Print\+Instructions (
@@ -175,7 +264,7 @@ Implements \hyperlink{classCApplication_ae2fe7afcd1a15cdbf5eb97a69b7731e6}{C\+Ap
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classCApplicationConsole_a77c169050d8faff5ff4019d3204e6ff8}{}\label{classCApplicationConsole_a77c169050d8faff5ff4019d3204e6ff8}
-
+Shoq basic usage instructions on the screen. 
 
 Implements \hyperlink{classCApplication_a308f31081c5a2b880c1bc96dbac3260d}{C\+Application}.
 
@@ -189,6 +278,20 @@ Implements \hyperlink{classCApplication_a308f31081c5a2b880c1bc96dbac3260d}{C\+Ap
 \item[{size\+\_\+t}]{num\+Cols}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCApplicationConsole_a2323e596b3a019fe843f88955218baba}{}\label{classCApplicationConsole_a2323e596b3a019fe843f88955218baba}
+Read and set values of a matrix from a stream. 
+\begin{DoxyParams}{Parameters}
+{\em in\+Stream} & input stream \\
+\hline
+{\em matrix} & values of matrix to be set \\
+\hline
+{\em num\+Rows} & number of rows of the matrix \\
+\hline
+{\em num\+Cols} & number of columns of the matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if read successfully, false otherwise (wrong number of values) 
+\end{DoxyReturn}
 \index{C\+Application\+Console@{C\+Application\+Console}!Read\+Size@{Read\+Size}}
 \index{Read\+Size@{Read\+Size}!C\+Application\+Console@{C\+Application\+Console}}
 \subsubsection[{\texorpdfstring{Read\+Size(std\+::size\+\_\+t \&num\+Rows, std\+::size\+\_\+t \&num\+Cols, istream \&in\+Stream) const }{ReadSize(std::size_t &numRows, std::size_t &numCols, istream &inStream) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Application\+Console\+::\+Read\+Size (
@@ -198,16 +301,28 @@ Implements \hyperlink{classCApplication_a308f31081c5a2b880c1bc96dbac3260d}{C\+Ap
 \item[{istream \&}]{in\+Stream}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCApplicationConsole_a1444353413fae5d03ba68a803f724379}{}\label{classCApplicationConsole_a1444353413fae5d03ba68a803f724379}
-\index{C\+Application\+Console@{C\+Application\+Console}!Show\+Matrix@{Show\+Matrix}}
-\index{Show\+Matrix@{Show\+Matrix}!C\+Application\+Console@{C\+Application\+Console}}
-\subsubsection[{\texorpdfstring{Show\+Matrix(unique\+\_\+ptr$<$ C\+Matrix $>$ \&matrix) const override}{ShowMatrix(unique_ptr< CMatrix > &matrix) const override}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Application\+Console\+::\+Show\+Matrix (
+Read size of result matrix from input. 
+\begin{DoxyParams}{Parameters}
+{\em num\+Rows} & number of rows \\
+\hline
+{\em num\+Cols} & number of columns \\
+\hline
+{\em in\+Stream} & input stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if read successfully, false otherwise (incorrect syntax) 
+\end{DoxyReturn}
+\index{C\+Application\+Console@{C\+Application\+Console}!Show\+Help@{Show\+Help}}
+\index{Show\+Help@{Show\+Help}!C\+Application\+Console@{C\+Application\+Console}}
+\subsubsection[{\texorpdfstring{Show\+Help() const override}{ShowHelp() const override}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Application\+Console\+::\+Show\+Help (
 \begin{DoxyParamCaption}
-\item[{unique\+\_\+ptr$<$ {\bf C\+Matrix} $>$ \&}]{matrix}
+{}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{classCApplicationConsole_a7c024277c01acd4cc575ad64ffd07a22}{}\label{classCApplicationConsole_a7c024277c01acd4cc575ad64ffd07a22}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{classCApplicationConsole_ad9d3e1cdadd2cc2e89dfa3591942f5f3}{}\label{classCApplicationConsole_ad9d3e1cdadd2cc2e89dfa3591942f5f3}
+Show description of app commands on the screen. 
 
-
-Implements \hyperlink{classCApplication_a8d6b41c059da7fbd01a4857bcb1c06e0}{C\+Application}.
+Implements \hyperlink{classCApplication_a97b87502b1a3c7fdaa7d8ef2e7870eaf}{C\+Application}.
 
 \index{C\+Application\+Console@{C\+Application\+Console}!Show\+Msg@{Show\+Msg}}
 \index{Show\+Msg@{Show\+Msg}!C\+Application\+Console@{C\+Application\+Console}}
@@ -216,31 +331,30 @@ Implements \hyperlink{classCApplication_a8d6b41c059da7fbd01a4857bcb1c06e0}{C\+Ap
 \item[{string}]{msg}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{classCApplicationConsole_a32152dd2a1793b20fd03ba3179d8e22e}{}\label{classCApplicationConsole_a32152dd2a1793b20fd03ba3179d8e22e}
+Show message on the screen. 
+\begin{DoxyParams}{Parameters}
+{\em msg} & message to be shown \\
+\hline
+\end{DoxyParams}
 
 
 Implements \hyperlink{classCApplication_ab88b3a17d0d6e5c14eba88fb263c9857}{C\+Application}.
 
 \index{C\+Application\+Console@{C\+Application\+Console}!Show\+Result@{Show\+Result}}
 \index{Show\+Result@{Show\+Result}!C\+Application\+Console@{C\+Application\+Console}}
-\subsubsection[{\texorpdfstring{Show\+Result(string result)}{ShowResult(string result)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Application\+Console\+::\+Show\+Result (
+\subsubsection[{\texorpdfstring{Show\+Result(string result) const override}{ShowResult(string result) const override}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Application\+Console\+::\+Show\+Result (
 \begin{DoxyParamCaption}
 \item[{string}]{result}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{classCApplicationConsole_a311cfc33ddf26daa5f6a759a335ea007}{}\label{classCApplicationConsole_a311cfc33ddf26daa5f6a759a335ea007}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{classCApplicationConsole_a4bca66a2f575557ca929d2fa8c8f9028}{}\label{classCApplicationConsole_a4bca66a2f575557ca929d2fa8c8f9028}
+Show result of operation on screen. 
+\begin{DoxyParams}{Parameters}
+{\em result} & result of operation \\
+\hline
+\end{DoxyParams}
 
 
-Implements \hyperlink{classCApplication_a13cc1aa745b5b4c4d7e02a77a1bbdac8}{C\+Application}.
-
-\index{C\+Application\+Console@{C\+Application\+Console}!Show\+Var\+Name@{Show\+Var\+Name}}
-\index{Show\+Var\+Name@{Show\+Var\+Name}!C\+Application\+Console@{C\+Application\+Console}}
-\subsubsection[{\texorpdfstring{Show\+Var\+Name(string name) const override}{ShowVarName(string name) const override}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Application\+Console\+::\+Show\+Var\+Name (
-\begin{DoxyParamCaption}
-\item[{string}]{name}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{classCApplicationConsole_a20c9dbcb6b56834b28ff9909f446848f}{}\label{classCApplicationConsole_a20c9dbcb6b56834b28ff9909f446848f}
-
-
-Implements \hyperlink{classCApplication_a5994ba2f7b8a5d88290040616765baaa}{C\+Application}.
+Implements \hyperlink{classCApplication_a741354ef7eba83ea594a116069dafddd}{C\+Application}.
 
 
 

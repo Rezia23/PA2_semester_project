@@ -11,7 +11,7 @@
 \item 
 \hyperlink{classCMemory_a32ed4aae31101111d8fd9fb1f0aa23b2}{$\sim$\+C\+Memory} ()=default
 \item 
-bool \hyperlink{classCMemory_a6bef7b5dcb74f3ccc1aac02457928a4d}{Exists\+Variable} (string name) const 
+bool \hyperlink{classCMemory_a29c4bb65170950b2dd06f65840a44f53}{Exists\+Variable} (const string \&name) const 
 \item 
 shared\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ \& \hyperlink{classCMemory_a2b1583d784f485f62d237b0efff84d37}{At} (const string \&name)
 \item 
@@ -49,13 +49,34 @@ map$<$ string, shared\+\_\+ptr$<$ class \hyperlink{classCMatrix}{C\+Matrix} $>$ 
 \item[{const string \&}]{name}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCMemory_a2b1583d784f485f62d237b0efff84d37}{}\label{classCMemory_a2b1583d784f485f62d237b0efff84d37}
+Access variable by name. 
+\begin{DoxyParams}{Parameters}
+{\em name} & variable name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+found matrix 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em exception} & variable does not exist \\
+\hline
+\end{DoxyExceptions}
 \index{C\+Memory@{C\+Memory}!Exists\+Variable@{Exists\+Variable}}
 \index{Exists\+Variable@{Exists\+Variable}!C\+Memory@{C\+Memory}}
-\subsubsection[{\texorpdfstring{Exists\+Variable(string name) const }{ExistsVariable(string name) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Memory\+::\+Exists\+Variable (
+\subsubsection[{\texorpdfstring{Exists\+Variable(const string \&name) const }{ExistsVariable(const string &name) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Memory\+::\+Exists\+Variable (
 \begin{DoxyParamCaption}
-\item[{string}]{name}
+\item[{const string \&}]{name}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCMemory_a6bef7b5dcb74f3ccc1aac02457928a4d}{}\label{classCMemory_a6bef7b5dcb74f3ccc1aac02457928a4d}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCMemory_a29c4bb65170950b2dd06f65840a44f53}{}\label{classCMemory_a29c4bb65170950b2dd06f65840a44f53}
+Check if variable exists in memory. 
+\begin{DoxyParams}{Parameters}
+{\em name} & variable name to be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if exists, false otherwise 
+\end{DoxyReturn}
 \index{C\+Memory@{C\+Memory}!Insert@{Insert}}
 \index{Insert@{Insert}!C\+Memory@{C\+Memory}}
 \subsubsection[{\texorpdfstring{Insert(const string \&name, shared\+\_\+ptr$<$ C\+Matrix $>$ matrix)}{Insert(const string &name, shared_ptr< CMatrix > matrix)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Memory\+::\+Insert (
@@ -64,6 +85,13 @@ map$<$ string, shared\+\_\+ptr$<$ class \hyperlink{classCMatrix}{C\+Matrix} $>$ 
 \item[{shared\+\_\+ptr$<$ {\bf C\+Matrix} $>$}]{matrix}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCMemory_a8d76cdcaabb8e18d3956e7f334a9fb0b}{}\label{classCMemory_a8d76cdcaabb8e18d3956e7f334a9fb0b}
+Insert variable into memory, replace if variable with such name already exists. 
+\begin{DoxyParams}{Parameters}
+{\em name} & variable name \\
+\hline
+{\em matrix} & matrix to be inserted \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Data Documentation}

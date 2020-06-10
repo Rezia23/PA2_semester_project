@@ -16,16 +16,18 @@ public:
     CMultiplyOperator(shared_ptr<CMatrix> &left, shared_ptr<CMatrix> &right)
             : CBinaryOperator(left, right) {}
 
-
+    /**
+     * Multiply variables.
+     */
     CMatrix *Evaluate(CMemory &memory) override {
-        if (m_Left->m_NumCols != m_Right->m_NumRows) {
+        if (m_Left->GetNumCols() != m_Right->GetNumRows()) {
             throw std::runtime_error("Multiplying incompatible matrices.");
         }
-        vector<vector<double>> product(m_Left->m_NumRows, vector<double>(m_Right->m_NumCols, 0));
+        vector<vector<double>> product(m_Left->GetNumRows(), vector<double>(m_Right->GetNumCols(), 0));
 
-        for (size_t i = 0; i < m_Left->m_NumRows; i++) {
-            for (size_t j = 0; j < m_Right->m_NumCols; j++) {
-                for (size_t k = 0; k < m_Right->m_NumRows; k++) {
+        for (size_t i = 0; i < m_Left->GetNumRows(); i++) {
+            for (size_t j = 0; j < m_Right->GetNumCols(); j++) {
+                for (size_t k = 0; k < m_Right->GetNumRows(); k++) {
                     product[i][j] += m_Left->GetNumAtCoords(i, k) * m_Right->GetNumAtCoords(k, j);
                 }
             }

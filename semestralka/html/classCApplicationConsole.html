@@ -123,8 +123,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a186bb7420ce66fadac70d2c30311b6ee inherit pub_methods_classCApplication"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4448f8a90f380d4ac2afcc9ee59780d inherit pub_methods_classCApplication"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCApplication.html#ab4448f8a90f380d4ac2afcc9ee59780d">~CApplication</a> ()=default</td></tr>
 <tr class="separator:ab4448f8a90f380d4ac2afcc9ee59780d inherit pub_methods_classCApplication"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89642c9a6de3ced8f1f77e4fed479e7c inherit pub_methods_classCApplication"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCApplication.html#a89642c9a6de3ced8f1f77e4fed479e7c">Evaluate</a> (string input, string &amp;result, unique_ptr&lt; <a class="el" href="classCCommand.html">CCommand</a> &gt; &amp;nextCommand)</td></tr>
-<tr class="separator:a89642c9a6de3ced8f1f77e4fed479e7c inherit pub_methods_classCApplication"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad04074e57722d0954b07ebc82298a02c inherit pub_methods_classCApplication"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCApplication.html#ad04074e57722d0954b07ebc82298a02c">Evaluate</a> (string input, string &amp;result, unique_ptr&lt; <a class="el" href="classCCommand.html">CCommand</a> &gt; &amp;command)</td></tr>
+<tr class="separator:ad04074e57722d0954b07ebc82298a02c inherit pub_methods_classCApplication"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa069063a23e53ea9858995f3ca34d6fb inherit pub_methods_classCApplication"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCApplication.html#aa069063a23e53ea9858995f3ca34d6fb">Run</a> ()</td></tr>
 <tr class="separator:aa069063a23e53ea9858995f3ca34d6fb inherit pub_methods_classCApplication"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -134,10 +134,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a0af959fae7259bf81f7855985e16adff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32152dd2a1793b20fd03ba3179d8e22e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCApplicationConsole.html#a32152dd2a1793b20fd03ba3179d8e22e">ShowMsg</a> (string msg) const override</td></tr>
 <tr class="separator:a32152dd2a1793b20fd03ba3179d8e22e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20c9dbcb6b56834b28ff9909f446848f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCApplicationConsole.html#a20c9dbcb6b56834b28ff9909f446848f">ShowVarName</a> (string name) const override</td></tr>
-<tr class="separator:a20c9dbcb6b56834b28ff9909f446848f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c024277c01acd4cc575ad64ffd07a22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCApplicationConsole.html#a7c024277c01acd4cc575ad64ffd07a22">ShowMatrix</a> (unique_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;matrix) const override</td></tr>
-<tr class="separator:a7c024277c01acd4cc575ad64ffd07a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9d3e1cdadd2cc2e89dfa3591942f5f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCApplicationConsole.html#ad9d3e1cdadd2cc2e89dfa3591942f5f3">ShowHelp</a> () const override</td></tr>
+<tr class="separator:ad9d3e1cdadd2cc2e89dfa3591942f5f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95f0c288b2224cc1273cf20472cbc34f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCApplicationConsole.html#a95f0c288b2224cc1273cf20472cbc34f">getVariableName</a> (string &amp;input, string &amp;varName) const </td></tr>
 <tr class="separator:a95f0c288b2224cc1273cf20472cbc34f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1444353413fae5d03ba68a803f724379"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCApplicationConsole.html#a1444353413fae5d03ba68a803f724379">ReadSize</a> (std::size_t &amp;numRows, std::size_t &amp;numCols, istream &amp;inStream) const </td></tr>
@@ -146,12 +144,12 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a2323e596b3a019fe843f88955218baba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ca78c0250dfbdf71a995277c0485e5a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCApplicationConsole.html#a6ca78c0250dfbdf71a995277c0485e5a">IsSyntaxCorrect</a> (istream &amp;inStream) const </td></tr>
 <tr class="separator:a6ca78c0250dfbdf71a995277c0485e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a311cfc33ddf26daa5f6a759a335ea007"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCApplicationConsole.html#a311cfc33ddf26daa5f6a759a335ea007">ShowResult</a> (string result)</td></tr>
-<tr class="separator:a311cfc33ddf26daa5f6a759a335ea007"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bca66a2f575557ca929d2fa8c8f9028"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCApplicationConsole.html#a4bca66a2f575557ca929d2fa8c8f9028">ShowResult</a> (string result) const override</td></tr>
+<tr class="separator:a4bca66a2f575557ca929d2fa8c8f9028"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ae836d72b1ecdc4b3c3e15ff5f171b6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCApplicationConsole.html#a4ae836d72b1ecdc4b3c3e15ff5f171b6">ParseCommandWord</a> (string &amp;input, string &amp;in_command)</td></tr>
 <tr class="separator:a4ae836d72b1ecdc4b3c3e15ff5f171b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2ee7085fd41f96607d37673ed705e76"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCApplicationConsole.html#ae2ee7085fd41f96607d37673ed705e76">ParseCommand</a> (string &amp;input, unique_ptr&lt; <a class="el" href="classCCommand.html">CCommand</a> &gt; &amp;nextCommand) override</td></tr>
-<tr class="separator:ae2ee7085fd41f96607d37673ed705e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab17d9e0bf16052fff75f721f9aaaafc8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCApplicationConsole.html#ab17d9e0bf16052fff75f721f9aaaafc8">ParseCommand</a> (string &amp;input, unique_ptr&lt; <a class="el" href="classCCommand.html">CCommand</a> &gt; &amp;command) override</td></tr>
+<tr class="separator:ab17d9e0bf16052fff75f721f9aaaafc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12531e44827274807a3a0787e66345fe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCApplicationConsole.html#a12531e44827274807a3a0787e66345fe">LoadOperandName</a> (string &amp;input, string &amp;name)</td></tr>
 <tr class="separator:a12531e44827274807a3a0787e66345fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a092af2533775a460a05e7c5198d991fa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCApplicationConsole.html#a092af2533775a460a05e7c5198d991fa">ParseLoading</a> (string &amp;input, string &amp;varName, vector&lt; vector&lt; double &gt;&gt; &amp;matrixNums)</td></tr>
@@ -235,6 +233,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get input from user. </p><dl class="section return"><dt>Returns</dt><dd>input data in string </dd></dl>
 
 <p>Implements <a class="el" href="classCApplication.html#a69a1706c3cf78d8dad7e16734e92b3f6">CApplication</a>.</p>
 
@@ -271,6 +270,14 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Read name of a variable from input. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>input data </td></tr>
+    <tr><td class="paramname">varName</td><td>name of variable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if variable name read successfully, false otherwise (incorrect syntax) </dd></dl>
 
 </div>
 </div>
@@ -295,6 +302,13 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Check if command is properly ended. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inStream</td><td>input stream </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if properly ended </dd></dl>
 
 </div>
 </div>
@@ -329,10 +343,18 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Load name of operand variable. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>input data </td></tr>
+    <tr><td class="paramname">name</td><td>variable name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if loaded successfully, false otherwise (incorrect syntax) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ae2ee7085fd41f96607d37673ed705e76"></a>
+<a class="anchor" id="ab17d9e0bf16052fff75f721f9aaaafc8"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -349,7 +371,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unique_ptr&lt; <a class="el" href="classCCommand.html">CCommand</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>nextCommand</em>&#160;</td>
+          <td class="paramname"><em>command</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -363,8 +385,16 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Parse input data into commands. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>input data </td></tr>
+    <tr><td class="paramname">command</td><td>parsed command </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if command successfully parsed, false otherwise </dd></dl>
 
-<p>Implements <a class="el" href="classCApplication.html#ae2fe7afcd1a15cdbf5eb97a69b7731e6">CApplication</a>.</p>
+<p>Implements <a class="el" href="classCApplication.html#abfa3357f4517c85261fac0bc307e1ab7">CApplication</a>.</p>
 
 </div>
 </div>
@@ -399,6 +429,14 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Parse name of the command from input. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>input data </td></tr>
+    <tr><td class="paramname">in_command</td><td>name of the command </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if parsed successfully, false otherwise (incorrect syntax) </dd></dl>
 
 </div>
 </div>
@@ -451,6 +489,17 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Parse parameters for cutting of a matrix. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>input data </td></tr>
+    <tr><td class="paramname">varName</td><td>input variable name </td></tr>
+    <tr><td class="paramname">numRows</td><td>number of rows of the cut matrix </td></tr>
+    <tr><td class="paramname">numCols</td><td>number of columns of the cut matrix </td></tr>
+    <tr><td class="paramname">startPoint</td><td>row and column index where to start cutting </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise (incorrect syntax) </dd></dl>
 
 </div>
 </div>
@@ -491,6 +540,15 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Parse parameters for loading of a matrix. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>input data </td></tr>
+    <tr><td class="paramname">varName</td><td>name of variable to be loaded </td></tr>
+    <tr><td class="paramname">matrixNums</td><td>values of a loaded matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false otherwise (incorrect syntax) </dd></dl>
 
 </div>
 </div>
@@ -531,6 +589,15 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Parse operand variable names. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>input data </td></tr>
+    <tr><td class="paramname">operands</td><td>vector to store operands </td></tr>
+    <tr><td class="paramname">numOfOperands</td><td>number of operands to parse </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successfull, false otherwise (incorrect syntax) </dd></dl>
 
 </div>
 </div>
@@ -554,6 +621,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Shoq basic usage instructions on the screen. </p>
 
 <p>Implements <a class="el" href="classCApplication.html#a308f31081c5a2b880c1bc96dbac3260d">CApplication</a>.</p>
 
@@ -602,6 +670,16 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Read and set values of a matrix from a stream. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inStream</td><td>input stream </td></tr>
+    <tr><td class="paramname">matrix</td><td>values of matrix to be set </td></tr>
+    <tr><td class="paramname">numRows</td><td>number of rows of the matrix </td></tr>
+    <tr><td class="paramname">numCols</td><td>number of columns of the matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if read successfully, false otherwise (wrong number of values) </dd></dl>
 
 </div>
 </div>
@@ -642,10 +720,19 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Read size of result matrix from input. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numRows</td><td>number of rows </td></tr>
+    <tr><td class="paramname">numCols</td><td>number of columns </td></tr>
+    <tr><td class="paramname">inStream</td><td>input stream </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if read successfully, false otherwise (incorrect syntax) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a7c024277c01acd4cc575ad64ffd07a22"></a>
+<a class="anchor" id="ad9d3e1cdadd2cc2e89dfa3591942f5f3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -653,10 +740,9 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CApplicationConsole::ShowMatrix </td>
+          <td class="memname">void CApplicationConsole::ShowHelp </td>
           <td>(</td>
-          <td class="paramtype">unique_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>matrix</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -666,8 +752,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Show description of app commands on the screen. </p>
 
-<p>Implements <a class="el" href="classCApplication.html#a8d6b41c059da7fbd01a4857bcb1c06e0">CApplication</a>.</p>
+<p>Implements <a class="el" href="classCApplication.html#a97b87502b1a3c7fdaa7d8ef2e7870eaf">CApplication</a>.</p>
 
 </div>
 </div>
@@ -692,12 +779,18 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Show message on the screen. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>message to be shown </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="classCApplication.html#ab88b3a17d0d6e5c14eba88fb263c9857">CApplication</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a311cfc33ddf26daa5f6a759a335ea007"></a>
+<a class="anchor" id="a4bca66a2f575557ca929d2fa8c8f9028"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -709,32 +802,6 @@ Additional Inherited Members</h2></td></tr>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>result</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="classCApplication.html#a13cc1aa745b5b4c4d7e02a77a1bbdac8">CApplication</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a20c9dbcb6b56834b28ff9909f446848f"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CApplicationConsole::ShowVarName </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -744,8 +811,14 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Show result of operation on screen. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">result</td><td>result of operation </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Implements <a class="el" href="classCApplication.html#a5994ba2f7b8a5d88290040616765baaa">CApplication</a>.</p>
+<p>Implements <a class="el" href="classCApplication.html#a741354ef7eba83ea594a116069dafddd">CApplication</a>.</p>
 
 </div>
 </div>

@@ -23,18 +23,18 @@ protected:
     CMemory m_Memory;
 
     /**
-     * print basic usage instructions
+     * Shoq basic usage instructions on the screen.
      */
     virtual void PrintInstructions() const = 0;
 
     /**
-     * get input from user
+     * Get input from user.
      * @return input data in string
      */
     virtual string GetInput() const = 0;
 
     /**
-     * parse input data into commands
+     * Parse input data into commands.
      * @param input input data
      * @param command parsed command
      * @return true if command successfully parsed, false otherwise
@@ -42,7 +42,7 @@ protected:
     virtual bool ParseCommand(string &input, unique_ptr<CCommand> &command) = 0;
 
     /**
-     * show result of operation on screen
+     * Show result of operation on screen.
      * @param result result of operation
      */
     virtual void ShowResult(string result) const = 0;
@@ -56,7 +56,7 @@ public:
     virtual ~CApplication() = default;
 
     /**
-     * evaluate input from user
+     * Evaluate input from user.
      * @param input input data
      * @param result string representation of result of operation
      * @param command command to be parsed
@@ -77,7 +77,7 @@ public:
     }
 
     /**
-     * run application
+     * Run application.
      */
     void Run() {
         while (true) {
@@ -100,13 +100,13 @@ public:
     }
 
     /**
-     * show message on the screen
+     * Show message on the screen.
      * @param msg message to be shown
      */
     virtual void ShowMsg(string msg) const = 0;
 
     /**
-     * show description of commands on the screen
+     * Show description of app commands on the screen.
      */
     virtual void ShowHelp() const = 0;
 

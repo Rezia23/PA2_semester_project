@@ -29,15 +29,13 @@ Collaboration diagram for C\+Application\+:\nopagebreak
 \item 
 virtual \hyperlink{classCApplication_ab4448f8a90f380d4ac2afcc9ee59780d}{$\sim$\+C\+Application} ()=default
 \item 
-bool \hyperlink{classCApplication_a89642c9a6de3ced8f1f77e4fed479e7c}{Evaluate} (string input, string \&result, unique\+\_\+ptr$<$ \hyperlink{classCCommand}{C\+Command} $>$ \&next\+Command)
+bool \hyperlink{classCApplication_ad04074e57722d0954b07ebc82298a02c}{Evaluate} (string input, string \&result, unique\+\_\+ptr$<$ \hyperlink{classCCommand}{C\+Command} $>$ \&command)
 \item 
 void \hyperlink{classCApplication_aa069063a23e53ea9858995f3ca34d6fb}{Run} ()
 \item 
-virtual void \hyperlink{classCApplication_a5994ba2f7b8a5d88290040616765baaa}{Show\+Var\+Name} (string name) const =0
-\item 
-virtual void \hyperlink{classCApplication_a8d6b41c059da7fbd01a4857bcb1c06e0}{Show\+Matrix} (unique\+\_\+ptr$<$ \hyperlink{classCMatrix}{C\+Matrix} $>$ \&matrix) const =0
-\item 
 virtual void \hyperlink{classCApplication_ab88b3a17d0d6e5c14eba88fb263c9857}{Show\+Msg} (string msg) const =0
+\item 
+virtual void \hyperlink{classCApplication_a97b87502b1a3c7fdaa7d8ef2e7870eaf}{Show\+Help} () const =0
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -46,9 +44,9 @@ virtual void \hyperlink{classCApplication_a308f31081c5a2b880c1bc96dbac3260d}{Pri
 \item 
 virtual string \hyperlink{classCApplication_a69a1706c3cf78d8dad7e16734e92b3f6}{Get\+Input} () const =0
 \item 
-virtual bool \hyperlink{classCApplication_ae2fe7afcd1a15cdbf5eb97a69b7731e6}{Parse\+Command} (string \&input, unique\+\_\+ptr$<$ \hyperlink{classCCommand}{C\+Command} $>$ \&next\+Command)=0
+virtual bool \hyperlink{classCApplication_abfa3357f4517c85261fac0bc307e1ab7}{Parse\+Command} (string \&input, unique\+\_\+ptr$<$ \hyperlink{classCCommand}{C\+Command} $>$ \&command)=0
 \item 
-virtual void \hyperlink{classCApplication_a13cc1aa745b5b4c4d7e02a77a1bbdac8}{Show\+Result} (string result)=0
+virtual void \hyperlink{classCApplication_a741354ef7eba83ea594a116069dafddd}{Show\+Result} (string result) const =0
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -77,13 +75,25 @@ virtual void \hyperlink{classCApplication_a13cc1aa745b5b4c4d7e02a77a1bbdac8}{Sho
 \subsection{Member Function Documentation}
 \index{C\+Application@{C\+Application}!Evaluate@{Evaluate}}
 \index{Evaluate@{Evaluate}!C\+Application@{C\+Application}}
-\subsubsection[{\texorpdfstring{Evaluate(string input, string \&result, unique\+\_\+ptr$<$ C\+Command $>$ \&next\+Command)}{Evaluate(string input, string &result, unique_ptr< CCommand > &nextCommand)}}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Application\+::\+Evaluate (
+\subsubsection[{\texorpdfstring{Evaluate(string input, string \&result, unique\+\_\+ptr$<$ C\+Command $>$ \&command)}{Evaluate(string input, string &result, unique_ptr< CCommand > &command)}}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Application\+::\+Evaluate (
 \begin{DoxyParamCaption}
 \item[{string}]{input, }
 \item[{string \&}]{result, }
-\item[{unique\+\_\+ptr$<$ {\bf C\+Command} $>$ \&}]{next\+Command}
+\item[{unique\+\_\+ptr$<$ {\bf C\+Command} $>$ \&}]{command}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCApplication_a89642c9a6de3ced8f1f77e4fed479e7c}{}\label{classCApplication_a89642c9a6de3ced8f1f77e4fed479e7c}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCApplication_ad04074e57722d0954b07ebc82298a02c}{}\label{classCApplication_ad04074e57722d0954b07ebc82298a02c}
+Evaluate input from user. 
+\begin{DoxyParams}{Parameters}
+{\em input} & input data \\
+\hline
+{\em result} & string representation of result of operation \\
+\hline
+{\em command} & command to be parsed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if evaluation successful, false otherwise 
+\end{DoxyReturn}
 \index{C\+Application@{C\+Application}!Get\+Input@{Get\+Input}}
 \index{Get\+Input@{Get\+Input}!C\+Application@{C\+Application}}
 \subsubsection[{\texorpdfstring{Get\+Input() const =0}{GetInput() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual string C\+Application\+::\+Get\+Input (
@@ -91,21 +101,34 @@ virtual void \hyperlink{classCApplication_a13cc1aa745b5b4c4d7e02a77a1bbdac8}{Sho
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{classCApplication_a69a1706c3cf78d8dad7e16734e92b3f6}{}\label{classCApplication_a69a1706c3cf78d8dad7e16734e92b3f6}
+Get input from user. \begin{DoxyReturn}{Returns}
+input data in string 
+\end{DoxyReturn}
 
 
 Implemented in \hyperlink{classCApplicationConsole_a0af959fae7259bf81f7855985e16adff}{C\+Application\+Console}.
 
 \index{C\+Application@{C\+Application}!Parse\+Command@{Parse\+Command}}
 \index{Parse\+Command@{Parse\+Command}!C\+Application@{C\+Application}}
-\subsubsection[{\texorpdfstring{Parse\+Command(string \&input, unique\+\_\+ptr$<$ C\+Command $>$ \&next\+Command)=0}{ParseCommand(string &input, unique_ptr< CCommand > &nextCommand)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\+Application\+::\+Parse\+Command (
+\subsubsection[{\texorpdfstring{Parse\+Command(string \&input, unique\+\_\+ptr$<$ C\+Command $>$ \&command)=0}{ParseCommand(string &input, unique_ptr< CCommand > &command)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\+Application\+::\+Parse\+Command (
 \begin{DoxyParamCaption}
 \item[{string \&}]{input, }
-\item[{unique\+\_\+ptr$<$ {\bf C\+Command} $>$ \&}]{next\+Command}
+\item[{unique\+\_\+ptr$<$ {\bf C\+Command} $>$ \&}]{command}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{classCApplication_ae2fe7afcd1a15cdbf5eb97a69b7731e6}{}\label{classCApplication_ae2fe7afcd1a15cdbf5eb97a69b7731e6}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{classCApplication_abfa3357f4517c85261fac0bc307e1ab7}{}\label{classCApplication_abfa3357f4517c85261fac0bc307e1ab7}
+Parse input data into commands. 
+\begin{DoxyParams}{Parameters}
+{\em input} & input data \\
+\hline
+{\em command} & parsed command \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command successfully parsed, false otherwise 
+\end{DoxyReturn}
 
 
-Implemented in \hyperlink{classCApplicationConsole_ae2ee7085fd41f96607d37673ed705e76}{C\+Application\+Console}.
+Implemented in \hyperlink{classCApplicationConsole_ab17d9e0bf16052fff75f721f9aaaafc8}{C\+Application\+Console}.
 
 \index{C\+Application@{C\+Application}!Print\+Instructions@{Print\+Instructions}}
 \index{Print\+Instructions@{Print\+Instructions}!C\+Application@{C\+Application}}
@@ -114,7 +137,7 @@ Implemented in \hyperlink{classCApplicationConsole_ae2ee7085fd41f96607d37673ed70
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{classCApplication_a308f31081c5a2b880c1bc96dbac3260d}{}\label{classCApplication_a308f31081c5a2b880c1bc96dbac3260d}
-
+Shoq basic usage instructions on the screen. 
 
 Implemented in \hyperlink{classCApplicationConsole_a77c169050d8faff5ff4019d3204e6ff8}{C\+Application\+Console}.
 
@@ -125,16 +148,16 @@ Implemented in \hyperlink{classCApplicationConsole_a77c169050d8faff5ff4019d3204e
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCApplication_aa069063a23e53ea9858995f3ca34d6fb}{}\label{classCApplication_aa069063a23e53ea9858995f3ca34d6fb}
-\index{C\+Application@{C\+Application}!Show\+Matrix@{Show\+Matrix}}
-\index{Show\+Matrix@{Show\+Matrix}!C\+Application@{C\+Application}}
-\subsubsection[{\texorpdfstring{Show\+Matrix(unique\+\_\+ptr$<$ C\+Matrix $>$ \&matrix) const =0}{ShowMatrix(unique_ptr< CMatrix > &matrix) const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Application\+::\+Show\+Matrix (
+Run application. \index{C\+Application@{C\+Application}!Show\+Help@{Show\+Help}}
+\index{Show\+Help@{Show\+Help}!C\+Application@{C\+Application}}
+\subsubsection[{\texorpdfstring{Show\+Help() const =0}{ShowHelp() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Application\+::\+Show\+Help (
 \begin{DoxyParamCaption}
-\item[{unique\+\_\+ptr$<$ {\bf C\+Matrix} $>$ \&}]{matrix}
+{}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classCApplication_a8d6b41c059da7fbd01a4857bcb1c06e0}{}\label{classCApplication_a8d6b41c059da7fbd01a4857bcb1c06e0}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classCApplication_a97b87502b1a3c7fdaa7d8ef2e7870eaf}{}\label{classCApplication_a97b87502b1a3c7fdaa7d8ef2e7870eaf}
+Show description of app commands on the screen. 
 
-
-Implemented in \hyperlink{classCApplicationConsole_a7c024277c01acd4cc575ad64ffd07a22}{C\+Application\+Console}.
+Implemented in \hyperlink{classCApplicationConsole_ad9d3e1cdadd2cc2e89dfa3591942f5f3}{C\+Application\+Console}.
 
 \index{C\+Application@{C\+Application}!Show\+Msg@{Show\+Msg}}
 \index{Show\+Msg@{Show\+Msg}!C\+Application@{C\+Application}}
@@ -143,31 +166,30 @@ Implemented in \hyperlink{classCApplicationConsole_a7c024277c01acd4cc575ad64ffd0
 \item[{string}]{msg}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classCApplication_ab88b3a17d0d6e5c14eba88fb263c9857}{}\label{classCApplication_ab88b3a17d0d6e5c14eba88fb263c9857}
+Show message on the screen. 
+\begin{DoxyParams}{Parameters}
+{\em msg} & message to be shown \\
+\hline
+\end{DoxyParams}
 
 
 Implemented in \hyperlink{classCApplicationConsole_a32152dd2a1793b20fd03ba3179d8e22e}{C\+Application\+Console}.
 
 \index{C\+Application@{C\+Application}!Show\+Result@{Show\+Result}}
 \index{Show\+Result@{Show\+Result}!C\+Application@{C\+Application}}
-\subsubsection[{\texorpdfstring{Show\+Result(string result)=0}{ShowResult(string result)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Application\+::\+Show\+Result (
+\subsubsection[{\texorpdfstring{Show\+Result(string result) const =0}{ShowResult(string result) const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Application\+::\+Show\+Result (
 \begin{DoxyParamCaption}
 \item[{string}]{result}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{classCApplication_a13cc1aa745b5b4c4d7e02a77a1bbdac8}{}\label{classCApplication_a13cc1aa745b5b4c4d7e02a77a1bbdac8}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\hypertarget{classCApplication_a741354ef7eba83ea594a116069dafddd}{}\label{classCApplication_a741354ef7eba83ea594a116069dafddd}
+Show result of operation on screen. 
+\begin{DoxyParams}{Parameters}
+{\em result} & result of operation \\
+\hline
+\end{DoxyParams}
 
 
-Implemented in \hyperlink{classCApplicationConsole_a311cfc33ddf26daa5f6a759a335ea007}{C\+Application\+Console}.
-
-\index{C\+Application@{C\+Application}!Show\+Var\+Name@{Show\+Var\+Name}}
-\index{Show\+Var\+Name@{Show\+Var\+Name}!C\+Application@{C\+Application}}
-\subsubsection[{\texorpdfstring{Show\+Var\+Name(string name) const =0}{ShowVarName(string name) const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Application\+::\+Show\+Var\+Name (
-\begin{DoxyParamCaption}
-\item[{string}]{name}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classCApplication_a5994ba2f7b8a5d88290040616765baaa}{}\label{classCApplication_a5994ba2f7b8a5d88290040616765baaa}
-
-
-Implemented in \hyperlink{classCApplicationConsole_a20c9dbcb6b56834b28ff9909f446848f}{C\+Application\+Console}.
+Implemented in \hyperlink{classCApplicationConsole_a4bca66a2f575557ca929d2fa8c8f9028}{C\+Application\+Console}.
 
 
 

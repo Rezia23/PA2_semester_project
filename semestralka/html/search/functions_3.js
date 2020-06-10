@@ -1,7 +1,7 @@
 var searchData=
 [
   ['gem',['Gem',['../elimination_8cpp.html#a847e69ec9e2865fbdda13efc59055bbb',1,'Gem(shared_ptr&lt; CMatrix &gt; &amp;matrix, vector&lt; shared_ptr&lt; CMatrix &gt;&gt; &amp;eliminationProcess):&#160;elimination.cpp'],['../elimination_8cpp.html#a3ac51e9fcb3ad95c3ae012e0171aa7e1',1,'Gem(shared_ptr&lt; CMatrix &gt; &amp;matrix):&#160;elimination.cpp'],['../elimination_8h.html#a847e69ec9e2865fbdda13efc59055bbb',1,'Gem(shared_ptr&lt; CMatrix &gt; &amp;matrix, vector&lt; shared_ptr&lt; CMatrix &gt;&gt; &amp;eliminationProcess):&#160;elimination.cpp'],['../elimination_8h.html#a3ac51e9fcb3ad95c3ae012e0171aa7e1',1,'Gem(shared_ptr&lt; CMatrix &gt; &amp;matrix):&#160;elimination.cpp']]],
-  ['getcountzerorows',['GetCountZeroRows',['../classCOrderCalculator.html#ac4b392de504c60ef15d17d9ebc78166e',1,'COrderCalculator']]],
+  ['getcountzerorows',['GetCountZeroRows',['../classCOrderCalculator.html#a6dd367054326190a149d1df3683cce00',1,'COrderCalculator']]],
   ['geteliminationprocess',['GetEliminationProcess',['../classCGaussEliminationOperator.html#a44b0cb343e17a349d4cb0361f1d16d97',1,'CGaussEliminationOperator']]],
   ['getemptyinstance',['GetEmptyInstance',['../classCMatrix.html#a7495208c2bd786fe46b130f6090e7eb5',1,'CMatrix::GetEmptyInstance()'],['../classCMatrixSparse.html#a2f545baf72ad2974e1450f8653f9bd06',1,'CMatrixSparse::GetEmptyInstance()'],['../classCMatrixStandard.html#a17e51335d1d9e731441a8205536697f7',1,'CMatrixStandard::GetEmptyInstance()']]],
   ['getidentity',['GetIdentity',['../classCInverseOperator.html#a007fc0315502d838a79e83e0d2379083',1,'CInverseOperator']]],

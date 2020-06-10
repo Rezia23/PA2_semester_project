@@ -2,8 +2,8 @@
 // Created by terez on 06.05.2020.
 //
 
-#ifndef SEMESTRALKA_CMERGENEXTTOOPERATION_H
-#define SEMESTRALKA_CMERGENEXTTOOPERATION_H
+#ifndef SEMESTRALKA_CMERGENEXTTOOPERATOR_H
+#define SEMESTRALKA_CMERGENEXTTOOPERATOR_H
 
 
 #include "CMatrix.h"
@@ -16,19 +16,21 @@ public:
     CMergeNextToOperator(shared_ptr<CMatrix> &left, shared_ptr<CMatrix> &right)
             : CBinaryOperator(left, right) {}
 
-
+    /**
+     * Combine two variables into a new one. Variables are combined by placing next to each other.
+     */
     CMatrix *Evaluate(CMemory &memory) override {
-        if (m_Left->m_NumRows != m_Right->m_NumRows) {
+        if (m_Left->GetNumRows() != m_Right->GetNumRows()) {
             throw std::runtime_error("Merging incompatible matrices.");
         }
-        vector<vector<double>> merged(m_Left->m_NumRows);
-        for (size_t i = 0; i < m_Left->m_NumRows; i++) {
-            for (size_t j = 0; j < m_Left->m_NumCols + m_Right->m_NumCols; j++) {
+        vector<vector<double>> merged(m_Left->GetNumRows());
+        for (size_t i = 0; i < m_Left->GetNumRows(); i++) {
+            for (size_t j = 0; j < m_Left->GetNumCols() + m_Right->GetNumCols(); j++) {
                 double nextNum;
-                if (j < m_Left->m_NumCols) {
+                if (j < m_Left->GetNumCols()) {
                     nextNum = m_Left->GetNumAtCoords(i, j);
                 } else {
-                    nextNum = m_Right->GetNumAtCoords(i, j - m_Left->m_NumCols);
+                    nextNum = m_Right->GetNumAtCoords(i, j - m_Left->GetNumCols());
                 }
                 merged[i].push_back(nextNum);
             }
@@ -43,4 +45,4 @@ public:
 };
 
 
-#endif //SEMESTRALKA_CMERGENEXTTOOPERATION_H
+#endif //SEMESTRALKA_CMERGENEXTTOOPERATOR_H

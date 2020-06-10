@@ -30,7 +30,7 @@ const char *const COMMAND_GAUSS_ELIMINATION_DESTRUCTIVE = "Gem";
 const char *const COMMAND_PUT = "put";
 
 
-
+const char DELIMITER = ';';
 
 
 const vector<vector<string>> HELP = {

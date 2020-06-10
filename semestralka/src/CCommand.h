@@ -18,6 +18,11 @@ public:
 
     CCommand() = default;
 
+    /**
+     * Execute command.
+     * @param memory
+     * @return true if execution successful, false otherwise (command cannot be performed)
+     */
     virtual bool Execute(CMemory &memory) = 0;
 
     virtual ~CCommand() = default;

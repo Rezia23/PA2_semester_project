@@ -84,6 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="classCOrderCalculator-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">COrderCalculator Class Reference</div>  </div>
@@ -94,13 +95,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac4b392de504c60ef15d17d9ebc78166e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCOrderCalculator.html#ac4b392de504c60ef15d17d9ebc78166e">GetCountZeroRows</a> (const shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;matrix) const </td></tr>
-<tr class="separator:ac4b392de504c60ef15d17d9ebc78166e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe4e4728a60159e28c80da4cd979a60d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCOrderCalculator.html#abe4e4728a60159e28c80da4cd979a60d">operator()</a> (const shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;matrix)</td></tr>
-<tr class="separator:abe4e4728a60159e28c80da4cd979a60d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34946aaf27501915d1bc854df890ac1d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCOrderCalculator.html#a34946aaf27501915d1bc854df890ac1d">operator()</a> (const shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;matrix) const </td></tr>
+<tr class="separator:a34946aaf27501915d1bc854df890ac1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a6dd367054326190a149d1df3683cce00"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCOrderCalculator.html#a6dd367054326190a149d1df3683cce00">GetCountZeroRows</a> (const shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;matrix)</td></tr>
+<tr class="separator:a6dd367054326190a149d1df3683cce00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ac4b392de504c60ef15d17d9ebc78166e"></a>
+<a class="anchor" id="a6dd367054326190a149d1df3683cce00"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -108,7 +112,38 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int COrderCalculator::GetCountZeroRows </td>
+          <td class="memname">static int COrderCalculator::GetCountZeroRows </td>
+          <td>(</td>
+          <td class="paramtype">const shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>matrix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Count number of rows in matrix which have only zero values. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">matrix</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>number of zero rows </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a34946aaf27501915d1bc854df890ac1d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int COrderCalculator::operator() </td>
           <td>(</td>
           <td class="paramtype">const shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>matrix</em></td><td>)</td>
@@ -121,30 +156,13 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="abe4e4728a60159e28c80da4cd979a60d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int COrderCalculator::operator() </td>
-          <td>(</td>
-          <td class="paramtype">const shared_ptr&lt; <a class="el" href="classCMatrix.html">CMatrix</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>matrix</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Calculate order of a matrix. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">matrix</td><td>matrix to have order calculated </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>order of a matrix </dd></dl>
 
 </div>
 </div>

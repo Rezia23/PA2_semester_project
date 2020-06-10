@@ -18,7 +18,7 @@ public:
 
         CTransposeOperator op(memory.At(m_VarName));
 
-        memory.Insert(m_VarName, shared_ptr<CMatrix>(op.Evaluate(memory)));
+        memory.Insert(m_VarName, shared_ptr<CMatrix>(op.Evaluate(memory))); //replace original variable with result
         m_ResultMatrix = unique_ptr<CMatrix>(memory.At(m_VarName)->Clone());
         m_Result += m_ResultMatrix->ToString();
         return true;

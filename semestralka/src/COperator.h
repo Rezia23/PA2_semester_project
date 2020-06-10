@@ -13,6 +13,12 @@ public:
 
     virtual ~COperator() = default;
 
+    /**
+     * Evaluate matrix operation.
+     * @param memory memory with variables
+     * @return result of operation
+     * @throw exception operation could not be performed
+     */
     virtual class CMatrix *Evaluate(CMemory &memory) = 0;
 };
 
