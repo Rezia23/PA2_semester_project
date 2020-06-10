@@ -71,7 +71,7 @@ public:
         m_NumCols = numCols;
     }
 
-    virtual void Print() const override;
+
 
 
     virtual bool ShouldBeSparse() const override {

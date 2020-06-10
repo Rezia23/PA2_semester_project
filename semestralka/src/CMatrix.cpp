@@ -3,7 +3,6 @@
 //
 
 #include "CMatrix.h"
-#include <sstream>
 #include <iomanip>
 #include <iostream>
 
@@ -23,7 +22,7 @@ bool CMatrix::operator==(const CMatrix &other) {
 }
 
 string CMatrix::ToString() const {
-    int width = SetCellWidth();
+    int width = GetCellWidth();
     stringstream ss;
     for (size_t i = 0; i < m_NumRows; i++) {
         for (size_t j = 0; j < m_NumCols; j++) {
@@ -34,7 +33,7 @@ string CMatrix::ToString() const {
     return ss.str();
 }
 
-int CMatrix::SetCellWidth() const {
+int CMatrix::GetCellWidth() const {
     for(size_t i = 0;i<m_NumRows;i++){
         for(std::size_t j = 0; j<m_NumCols;j++){
             int numLength = GetNumLength(i,j);

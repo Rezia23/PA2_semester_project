@@ -62,7 +62,6 @@ public:
 
     virtual ~CMatrixStandard() override = default;
 
-    virtual void Print() const override;
 
     virtual double GetNumAtCoords(size_t row, size_t col) const override { return m_Matrix[row][col]; }
 

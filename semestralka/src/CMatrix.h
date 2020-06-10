@@ -32,11 +32,7 @@ public:
         return m_NumCols;
     }
 
-    /**
-     * Debug function to print matrix.
-     */
-     //todo probably delete
-    virtual void Print() const = 0;
+
     /**
      * Get value from a matrix from given coordinates.
      * @param row index of a row of a value
@@ -104,6 +100,7 @@ public:
 
     /**
      * == overload, two matrices are equal if all their values are equal
+     * Used only for debug.
      * @param other
      * @return true if matrices are equal
      */
@@ -113,12 +110,22 @@ public:
      * Convert matrix to string.
      * @return matrix in string
      */
-     //todo maybe format somehow better
     string ToString() const;
 
-    int SetCellWidth() const;
-
-    int GetNumLength(std::size_t rows, std::size_t cols) const;
+    /**
+     * Get width of a column.
+     * According to length, get how wide each column should be.
+     * @return width of a column
+     */
+    int GetCellWidth() const;
+    /**
+     * Get number of characters of a value in a matrix.
+     * Length of a number includes decimal point, sign, excludes zeroes behind decimal point
+     * @param row row index of value in matrix
+     * @param col column index of value in matrix
+     * @return number of characters
+     */
+    int GetNumLength(std::size_t row, std::size_t col) const;
 };
 
 
