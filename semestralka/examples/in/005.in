@@ -1,0 +1,7 @@
+load:ondra 3 2|1.0 104 98 11 5.434 0.002 ;
+load:petr 3 2|80 14 7 1.234 0.4 5.002 ;
+merge_next_to:ondra petr ;
+merge_next_to:petr ondra ;
+merge_under:ondra petr ;
+merge_under:petr ondra ;
+exit
