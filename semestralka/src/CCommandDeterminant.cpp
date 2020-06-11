@@ -3,10 +3,11 @@
 //
 
 #include "CCommandDeterminant.h"
+#include "messages.h"
 
 bool CCommandDeterminant::Execute(CMemory &memory) {
     if (!memory.ExistsVariable(m_VarName)) {
-        m_Result = "Variable does not exist.";
+        m_Result = MSG_NOT_EXISTING_VARIABLE;
         return false;
     }
     m_Result = "Matrix " + m_VarName + " has determinant:\n";

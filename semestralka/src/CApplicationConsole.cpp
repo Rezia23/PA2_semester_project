@@ -6,12 +6,13 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "messages.h"
 
 using namespace std;
 
 bool CApplicationConsole::getVariableName(string &input, string &varName) const {
     std::string::size_type spacePosition;
-    spacePosition = input.find(" ");
+    spacePosition = input.find(DELIMITER_PARAMETERS);
     if (spacePosition == std::string::npos) {
         return false;
     }
@@ -28,10 +29,7 @@ bool CApplicationConsole::ReadSize(std::size_t &numRows, std::size_t &numCols, i
         return false;
     }
     char delimiter;
-    if (!(inStream >> delimiter) || delimiter != '|') {
-        return false;
-    }
-    return true;
+    return ((inStream >> delimiter) && delimiter == DELIMITER_MATRIX_SIZE);
 }
 
 bool CApplicationConsole::ReadMatrix(istream &inStream, vector<vector<double>> &matrix, size_t numRows,
@@ -57,7 +55,7 @@ string CApplicationConsole::GetInput() const {
  bool CApplicationConsole::ParseCommandWord(string &input, string &in_command) {
 
      std::string::size_type semicolonPosition;
-     semicolonPosition = input.find(":");
+     semicolonPosition = input.find(DELIMITER_COMMAND_WORD);
      if (semicolonPosition == std::string::npos) {
          return false;
      }
@@ -242,7 +240,7 @@ string CApplicationConsole::GetInput() const {
 
  bool CApplicationConsole::LoadOperandName(string &input, string &name) {
      std::string::size_type spacePosition;
-     spacePosition = input.find(" ");
+     spacePosition = input.find(DELIMITER_PARAMETERS);
      if (spacePosition == std::string::npos) {
          return false;
      }

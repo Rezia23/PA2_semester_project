@@ -3,12 +3,13 @@
 //
 
 #include "CApplication.h"
+#include "messages.h"
 
 
 bool CApplication::Evaluate(string input, string &result, unique_ptr<CCommand> &command) {
 
     if (!ParseCommand(input, command)) {
-        result = "Command could not be parsed.";
+        result = MSG_COMMAND_NOT_PARSED;
         return false;
     }
     if (!command->Execute(m_Memory)) {
@@ -23,7 +24,7 @@ void CApplication::Run() {
     while (true) {
         string input = GetInput();
         if (input == COMMAND_EXIT) {
-            ShowMsg("Closing the app.");
+            ShowMsg(MSG_EXIT);
             break;
         } else if (input == COMMAND_HELP) {
             ShowHelp();
@@ -32,7 +33,7 @@ void CApplication::Run() {
         string result;
         unique_ptr<CCommand> nextCommand;
         if (!Evaluate(input, result, nextCommand)) {
-            ShowMsg("Operation failed:");
+            ShowMsg(MSG_FAILED_OPERATION);
         }
         ShowResult(result);
 

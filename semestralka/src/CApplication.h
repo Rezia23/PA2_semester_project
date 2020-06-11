@@ -14,7 +14,6 @@
 #include "CMatrixStandard.h"
 #include "CCommand.h"
 #include "CMemory.h"
-#include "messages.h"
 
 class CApplication {
 

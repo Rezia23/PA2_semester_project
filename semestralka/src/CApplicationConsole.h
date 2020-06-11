@@ -87,7 +87,7 @@ private:
      */
     bool IsSyntaxCorrect(istream &inStream) const {
         char delimiter;
-        return (inStream >> delimiter) && delimiter == DELIMITER;
+        return (inStream >> delimiter) && delimiter == DELIMITER_END_COMMAND;
     }
 
     void ShowResult(string result) const override {

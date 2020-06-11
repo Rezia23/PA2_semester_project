@@ -29,9 +29,16 @@ const char *const COMMAND_GAUSS_ELIMINATION_DESTRUCTIVE = "Gem";
 
 const char *const COMMAND_PUT = "put";
 
+const char DELIMITER_PARAMETERS=' ';
+const char DELIMITER_END_COMMAND = ';';
+const char DELIMITER_COMMAND_WORD = ':';
+const char DELIMITER_MATRIX_SIZE = '|';
 
-const char DELIMITER = ';';
+const char * const MSG_COMMAND_NOT_PARSED = "Command could not be parsed.";
+const char * const MSG_EXIT = "Closing the app.";
+const char * const MSG_FAILED_OPERATION = "Operation failed.";
 
+const char * const MSG_NOT_EXISTING_VARIABLE = "Variable does not exist.";
 
 const vector<vector<string>> HELP = {
         {{"Command name"},{"description"},{"usage"}},
@@ -61,4 +68,9 @@ const vector<vector<string>> HELP = {
 
 const string USAGE_INSTRUCTIONS =
         "Welcome to the MATRIX! calculator.\nFor exit type '" + string(COMMAND_EXIT) + "' for help type '" + string(COMMAND_HELP) + "'.\n-------------------------------------------\n";
+
+
+
+
+
 #endif //SEMESTRALKA_MESSAGES_H
