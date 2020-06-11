@@ -21,6 +21,7 @@ run: $(TARGET)
 $(TARGET): ${OBJ_FILES}
 		$(CXX) $(CXX_FLAGS) $^ -o $@
 
+-include $(OBJ_FILES:.o=.d)
 
 $(BUILD_DIR)/%.o: src/%.cpp
 		$(MKDIR) $(BUILD_DIR)
