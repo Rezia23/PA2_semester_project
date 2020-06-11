@@ -10,7 +10,7 @@ int COrderCalculator::GetCountZeroRows(const shared_ptr<CMatrix> &matrix) {
     for (size_t i = 0; i < matrix->GetNumRows(); i++) {
         isRowZero = true;
         for (size_t j = 0; j < matrix->GetNumCols(); j++) {
-            if (matrix->GetNumAtCoords(i, j) != 0) {
+            if (!IsZero(matrix->GetNumAtCoords(i, j))) {
                 isRowZero = false;
                 break;
             }

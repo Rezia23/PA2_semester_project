@@ -46,7 +46,7 @@ bool CDeterminantCalculator::HasZeroRowOrCol(const shared_ptr<CMatrix> &matrix) 
     bool onlyZeroes = true;
     for (std::size_t i = 0; i < matrix->GetNumRows(); i++) {
         for (std::size_t j = 0; j < matrix->GetNumCols(); j++) {
-            if (matrix->GetNumAtCoords(i, j) != 0) {
+            if (!IsZero(matrix->GetNumAtCoords(i, j))) {
                 onlyZeroes = false;
                 break;
             }
@@ -58,7 +58,7 @@ bool CDeterminantCalculator::HasZeroRowOrCol(const shared_ptr<CMatrix> &matrix) 
     }
     for (std::size_t i = 0; i < matrix->GetNumCols(); i++) {
         for (std::size_t j = 0; j < matrix->GetNumRows(); j++) {
-            if (matrix->GetNumAtCoords(j, i) != 0) {
+            if (!IsZero(matrix->GetNumAtCoords(j, i))) {
                 onlyZeroes = false;
                 break;
             }

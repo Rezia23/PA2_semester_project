@@ -9,6 +9,7 @@ bool CCommandPrint::Execute(CMemory &memory) {
         m_Result = "Variable " + m_VariableName + " does not exist.";
         return false;
     }
-    m_Result = memory.At(m_VariableName)->ToString();
+    m_Result = "Printing matrix " + m_VariableName + "\n" ;
+    m_Result += memory.At(m_VariableName)->ToString();
     return true;
 }

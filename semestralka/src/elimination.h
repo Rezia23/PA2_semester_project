@@ -7,7 +7,11 @@
 
 #include "CMatrix.h"
 
-
+/**
+ * Sort rows of a matrix so that first number (or next if the same) decreases with increasing row index.
+ * @param matrix matrix to be sorted
+ * @return number of row swaps made
+ */
 int SortForElimination(shared_ptr<CMatrix> &matrix);
 
 /**
@@ -22,5 +26,24 @@ void Gem(shared_ptr<CMatrix> &matrix, vector<shared_ptr<CMatrix>> &eliminationPr
  */
 void Gem(shared_ptr<CMatrix> &matrix);
 
+/**
+ * Perform step of elimination on a matrix.
+ * Subtract multiple of a row from a multiple of another.
+ * Row to be changed is multiplied by first non zero value in subtracting row, so that subtraction
+ * creates zero value in row to be changed in the same column as is the first non zero value in subtracting row.
+ * @param matrix
+ * @param firstNonZeroColumn index of first column in row with non zero value
+ * @param multipleToSubtract this multiple of row will be subtracted
+ * @param rowToBeChanged index of row to be changed
+ * @param subtractingRow index of subtracting row
+ * @return
+ */
+bool SubtractRows(shared_ptr<CMatrix> &matrix, size_t firstNonZeroColumn, double multipleToSubtract, size_t rowToBeChanged, size_t subtractingRow);
+/**
+ * Compare double to zero.
+ * @param number
+ * @return true if equals zero, false otherwise
+ */
+bool IsZero(double number);
 
 #endif //SEMESTRALKA_ELIMINATION_H
