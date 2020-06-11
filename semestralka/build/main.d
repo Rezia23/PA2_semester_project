@@ -1,6 +1,6 @@
 build/main.o: src/main.cpp src/CApplicationConsole.h src/CApplication.h \
- src/CMatrix.h src/COperator.h src/CMemory.h src/CMatrixStandard.h \
- src/CMatrixSparse.h src/elimination.h src/CCommand.h src/CCommandLoad.h \
+ src/CMatrix.h src/COperator.h src/CMatrixStandard.h src/CMatrixSparse.h \
+ src/elimination.h src/CCommand.h src/CMemory.h src/CCommandLoad.h \
  src/CCommandPrint.h src/CCommandAdd.h src/CAddOperator.h \
  src/CBinaryOperator.h src/CCommandSubtract.h src/CSubtractOperator.h \
  src/CCommandMultiply.h src/CMultiplyOperator.h src/CCommandTranspose.h \
@@ -22,8 +22,6 @@ src/CMatrix.h:
 
 src/COperator.h:
 
-src/CMemory.h:
-
 src/CMatrixStandard.h:
 
 src/CMatrixSparse.h:
@@ -31,6 +29,8 @@ src/CMatrixSparse.h:
 src/elimination.h:
 
 src/CCommand.h:
+
+src/CMemory.h:
 
 src/CCommandLoad.h:
 

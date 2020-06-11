@@ -14,7 +14,7 @@ bool CCommandInverse::Execute(CMemory &memory) {
 
     CInverseOperator op(memory.At(m_VarName));
     try {
-        m_ResultMatrix = unique_ptr<CMatrix>(op.Evaluate(memory));
+        m_ResultMatrix = unique_ptr<CMatrix>(op.Evaluate());
         m_Result += m_ResultMatrix->ToString();
         return true;
     } catch (const std::runtime_error &e) {

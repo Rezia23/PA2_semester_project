@@ -4,7 +4,7 @@
 
 #include "CMergeNextToOperator.h"
 
-CMatrix *CMergeNextToOperator::Evaluate(CMemory &memory) {
+CMatrix *CMergeNextToOperator::Evaluate() {
     if (m_Left->GetNumRows() != m_Right->GetNumRows()) {
         throw std::runtime_error("Merging incompatible matrices.");
     }

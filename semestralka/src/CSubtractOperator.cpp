@@ -4,7 +4,7 @@
 
 #include "CSubtractOperator.h"
 
-CMatrix *CSubtractOperator::Evaluate(CMemory &memory) {
+CMatrix *CSubtractOperator::Evaluate() {
     if (m_Left->GetNumRows() != m_Right->GetNumRows() || m_Left->GetNumCols() != m_Right->GetNumCols()) {
         throw std::runtime_error("Subtracting incompatible matrices.");
     }

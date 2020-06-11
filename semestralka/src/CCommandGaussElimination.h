@@ -16,7 +16,7 @@ public:
 
     bool Execute(CMemory &memory) override;
 
-    CCommandGaussElimination(string varName):m_VarName(varName){};
+    CCommandGaussElimination(string varName) : m_VarName(varName) {};
 
 protected:
     string m_VarName;

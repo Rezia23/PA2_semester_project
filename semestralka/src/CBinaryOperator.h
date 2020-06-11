@@ -8,7 +8,6 @@
 
 #include "COperator.h"
 #include "CMatrix.h"
-#include <memory>
 
 using namespace std;
 
@@ -26,7 +25,7 @@ public:
 
     virtual ~CBinaryOperator() = default;
 
-    virtual CMatrix *Evaluate(CMemory &memory) = 0;
+    virtual CMatrix *Evaluate() = 0;
 };
 
 

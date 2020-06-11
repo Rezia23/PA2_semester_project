@@ -4,10 +4,8 @@
 
 #include "CAddOperator.h"
 
-CMatrix *CAddOperator::Evaluate(CMemory &memory) {
+CMatrix *CAddOperator::Evaluate() {
 
-    //todo: can i do this
-    (void) memory; // unused for a reason
 
     if (m_Left->GetNumRows() != m_Right->GetNumRows() || m_Left->GetNumCols() != m_Right->GetNumCols()) {
         throw std::runtime_error("Adding incompatible matrices.");

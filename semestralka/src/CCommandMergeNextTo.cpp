@@ -12,7 +12,7 @@ bool CCommandMergeNextTo::Execute(CMemory &memory) {
     m_Result = "Result of merge is:\n";
     CMergeNextToOperator op(memory.At(m_Operand1), memory.At(m_Operand2));
     try {
-        m_ResultMatrix = unique_ptr<CMatrix>(op.Evaluate(memory));
+        m_ResultMatrix = unique_ptr<CMatrix>(op.Evaluate());
         m_Result += m_ResultMatrix->ToString();
         return true;
     } catch (const std::runtime_error &e) {

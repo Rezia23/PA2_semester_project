@@ -40,6 +40,7 @@ public:
      * @return value on indexes [row][col]
      */
     virtual double GetNumAtCoords(size_t row, size_t col) const = 0;
+
     /**
      * Set value of matrix at given coordinates.
      * @param row index of a row of a value
@@ -118,6 +119,7 @@ public:
      * @return width of a column
      */
     int GetCellWidth() const;
+
     /**
      * Get number of characters of a value in a matrix.
      * Length of a number includes decimal point, sign, excludes zeroes behind decimal point

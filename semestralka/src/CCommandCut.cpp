@@ -14,7 +14,7 @@ bool CCommandCut::Execute(CMemory &memory) {
     shared_ptr<CMatrix> result = shared_ptr<CMatrix>(memory.At(m_VarName)->Clone());
     CCutOperator op(result, m_NumRows, m_NumCols, m_StartPoint);
     try {
-        m_ResultMatrix = unique_ptr<CMatrix>(op.Evaluate(memory));
+        m_ResultMatrix = unique_ptr<CMatrix>(op.Evaluate());
         m_Result += m_ResultMatrix->ToString();
         return true;
     } catch (const std::runtime_error &e) {

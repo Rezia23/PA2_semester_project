@@ -25,7 +25,7 @@ public:
     /**
      * Cut matrix according to parameters.
      */
-    CMatrix *Evaluate(CMemory &memory) override;
+    CMatrix *Evaluate() override;
 
 };
 

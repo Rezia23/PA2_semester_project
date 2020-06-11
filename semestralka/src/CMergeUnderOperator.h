@@ -8,7 +8,6 @@
 
 #include "CMatrix.h"
 #include "CBinaryOperator.h"
-#include "CMemory.h"
 #include "CMatrixStandard.h"
 
 class CMergeUnderOperator : public CBinaryOperator {
@@ -19,7 +18,7 @@ public:
     /**
      * Combine two variables into a new one. Variables are combined by placing one below the other.
      */
-    CMatrix *Evaluate(CMemory &memory) override;
+    CMatrix *Evaluate() override;
 
 
 };

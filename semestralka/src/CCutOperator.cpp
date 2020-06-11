@@ -4,7 +4,7 @@
 
 #include "CCutOperator.h"
 
-CMatrix *CCutOperator::Evaluate(CMemory &memory) {
+CMatrix *CCutOperator::Evaluate() {
     if (m_NumRows > m_Operand->GetNumRows() || m_NumCols > m_Operand->GetNumCols()) {
         throw runtime_error("Wrong dimensions, cannot cut.");
     } else if (m_StartPoint.first > m_Operand->GetNumRows() - m_NumRows ||

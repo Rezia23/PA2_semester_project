@@ -72,8 +72,6 @@ public:
     }
 
 
-
-
     virtual bool ShouldBeSparse() const override {
         return (m_NumRows * m_NumCols) - m_Matrix.size() > m_Matrix.size();
     }

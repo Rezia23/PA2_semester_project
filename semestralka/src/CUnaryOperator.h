@@ -6,6 +6,9 @@
 #define SEMESTRALKA_CUNARYOPERATOR_H
 
 #include "COperator.h"
+#include "CMatrix.h"
+
+using namespace std;
 
 class CUnaryOperator : public COperator {
 protected:
@@ -19,7 +22,7 @@ public:
 
     virtual ~CUnaryOperator() = default;
 
-    virtual CMatrix *Evaluate(CMemory &memory) = 0;
+    virtual CMatrix *Evaluate() = 0;
 };
 
 

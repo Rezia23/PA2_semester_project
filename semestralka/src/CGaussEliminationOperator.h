@@ -21,7 +21,8 @@ public:
     /**
      * Transform variable to upper triangular form.
      */
-    CMatrix *Evaluate(CMemory &memory) override;
+    CMatrix *Evaluate() override;
+
     /**
      * Get matrices from each step of elimination process.
      * @return vector of matrices

@@ -26,18 +26,18 @@ string CMatrix::ToString() const {
     stringstream ss;
     for (size_t i = 0; i < m_NumRows; i++) {
         for (size_t j = 0; j < m_NumCols; j++) {
-            ss<<setw(width)<<GetNumAtCoords(i,j);
+            ss << setw(width) << GetNumAtCoords(i, j);
         }
-        ss<<'\n';
+        ss << '\n';
     }
     return ss.str();
 }
 
 int CMatrix::GetCellWidth() const {
-    for(size_t i = 0;i<m_NumRows;i++){
-        for(std::size_t j = 0; j<m_NumCols;j++){
-            int numLength = GetNumLength(i,j);
-            if(numLength>=5){
+    for (size_t i = 0; i < m_NumRows; i++) {
+        for (std::size_t j = 0; j < m_NumCols; j++) {
+            int numLength = GetNumLength(i, j);
+            if (numLength >= 5) {
                 return 14;
             }
         }
@@ -46,14 +46,14 @@ int CMatrix::GetCellWidth() const {
 }
 
 int CMatrix::GetNumLength(std::size_t row, std::size_t column) const {
-    string number = to_string(GetNumAtCoords(row,column));
+    string number = to_string(GetNumAtCoords(row, column));
     int length = number.length();
-    std::size_t it = number.length()-1;
+    std::size_t it = number.length() - 1;
     char digit = number[it];
-    while(digit=='0'){
+    while (digit == '0') {
         length--;
         it--;
-        digit=number[it];
+        digit = number[it];
     }
     return length;
 }

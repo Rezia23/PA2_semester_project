@@ -20,6 +20,7 @@ int SortForElimination(shared_ptr<CMatrix> &matrix);
  * @param eliminationProcess vector of steps (matrices) of elimination
  */
 void Gem(shared_ptr<CMatrix> &matrix, vector<shared_ptr<CMatrix>> &eliminationProcess);
+
 /**
  * Convert matrix to upper triangular form.
  * @param matrix matrix to be converted
@@ -37,7 +38,10 @@ void Gem(shared_ptr<CMatrix> &matrix);
  * @param subtractingRow index of subtracting row
  * @return
  */
-bool SubtractRows(shared_ptr<CMatrix> &matrix, size_t firstNonZeroColumn, double multipleToSubtract, size_t rowToBeChanged, size_t subtractingRow);
+bool
+SubtractRows(shared_ptr<CMatrix> &matrix, size_t firstNonZeroColumn, double multipleToSubtract, size_t rowToBeChanged,
+             size_t subtractingRow);
+
 /**
  * Compare double to zero.
  * @param number

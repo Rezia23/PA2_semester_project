@@ -63,6 +63,7 @@ private:
      * @return true if variable name read successfully, false otherwise (incorrect syntax)
      */
     bool getVariableName(string &input, string &varName) const;
+
     /**
      * Read size of result matrix from input.
      * @param numRows number of rows
@@ -71,6 +72,7 @@ private:
      * @return true if read successfully, false otherwise (incorrect syntax)
      */
     bool ReadSize(std::size_t &numRows, std::size_t &numCols, istream &inStream) const;
+
     /**
      * Read and set values of a matrix from a stream.
      * @param inStream input stream
@@ -80,6 +82,7 @@ private:
      * @return true if read successfully, false otherwise (wrong number of values)
      */
     bool ReadMatrix(istream &inStream, vector<vector<double>> &matrix, size_t numRows, size_t numCols) const;
+
     /**
      * Check if command is properly ended.
      * @param inStream input stream
@@ -93,6 +96,7 @@ private:
     void ShowResult(string result) const override {
         cout << result << endl;
     }
+
     /**
      * Parse name of the command from input.
      * @param input input data
@@ -110,6 +114,7 @@ private:
      * @return true if loaded successfully, false otherwise (incorrect syntax)
      */
     static bool LoadOperandName(string &input, string &name);
+
     /**
      * Parse parameters for loading of a matrix.
      * @param input input data
@@ -118,6 +123,7 @@ private:
      * @return true if successful, false otherwise (incorrect syntax)
      */
     bool ParseLoading(string &input, string &varName, vector<vector<double>> &matrixNums);
+
     /**
      * Parse operand variable names.
      * @param input input data
@@ -126,6 +132,7 @@ private:
      * @return true if successfull, false otherwise (incorrect syntax)
      */
     static bool ParseOperands(string &input, vector<string> &operands, std::size_t numOfOperands = 1);
+
     /**
      * Parse parameters for cutting of a matrix.
      * @param input input data

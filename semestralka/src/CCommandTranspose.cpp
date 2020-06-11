@@ -14,7 +14,7 @@ bool CCommandTranspose::Execute(CMemory &memory) {
     shared_ptr<CMatrix> result = shared_ptr<CMatrix>(memory.At(m_VarName)->Clone());
     CTransposeOperator op(result);
 
-    m_ResultMatrix = (unique_ptr<CMatrix>(op.Evaluate(memory)));
+    m_ResultMatrix = (unique_ptr<CMatrix>(op.Evaluate()));
     m_Result += m_ResultMatrix->ToString();
     return true;
 }

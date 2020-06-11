@@ -18,6 +18,7 @@ public:
     CMemory() = default;
 
     ~CMemory() = default;
+
     /**
      * Check if variable exists in memory.
      * @param name variable name to be checked
@@ -33,25 +34,14 @@ public:
      * @return found matrix
      * @throw exception variable does not exist
      */
-    shared_ptr<CMatrix> &At(const string &name) {
-        if(!ExistsVariable(name)){
-            throw runtime_error("Variable does not exist");
-        }
-        return m_Variables.at(name);
-    }
+    shared_ptr<CMatrix> &At(const string &name);
+
     /**
      * Insert variable into memory, replace if variable with such name already exists.
      * @param name variable name
      * @param matrix matrix to be inserted
      */
-    void Insert(const string &name, shared_ptr<CMatrix> matrix) {
-        if (ExistsVariable(name)) {
-            m_Variables.at(name) = matrix;
-        } else {
-            m_Variables[name] = matrix;
-        }
-    }
-
+    void Insert(const string &name, shared_ptr<CMatrix> matrix);
 };
 
 

@@ -8,7 +8,6 @@
 
 #include "CMatrix.h"
 #include "CBinaryOperator.h"
-#include "CMemory.h"
 #include "CMatrixStandard.h"
 
 class CAddOperator : public CBinaryOperator {
@@ -19,7 +18,7 @@ public:
     /**
      * Add two variables from memory.
      */
-    CMatrix *Evaluate(CMemory &memory) override;
+    CMatrix *Evaluate() override;
 
 
 };

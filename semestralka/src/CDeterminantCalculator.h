@@ -28,6 +28,7 @@ private:
      * @return determinant
      */
     double CalculateDeterminant(shared_ptr<CMatrix> &matrix);
+
     /**
      * Multiply diagonal values of a square matrix.
      * @param det

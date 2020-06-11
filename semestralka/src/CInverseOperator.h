@@ -30,6 +30,7 @@ public:
      * @param matrix matrix to be converted
      */
     void CreateZeroTriangles(shared_ptr<CMatrix> &matrix);
+
     /**
      * Make diagonal of beginning square matrix of augumented matrix to 1.
      * Each row is divided by number on the diagonal of the beginning square matrix.
@@ -49,7 +50,7 @@ public:
     /**
      * Find inverse of a variable.
      */
-    CMatrix *Evaluate(CMemory &memory) override;
+    CMatrix *Evaluate() override;
 };
 
 

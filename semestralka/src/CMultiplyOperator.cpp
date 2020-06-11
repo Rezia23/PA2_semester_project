@@ -4,7 +4,7 @@
 
 #include "CMultiplyOperator.h"
 
-CMatrix *CMultiplyOperator::Evaluate(CMemory &memory) {
+CMatrix *CMultiplyOperator::Evaluate() {
     if (m_Left->GetNumCols() != m_Right->GetNumRows()) {
         throw std::runtime_error("Multiplying incompatible matrices.");
     }

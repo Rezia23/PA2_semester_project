@@ -13,7 +13,7 @@ bool CCommandGaussEliminationDestructive::Execute(CMemory &memory) {
     m_Result = "Matrix " + m_VarName + " has been eliminated in these steps:";
 
     CGaussEliminationOperator op(memory.m_Variables.at(m_VarName));
-    memory.Insert(m_VarName, shared_ptr<CMatrix>(op.Evaluate(memory))); //replace original variable with result
+    memory.Insert(m_VarName, shared_ptr<CMatrix>(op.Evaluate())); //replace original variable with result
     m_ResultMatrix = unique_ptr<CMatrix>(memory.At(m_VarName)->Clone());
 
     vector<shared_ptr<CMatrix>> eliminationProcess = op.GetEliminationProcess();

@@ -5,7 +5,6 @@
 #ifndef SEMESTRALKA_COPERATOR_H
 #define SEMESTRALKA_COPERATOR_H
 
-#include "CMemory.h"
 
 class COperator {
 public:
@@ -19,7 +18,7 @@ public:
      * @return result of operation
      * @throw exception operation could not be performed
      */
-    virtual class CMatrix *Evaluate(CMemory &memory) = 0;
+    virtual class CMatrix *Evaluate() = 0;
 };
 
 

@@ -8,7 +8,6 @@
 
 #include "CMatrix.h"
 #include "CBinaryOperator.h"
-#include "CMemory.h"
 #include "CMatrixStandard.h"
 
 class CSubtractOperator : public CBinaryOperator {
@@ -19,7 +18,7 @@ public:
     /**
      * Subtract two variables.
      */
-    CMatrix *Evaluate(CMemory &memory) override;
+    CMatrix *Evaluate() override;
 };
 
 

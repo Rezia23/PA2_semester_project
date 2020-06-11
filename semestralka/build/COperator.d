@@ -1,5 +1,3 @@
-build/COperator.o: src/COperator.cpp src/COperator.h src/CMemory.h
+build/COperator.o: src/COperator.cpp src/COperator.h
 
 src/COperator.h:
-
-src/CMemory.h:

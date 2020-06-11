@@ -41,7 +41,7 @@ void CInverseOperator::MakeDiagonalsTo1(shared_ptr<CMatrix> &matrix) {
     }
 }
 
-CMatrix *CInverseOperator::Evaluate(CMemory &memory) {
+CMatrix *CInverseOperator::Evaluate() {
     if (m_Operand->GetNumRows() != m_Operand->GetNumCols()) {
         throw runtime_error("Inverse does not exist.");
     }
@@ -53,11 +53,11 @@ CMatrix *CInverseOperator::Evaluate(CMemory &memory) {
     shared_ptr<CMatrix> identity = shared_ptr<CMatrix>(GetIdentity(m_Operand->GetNumRows()));
 
     shared_ptr<CMatrix> augumented = shared_ptr<CMatrix>(
-            CMergeNextToOperator(m_Operand, identity).Evaluate(memory));
+            CMergeNextToOperator(m_Operand, identity).Evaluate());
     SortForElimination(augumented);
 
     ConvertToLU(augumented);
 
-    return CCutOperator(augumented, m_Operand->GetNumCols(), m_Operand->GetNumCols(), {0, m_Operand->GetNumCols()}).Evaluate(
-            memory);
+    return CCutOperator(augumented, m_Operand->GetNumCols(), m_Operand->GetNumCols(),
+                        {0, m_Operand->GetNumCols()}).Evaluate();
 }

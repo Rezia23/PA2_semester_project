@@ -16,7 +16,7 @@ public:
     /**
      * Perform matrix transposition on a variable.
      */
-    CMatrix *Evaluate(CMemory &memory) override;
+    CMatrix *Evaluate() override;
 
 };
 

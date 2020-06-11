@@ -4,7 +4,7 @@
 
 #include "CTransposeOperator.h"
 
-CMatrix *CTransposeOperator::Evaluate(CMemory &memory) {
+CMatrix *CTransposeOperator::Evaluate() {
     CMatrix *transposed = m_Operand->GetEmptyInstance();
     transposed->Resize(m_Operand->GetNumCols(), m_Operand->GetNumRows());
     for (size_t i = 0; i < transposed->GetNumRows(); i++) {
