@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Matrix calculator: src/messages.h File Reference</title>
+<title>MATRIX! calculator: src/messages.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Matrix calculator
+   <div id="projectname">MATRIX! calculator
    </div>
   </td>
  </tr>
@@ -101,11 +101,19 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="messages_8h__dep__incl.png" border="0" usemap="#src_2messages_8hdep" alt=""/></div>
 <map name="src_2messages_8hdep" id="src_2messages_8hdep">
-<area shape="rect" id="node2" href="CApplication_8h.html" title="src/CApplication.h" alt="" coords="93,80,223,107"/>
-<area shape="rect" id="node4" href="CApplicationConsole_8h.html" title="src/CApplicationConsole.h" alt="" coords="172,155,349,181"/>
-<area shape="rect" id="node3" href="CApplication_8cpp.html" title="src/CApplication.cpp" alt="" coords="5,155,148,181"/>
-<area shape="rect" id="node5" href="CApplicationConsole_8cpp.html" title="src/CApplicationConsole.cpp" alt="" coords="81,229,272,256"/>
-<area shape="rect" id="node6" href="main_8cpp.html" title="src/main.cpp" alt="" coords="296,229,393,256"/>
+<area shape="rect" id="node2" href="CApplication_8cpp.html" title="src/CApplication.cpp" alt="" coords="5,87,148,114"/>
+<area shape="rect" id="node3" href="CApplicationConsole_8h.html" title="src/CApplicationConsole.h" alt="" coords="224,87,401,114"/>
+<area shape="rect" id="node4" href="CApplicationConsole_8cpp.html" title="src/CApplicationConsole.cpp" alt="" coords="91,169,281,196"/>
+<area shape="rect" id="node6" href="CCommandCut_8cpp.html" title="src/CCommandCut.cpp" alt="" coords="426,87,586,114"/>
+<area shape="rect" id="node7" href="CCommandCutDestructive_8cpp.html" title="src/CCommandCutDestructive.cpp" alt="" coords="610,87,837,114"/>
+<area shape="rect" id="node8" href="CCommandDeterminant_8cpp.html" title="src/CCommandDeterminant.cpp" alt="" coords="861,87,1071,114"/>
+<area shape="rect" id="node9" href="CCommandGaussElimination_8cpp.html" title="src/CCommandGaussElimination.cpp" alt="" coords="1096,87,1337,114"/>
+<area shape="rect" id="node10" href="CCommandGaussEliminationDestructive_8cpp.html" title="src/CCommandGaussElimination\lDestructive.cpp" alt="" coords="1362,80,1578,121"/>
+<area shape="rect" id="node11" href="CCommandInverse_8cpp.html" title="src/CCommandInverse.cpp" alt="" coords="1603,87,1785,114"/>
+<area shape="rect" id="node12" href="CCommandOrder_8cpp.html" title="src/CCommandOrder.cpp" alt="" coords="1810,87,1981,114"/>
+<area shape="rect" id="node13" href="CCommandTranspose_8cpp.html" title="src/CCommandTranspose.cpp" alt="" coords="2005,87,2205,114"/>
+<area shape="rect" id="node14" href="CCommandTransposeDestructive_8cpp.html" title="src/CCommandTransposeDestructive.cpp" alt="" coords="2229,87,2495,114"/>
+<area shape="rect" id="node5" href="main_8cpp.html" title="src/main.cpp" alt="" coords="305,169,403,196"/>
 </map>
 </div>
 </div>
@@ -151,8 +159,22 @@ Variables</h2></td></tr>
 <tr class="separator:a1497e0f85dc9aadd877e06eebef49f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3257b1f802c79d2210d19aec8372af52"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="messages_8h.html#a3257b1f802c79d2210d19aec8372af52">COMMAND_PUT</a> = &quot;put&quot;</td></tr>
 <tr class="separator:a3257b1f802c79d2210d19aec8372af52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32d67795a8b119935e98ba0da0d5be5f"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="messages_8h.html#a32d67795a8b119935e98ba0da0d5be5f">DELIMITER</a> = ';'</td></tr>
-<tr class="separator:a32d67795a8b119935e98ba0da0d5be5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7acbe6ba9671e73094db7022b725a683"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="messages_8h.html#a7acbe6ba9671e73094db7022b725a683">DELIMITER_PARAMETERS</a> =' '</td></tr>
+<tr class="separator:a7acbe6ba9671e73094db7022b725a683"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aea975cc4b57ffe9400b79fb0d0b1cf"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="messages_8h.html#a3aea975cc4b57ffe9400b79fb0d0b1cf">DELIMITER_END_COMMAND</a> = ';'</td></tr>
+<tr class="separator:a3aea975cc4b57ffe9400b79fb0d0b1cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54bb22375664491b87017104e5cb43fc"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="messages_8h.html#a54bb22375664491b87017104e5cb43fc">DELIMITER_COMMAND_WORD</a> = ':'</td></tr>
+<tr class="separator:a54bb22375664491b87017104e5cb43fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d486fc709e257de1f85afdaa571141d"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="messages_8h.html#a8d486fc709e257de1f85afdaa571141d">DELIMITER_MATRIX_SIZE</a> = '|'</td></tr>
+<tr class="separator:a8d486fc709e257de1f85afdaa571141d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1651b4dca00e2295b4b5260206ca7387"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="messages_8h.html#a1651b4dca00e2295b4b5260206ca7387">MSG_COMMAND_NOT_PARSED</a> = &quot;Command could not be parsed.&quot;</td></tr>
+<tr class="separator:a1651b4dca00e2295b4b5260206ca7387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e940063465a1d73491e4608525f0d9c"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="messages_8h.html#a8e940063465a1d73491e4608525f0d9c">MSG_EXIT</a> = &quot;Closing the app.&quot;</td></tr>
+<tr class="separator:a8e940063465a1d73491e4608525f0d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac87ad7ef3a4a857245796767c74f2336"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="messages_8h.html#ac87ad7ef3a4a857245796767c74f2336">MSG_FAILED_OPERATION</a> = &quot;Operation failed.&quot;</td></tr>
+<tr class="separator:ac87ad7ef3a4a857245796767c74f2336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55ad654da488b01f57f26cf29b9a22d4"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="messages_8h.html#a55ad654da488b01f57f26cf29b9a22d4">MSG_NOT_EXISTING_VARIABLE</a> = &quot;Variable does not exist.&quot;</td></tr>
+<tr class="separator:a55ad654da488b01f57f26cf29b9a22d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af29467fcd11a5de56e9d5fd1cab366dc"><td class="memItemLeft" align="right" valign="top">const vector&lt; vector&lt; string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="messages_8h.html#af29467fcd11a5de56e9d5fd1cab366dc">HELP</a></td></tr>
 <tr class="separator:af29467fcd11a5de56e9d5fd1cab366dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf209db7a2c90a1da4d26f3840eb23b4"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="messages_8h.html#aaf209db7a2c90a1da4d26f3840eb23b4">USAGE_INSTRUCTIONS</a></td></tr>
@@ -387,12 +409,48 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a32d67795a8b119935e98ba0da0d5be5f"></a>
+<a class="anchor" id="a54bb22375664491b87017104e5cb43fc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char DELIMITER = ';'</td>
+          <td class="memname">const char DELIMITER_COMMAND_WORD = ':'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3aea975cc4b57ffe9400b79fb0d0b1cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char DELIMITER_END_COMMAND = ';'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8d486fc709e257de1f85afdaa571141d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char DELIMITER_MATRIX_SIZE = '|'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7acbe6ba9671e73094db7022b725a683"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char DELIMITER_PARAMETERS =' '</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -428,6 +486,54 @@ Variables</h2></td></tr>
 <div class="ttc" id="messages_8h_html_ade1db9b8a627c1b6b1cd5af2e187f879"><div class="ttname"><a href="messages_8h.html#ade1db9b8a627c1b6b1cd5af2e187f879">COMMAND_SUBTRACT</a></div><div class="ttdeci">const char *const COMMAND_SUBTRACT</div><div class="ttdef"><b>Definition:</b> messages.h:14</div></div>
 <div class="ttc" id="messages_8h_html_ace2639c8f3256d9e0364fe51c40ffe7b"><div class="ttname"><a href="messages_8h.html#ace2639c8f3256d9e0364fe51c40ffe7b">COMMAND_MERGE_UNDER</a></div><div class="ttdeci">const char *const COMMAND_MERGE_UNDER</div><div class="ttdef"><b>Definition:</b> messages.h:17</div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a1651b4dca00e2295b4b5260206ca7387"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* const MSG_COMMAND_NOT_PARSED = &quot;Command could not be parsed.&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8e940063465a1d73491e4608525f0d9c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* const MSG_EXIT = &quot;Closing the app.&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac87ad7ef3a4a857245796767c74f2336"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* const MSG_FAILED_OPERATION = &quot;Operation failed.&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a55ad654da488b01f57f26cf29b9a22d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* const MSG_NOT_EXISTING_VARIABLE = &quot;Variable does not exist.&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <a class="anchor" id="aaf209db7a2c90a1da4d26f3840eb23b4"></a>

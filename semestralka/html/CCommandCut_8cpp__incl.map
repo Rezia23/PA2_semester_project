@@ -1,12 +1,13 @@
 <map id="src/CCommandCut.cpp" name="src/CCommandCut.cpp">
-<area shape="rect" id="node2" href="$CCommandCut_8h.html" title="CCommandCut.h" alt="" coords="393,80,517,107"/>
-<area shape="rect" id="node4" href="$CCommand_8h.html" title="CCommand.h" alt="" coords="40,304,143,331"/>
-<area shape="rect" id="node13" href="$CCutOperator_8h.html" title="CCutOperator.h" alt="" coords="398,155,513,181"/>
-<area shape="rect" id="node6" href="$CMatrix_8h.html" title="CMatrix.h" alt="" coords="263,379,341,405"/>
-<area shape="rect" id="node11" href="$CMemory_8h.html" title="CMemory.h" alt="" coords="103,528,194,555"/>
-<area shape="rect" id="node10" href="$COperator_8h.html" title="COperator.h" alt="" coords="129,453,222,480"/>
-<area shape="rect" id="node14" href="$CUnaryOperator_8h.html" title="CUnaryOperator.h" alt="" coords="213,229,341,256"/>
-<area shape="rect" id="node15" href="$CMatrixStandard_8h.html" title="CMatrixStandard.h" alt="" coords="390,229,521,256"/>
-<area shape="rect" id="node16" href="$CMatrixSparse_8h.html" title="CMatrixSparse.h" alt="" coords="395,304,515,331"/>
-<area shape="rect" id="node18" href="$elimination_8h.html" title="elimination.h" alt="" coords="225,304,320,331"/>
+<area shape="rect" id="node2" href="$CCommandCut_8h.html" title="CCommandCut.h" alt="" coords="422,80,546,107"/>
+<area shape="rect" id="node19" href="$messages_8h.html" title="messages.h" alt="" coords="564,155,658,181"/>
+<area shape="rect" id="node4" href="$CCommand_8h.html" title="CCommand.h" alt="" coords="470,304,573,331"/>
+<area shape="rect" id="node13" href="$CCutOperator_8h.html" title="CCutOperator.h" alt="" coords="296,155,411,181"/>
+<area shape="rect" id="node6" href="$CMatrix_8h.html" title="CMatrix.h" alt="" coords="213,379,292,405"/>
+<area shape="rect" id="node11" href="$CMemory_8h.html" title="CMemory.h" alt="" coords="347,528,438,555"/>
+<area shape="rect" id="node10" href="$COperator_8h.html" title="COperator.h" alt="" coords="319,453,412,480"/>
+<area shape="rect" id="node14" href="$CUnaryOperator_8h.html" title="CUnaryOperator.h" alt="" coords="260,229,388,256"/>
+<area shape="rect" id="node15" href="$CMatrixStandard_8h.html" title="CMatrixStandard.h" alt="" coords="106,229,236,256"/>
+<area shape="rect" id="node16" href="$CMatrixSparse_8h.html" title="CMatrixSparse.h" alt="" coords="27,304,147,331"/>
+<area shape="rect" id="node18" href="$elimination_8h.html" title="elimination.h" alt="" coords="172,304,266,331"/>
 </map>

@@ -5,6 +5,7 @@
 #include "CMergeUnderOperator.h"
 
 CMatrix *CMergeUnderOperator::Evaluate(CMemory &memory) {
+    (void) memory ; //not accessing memory here,
     if (m_Left->GetNumCols() != m_Right->GetNumCols()) {
         throw std::runtime_error("Merging incompatible matrices.");
     }

@@ -29,10 +29,8 @@ void Gem(shared_ptr<CMatrix> &matrix);
 /**
  * Perform step of elimination on a matrix.
  * Subtract multiple of a row from a multiple of another.
- * Row to be changed is multiplied by first non zero value in subtracting row, so that subtraction
- * creates zero value in row to be changed in the same column as is the first non zero value in subtracting row.
- * Row divided if values are too big
- * @param matrix
+ * Multiple is optimized so it does not create too big numbers.
+ * @param matrix matrix to have rows subtracted
  * @param firstNonZeroColumn index of first column in row with non zero value
  * @param multipleToSubtract this multiple of row will be subtracted
  * @param rowToBeChanged index of row to be changed

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['loadoperandname',['LoadOperandName',['../classCApplicationConsole.html#a12531e44827274807a3a0787e66345fe',1,'CApplicationConsole']]]
+  ['insert',['Insert',['../classCMemory.html#a8d76cdcaabb8e18d3956e7f334a9fb0b',1,'CMemory']]],
+  ['issyntaxcorrect',['IsSyntaxCorrect',['../classCApplicationConsole.html#a6ca78c0250dfbdf71a995277c0485e5a',1,'CApplicationConsole']]],
+  ['iszero',['IsZero',['../elimination_8cpp.html#a93373bfc587232570066d6944e2c2312',1,'IsZero(double number):&#160;elimination.cpp'],['../elimination_8h.html#a93373bfc587232570066d6944e2c2312',1,'IsZero(double number):&#160;elimination.cpp']]]
 ];

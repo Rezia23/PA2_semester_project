@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Matrix calculator: CMatrix Class Reference</title>
+<title>MATRIX! calculator: CMatrix Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Matrix calculator
+   <div id="projectname">MATRIX! calculator
    </div>
   </td>
  </tr>
@@ -112,8 +112,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a08f758f9654f380b4c8d387fe53b99ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3e74076e0ab9419860cb1c6d0841b96"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrix.html#af3e74076e0ab9419860cb1c6d0841b96">GetNumCols</a> () const </td></tr>
 <tr class="separator:af3e74076e0ab9419860cb1c6d0841b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a424a048d20918f0f041f4a8645823ae7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrix.html#a424a048d20918f0f041f4a8645823ae7">Print</a> () const =0</td></tr>
-<tr class="separator:a424a048d20918f0f041f4a8645823ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa0213e0a6c5823e6b6e786891cc5f2d"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrix.html#afa0213e0a6c5823e6b6e786891cc5f2d">GetNumAtCoords</a> (size_t row, size_t col) const =0</td></tr>
 <tr class="separator:afa0213e0a6c5823e6b6e786891cc5f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afeba0f7cfcc2623bde41cf6111b0ef6a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrix.html#afeba0f7cfcc2623bde41cf6111b0ef6a">SetNumAtCoords</a> (size_t row, size_t col, double value)=0</td></tr>
@@ -134,6 +132,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2f26b64fa654512fe2a4e954f18e1f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dc7e1a855fc44054a480fff050d393b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrix.html#a4dc7e1a855fc44054a480fff050d393b">ToString</a> () const </td></tr>
 <tr class="separator:a4dc7e1a855fc44054a480fff050d393b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e0f0778020cb05b37f5cf2ba1014239"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrix.html#a8e0f0778020cb05b37f5cf2ba1014239">GetCellWidth</a> () const </td></tr>
+<tr class="separator:a8e0f0778020cb05b37f5cf2ba1014239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7220cef72064b0d4e6967bdb84d8b663"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCMatrix.html#a7220cef72064b0d4e6967bdb84d8b663">GetNumLength</a> (std::size_t row, std::size_t col) const </td></tr>
+<tr class="separator:a7220cef72064b0d4e6967bdb84d8b663"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -242,6 +244,22 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8e0f0778020cb05b37f5cf2ba1014239"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CMatrix::GetCellWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get width of a column. According to length, get how wide each column should be. </p><dl class="section return"><dt>Returns</dt><dd>width of a column </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a7495208c2bd786fe46b130f6090e7eb5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -335,6 +353,40 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a7220cef72064b0d4e6967bdb84d8b663"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CMatrix::GetNumLength </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get number of characters of a value in a matrix. Length of a number includes decimal point, sign, excludes zeroes behind decimal point </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>row index of value in matrix </td></tr>
+    <tr><td class="paramname">col</td><td>column index of value in matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>number of characters </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a08f758f9654f380b4c8d387fe53b99ed"></a>
 <div class="memitem">
 <div class="memproto">
@@ -371,39 +423,13 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>== overload, two matrices are equal if all their values are equal </p><dl class="params"><dt>Parameters</dt><dd>
+<p>== overload, two matrices are equal if all their values are equal Used only for debug. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if matrices are equal </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a424a048d20918f0f041f4a8645823ae7"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void CMatrix::Print </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Debug function to print matrix. </p>
-
-<p>Implemented in <a class="el" href="classCMatrixSparse.html#acf4a7e41666e6fb29e629c3a62a7fd8f">CMatrixSparse</a>, and <a class="el" href="classCMatrixStandard.html#a0ace6054f9ec1fb2b26e0683034e48bd">CMatrixStandard</a>.</p>
 
 </div>
 </div>

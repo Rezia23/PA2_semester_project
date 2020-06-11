@@ -5,6 +5,8 @@
 #include <iostream>
 #include "elimination.h"
 
+const double DOUBLE_EPSILON = 10e-7; //inaccuracy tolerance to compare doubles
+
 
 int SortForElimination(shared_ptr<CMatrix> &matrix) {
     int numSwaps = 0;
@@ -44,7 +46,7 @@ double FindFirstNonZero(size_t rowFirst,size_t rowSecond, size_t &column, shared
     return temp;
 }
 bool SubtractRows(shared_ptr<CMatrix> &matrix, size_t firstNonZeroColumn, double multipleToSubtract, size_t rowToBeChanged, size_t subtractingRow) {
-    int maxNum = 1000;
+    const int maxNum = 1000; //bigger numbers than this are multiplied only by fractions of original numbers to prevent too big values
     int divideBy = 1;
     int divideSubtractingRow = 1;
     if(IsZero(multipleToSubtract)){
@@ -55,7 +57,6 @@ bool SubtractRows(shared_ptr<CMatrix> &matrix, size_t firstNonZeroColumn, double
         divideBy = maxNum;
     }
     if(abs(matrix->GetNumAtCoords(subtractingRow,firstNonZeroColumn))>=maxNum){
-        cout<<"it is";
         divideSubtractingRow = maxNum/10;
     }
     for (size_t k = 0; k < matrix->GetNumCols(); k++) {
@@ -66,7 +67,7 @@ bool SubtractRows(shared_ptr<CMatrix> &matrix, size_t firstNonZeroColumn, double
 }
 
 bool IsZero(double number) {
-    return abs(number)<=10e-7 * abs(number);
+    return abs(number)<=DOUBLE_EPSILON * abs(number);
 }
 
 void Gem(shared_ptr<CMatrix> &matrix, vector<shared_ptr<CMatrix>> &eliminationProcess) {
@@ -89,8 +90,6 @@ void Gem(shared_ptr<CMatrix> &matrix, vector<shared_ptr<CMatrix>> &eliminationPr
         }
     }
 }
-
-
 
 void Gem(shared_ptr<CMatrix> &matrix) {
     SortForElimination(matrix);

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['operator_28_29',['operator()',['../classCDeterminantCalculator.html#a1f86ba4955b9cabf3042b96be7563a10',1,'CDeterminantCalculator::operator()()'],['../classCOrderCalculator.html#a34946aaf27501915d1bc854df890ac1d',1,'COrderCalculator::operator()()']]],
-  ['operator_3d_3d',['operator==',['../classCMatrix.html#a2f26b64fa654512fe2a4e954f18e1f1c',1,'CMatrix']]]
+  ['main',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
+  ['makediagonalsto1',['MakeDiagonalsTo1',['../classCInverseOperator.html#accadb5f47ca24653afdfc77e76c7d344',1,'CInverseOperator']]]
 ];

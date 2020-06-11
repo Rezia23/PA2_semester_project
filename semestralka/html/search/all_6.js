@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['insert',['Insert',['../classCMemory.html#a8d76cdcaabb8e18d3956e7f334a9fb0b',1,'CMemory']]],
-  ['issyntaxcorrect',['IsSyntaxCorrect',['../classCApplicationConsole.html#a6ca78c0250dfbdf71a995277c0485e5a',1,'CApplicationConsole']]]
+  ['haszeroroworcol',['HasZeroRowOrCol',['../classCDeterminantCalculator.html#af95c02164648b7a50ed4ec7ccf370617',1,'CDeterminantCalculator']]],
+  ['help',['HELP',['../messages_8h.html#af29467fcd11a5de56e9d5fd1cab366dc',1,'messages.h']]]
 ];
