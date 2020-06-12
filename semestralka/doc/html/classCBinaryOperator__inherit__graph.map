@@ -1,0 +1,8 @@
+<map id="CBinaryOperator" name="CBinaryOperator">
+<area shape="rect" id="node3" href="$classCAddOperator.html" title="{CAddOperator\n||+ CAddOperator()\l+ Evaluate()\l}" alt="" coords="5,329,131,421"/>
+<area shape="rect" id="node4" href="$classCMergeNextToOperator.html" title="{CMergeNextToOperator\n||+ CMergeNextToOperator()\l+ Evaluate()\l}" alt="" coords="155,329,336,421"/>
+<area shape="rect" id="node5" href="$classCMergeUnderOperator.html" title="{CMergeUnderOperator\n||+ CMergeUnderOperator()\l+ Evaluate()\l}" alt="" coords="360,329,533,421"/>
+<area shape="rect" id="node6" href="$classCMultiplyOperator.html" title="{CMultiplyOperator\n||+ CMultiplyOperator()\l+ Evaluate()\l}" alt="" coords="557,329,704,421"/>
+<area shape="rect" id="node7" href="$classCSubtractOperator.html" title="{CSubtractOperator\n||+ CSubtractOperator()\l+ Evaluate()\l}" alt="" coords="729,329,879,421"/>
+<area shape="rect" id="node2" href="$classCOperator.html" title="{COperator\n||+ COperator()\l+ ~COperator()\l+ Evaluate()\l}" alt="" coords="391,5,502,112"/>
+</map>

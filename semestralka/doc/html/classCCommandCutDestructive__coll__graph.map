@@ -1,0 +1,4 @@
+<map id="CCommandCutDestructive" name="CCommandCutDestructive">
+<area shape="rect" id="node2" href="$classCCommandCut.html" title="{CCommandCut\n|# m_VarName\l# m_NumRows\l# m_NumCols\l# m_StartPoint\l|+ CCommandCut()\l+ ~CCommandCut()\l+ CCommandCut()\l+ Execute()\l}" alt="" coords="35,175,176,340"/>
+<area shape="rect" id="node3" href="$classCCommand.html" title="{CCommand\n|+ m_Result\l+ m_ResultMatrix\l|+ CCommand()\l+ Execute()\l+ ~CCommand()\l}" alt="" coords="42,5,169,127"/>
+</map>

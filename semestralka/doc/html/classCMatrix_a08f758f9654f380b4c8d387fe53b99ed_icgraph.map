@@ -1,0 +1,5 @@
+<map id="CMatrix::GetNumRows" name="CMatrix::GetNumRows">
+<area shape="rect" id="node2" href="$classCMatrixSparse.html#ab2dc89566f3cdcb626a04fb4c89db926" title="CMatrixSparse::CMatrixSparse" alt="" coords="212,5,416,32"/>
+<area shape="rect" id="node3" href="$classCTransposeOperator.html#a8be388c94502b8d00922cd775d0d8f93" title="CTransposeOperator\l::Evaluate" alt="" coords="243,57,385,98"/>
+<area shape="rect" id="node4" href="$classCTransposeOperator.html#a87ad1b84abb5e03b679d83f18d85b5ff" title="CTransposeOperator\l::CTransposeOperator" alt="" coords="464,57,615,98"/>
+</map>

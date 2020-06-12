@@ -1,0 +1,3 @@
+<map id="CApplication" name="CApplication">
+<area shape="rect" id="node2" href="$classCApplicationConsole.html" title="{CApplicationConsole\n||+ CApplicationConsole()\l+ ~CApplicationConsole()\l+ PrintInstructions()\l&#45; GetInput()\l&#45; ShowMsg()\l&#45; ShowHelp()\l&#45; getVariableName()\l&#45; ReadSize()\l&#45; ReadMatrix()\l&#45; IsSyntaxCorrect()\l&#45; ShowResult()\l&#45; ParseCommandWord()\l&#45; ParseCommand()\l&#45; ParseLoading()\l&#45; ParseCutting()\l&#45; LoadOperandName()\l&#45; ParseOperands()\l}" alt="" coords="5,263,177,575"/>
+</map>
