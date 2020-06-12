@@ -48,6 +48,8 @@ public:
     }
 
     /**
+     * @copydoc COperator::Evaluate()
+     *
      * Find inverse of a variable.
      */
     CMatrix *Evaluate() override;

@@ -16,6 +16,8 @@ public:
             : CBinaryOperator(left, right) {}
 
     /**
+     * @copydoc COperator::Evaluate()
+     *
      * Subtract two variables.
      */
     CMatrix *Evaluate() override;

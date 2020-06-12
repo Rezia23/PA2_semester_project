@@ -25,7 +25,6 @@ public:
 
     virtual ~CBinaryOperator() = default;
 
-    virtual CMatrix *Evaluate() = 0;
 };
 
 

@@ -16,6 +16,8 @@ public:
             : CBinaryOperator(left, right) {}
 
     /**
+     * @copydoc COperator::Evaluate()
+     *
      * Combine two variables into a new one. Variables are combined by placing next to each other.
      */
     CMatrix *Evaluate() override;

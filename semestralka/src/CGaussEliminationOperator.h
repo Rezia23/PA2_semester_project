@@ -19,6 +19,8 @@ public:
             : CUnaryOperator(operand) {}
 
     /**
+     * @copydoc COperator::Evaluate()
+     *
      * Transform variable to upper triangular form.
      */
     CMatrix *Evaluate() override;

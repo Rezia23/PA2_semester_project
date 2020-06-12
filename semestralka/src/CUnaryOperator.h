@@ -22,7 +22,6 @@ public:
 
     virtual ~CUnaryOperator() = default;
 
-    virtual CMatrix *Evaluate() = 0;
 };
 
 

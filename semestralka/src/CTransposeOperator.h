@@ -14,6 +14,8 @@ public:
             : CUnaryOperator(operand) {}
 
     /**
+     * @copydoc COperator::Evaluate()
+     *
      * Perform matrix transposition on a variable.
      */
     CMatrix *Evaluate() override;

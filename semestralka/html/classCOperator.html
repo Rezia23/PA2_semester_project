@@ -116,8 +116,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a87e51bbea921716008a02f2c01cc22ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55ebb3beea88394151be9204cc29ccac"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCOperator.html#a55ebb3beea88394151be9204cc29ccac">~COperator</a> ()=default</td></tr>
 <tr class="separator:a55ebb3beea88394151be9204cc29ccac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45c8237c879a44f839247badefe6eade"><td class="memItemLeft" align="right" valign="top">virtual class <a class="el" href="classCMatrix.html">CMatrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCOperator.html#a45c8237c879a44f839247badefe6eade">Evaluate</a> (<a class="el" href="classCMemory.html">CMemory</a> &amp;memory)=0</td></tr>
-<tr class="separator:a45c8237c879a44f839247badefe6eade"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a739ece50021b66a4b7704a669cda162c"><td class="memItemLeft" align="right" valign="top">virtual class <a class="el" href="classCMatrix.html">CMatrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCOperator.html#a739ece50021b66a4b7704a669cda162c">Evaluate</a> ()=0</td></tr>
+<tr class="separator:a739ece50021b66a4b7704a669cda162c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a87e51bbea921716008a02f2c01cc22ae"></a>
@@ -167,7 +167,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a45c8237c879a44f839247badefe6eade"></a>
+<a class="anchor" id="a739ece50021b66a4b7704a669cda162c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -177,8 +177,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual class <a class="el" href="classCMatrix.html">CMatrix</a>* COperator::Evaluate </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classCMemory.html">CMemory</a> &amp;&#160;</td>
-          <td class="paramname"><em>memory</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -202,7 +201,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classCInverseOperator.html#a65bd9fa67c49aec828506cb7188fd8f5">CInverseOperator</a>, <a class="el" href="classCBinaryOperator.html#aea1eef33f83a4e395091daa0637f4c77">CBinaryOperator</a>, <a class="el" href="classCCutOperator.html#ad401b31051d8b245cc0258d773f4f816">CCutOperator</a>, <a class="el" href="classCGaussEliminationOperator.html#a65b706ae08cef92db1e5aed380e1a7ee">CGaussEliminationOperator</a>, <a class="el" href="classCAddOperator.html#a231aacd1eab97d55bb41bc05139420df">CAddOperator</a>, <a class="el" href="classCMergeNextToOperator.html#af0089f8a8e0de3f9f25e7829d6a5a6fa">CMergeNextToOperator</a>, <a class="el" href="classCMergeUnderOperator.html#ae1015649a31bd8a92dfef34ed3fec44c">CMergeUnderOperator</a>, <a class="el" href="classCMultiplyOperator.html#a5acd8e1569398963bb2d80846ec1656e">CMultiplyOperator</a>, <a class="el" href="classCSubtractOperator.html#a0caad8afe8a56c60e14f2276e7ec1f2d">CSubtractOperator</a>, <a class="el" href="classCUnaryOperator.html#a17b01d9de023a58642f6fd82f214cde0">CUnaryOperator</a>, and <a class="el" href="classCTransposeOperator.html#a1010970978708b06a659237afb88c043">CTransposeOperator</a>.</p>
+<p>Implemented in <a class="el" href="classCInverseOperator.html#a0fa1a8046d21376c9efadbab08341e96">CInverseOperator</a>, <a class="el" href="classCCutOperator.html#ad5ac6d27ffad1d9ea811932789a77a03">CCutOperator</a>, <a class="el" href="classCBinaryOperator.html#abcfd2368c7f6259d27adbbc051d14c97">CBinaryOperator</a>, <a class="el" href="classCGaussEliminationOperator.html#aa434473c1476662e60133ed2bd10c038">CGaussEliminationOperator</a>, <a class="el" href="classCUnaryOperator.html#a9ffa435c72905528909a52e5148e47b9">CUnaryOperator</a>, <a class="el" href="classCAddOperator.html#a13c79ecf51bdad902c27e672398178df">CAddOperator</a>, <a class="el" href="classCMergeNextToOperator.html#ab78ca822a9e930c308afbcfb45b52d99">CMergeNextToOperator</a>, <a class="el" href="classCMergeUnderOperator.html#a834c307054f40fa746a6f3d791ad45b7">CMergeUnderOperator</a>, <a class="el" href="classCMultiplyOperator.html#a0be557b9c0be479e6ca5b95116cc54ed">CMultiplyOperator</a>, <a class="el" href="classCSubtractOperator.html#a8cf325554900abc0f925599846c37ced">CSubtractOperator</a>, and <a class="el" href="classCTransposeOperator.html#a8be388c94502b8d00922cd775d0d8f93">CTransposeOperator</a>.</p>
 
 </div>
 </div>

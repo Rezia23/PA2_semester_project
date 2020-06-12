@@ -16,6 +16,8 @@ public:
             : CBinaryOperator(left, right) {}
 
     /**
+     * @copydoc COperator::Evaluate()
+     *
      * Add two variables from memory.
      */
     CMatrix *Evaluate() override;

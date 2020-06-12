@@ -23,6 +23,8 @@ public:
             : CUnaryOperator(operand), m_NumRows(numRows), m_NumCols(numCols), m_StartPoint(std::move(startPoint)) {}
 
     /**
+     *  @copydoc COperator::Evaluate()
+     *
      * Cut matrix according to parameters.
      */
     CMatrix *Evaluate() override;

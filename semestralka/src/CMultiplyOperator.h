@@ -16,6 +16,8 @@ public:
             : CBinaryOperator(left, right) {}
 
     /**
+     * @copydoc COperator::Evaluate()
+     *
      * Multiply variables.
      */
     CMatrix *Evaluate() override;
