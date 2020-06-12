@@ -1,5 +1,5 @@
 //
-// Created by terez on 07.05.2020.
+// Created by hrubate1 on 07.05.2020.
 //
 
 #ifndef SEMESTRALKA_CORDERCALCULATOR_H

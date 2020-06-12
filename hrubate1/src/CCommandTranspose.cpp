@@ -1,5 +1,5 @@
 //
-// Created by terez on 30.04.2020.
+// Created by hrubate1 on 30.04.2020.
 //
 
 #include "CCommandTranspose.h"

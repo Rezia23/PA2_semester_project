@@ -29,11 +29,10 @@ $(BUILD_DIR)/%.o: src/%.cpp
 
 .PHONY: clean
 clean:
-	rm -rf $(TARGET) $(BUILD_DIR)/ 2>/dev/null
+	rm -rf $(TARGET) $(BUILD_DIR)/ doc/ 2>/dev/null
 
-doc: doc src/*.h
+doc: Doxyfile src/*.h
 	doxygen Doxyfile
-
 
 
 

@@ -1,5 +1,5 @@
 //
-// Created by terez on 24.04.2020.
+// Created by hrubate1 on 24.04.2020.
 //
 
 #ifndef SEMESTRALKA_CMATRIXSPARSE_H

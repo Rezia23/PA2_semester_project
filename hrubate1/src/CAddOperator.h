@@ -1,5 +1,5 @@
 //
-// Created by terez on 05.05.2020.
+// Created by hrubate1 on 05.05.2020.
 //
 
 #ifndef SEMESTRALKA_CADDOPERATOR_H

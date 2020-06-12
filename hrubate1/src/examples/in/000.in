@@ -1,8 +1,0 @@
-load:pepa 2 2|1 2 3 4 ;
-load:franta 2 2|1 1 1 1 ;
-load:lojza 2 3|0 0 0 1 6 7 ;
-add:pepa franta ;
-multiply:pepa lojza ;
-multiply:lojza pepa ;
-subtract:franta pepa ;
-exit
