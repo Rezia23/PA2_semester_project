@@ -22,7 +22,8 @@ int SortForElimination(shared_ptr<CMatrix> &matrix) {
                 isChange = true;
             } else if (val1 == val2 && IsZero(val1)) {
                 std::size_t column = 0;
-                while (val1 == val2 && IsZero(val1) && column < matrix->GetNumCols()) {
+                while (val1 == val2 && IsZero(val1) &&
+                       column < matrix->GetNumCols()) { //find first difference in two row values
                     val1 = matrix->GetNumAtCoords(i - 1, column);
                     val2 = matrix->GetNumAtCoords(i, column);
                     column++;
