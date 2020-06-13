@@ -1,4 +1,0 @@
-<map id="CSubtractOperator" name="CSubtractOperator">
-<area shape="rect" id="node2" href="$classCBinaryOperator.html" title="{CBinaryOperator\n|# m_Left\l# m_Right\l|+ CBinaryOperator()\l+ CBinaryOperator()\l+ ~CBinaryOperator()\l}" alt="" coords="7,160,154,281"/>
-<area shape="rect" id="node3" href="$classCOperator.html" title="{COperator\n||+ COperator()\l+ ~COperator()\l+ Evaluate()\l}" alt="" coords="25,5,136,112"/>
-</map>

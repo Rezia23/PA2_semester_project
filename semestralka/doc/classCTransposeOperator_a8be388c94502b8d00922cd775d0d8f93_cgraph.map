@@ -1,6 +1,0 @@
-<map id="CTransposeOperator::Evaluate" name="CTransposeOperator::Evaluate">
-<area shape="rect" id="node2" href="$classCMatrix.html#adb83eafeeea2025f9c84d172f1bb0f1e" title="CMatrix::Resize" alt="" coords="227,5,344,32"/>
-<area shape="rect" id="node3" href="$classCMatrix.html#a08f758f9654f380b4c8d387fe53b99ed" title="CMatrix::GetNumRows" alt="" coords="206,56,365,83"/>
-<area shape="rect" id="node4" href="$classCMatrix.html#af3e74076e0ab9419860cb1c6d0841b96" title="CMatrix::GetNumCols" alt="" coords="209,107,361,133"/>
-<area shape="rect" id="node5" href="$classCMatrix.html#afeba0f7cfcc2623bde41cf6111b0ef6a" title="CMatrix::SetNumAtCoords" alt="" coords="196,157,375,184"/>
-</map>

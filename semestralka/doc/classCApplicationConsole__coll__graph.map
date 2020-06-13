@@ -1,4 +1,0 @@
-<map id="CApplicationConsole" name="CApplicationConsole">
-<area shape="rect" id="node2" href="$classCApplication.html" title="{CApplication\n||+ CApplication()\l+ ~CApplication()\l+ Evaluate()\l+ Run()\l+ ShowMsg()\l+ ShowHelp()\l# PrintInstructions()\l# GetInput()\l# ParseCommand()\l# ShowResult()\l}" alt="" coords="23,204,159,413"/>
-<area shape="rect" id="node3" href="$classCMemory.html" title="{CMemory\n|+ m_Variables\l|+ CMemory()\l+ ~CMemory()\l+ ExistsVariable()\l+ At()\l+ Insert()\l}" alt="" coords="28,5,155,141"/>
-</map>

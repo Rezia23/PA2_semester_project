@@ -8,7 +8,7 @@ MKDIR = mkdir -p
 
 
 .PHONY: all
-all: compile
+all: compile doc
 
 
 .PHONY: compile

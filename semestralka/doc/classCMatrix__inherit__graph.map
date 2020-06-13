@@ -1,4 +1,0 @@
-<map id="CMatrix" name="CMatrix">
-<area shape="rect" id="node2" href="$classCMatrixSparse.html" title="{CMatrixSparse\n|&#45; m_Matrix\l|+ CMatrixSparse()\l+ CMatrixSparse()\l+ CMatrixSparse()\l+ CMatrixSparse()\l+ Clone()\l+ Convert()\l+ ~CMatrixSparse()\l+ GetNumAtCoords()\l+ SetNumAtCoords()\l+ GetEmptyInstance()\l+ Resize()\l+ ShouldBeSparse()\l+ SwapRows()\l}" alt="" coords="5,292,156,545"/>
-<area shape="rect" id="node3" href="$classCMatrixStandard.html" title="{CMatrixStandard\n|&#45; m_Matrix\l|+ CMatrixStandard()\l+ CMatrixStandard()\l+ CMatrixStandard()\l+ SwapRows()\l+ Clone()\l+ Convert()\l+ ~CMatrixStandard()\l+ GetNumAtCoords()\l+ SetNumAtCoords()\l+ GetEmptyInstance()\l+ Resize()\l}" alt="" coords="180,307,331,531"/>
-</map>

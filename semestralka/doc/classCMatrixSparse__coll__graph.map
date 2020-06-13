@@ -1,3 +1,0 @@
-<map id="CMatrixSparse" name="CMatrixSparse">
-<area shape="rect" id="node2" href="$classCMatrix.html" title="{CMatrix\n|# m_NumRows\l# m_NumCols\l|+ CMatrix()\l+ ~CMatrix()\l+ GetNumRows()\l+ GetNumCols()\l+ GetNumAtCoords()\l+ SetNumAtCoords()\l+ GetEmptyInstance()\l+ Resize()\l+ ShouldBeSparse()\l+ Convert()\land 6 more...\l}" alt="" coords="5,5,156,244"/>
-</map>
