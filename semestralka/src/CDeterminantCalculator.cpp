@@ -21,22 +21,9 @@ double CDeterminantCalculator::operator()(const shared_ptr<CMatrix> &matrix) {
 
 double CDeterminantCalculator::CalculateDeterminant(shared_ptr<CMatrix> &matrix) {
     double determinant = 1;
-    double rowsMultipliedBy = 1;
     int numSwaps = SortForElimination(matrix);
     determinant *= pow(-1, numSwaps);
-    for (size_t i = 0; i < matrix->GetNumRows(); i++) {
-        for (size_t j = 0; j < matrix->GetNumRows(); j++) {
-            if (i < j) {
-                double temp = matrix->GetNumAtCoords(j, i);
-                rowsMultipliedBy *= matrix->GetNumAtCoords(i, i); //store multiples used for elimination
-                for (size_t k = 0; k < matrix->GetNumCols(); k++) {
-                    matrix->SetNumAtCoords(j, k, matrix->GetNumAtCoords(j, k) * matrix->GetNumAtCoords(i, i));
-                    matrix->SetNumAtCoords(j, k,
-                                           matrix->GetNumAtCoords(j, k) - (matrix->GetNumAtCoords(i, k) * temp));
-                }
-            }
-        }
-    }
+    int rowsMultipliedBy = Gem(matrix);
     AddDiagonal(determinant, matrix);
     determinant /= rowsMultipliedBy;
     return determinant;

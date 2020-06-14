@@ -100,7 +100,8 @@ void Gem(shared_ptr<CMatrix> &matrix, vector<shared_ptr<CMatrix>> &eliminationPr
     }
 }
 
-void Gem(shared_ptr<CMatrix> &matrix) {
+int Gem(shared_ptr<CMatrix> &matrix) {
+    int rowsMultipliedBy = 1;
     SortForElimination(matrix);
 
     for (size_t i = 0; i < matrix->GetNumRows(); i++) {
@@ -108,8 +109,12 @@ void Gem(shared_ptr<CMatrix> &matrix) {
             if (i < j) {
                 size_t firstNonZeroColumn = i;
                 double temp = FindFirstNonZero(i, j, firstNonZeroColumn, matrix);
+                if(temp!=0){
+                    rowsMultipliedBy*=temp;
+                }
                 SubtractRows(matrix, firstNonZeroColumn, temp, j, i);
             }
         }
     }
+    return rowsMultipliedBy;
 }

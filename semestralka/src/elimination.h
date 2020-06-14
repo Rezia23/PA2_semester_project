@@ -24,8 +24,9 @@ void Gem(shared_ptr<CMatrix> &matrix, vector<shared_ptr<CMatrix>> &eliminationPr
 /**
  * Convert matrix to upper triangular form.
  * @param matrix matrix to be converted
+ * @return multiple of numbers used for multiplying rows in gauss elimination
  */
-void Gem(shared_ptr<CMatrix> &matrix);
+int Gem(shared_ptr<CMatrix> &matrix);
 
 /**
  * Perform step of elimination on a matrix.
@@ -38,8 +39,7 @@ void Gem(shared_ptr<CMatrix> &matrix);
  * @param subtractingRow index of subtracting row
  * @return
  */
-bool
-SubtractRows(shared_ptr<CMatrix> &matrix, size_t firstNonZeroColumn, double multipleToSubtract, size_t rowToBeChanged,
+bool SubtractRows(shared_ptr<CMatrix> &matrix, size_t firstNonZeroColumn, double multipleToSubtract, size_t rowToBeChanged,
              size_t subtractingRow);
 
 /**
