@@ -15,7 +15,7 @@ const char *const COMMAND_SUBTRACT = "subtract";
 const char *const COMMAND_MULTIPLY = "multiply";
 const char *const COMMAND_MERGE_NEXT_TO = "merge_next_to";
 const char *const COMMAND_MERGE_UNDER = "merge_under";
-const char *const COMMAND_ORDER = "order";
+const char *const COMMAND_RANK = "rank";
 const char *const COMMAND_DETERMINANT = "determinant";
 const char *const COMMAND_PRINT = "print";
 const char *const COMMAND_INVERSE = "inverse";
@@ -99,9 +99,9 @@ const vector<vector<string>> HELP = {
                                                                                                                                                                       string(COMMAND_PUT) +
                                                                                                                                                                       ":var_name other_command params_of_other_command ;', e.g. put:cypher add:morpheus trinity ;"}},
 
-        {{COMMAND_ORDER},                         {"calculate order of a variable"},                                                                                 {"'" +
-                                                                                                                                                                      string(COMMAND_ORDER) +
-                                                                                                                                                                      ":var_name ;'"}},
+        {{COMMAND_RANK}, {"calculate rank of a variable"}, {"'" +
+                                                             string(COMMAND_RANK) +
+                                                             ":var_name ;'"}},
         {{COMMAND_DETERMINANT},                   {"calculate determinant of a variable"},                                                                           {"'" +
                                                                                                                                                                       string(COMMAND_DETERMINANT) +
                                                                                                                                                                       ":var_name ;'"}},

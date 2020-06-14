@@ -25,7 +25,7 @@
 #include "CCommandInverse.h"
 #include "CCommandDeterminant.h"
 #include "CCommandGaussEliminationDestructive.h"
-#include "CCommandOrder.h"
+#include "CCommandRank.h"
 #include "messages.h"
 #include "CCommandGaussElimination.h"
 #include "CCommandTransposeDestructive.h"

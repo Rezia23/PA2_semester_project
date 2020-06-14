@@ -223,7 +223,7 @@ bool CApplicationConsole::ParseCommand(string &input, unique_ptr<CCommand> &comm
         }
 
         return true;
-    } else if (in_command == COMMAND_ORDER) {
+    } else if (in_command == COMMAND_RANK) {
         vector<string> operands;
         if (!ParseOperands(input, operands, 1)) {
             return false;
@@ -232,7 +232,7 @@ bool CApplicationConsole::ParseCommand(string &input, unique_ptr<CCommand> &comm
         if (!(IsSyntaxCorrect(inStream))) {
             return false;
         }
-        command = (std::make_unique<CCommandOrder>(operands[0]));
+        command = (std::make_unique<CCommandRank>(operands[0]));
         return true;
     }
     return false;
