@@ -3,6 +3,7 @@
 //
 
 #include "CMatrix.h"
+#include "elimination.h"
 #include <iomanip>
 #include <iostream>
 
@@ -27,7 +28,11 @@ string CMatrix::ToString() const {
     stringstream ss;
     for (size_t i = 0; i < m_NumRows; i++) {
         for (size_t j = 0; j < m_NumCols; j++) {
-            ss << setw(width) << GetNumAtCoords(i, j);
+            double num = GetNumAtCoords(i,j);
+            if(IsZero(num)){        //prevent printing -0
+                num = 0;
+            }
+            ss << setw(width) << num;
         }
         ss << '\n';
     }

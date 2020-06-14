@@ -76,11 +76,11 @@ const vector<vector<string>> HELP = {
                                                                                                                                                                       ":var_name ;'"}},
         {{COMMAND_CUT},                           {"create new matrix by cutting variable according to given parameters"},                                           {"'" +
                                                                                                                                                                       string(COMMAND_CUT) +
-                                                                                                                                                                      ":var_name new_num_rows new_num_cols|start_row end_row ;'"}},
+                                                                                                                                                                      ":var_name new_num_rows new_num_cols|start_row start_col ;'"}},
         {{COMMAND_CUT_DESTRUCTIVE},               {"same as '" + string(COMMAND_CUT) +
                                                    "' but replaces input variable by the output matrix"},                                                            {"'" +
                                                                                                                                                                       string(COMMAND_CUT_DESTRUCTIVE) +
-                                                                                                                                                                      ":var_name new_num_rows new_num_cols|start_row end_row ;'"}},
+                                                                                                                                                                      ":var_name new_num_rows new_num_cols|start_row start_col ;'"}},
         {{COMMAND_TRANSPOSE},                     {"create new matrix by transposing input variable"},                                                               {"'" +
                                                                                                                                                                       string(COMMAND_TRANSPOSE) +
                                                                                                                                                                       ":var_name ;'"}},

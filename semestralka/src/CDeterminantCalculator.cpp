@@ -15,7 +15,9 @@ double CDeterminantCalculator::operator()(const shared_ptr<CMatrix> &matrix) {
     vector<double> diagonal(tmpMatrix->GetNumRows(), 1);
     double det = 1;
     det = CalculateDeterminant(tmpMatrix);
-
+    if(IsZero(det)){
+        det = 0;
+    }
     return det;
 }
 
