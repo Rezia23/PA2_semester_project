@@ -50,20 +50,24 @@ double FindFirstNonZero(size_t rowFirst, size_t rowSecond, size_t &column, share
 
 bool
 SubtractRows(shared_ptr<CMatrix> &matrix, size_t firstNonZeroColumn, double multipleToSubtract, size_t rowToBeChanged,
-             size_t subtractingRow) {
+             size_t subtractingRow, bool optimizeBigNums) {
     const int maxNum = 1000; //bigger numbers than this are multiplied only by fractions of original numbers to prevent too big values
     int divideBy = 1;
     int divideSubtractingRow = 1;
+
     if (IsZero(multipleToSubtract)) {
         return false;
     }
-    if (abs(multipleToSubtract) >= maxNum) {
-        multipleToSubtract /= maxNum;
-        divideBy = maxNum;
+    if(optimizeBigNums){
+        if (abs(multipleToSubtract) >= maxNum) {
+            multipleToSubtract /= maxNum;
+            divideBy = maxNum;
+        }
+        if (abs(matrix->GetNumAtCoords(subtractingRow, firstNonZeroColumn)) >= maxNum) {
+            divideSubtractingRow = maxNum / 10;
+        }
     }
-    if (abs(matrix->GetNumAtCoords(subtractingRow, firstNonZeroColumn)) >= maxNum) {
-        divideSubtractingRow = maxNum / 10;
-    }
+
     for (size_t k = 0; k < matrix->GetNumCols(); k++) {
         matrix->SetNumAtCoords(rowToBeChanged, k, matrix->GetNumAtCoords(rowToBeChanged, k) / divideBy *
                                                   matrix->GetNumAtCoords(subtractingRow, firstNonZeroColumn) /
@@ -90,7 +94,7 @@ void Gem(shared_ptr<CMatrix> &matrix, vector<shared_ptr<CMatrix>> &eliminationPr
             if (i < j) {
                 size_t firstNonZeroColumn = i;
                 double temp = FindFirstNonZero(i, j, firstNonZeroColumn, matrix);
-                wasMadeChange = SubtractRows(matrix, firstNonZeroColumn, temp, j, i);
+                wasMadeChange = SubtractRows(matrix, firstNonZeroColumn, temp, j, i, true);
 
                 if (wasMadeChange) {
                     eliminationProcess.push_back(shared_ptr<CMatrix>(matrix->Clone()));
@@ -100,8 +104,8 @@ void Gem(shared_ptr<CMatrix> &matrix, vector<shared_ptr<CMatrix>> &eliminationPr
     }
 }
 
-int Gem(shared_ptr<CMatrix> &matrix) {
-    int rowsMultipliedBy = 1;
+void Gem(shared_ptr<CMatrix> &matrix) {
+
     SortForElimination(matrix);
 
     for (size_t i = 0; i < matrix->GetNumRows(); i++) {
@@ -109,12 +113,8 @@ int Gem(shared_ptr<CMatrix> &matrix) {
             if (i < j) {
                 size_t firstNonZeroColumn = i;
                 double temp = FindFirstNonZero(i, j, firstNonZeroColumn, matrix);
-                if(temp!=0){
-                    rowsMultipliedBy*=temp;
-                }
-                SubtractRows(matrix, firstNonZeroColumn, temp, j, i);
+                SubtractRows(matrix, firstNonZeroColumn, temp, j, i, true);
             }
         }
     }
-    return rowsMultipliedBy;
 }

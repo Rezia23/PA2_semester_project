@@ -21,11 +21,9 @@ void CInverseOperator::CreateZeroTriangles(shared_ptr<CMatrix> &matrix) {
     for (size_t i = 0; i < matrix->GetNumRows(); i++) {
         for (size_t j = 0; j < matrix->GetNumRows(); j++) {
             if (j != i) {
-                double temp = matrix->GetNumAtCoords(j, i);
-                for (size_t k = 0; k < 2 * matrix->GetNumRows(); k++) {
-                    matrix->SetNumAtCoords(j, k, matrix->GetNumAtCoords(i, i) * matrix->GetNumAtCoords(j, k));
-                    matrix->SetNumAtCoords(j, k, matrix->GetNumAtCoords(j, k) - (matrix->GetNumAtCoords(i, k) * temp));
-                }
+                size_t firstNonZeroColumn = i;
+                double temp = FindFirstNonZero(i, j, firstNonZeroColumn, matrix);
+                SubtractRows(matrix, firstNonZeroColumn, temp, j, i, true);
             }
         }
     }
