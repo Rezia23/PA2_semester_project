@@ -1,4 +1,0 @@
-<map id="CInverseOperator" name="CInverseOperator">
-<area shape="rect" id="node2" href="$classCUnaryOperator.html" title="{CUnaryOperator\n|# m_Operand\l|+ CUnaryOperator()\l+ CUnaryOperator()\l+ ~CUnaryOperator()\l}" alt="" coords="13,160,158,267"/>
-<area shape="rect" id="node3" href="$classCOperator.html" title="{COperator\n||+ COperator()\l+ ~COperator()\l+ Evaluate()\l}" alt="" coords="30,5,141,112"/>
-</map>

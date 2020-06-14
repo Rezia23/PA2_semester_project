@@ -1,4 +1,0 @@
-<map id="CMergeNextToOperator" name="CMergeNextToOperator">
-<area shape="rect" id="node2" href="$classCBinaryOperator.html" title="{CBinaryOperator\n|# m_Left\l# m_Right\l|+ CBinaryOperator()\l+ CBinaryOperator()\l+ ~CBinaryOperator()\l}" alt="" coords="23,160,169,281"/>
-<area shape="rect" id="node3" href="$classCOperator.html" title="{COperator\n||+ COperator()\l+ ~COperator()\l+ Evaluate()\l}" alt="" coords="41,5,151,112"/>
-</map>

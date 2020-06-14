@@ -1,9 +1,0 @@
-<map id="src/CApplication.h" name="src/CApplication.h">
-<area shape="rect" id="node7" href="$CMatrix_8h.html" title="CMatrix.h" alt="" coords="536,229,615,256"/>
-<area shape="rect" id="node11" href="$CMatrixStandard_8h.html" title="CMatrixStandard.h" alt="" coords="510,80,641,107"/>
-<area shape="rect" id="node15" href="$CCommand_8h.html" title="CCommand.h" alt="" coords="139,80,241,107"/>
-<area shape="rect" id="node16" href="$CMemory_8h.html" title="CMemory.h" alt="" coords="101,155,191,181"/>
-<area shape="rect" id="node10" href="$COperator_8h.html" title="COperator.h" alt="" coords="566,304,659,331"/>
-<area shape="rect" id="node13" href="$CMatrixSparse_8h.html" title="CMatrixSparse.h" alt="" coords="418,155,538,181"/>
-<area shape="rect" id="node14" href="$elimination_8h.html" title="elimination.h" alt="" coords="691,155,785,181"/>
-</map>

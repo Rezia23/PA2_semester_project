@@ -25,9 +25,15 @@ bool CApplicationConsole::getVariableName(string &input, string &varName) const 
 }
 
 bool CApplicationConsole::ReadSize(std::size_t &numRows, std::size_t &numCols, istream &inStream) const {
-    if (!(inStream >> numRows) || !(inStream >> numCols)) {
+    int rows, cols;
+    if (!(inStream >> rows) || !(inStream >> cols)) {
         return false;
     }
+    if(rows <= 0 || cols <= 0){
+        return false;
+    }
+    numRows = rows;
+    numCols = cols;
     char delimiter;
     return ((inStream >> delimiter) && delimiter == DELIMITER_MATRIX_SIZE);
 }
@@ -262,7 +268,13 @@ bool CApplicationConsole::ParseLoading(string &input, string &varName, vector<ve
     if (!ReadSize(numRows, numCols, inStream)) {
         return false;
     }
+    if(matrixNums.max_size() < numRows){
+        return false;
+    }
     matrixNums.resize(numRows);
+    if(matrixNums[0].max_size() < numCols){
+        return false;
+    }
     if (!ReadMatrix(inStream, matrixNums, numRows, numCols)) {
         return false;
     }

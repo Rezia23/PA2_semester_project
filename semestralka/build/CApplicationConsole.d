@@ -11,8 +11,8 @@ build/CApplicationConsole.o: src/CApplicationConsole.cpp \
  src/CCutOperator.h src/CCommandInverse.h src/CInverseOperator.h \
  src/CDeterminantCalculator.h src/CCommandDeterminant.h \
  src/CCommandGaussEliminationDestructive.h src/CCommandGaussElimination.h \
- src/CGaussEliminationOperator.h src/CCommandOrder.h \
- src/COrderCalculator.h src/messages.h src/CCommandTransposeDestructive.h \
+ src/CGaussEliminationOperator.h src/CCommandRank.h src/CRankCalculator.h \
+ src/messages.h src/CCommandTransposeDestructive.h \
  src/CCommandCutDestructive.h
 
 src/CApplicationConsole.h:
@@ -85,9 +85,9 @@ src/CCommandGaussElimination.h:
 
 src/CGaussEliminationOperator.h:
 
-src/CCommandOrder.h:
+src/CCommandRank.h:
 
-src/COrderCalculator.h:
+src/CRankCalculator.h:
 
 src/messages.h:
 
