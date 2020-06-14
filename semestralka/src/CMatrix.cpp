@@ -7,6 +7,7 @@
 #include <iostream>
 
 
+
 bool CMatrix::operator==(const CMatrix &other) {
     if (m_NumRows != other.m_NumRows || m_NumCols != other.m_NumCols) {
         return false;
@@ -34,15 +35,17 @@ string CMatrix::ToString() const {
 }
 
 int CMatrix::GetCellWidth() const {
+    const int bigCellWidth = 14; //should be bigger or equal to 14, since double longest value has 13 digits
+    const int smallCellWidth = 6;
     for (size_t i = 0; i < m_NumRows; i++) {
         for (std::size_t j = 0; j < m_NumCols; j++) {
             int numLength = GetNumLength(i, j);
-            if (numLength >= 5) {
-                return 14;
+            if (numLength >= smallCellWidth) {
+                return bigCellWidth;
             }
         }
     }
-    return 6;
+    return smallCellWidth;
 }
 
 int CMatrix::GetNumLength(std::size_t row, std::size_t column) const {

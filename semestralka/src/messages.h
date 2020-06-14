@@ -40,8 +40,8 @@ const char *const MSG_FAILED_OPERATION = "Operation failed.";
 
 const char *const MSG_NOT_EXISTING_VARIABLE = "Variable does not exist.";
 
+const char * const HELP_BEGINNING = "List of all commands, their description and usage";
 const vector<vector<string>> HELP = {
-        {{"Command name"},                        {"description"},                                                                                                   {"usage"}},
         {{COMMAND_EXIT},                          {"exit the app"},                                                                                                  {"'" +
                                                                                                                                                                       string(COMMAND_EXIT) +
                                                                                                                                                                       "'"}},
