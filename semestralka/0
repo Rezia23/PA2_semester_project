@@ -1,0 +1,31 @@
+Welcome to the MATRIX! calculator.
+For exit type 'exit' for help type 'help'.
+-------------------------------------------
+
+Matrix pepa successfully loaded.
+     1     2
+     3     4
+
+Matrix franta successfully loaded.
+     1     1
+     1     1
+
+Matrix lojza successfully loaded.
+     0     0     0
+     1     6     7
+
+Result of addition is:
+     2     3
+     4     5
+
+Result of multiplication is:
+     2    12    14
+     4    24    28
+
+Operation failed.
+Matrices lojza and pepa are not compatible for multiplication.
+Result of subtraction is:
+     0    -1
+    -2    -3
+
+Closing the app.

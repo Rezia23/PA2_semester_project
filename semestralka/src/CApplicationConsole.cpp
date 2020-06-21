@@ -29,7 +29,7 @@ bool CApplicationConsole::ReadSize(std::size_t &numRows, std::size_t &numCols, i
     if (!(inStream >> rows) || !(inStream >> cols)) {
         return false;
     }
-    if(rows <= 0 || cols <= 0){
+    if (rows <= 0 || cols <= 0) {
         return false;
     }
     numRows = rows;
@@ -268,11 +268,11 @@ bool CApplicationConsole::ParseLoading(string &input, string &varName, vector<ve
     if (!ReadSize(numRows, numCols, inStream)) {
         return false;
     }
-    if(matrixNums.max_size() < numRows){
+    if (matrixNums.max_size() < numRows) {
         return false;
     }
     matrixNums.resize(numRows);
-    if(matrixNums[0].max_size() < numCols){
+    if (matrixNums[0].max_size() < numCols) {
         return false;
     }
     if (!ReadMatrix(inStream, matrixNums, numRows, numCols)) {

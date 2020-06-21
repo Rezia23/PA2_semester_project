@@ -11,6 +11,7 @@
 #include "CMergeNextToOperator.h"
 #include "CCutOperator.h"
 #include "CDeterminantCalculator.h"
+#include "elimination.h"
 
 
 class CInverseOperator : public CUnaryOperator {

@@ -7,10 +7,10 @@ print:lojza ;
 Transpose:lojza ;
 print:lojza ;
 gem:albert ;
-order:albert ;
+rank:albert ;
 determinant:konrad ;
 determinant:albert ;
-order:helmut ;
+rank:helmut ;
 Cut:helmut 2 1|0 3 ;
 cut:albert 4 4|0 0 ;
 exit

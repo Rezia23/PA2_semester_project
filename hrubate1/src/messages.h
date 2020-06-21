@@ -15,7 +15,7 @@ const char *const COMMAND_SUBTRACT = "subtract";
 const char *const COMMAND_MULTIPLY = "multiply";
 const char *const COMMAND_MERGE_NEXT_TO = "merge_next_to";
 const char *const COMMAND_MERGE_UNDER = "merge_under";
-const char *const COMMAND_ORDER = "order";
+const char *const COMMAND_RANK = "rank";
 const char *const COMMAND_DETERMINANT = "determinant";
 const char *const COMMAND_PRINT = "print";
 const char *const COMMAND_INVERSE = "inverse";
@@ -40,8 +40,8 @@ const char *const MSG_FAILED_OPERATION = "Operation failed.";
 
 const char *const MSG_NOT_EXISTING_VARIABLE = "Variable does not exist.";
 
+const char * const HELP_BEGINNING = "List of all commands, their description and usage";
 const vector<vector<string>> HELP = {
-        {{"Command name"},                        {"description"},                                                                                                   {"usage"}},
         {{COMMAND_EXIT},                          {"exit the app"},                                                                                                  {"'" +
                                                                                                                                                                       string(COMMAND_EXIT) +
                                                                                                                                                                       "'"}},
@@ -76,11 +76,11 @@ const vector<vector<string>> HELP = {
                                                                                                                                                                       ":var_name ;'"}},
         {{COMMAND_CUT},                           {"create new matrix by cutting variable according to given parameters"},                                           {"'" +
                                                                                                                                                                       string(COMMAND_CUT) +
-                                                                                                                                                                      ":var_name new_num_rows new_num_cols|start_row end_row ;'"}},
+                                                                                                                                                                      ":var_name new_num_rows new_num_cols|start_row start_col ;'"}},
         {{COMMAND_CUT_DESTRUCTIVE},               {"same as '" + string(COMMAND_CUT) +
                                                    "' but replaces input variable by the output matrix"},                                                            {"'" +
                                                                                                                                                                       string(COMMAND_CUT_DESTRUCTIVE) +
-                                                                                                                                                                      ":var_name new_num_rows new_num_cols|start_row end_row ;'"}},
+                                                                                                                                                                      ":var_name new_num_rows new_num_cols|start_row start_col ;'"}},
         {{COMMAND_TRANSPOSE},                     {"create new matrix by transposing input variable"},                                                               {"'" +
                                                                                                                                                                       string(COMMAND_TRANSPOSE) +
                                                                                                                                                                       ":var_name ;'"}},
@@ -99,9 +99,9 @@ const vector<vector<string>> HELP = {
                                                                                                                                                                       string(COMMAND_PUT) +
                                                                                                                                                                       ":var_name other_command params_of_other_command ;', e.g. put:cypher add:morpheus trinity ;"}},
 
-        {{COMMAND_ORDER},                         {"calculate order of a variable"},                                                                                 {"'" +
-                                                                                                                                                                      string(COMMAND_ORDER) +
-                                                                                                                                                                      ":var_name ;'"}},
+        {{COMMAND_RANK}, {"calculate rank of a variable"}, {"'" +
+                                                             string(COMMAND_RANK) +
+                                                             ":var_name ;'"}},
         {{COMMAND_DETERMINANT},                   {"calculate determinant of a variable"},                                                                           {"'" +
                                                                                                                                                                       string(COMMAND_DETERMINANT) +
                                                                                                                                                                       ":var_name ;'"}},

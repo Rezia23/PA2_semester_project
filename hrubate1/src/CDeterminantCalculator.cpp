@@ -15,7 +15,9 @@ double CDeterminantCalculator::operator()(const shared_ptr<CMatrix> &matrix) {
     vector<double> diagonal(tmpMatrix->GetNumRows(), 1);
     double det = 1;
     det = CalculateDeterminant(tmpMatrix);
-
+    if(IsZero(det)){
+        det = 0;
+    }
     return det;
 }
 
@@ -28,11 +30,13 @@ double CDeterminantCalculator::CalculateDeterminant(shared_ptr<CMatrix> &matrix)
         for (size_t j = 0; j < matrix->GetNumRows(); j++) {
             if (i < j) {
                 double temp = matrix->GetNumAtCoords(j, i);
-                rowsMultipliedBy *= matrix->GetNumAtCoords(i, i); //store multiples used for elimination
-                for (size_t k = 0; k < matrix->GetNumCols(); k++) {
-                    matrix->SetNumAtCoords(j, k, matrix->GetNumAtCoords(j, k) * matrix->GetNumAtCoords(i, i));
-                    matrix->SetNumAtCoords(j, k,
-                                           matrix->GetNumAtCoords(j, k) - (matrix->GetNumAtCoords(i, k) * temp));
+                if(temp!=0){
+                    rowsMultipliedBy *= matrix->GetNumAtCoords(i, i); //store multiples used for elimination
+                    for (size_t k = 0; k < matrix->GetNumCols(); k++) {
+                        matrix->SetNumAtCoords(j, k, matrix->GetNumAtCoords(j, k) * matrix->GetNumAtCoords(i, i));
+                        matrix->SetNumAtCoords(j, k,
+                                               matrix->GetNumAtCoords(j, k) - (matrix->GetNumAtCoords(i, k) * temp));
+                    }
                 }
             }
         }

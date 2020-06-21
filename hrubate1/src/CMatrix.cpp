@@ -3,8 +3,10 @@
 //
 
 #include "CMatrix.h"
+#include "elimination.h"
 #include <iomanip>
 #include <iostream>
+
 
 
 bool CMatrix::operator==(const CMatrix &other) {
@@ -26,7 +28,7 @@ string CMatrix::ToString() const {
     stringstream ss;
     for (size_t i = 0; i < m_NumRows; i++) {
         for (size_t j = 0; j < m_NumCols; j++) {
-            ss << setw(width) << GetNumAtCoords(i, j);
+            ss << setw(width) << GetNumAtCoords(i,j);
         }
         ss << '\n';
     }
@@ -34,15 +36,17 @@ string CMatrix::ToString() const {
 }
 
 int CMatrix::GetCellWidth() const {
+    const int bigCellWidth = 14; //should be bigger or equal to 14, since double longest value has 13 digits
+    const int smallCellWidth = 6;
     for (size_t i = 0; i < m_NumRows; i++) {
         for (std::size_t j = 0; j < m_NumCols; j++) {
             int numLength = GetNumLength(i, j);
-            if (numLength >= 5) {
-                return 14;
+            if (numLength >= smallCellWidth) {
+                return bigCellWidth;
             }
         }
     }
-    return 6;
+    return smallCellWidth;
 }
 
 int CMatrix::GetNumLength(std::size_t row, std::size_t column) const {

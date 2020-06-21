@@ -52,11 +52,10 @@ private:
     }
 
     void ShowHelp() const override {
-        cout << HELP_BEGINNING<<"\n"<<setfill('-')<<setw(strlen(HELP_BEGINNING)+1)<<"\n";
+        cout << HELP_BEGINNING << "\n" << setfill('-') << setw(strlen(HELP_BEGINNING) + 1) << "\n";
 
         for (std::size_t i = 0; i < HELP.size(); i++) {
-//            cout << HELP[i][0] << setw(120 - HELP[i][0].size()) << HELP[i][1] << "         " << HELP[i][2] << endl;
-            cout << HELP[i][0] << "\n\t" << HELP[i][1] << "\n\t" <<HELP[i][2]<< endl;
+            cout << HELP[i][0] << "\n\t" << HELP[i][1] << "\n\t" << HELP[i][2] << endl;
         }
 
     }

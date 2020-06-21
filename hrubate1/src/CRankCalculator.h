@@ -2,19 +2,19 @@
 // Created by hrubate1 on 07.05.2020.
 //
 
-#ifndef SEMESTRALKA_CORDERCALCULATOR_H
-#define SEMESTRALKA_CORDERCALCULATOR_H
+#ifndef SEMESTRALKA_CRANKCALCULATOR_H
+#define SEMESTRALKA_CRANKCALCULATOR_H
 
 
 #include "CMatrix.h"
 #include "CGaussEliminationOperator.h"
 
-class COrderCalculator {
+class CRankCalculator {
 public:
     /**
-     * Calculate order of a matrix.
-     * @param matrix matrix to have order calculated
-     * @return order of a matrix
+     * Calculate rank of a matrix.
+     * @param matrix matrix to have rank calculated
+     * @return rank of a matrix
      */
     int operator()(const shared_ptr<CMatrix> &matrix) const;
 
@@ -28,4 +28,4 @@ private:
 };
 
 
-#endif //SEMESTRALKA_CORDERCALCULATOR_H
+#endif //SEMESTRALKA_CRANKCALCULATOR_H

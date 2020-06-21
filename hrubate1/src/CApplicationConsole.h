@@ -9,6 +9,7 @@
 #include <memory>
 #include <sstream>
 #include <iomanip>
+#include <cstring>
 #include "CApplication.h"
 #include "CMatrixSparse.h"
 #include "CCommandLoad.h"
@@ -24,7 +25,7 @@
 #include "CCommandInverse.h"
 #include "CCommandDeterminant.h"
 #include "CCommandGaussEliminationDestructive.h"
-#include "CCommandOrder.h"
+#include "CCommandRank.h"
 #include "messages.h"
 #include "CCommandGaussElimination.h"
 #include "CCommandTransposeDestructive.h"
@@ -51,9 +52,12 @@ private:
     }
 
     void ShowHelp() const override {
+        cout << HELP_BEGINNING << "\n" << setfill('-') << setw(strlen(HELP_BEGINNING) + 1) << "\n";
+
         for (std::size_t i = 0; i < HELP.size(); i++) {
-            cout << HELP[i][0] << setw(120 - HELP[i][0].size()) << HELP[i][1] << "         " << HELP[i][2] << endl;
+            cout << HELP[i][0] << "\n\t" << HELP[i][1] << "\n\t" << HELP[i][2] << endl;
         }
+
     }
 
     /**

@@ -1,0 +1,29 @@
+Welcome to the MATRIX! calculator.
+For exit type 'exit' for help type 'help'.
+-------------------------------------------
+
+Matrix georg successfully loaded.
+     1     2     3     1     2     4
+     4     7    87    12     3     4
+    56    77     8   144     7    64
+     4    33   201    22     0     9
+
+Matrix alfons successfully loaded.
+     1     8    32     1    12
+     4     4     7    87    12
+     3     4    56     7     7
+    44     7    64     4    33
+   201    22     5    66     8
+
+Matrix alfons has determinant:
+-155344616.000000
+Operation failed.
+Matrix georg is not square - cannot get determinant.
+Matrix georg has been cut to:
+    87    12     3
+     8   144     7
+   201    22     0
+
+Matrix georg has determinant:
+-82818.000000
+Closing the app.

@@ -2,9 +2,9 @@
 // Created by hrubate1 on 07.05.2020.
 //
 
-#include "COrderCalculator.h"
+#include "CRankCalculator.h"
 
-int COrderCalculator::GetCountZeroRows(const shared_ptr<CMatrix> &matrix) {
+int CRankCalculator::GetCountZeroRows(const shared_ptr<CMatrix> &matrix) {
     int count = 0;
     bool isRowZero;
     for (size_t i = 0; i < matrix->GetNumRows(); i++) {
@@ -22,7 +22,7 @@ int COrderCalculator::GetCountZeroRows(const shared_ptr<CMatrix> &matrix) {
     return count;
 }
 
-int COrderCalculator::operator()(const shared_ptr<CMatrix> &matrix) const {
+int CRankCalculator::operator()(const shared_ptr<CMatrix> &matrix) const {
     shared_ptr<CMatrix> tmp = shared_ptr<CMatrix>(matrix->Clone());
     Gem(tmp);
     return matrix->GetNumRows() - GetCountZeroRows(tmp);

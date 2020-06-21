@@ -1,0 +1,72 @@
+Welcome to the MATRIX! calculator.
+For exit type 'exit' for help type 'help'.
+-------------------------------------------
+
+Matrix lojza successfully loaded.
+     0     0     0
+     1     6     7
+
+Matrix albert successfully loaded.
+     0     0     0
+     1     6     7
+     4     2     5
+
+Matrix helmut successfully loaded.
+     5    63     2    71
+     1     5     6     7
+    78     9     1     5
+    66     4     2     3
+
+Matrix konrad successfully loaded.
+     1     0     5
+     0     0     2
+     2     3     4
+     0     0     8
+
+Matrix lojza would be transposed to:
+     0     1
+     0     6
+     0     7
+
+Printing matrix lojza
+     0     0     0
+     1     6     7
+
+Matrix lojza has been transposed to:
+     0     1
+     0     6
+     0     7
+
+Printing matrix lojza
+     0     1
+     0     6
+     0     7
+
+Matrix albert would be eliminated in these steps:
+     0     0     0
+     1     6     7
+     4     2     5
+
+     4     2     5
+     1     6     7
+     0     0     0
+
+     4     2     5
+     0    22    23
+     0     0     0
+
+Matrix albert has rank:
+2
+Operation failed.
+Matrix konrad is not square - cannot get determinant.
+Matrix albert has determinant:
+0.000000
+Matrix helmut has rank:
+4
+Matrix helmut has been cut to:
+    71
+     7
+
+Operation failed.
+Matrix albert cannot be cut.
+Closing the app.

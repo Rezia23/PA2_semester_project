@@ -1,0 +1,41 @@
+Welcome to the MATRIX! calculator.
+For exit type 'exit' for help type 'help'.
+-------------------------------------------
+
+Matrix ondra successfully loaded.
+     1   104
+    98    11
+ 5.434 0.002
+
+Matrix petr successfully loaded.
+    80    14
+     7 1.234
+   0.4 5.002
+
+Result of merge is:
+     1   104    80    14
+    98    11     7 1.234
+ 5.434 0.002   0.4 5.002
+
+Result of merge is:
+    80    14     1   104
+     7 1.234    98    11
+   0.4 5.002 5.434 0.002
+
+Result of merge is:
+     1   104
+    98    11
+ 5.434 0.002
+    80    14
+     7 1.234
+   0.4 5.002
+
+Result of merge is:
+    80    14
+     7 1.234
+   0.4 5.002
+     1   104
+    98    11
+ 5.434 0.002
+
+Closing the app.
