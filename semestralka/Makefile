@@ -34,5 +34,13 @@ clean:
 doc: Doxyfile src/*.h
 	doxygen Doxyfile
 
+EXAMPLES = $(wildcard examples/*)
+$(TARGET).zip: zadani.txt prohlaseni.txt Makefile Doxyfile $(HEADERS) $(SOURCES) $(EXAMPLES)
+	mkdir -p .archive/$(TARGET)/
+	cp -r README.md zadani.txt prohlaseni.txt Makefile Doxyfile src/ examples/ .archive/$(TARGET)/
+	cd .archive/; zip -r ../$(TARGET).zip $(TARGET)/
+	rm -r .archive/
+
+
 
 

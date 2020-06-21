@@ -1,4 +1,6 @@
-*.txt
+CMakeLists.txt
 *.xml
 *.out
 */cmake-build-debug
+*.idea
+Doxyfile.bak
